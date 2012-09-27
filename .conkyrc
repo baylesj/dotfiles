@@ -1,0 +1,122 @@
+# conky configuration
+#
+# The list of variables has been removed from this file in favour
+# of keeping the documentation more maintainable.
+# Check http://conky.sf.net for an up-to-date-list.
+#
+# For ideas about how to modify conky, please see:
+# http://crunchbanglinux.org/forums/topic/59/my-conky-config/
+#
+# For help with conky, please see:
+# http://crunchbanglinux.org/forums/topic/2047/conky-help/
+#
+# Enjoy! :)
+##############################################
+# Settings
+##############################################
+
+background yes
+use_xft yes
+xftfont Droid Sans:size=8
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+
+default_shade_color black
+lua_load ~/bin/draw_bg.lua
+lua_draw_hook_pre draw_bg
+
+own_window yes
+own_window_transparent yes
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+double_buffer yes
+minimum_size 200 200
+maximum_width 200
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+#default_color 656667
+default_color 999999
+default_shade_color 444444
+default_outline_color 828282
+alignment top_right
+gap_x 5
+gap_y 34
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+
+##############################################
+#  Output
+##############################################
+TEXT
+${font sans-serif:bold:size=8}SYSTEM${hr 1}
+${font sans-serif:normal:size=8}Crunchbang:  ${alignr}8.10.1
+${font sans-serif:normal:size=8}Kernel:  ${alignr}${kernel}
+Hostname:$alignr$nodename
+Uptime:$alignr$uptime
+#File System: $alignr${fs_type}
+Battery level: (${color}${battery_percent BAT0}${color}) ${alignr}${color 003399}${battery_bar 8,85 BAT0}${color}
+
+${font sans-serif:bold:size=8}PROCESSORS${hr 1}
+${font sans-serif:normal:size=8}${cpugraph cpu1 ffcc00 ff0000}
+CPU1: ${cpu cpu1}% ${color 119933}${cpubar cpu1}${color}
+CPU2: ${cpu cpu2}% ${color 119933}${cpubar cpu2}${color}
+
+# MEMORY
+${font sans-serif:bold:size=8}MEMORY${hr 1}
+${font sans-serif:normal:size=8}RAM $alignc $mem / $memmax $alignr $memperc%
+${color 119933}$membar${color}
+# DISKS
+#${font sans-serif:bold:size=8}DISKS ${hr 1}
+${font sans-serif:normal:size=8}/ $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
+${color 119933}${fs_bar /}${color}
+${font sans-serif:normal:size=8}/home $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home}%
+${color 119933}${fs_bar /home}${color}
+#SWAP $alignc ${swap} / ${swapmax} $alignr ${swapperc}%
+#${color 119933}${swapbar}${color}
+
+# TOP PROCESSES
+${font sans-serif:bold:size=8}TOP PROCESSES${hr 1}
+${font sans-serif:normal:size=8}${top_mem name 1}${alignr}${top mem 1} %
+${top_mem name 2}${alignr}${top mem 2} %
+$font${top_mem name 3}${alignr}${top mem 3} %
+$font${top_mem name 4}${alignr}${top mem 4} %
+$font${top_mem name 5}${alignr}${top mem 5} %
+
+# NETWORKING
+${font sans-serif:bold:size=8}NETWORK${hr 1}
+${font sans-serif:normal:size=8}IP address: $alignr ${addr wlan0}
+ESSID: $alignr ${wireless_essid wlan0}
+Connection quality: $alignr ${wireless_link_qual_perc wlan0}%
+${downspeedgraph wlan0 ffcc00 ff0000}
+DLS:${downspeed wlan0} $alignr total: ${totaldown wlan0}
+#${upspeedgraph wlan0}
+#ULS:${upspeed wlan0} kb/s $alignr total: ${totalup wlan0}
+
+# SHORTCUTS
+${font sans-serif:bold:size=8}SHORTCUTS${hr 1}
+${font sans-serif:normal:size=8}Alt+F2$alignr Run Dialog
+Alt+F3$alignr Alt Menu
+Alt+F5$alignr Xrandr settings
+Super+Space$alignr Main Menu
+Super+Tab$alignr Client Menu
+Super+t$alignr Terminal
+Super+f$alignr File Manager
+Super+e$alignr Editor
+Super+m$alignr Media Player
+Super+w$alignr Web Browser
+Super+l$alignr Lock Screen
+Super+v$alignr Volume Control
+Super+x$alignr Logout
+Super+Left$alignr Snap Left
+Super+Right$alignr Snap Right
+Super+Up$alignr Maximize
+PrtSc$alignr Screenshot
+
