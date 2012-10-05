@@ -6,14 +6,24 @@
 # This file contains aliases, functions, and other features for bash
 #==============================================================================
 
-export EDITOR='vi'
+#==============================================================================
+# Exports
+#==============================================================================
+export EDITOR='vim'
 export TERM='xterm-256color'
 PATH=$PATH:"/home/jordan/matlab2011b/bin:/usr/local/texlive/2011/bin/x86_64-linux:/home/jordan/bin:/home/jordan/android-sdk-linux/platform-tools"
 export PATH
 
 #==============================================================================
+# Sources
+#==============================================================================
+source /usr/share/git/completion/git-completion.bash
+source ~/.git-prompt.sh
+
+#==============================================================================
 # Aliases
 #==============================================================================
+alias vi='vim'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -51,14 +61,6 @@ alias lm='ls -al |more'    # pipe through 'more'
 alias lr='ls -lR'          # recursive ls
 alias tree='tree -Csu'     # nice alternative to 'recursive ls'
 
-# aptitude family
-alias sai='sudo aptitude install'
-alias sar='sudo aptitude remove'
-alias sas='sudo aptitude search'
-alias sau='sudo aptitude update'
-alias sad='sudo aptitude dist-upgrade'
-alias saud='sudo aptitude update && sudo aptitude dist-upgrade'
-
 # Oregon State related aliases
 alias flip='ssh baylesj@flip.engr.oregonstate.edu'
 alias dfu-wund='sudo dfu-programmer at90usb646'
@@ -69,17 +71,18 @@ alias valgrindv='valgrind --leak-check=full --track-origins=yes --show-reachable
 alias db='cd /home/jordan/Dropbox'
 alias sw='cd /home/jordan/Dropbox/schoolwork/'
     # Course specific aliases
-alias 152='cd /home/jordan/Dropbox/schoolwork/ece152'
-alias 323='cd /home/jordan/Dropbox/schoolwork/mth323'
 alias gibson='cd /home/jordan/Dropbox/extracurricular/gibson_research/'
 alias share='if mount|grep "/media/science"; 
              then cd /media/science/Share/gibsonn/Bayles
              else sudo mount /media/science && cd /media/science/Share/gibsonn/Bayles
              fi'
+alias cs261='sw && cd cs261'
+
 # General aliases
 alias fbstatus='fbcmd STATUS'
 alias minecraft='optirun java -jar -Xmx1024M -Xms512M /home/jordan/bin/minecraft.jar'
 alias cctags='ctags -R --languages=C,C++ --c++-kinds=+p --fields=+iaS --extra=+q ./'
+
 #==============================================================================
 # Some general settings
 #==============================================================================
@@ -168,7 +171,7 @@ local UC=$COLOR_BLUE                # user's color
 [ $UID -eq "0" ] && UC=$COLOR_RED   # root's color
 
 #PS1="$TITLEBAR\n${UC}\u@\h ${COLOR_LIGHT_BLUE}\${PWD} \n${COLOR_LIGHT_GREEN}→${COLOR_NC}"
-PS1="$TITLEBAR\n${UC}\u@\h ${COLOR_LIGHT_GREEN}\${PWD}${COLOR_NC}\n-> "
+PS1="$TITLEBAR\n${UC}\u@\h ${COLOR_LIGHT_GREEN}\${PWD} ${COLOR_CYAN}$(__git_ps1 " (%s)")${COLOR_NC}\n-> "
 }
 
 #fastprompt

@@ -2,9 +2,11 @@
 syntax on
 " Toggle line counter on/off
 set number
+" Don't allow mouse to select line numbers when copying
+se mouse+=a
 
 "Set tab size and smart tabbing
-set noet sts=0 sw=4 ts=4
+set noet sts=0 sw=4 ts=4 expandtab
 set cinoptions=(0,u0,U0
 
 "Autocommand for indent settings
