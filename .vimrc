@@ -16,11 +16,11 @@ augroup indent_settings
 augroup END
 
 "Mark lines over 80 columns
-"if exists('+colorcolumn')
-"  set colorcolumn=80
-"else
-"  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-"endif
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
 
 "Highlight tabs
 autocmd syntax * SpaceHi
@@ -33,13 +33,13 @@ setlocal spell spelllang=en_us
 map <F6> <Esc>:setlocal spell spelllang=en_us<CR>
 map <F7> <Esc>:setlocal nospell<CR>
 
-"Auto completion
-"if v:version >= 600
-"  filetype plugin on
-"  filetype indent on
-"else
-"  filetype on
-"endif
+" Plug in enabling
+if v:version >= 600
+  filetype plugin on
+  filetype indent on
+else
+  filetype on
+endif
 
 "if v:version >= 700
 "  set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin

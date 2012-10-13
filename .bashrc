@@ -11,8 +11,8 @@
 #==============================================================================
 export EDITOR='vim'
 export TERM='xterm-256color'
-PATH=$PATH:"/home/jordan/matlab2011b/bin:/usr/local/texlive/2011/bin/x86_64-linux:/home/jordan/bin:/home/jordan/android-sdk-linux/platform-tools"
-export PATH
+#PATH=$PATH:"/home/jordan/matlab2011b/bin:/usr/local/texlive/2011/bin/x86_64-linux:/home/jordan/bin:/home/jordan/android-sdk-linux/platform-tools"
+#export PATH
 
 #==============================================================================
 # Sources
@@ -23,6 +23,7 @@ source ~/.git-prompt.sh
 #==============================================================================
 # Aliases
 #==============================================================================
+alias sbrc='source ~/.bashrc'
 alias vi='vim'
 alias rm='rm -i'
 alias cp='cp -i'
@@ -61,6 +62,9 @@ alias lm='ls -al |more'    # pipe through 'more'
 alias lr='ls -lR'          # recursive ls
 alias tree='tree -Csu'     # nice alternative to 'recursive ls'
 
+# Compile alias
+alias upgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
 # Oregon State related aliases
 alias flip='ssh baylesj@flip.engr.oregonstate.edu'
 alias dfu-wund='sudo dfu-programmer at90usb646'
@@ -76,7 +80,7 @@ alias share='if mount|grep "/media/science";
              then cd /media/science/Share/gibsonn/Bayles
              else sudo mount /media/science && cd /media/science/Share/gibsonn/Bayles
              fi'
-alias cs261='sw && cd cs261'
+alias cs='sw && cd cs261'
 
 # General aliases
 alias fbstatus='fbcmd STATUS'
@@ -170,8 +174,14 @@ case $TERM in
 local UC=$COLOR_BLUE                # user's color
 [ $UID -eq "0" ] && UC=$COLOR_RED   # root's color
 
-#PS1="$TITLEBAR\n${UC}\u@\h ${COLOR_LIGHT_BLUE}\${PWD} \n${COLOR_LIGHT_GREEN}→${COLOR_NC}"
-PS1="$TITLEBAR\n${UC}\u@\h ${COLOR_LIGHT_GREEN}\${PWD} ${COLOR_CYAN}$(__git_ps1 " (%s)")${COLOR_NC}\n-> "
+# Important lesson here:
+# For variables to change after bash is instantiated, you need to escape the
+# "$" character, otherwise it is expanded on instantiation of the bash instance.
+PS1="$TITLEBAR\n${UC}\u@\h ${COLOR_LIGHT_GREEN}\${PWD} ${COLOR_CYAN}\$(__git_ps1)${COLOR_NC}\n-> "
+
+# Single quotes do NOT expand variable names. The following $PS1 fixes the git
+# issue, but adds some color related ones.
+#PS1='$TITLEBAR\n${UC}\u@\h ${COLOR_LIGHT_GREEN}\${PWD} ${COLOR_CYAN}$(__git_ps1)${COLOR_NC}\n-> '
 }
 
 #fastprompt
