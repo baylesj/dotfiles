@@ -6,14 +6,13 @@ set number
 se mouse+=a
 
 "Set tab size and smart tabbing
-set noet sts=0 sw=4 ts=4 expandtab
-set cinoptions=(0,u0,U0
+"set noet sts=0 sw=4 ts=4 expandtab
+"set cinoptions=(0,u0,U0
 
 "Autocommand for indent settings
-augroup indent_settings
-  au!
-  au BufEnter *.m setl tabstop=2 shiftwidth=2 expandtab
-augroup END
+  au FileType matlab setl tabstop=2 shiftwidth=2 expandtab
+  au FileType html setlocal shiftwidth=2 tabstop=2 expandtab
+  au FileType python setl shiftwidth=4 sts=0 tabstop=4 expandtab
 
 "Mark lines over 80 columns
 if exists('+colorcolumn')
@@ -80,6 +79,6 @@ function! WC()
 endfunction
 
 command WC call WC()
-
+map <F10> <Esc>:WC<CR>
 " Color has to be last for some reason
 color xoria256
