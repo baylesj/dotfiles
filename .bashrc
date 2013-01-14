@@ -6,11 +6,14 @@
 # This file contains aliases, functions, and other features for bash
 #==============================================================================
 
+shopt -s extglob
+
 #==============================================================================
 # Exports
 #==============================================================================
 export EDITOR='vim'
 export TERM='xterm-256color'
+export UNCRUSTIFY_CONFIG='/home/jordan/dotfiles/uncrustify.cfg'
 #PATH=$PATH:"/home/jordan/matlab2011b/bin:/usr/local/texlive/2011/bin/x86_64-linux:/home/jordan/bin:/home/jordan/android-sdk-linux/platform-tools"
 #export PATH
 
@@ -67,20 +70,21 @@ alias upgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # Oregon State related aliases
 alias flip='ssh baylesj@flip.engr.oregonstate.edu'
-alias dfu-wund='sudo dfu-programmer at90usb646'
-alias flash-wund='make clean && make all && sudo make program'
 alias gcc='gcc -lm -Wall -Werror -std=c99 -g'
 alias g++='g++ -ansi -pedantic -Wall'
 alias valgrindv='valgrind --leak-check=full --track-origins=yes --show-reachable=yes -v'
 alias db='cd /home/jordan/Dropbox'
 alias sw='cd /home/jordan/Dropbox/schoolwork/'
-    # Course specific aliases
+
+# Course specific aliases
 alias gibson='cd /home/jordan/Dropbox/extracurricular/gibson_research/'
 alias share='if mount|grep "/media/science"; 
              then cd /media/science/Share/gibsonn/Bayles
              else sudo mount /media/science && cd /media/science/Share/gibsonn/Bayles
              fi'
-alias cs='sw && cd cs261'
+alias cs='sw && cd cs311'
+alias kelleymac='sudo macchanger -e eth0 --mac=24:BE:05:0E:57:EF'
+alias osc='ssh baylesj@os-class.engr.oregonstate.edu'
 
 # General aliases
 alias fbstatus='fbcmd STATUS'
