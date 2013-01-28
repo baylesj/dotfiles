@@ -2,7 +2,7 @@
 # ~/.bash_profile
 #
 #[[ -f ~/.bashrc ]] && . ~/.bashrc
-$ cat .bash_profile 
+#$ cat .bash_profile 
 . $HOME/.bashrc
 
 # Make sure the users bin directory will be searched in first place.
@@ -11,4 +11,4 @@ then
     export PATH=$HOME/bin:$PATH
 fi
 
-[[ -f ~/.profile ]] ** . ~/.profile
+# [[ -f ~/.profile ]] ** . ~/.profile

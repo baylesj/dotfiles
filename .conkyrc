@@ -19,13 +19,13 @@ own_window_type desktop
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
 double_buffer yes
-minimum_size 200 200
+minimum_size 200 600
 maximum_width 200
 
 draw_shades no
 draw_outline no
 draw_borders no
-draw_graph_borders no
+draw_graph_borders yes
 
 #default_color 656667
 default_color 999999
@@ -44,6 +44,7 @@ override_utf8_locale no
 #  Output
 ##############################################
 TEXT
+
 ${font sans-serif:bold:size=8}SYSTEM${hr 1}
 ${font sans-serif:normal:size=8}Kernel:  ${alignr}${kernel}
 Hostname:$alignr$nodename
@@ -106,4 +107,5 @@ Super+Left$alignr Snap Left
 Super+Right$alignr Snap Right
 Super+Up$alignr Maximize
 PrtSc$alignr Screenshot
+
 
