@@ -14,8 +14,8 @@ shopt -s extglob
 export EDITOR='vim'
 export TERM='xterm-256color'
 export UNCRUSTIFY_CONFIG='/home/jordan/dotfiles/uncrustify.cfg'
-#PATH=$PATH:"/home/jordan/matlab2011b/bin:/usr/local/texlive/2011/bin/x86_64-linux:/home/jordan/bin:/home/jordan/android-sdk-linux/platform-tools"
-#export PATH
+PATH=$PATH:"/home/jordan/matlab2011b/bin:/usr/local/texlive/2011/bin/x86_64-linux:/home/jordan/bin:/home/jordan/android-sdk-linux/platform-tools"
+export PATH
 
 #==============================================================================
 # Sources
@@ -85,11 +85,13 @@ alias share='if mount|grep "/media/science";
 alias cs='sw && cd cs311'
 alias kelleymac='sudo macchanger -e eth0 --mac=24:BE:05:0E:57:EF'
 alias osc='ssh baylesj@os-class.engr.oregonstate.edu'
+alias python='python2'
 
 # General aliases
 alias fbstatus='fbcmd STATUS'
 alias minecraft='optirun java -jar -Xmx1024M -Xms512M /home/jordan/bin/minecraft.jar'
 alias cctags='ctags -R --languages=C,C++ --c++-kinds=+p --fields=+iaS --extra=+q ./'
+alias indentkr='indent -kr -i8'
 
 #==============================================================================
 # Some general settings

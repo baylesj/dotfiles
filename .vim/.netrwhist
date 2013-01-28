@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/jordan/bin'
 let g:netrw_dirhist_2='/home/jordan/.vim'
 let g:netrw_dirhist_3='/home/jordan'
 let g:netrw_dirhist_4='/etc/modprobe.d'
+let g:netrw_dirhist_5='/home/jordan/.urxvt'
+let g:netrw_dirhist_6='/home/jordan/.cache/lightdm/cache'
+let g:netrw_dirhist_7='/etc/modules-load.d'
