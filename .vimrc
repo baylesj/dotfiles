@@ -4,6 +4,7 @@ syntax on
 set number
 " Don't allow mouse to select line numbers when copying
 se mouse+=a
+set hls
 
 "Set tab size and smart tabbing
 "set noet sts=0 sw=4 ts=4 expandtab
