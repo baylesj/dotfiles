@@ -22,6 +22,7 @@ export PATH
 #==============================================================================
 source /usr/share/git/completion/git-completion.bash
 source ~/.git-prompt.sh
+source /opt/intel/bin/compilervars.sh intel64
 
 #==============================================================================
 # Aliases
@@ -70,7 +71,8 @@ alias upgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # Oregon State related aliases
 alias flip='ssh baylesj@flip.engr.oregonstate.edu'
-alias gcc='gcc -lm -Wall -Werror -std=c99 -g'
+alias gcc='gcc -lm -Wall -Werror -std=gnu99 -g'
+alias gcc99='gcc -lm -Wall -Werror -std=c99 -g'
 alias g++='g++ -ansi -pedantic -Wall'
 alias valgrindv='valgrind --leak-check=full --track-origins=yes --show-reachable=yes -v'
 alias db='cd /home/jordan/Dropbox'

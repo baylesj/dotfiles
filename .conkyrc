@@ -19,7 +19,7 @@ own_window_type desktop
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
 double_buffer yes
-minimum_size 200 600
+minimum_size 400 100
 maximum_width 200
 
 draw_shades no
@@ -107,5 +107,8 @@ Super+Left$alignr Snap Left
 Super+Right$alignr Snap Right
 Super+Up$alignr Maximize
 PrtSc$alignr Screenshot
+
+
+
 
 
