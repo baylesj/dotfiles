@@ -1,0 +1,22 @@
+[000:000] Browser XEmbed support present: 1
+[000:000] Browser toolkit is Gtk2.
+[000:001] Using Gtk2 toolkit
+[000:012] Starting client channel.
+[000:013] Read port file, port=44389
+[000:014] Initiated connection to GoogleTalkPlugin
+[000:106] Warning(clientchannel.cc:556): Connection to GoogleTalkPlugin failed, reason=111
+[000:106] Warning(clientchannel.cc:699): Stale port file; attempting to restart flute.
+[001:107] Restarting GoogleTalkPlugin...
+[001:107] Warning(optionsfile.cc:47): Load: Could not open file, err=2
+[001:107] Warning(pluginutils.cc:268): Failed to get GoogleTalkPlugin path. Trying default.
+[001:110] Started GoogleTalkPlugin, path=/opt/google/talkplugin/GoogleTalkPlugin
+[001:110] Waiting for GoogleTalkPlugin to start...
+[002:210] Attempting to connect to GoogleTalkPlugin...
+[002:210] Read port file, port=41528
+[002:211] Initiated connection to GoogleTalkPlugin
+[002:311] Socket connection established
+[002:311] ScheduleOnlineCheck: Online check in 5000ms
+[002:411] Got cookie response, socket is authorized
+[002:412] AUTHORIZED; socket handshake complete
+[007:322] HandleOnlineCheck: Starting check
+[007:322] HandleOnlineCheck: OK; current state: 3

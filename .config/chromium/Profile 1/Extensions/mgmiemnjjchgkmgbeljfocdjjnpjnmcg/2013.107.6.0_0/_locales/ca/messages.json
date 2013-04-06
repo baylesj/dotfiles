@@ -1,0 +1,272 @@
+{
+   "app_webstore": {
+      "message": "Chrome Web Store"
+   },
+   "notepad_default": {
+      "message": "Escriviu qualsevol cosa aqu\u00ED. Tot el que escrigues es guardar\u00E0 en cada cop de teclat. Aneu amb compte , no hi ha c\u00F2pies de seguretat, i el bot\u00F3 de reinici restablir\u00E0 aquest Widget!"
+   },
+   "rctm_clear_all": {
+      "message": "Neteja les pestanyes tancades recentment"
+   },
+   "rctm_remove": {
+      "message": "Treure"
+   },
+   "ui_about": {
+      "message": "Sobre"
+   },
+   "ui_about_contrib": {
+      "message": "Col\u00B7laboradors"
+   },
+   "ui_about_contrib_translators": {
+      "message": "Traductors"
+   },
+   "ui_about_contrib_users": {
+      "message": "Usuaris"
+   },
+   "ui_about_dev": {
+      "message": "Desenvolupadors"
+   },
+   "ui_about_rate": {
+      "message": "Valora"
+   },
+   "ui_about_share": {
+      "message": "Comparteix"
+   },
+   "ui_apps_tip_message_title": {
+      "message": "Nova App instal\u00B7lada"
+   },
+   "ui_bmb_ob": {
+      "message": "Altres adreces d'inter\u00E8s"
+   },
+   "ui_button_about": {
+      "message": "Sobre"
+   },
+   "ui_button_apps": {
+      "message": "Aplicacions"
+   },
+   "ui_button_close": {
+      "message": "Tancar"
+   },
+   "ui_button_help": {
+      "message": "Ajuda/Respostes"
+   },
+   "ui_button_lock": {
+      "message": "Bloqueja per interactuar amb Aplicacions i Widgets"
+   },
+   "ui_button_rct": {
+      "message": "Pestanyes tancades recentment"
+   },
+   "ui_button_unlock": {
+      "message": "Desbloquejar"
+   },
+   "ui_button_widget_browser": {
+      "message": "Buscador de Widgets"
+   },
+   "ui_button_widgets": {
+      "message": "Widgets"
+   },
+   "ui_c_learnmore": {
+      "message": "M\u00E9s informaci\u00F3"
+   },
+   "ui_config": {
+      "message": "Configura"
+   },
+   "ui_config_bg": {
+      "message": "Fons"
+   },
+   "ui_config_bg_changecolor": {
+      "message": "Canvia el Color de Fons"
+   },
+   "ui_config_bg_upload": {
+      "message": "Pujar imatge"
+   },
+   "ui_config_bgimg2": {
+      "message": "Exemple (NO punt i coma final!):"
+   },
+   "ui_config_bgimg3": {
+      "message": "Esborrar la caixa per utilitzar el fons per defecte (color s\u00F2lid)."
+   },
+   "ui_config_general": {
+      "message": "General"
+   },
+   "ui_config_reset": {
+      "message": "Restablir"
+   },
+   "ui_config_shtlb": {
+      "message": "Mostra els botons de l'esquerra superior nom\u00E9s a l'area flotant"
+   },
+   "ui_confirm_uninstall": {
+      "message": "Este\u00E0s segur que vols desinstal\u00B7lar l'aplicaci\u00F3?",
+      "placeholders": {
+         "app": {
+            "content": "$1",
+            "example": "Chrome Web Store"
+         }
+      }
+   },
+   "ui_faw_get_more_apps": {
+      "message": "Obtenir m\u00E9s Apps"
+   },
+   "ui_faw_get_more_apps_body": {
+      "message": "Obtenir m\u00E9s apps des de \u003Ca href='https://chrome.google.com/webstore/?utm_source=download-apps&utm_medium=awesome-new-tab-page'\u003E Chrome Web Store\u003C/a\u003E."
+   },
+   "ui_faw_get_more_widgets": {
+      "message": "Obtenir m\u00E9s Widgets"
+   },
+   "ui_faw_get_more_widgets_body": {
+      "message": "Trobar m\u00E9s Widgets."
+   },
+   "ui_faw_install": {
+      "message": "Instal lar"
+   },
+   "ui_faw_pick": {
+      "message": "Selecci\u00F3"
+   },
+   "ui_faw_unlock_drag": {
+      "message": "Desbloquejar & Arrossegar"
+   },
+   "ui_import_export_btn": {
+      "message": "Importar/Exportar"
+   },
+   "ui_import_export_btn2": {
+      "message": "Tornar"
+   },
+   "ui_import_export_btn_export": {
+      "message": "Exportar"
+   },
+   "ui_import_export_btn_import": {
+      "message": "Importar"
+   },
+   "ui_import_export_btn_import_run": {
+      "message": "Aplicar"
+   },
+   "ui_import_export_btn_restore": {
+      "message": "Restaurar"
+   },
+   "ui_import_export_complete_msg": {
+      "message": "Importaci\u00F3 completada."
+   },
+   "ui_import_export_confirm_restore": {
+      "message": "Esteu segur que voleu restaurar? Les configuracions actuals es podrien perdre."
+   },
+   "ui_import_export_confirm_restore_title": {
+      "message": "Confirmaci\u00F3 de la restauraci\u00F3"
+   },
+   "ui_import_export_header": {
+      "message": "Importar/Exportar"
+   },
+   "ui_import_export_msg_header": {
+      "message": "Importar/Exportar"
+   },
+   "ui_import_export_no_restore_msg": {
+      "message": "Res a restaurar!"
+   },
+   "ui_import_export_restore_complete_msg": {
+      "message": "Restauraci\u00F3 completa."
+   },
+   "ui_install": {
+      "message": "Instal lar"
+   },
+   "ui_resize_center": {
+      "message": "Centre"
+   },
+   "ui_resize_contain": {
+      "message": "Contingut"
+   },
+   "ui_resize_cover": {
+      "message": "Cobrir"
+   },
+   "ui_resize_reset": {
+      "message": "Restablir"
+   },
+   "ui_resize_zoom": {
+      "message": "Zoom"
+   },
+   "ui_screenshot_confirm": {
+      "message": "Per tal de captar la imatge, el lloc web s'obrir\u00E0 en una nova pestanya. Un cop la p\u00E0gina hagi acabat de carregar-se, la pestanya es tancar\u00E0 automaticament i ser\u00E0s retornat a la p\u00E0gina de l'Awesome New Tab. Si us plau, no toqueu res mentre dura el proc\u00E9s. No hauria de durar m\u00E9s d'uns pocs segnos."
+   },
+   "ui_screenshot_confirm_title": {
+      "message": "Fent una Captura de Pantalla"
+   },
+   "ui_screenshot_permission_denied": {
+      "message": "Es va negar a la p\u00E0gina de l'Awesome New Tab els permisos necessaris per permetre la captura de pantalla. Si desitges fer una captura de pantalla, si us plau torna-ho a provar concedint els permisos necessaris."
+   },
+   "ui_screenshot_permission_denied_title": {
+      "message": "Perm\u00EDs denegat"
+   },
+   "ui_shortcut_img": {
+      "message": "L'URL de la imatge ha de ser exactament de 128px per 128px, preferiblement en format PNG amb transpar\u00E8ncia alfa. Per reestablir els valors predeterminats, nom\u00E9s esborra tot en el camp."
+   },
+   "ui_te": {
+      "message": "Edita el Titol"
+   },
+   "ui_te_app_tip": {
+      "message": "No totes les opcions estan disponibles per les aplicacions. Si vols tenir m\u00E9s opcions, crea una drecera personalitzada. Simplement fes clic en un mosaic buit amb la quadr\u00EDcula desbloquejada."
+   },
+   "ui_te_bg_colorpicker": {
+      "message": "Obre el Selector de Color"
+   },
+   "ui_te_bg_note": {
+      "message": "Nota: No tindr\u00E0 cap efecte sobre les opcions d'\"Icona i Fons\"."
+   },
+   "ui_te_bg_tip": {
+      "message": "Consell: Si marques aquesta casella, tamb\u00E9 pots amagar el nom i el favicon."
+   },
+   "ui_te_bg_transparent": {
+      "message": "Fons completament transparent"
+   },
+   "ui_te_general": {
+      "message": "General"
+   },
+   "ui_te_ib": {
+      "message": "Icona i Fons"
+   },
+   "ui_te_ib_advanced": {
+      "message": "Advanced: Amaga el nom i el favicon(la petita icona del costat de l'URL) i fes server una imatge de 200px per 200px per personalitzar completament la rajola d'1x1."
+   },
+   "ui_te_ib_browse": {
+      "message": "Examinar"
+   },
+   "ui_te_ib_desc": {
+      "message": "Introdueix l'URL d'una imatge, fes servir el bot\u00F3 examinar, o arrossega i deixa una imatge damunt per cambiar l'icona."
+   },
+   "ui_te_ib_screenshot": {
+      "message": "Fes servir \"Captura de Pantalla\""
+   },
+   "ui_te_ib_tip": {
+      "message": "Consell: Deixa-ho en blanc si no vols cap icona."
+   },
+   "ui_te_name": {
+      "message": "Nom"
+   },
+   "ui_te_name_desc": {
+      "message": "Digues alguna cosa..."
+   },
+   "ui_te_newtab": {
+      "message": "Obre una nova Pestanya fent clic al bot\u00F3 esquerre"
+   },
+   "ui_te_pin": {
+      "message": "Pitja el bot\u00F3 esquerre"
+   },
+   "ui_te_search": {
+      "message": "Cerca"
+   },
+   "ui_te_search_desc": {
+      "message": "Introdu\u00EFu una adre\u00E7a URL per a aquest lloc web. Per exemple:"
+   },
+   "ui_te_shfavicon": {
+      "message": "Mostra / Amaga Favicon"
+   },
+   "ui_te_shname": {
+      "message": "Mostra / Amaga el Nom"
+   },
+   "ui_te_url_desc": {
+      "message": "Introdueix l'URL que vols enlla\u00E7ar, com ara http://www.google.com/"
+   },
+   "ui_te_url_tip": {
+      "message": "Consell: Una URL v\u00E0lida cont\u00E9 un protocol - com \"http://\" - abans del domini. Sense un protocol v\u00E0lid, la drecera no funcionar\u00E0."
+   },
+   "ui_uninstall": {
+      "message": "Desinstal lar"
+   }
+}

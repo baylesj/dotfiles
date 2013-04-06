@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xbel PUBLIC "+//IDN python.org//DTD XML Bookmark Exchange Language 1.0//EN//XML" "http://www.python.org/topics/xml/dtds/xbel-1.0.dtd">
+<xbel version="1.0" xmlns:midori="http://www.twotoasts.de">
+<info>
+<metadata midori:current="0" owner="http://www.twotoasts.de"/>
+</info>
+<bookmark href="http://html5test.com/">
+<title>The HTML5 test - How well does your browser support HTML5?</title>
+<info>
+<metadata midori:history-step="2" midori:icon="http://html5test.com/images/icon.png" midori:mime-type="text/html" owner="http://www.twotoasts.de"/>
+</info>
+</bookmark>
+</xbel>

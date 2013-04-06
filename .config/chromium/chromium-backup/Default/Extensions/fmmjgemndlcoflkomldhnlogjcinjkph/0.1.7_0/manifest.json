@@ -1,0 +1,38 @@
+{
+   "background_page": "background.html",
+   "content_scripts": [ {
+      "js": [ "javascript/jquery.js", "sites/sc2rep.com.js" ],
+      "matches": [ "http://www.sc2rep.com/*", "http://sc2rep.com/*" ]
+   }, {
+      "js": [ "javascript/jquery.js", "sites/gamereplays.org.js" ],
+      "matches": [ "http://www.gamereplays.org/starcraft2/*", "http://gamereplays.org/starcraft2/*" ]
+   }, {
+      "js": [ "javascript/jquery.js", "sites/replays.net.js" ],
+      "matches": [ "http://sc2.replays.net/replay/*", "http://sc2.replays.net/replay/*" ]
+   }, {
+      "js": [ "javascript/jquery.js", "sites/gosugamers.net.js" ],
+      "matches": [ "http://gosugamers.net/starcraft2/replays*", "http://www.gosugamers.net/starcraft2/replays*" ]
+   }, {
+      "js": [ "javascript/jquery.js", "sites/sc2-replays.net.js" ],
+      "matches": [ "http://sc2-replays.net/*/replays*", "http://www.sc2-replays.net/*/replays*" ]
+   }, {
+      "js": [ "javascript/jquery.js", "sites/blizzcon.js" ],
+      "matches": [ "http://*.battle.net/blizzcon/*/tournaments/*/matches/sc2/video-archive" ]
+   }, {
+      "css": [ "stylesheet/jquery-ui.css" ],
+      "js": [ "javascript/jquery.js", "javascript/jquery-ui.js", "sites/day9.js" ],
+      "matches": [ "http://day9.tv/archives/*" ]
+   } ],
+   "description": "More Starcraft II replays than you can eat.",
+   "icons": {
+      "128": "icons/128.png",
+      "16": "icons/16.png",
+      "48": "icons/48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDkhY3ceV0Dd3/R3oEsA4xDu2sSf8kCSRVstgavcjmFzkfR0Z4/59gDhlVsqy7hHipJUjKbx1q+cEMoVDEWFAff2J0G9dyJAxMcKjQXLaowMxgS4yhDm0UMUHLuTHbaxGoNJAjgn+40dtHq19HV4dnsXk4wPqg9cSKY8YqegxhVpQIDAQAB",
+   "name": "Replayniac",
+   "options_page": "options.html",
+   "permissions": [ "tabs" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "0.1.7"
+}

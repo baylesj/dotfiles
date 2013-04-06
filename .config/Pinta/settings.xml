@@ -1,0 +1,3 @@
+﻿<settings>
+  <setting name="default-image-type" type="System.String">png</setting>
+</settings>

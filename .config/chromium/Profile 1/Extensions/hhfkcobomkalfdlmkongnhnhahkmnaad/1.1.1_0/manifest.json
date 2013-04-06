@@ -1,0 +1,29 @@
+{
+   "background": {
+      "page": "views/background.xhtml"
+   },
+   "browser_action": {
+      "default_icon": "images/chromium-speech_input_mic_full-19.png",
+      "default_title": "__MSG_popup_title__"
+   },
+   "content_scripts": [ {
+      "js": [ "js/content.js" ],
+      "matches": [ "\u003Call_urls\u003E" ],
+      "run_at": "document_end"
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_extension_description__",
+   "icons": {
+      "128": "images/chromium-speech_input_mic_full-128.png",
+      "16": "images/chromium-speech_input_mic_full-16.png",
+      "48": "images/chromium-speech_input_mic_full-48.png",
+      "68": "images/chromium-speech_input_mic_full-68.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDDhdCMB1/FVpqdCwxKBUvI1tDxH581Piy6rbUtGXMEIyE9QbVWwRsbCHzpooGlk+FmyWVFP92a5mt4dKTJnB8+sN/ETNm2r49Pf/Rin0449KrDExnG53k/iE8ahGChFp1PIsnS5Kst9Qs3nQRBloRX2EgFqVmLpSmfBXpaP84bjQIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_extension_name__",
+   "options_page": "views/options.html",
+   "permissions": [ "chrome://favicon/", "tabs" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.1.1"
+}

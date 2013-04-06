@@ -1,0 +1,184 @@
+<html>
+<head><title>SiteIT Extension Options</title>
+<style type="text/css">
+.style1 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style2 {
+	font-size: small;
+}
+.style7 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+}
+.style9 {
+	border: thin;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	background-color: #97C4F0;
+}
+.style10 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+	text-align: center;
+}
+    #txtmsg
+    {
+        width: 310px;
+    }
+.style8 {
+	color: #2A992C;
+	font-size: x-small;
+}
+.style11 {
+	text-align: center;
+}
+.style12 {
+	color: #FF0505;
+}
+.button {
+	background-color: #C2DDF8;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-small;
+}
+.style9Copy {
+	border: thin;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	background-color: #62A5E8;
+}
+.style9Copy {
+	border: thin;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	background-color: #E1EEFB;
+}
+.style13 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	text-align: center;
+	border-style: none;
+	border-color: inherit;
+	border-width: thin;
+	background-color: #E1EEFB;
+}
+.style14 {
+	background-color: #C2DDF8;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: large;
+}
+</style>
+</head>
+<script type="text/javascript" src="options.js"></script>
+ 
+<body onload="restore_options()" style="background-image: url('back_drop.png')">
+	<table cellpadding="0" cellspacing="0" style="width: 100%; height: 227">
+		<tr>
+			<td class="style14" colspan="2" style="height: 34px"><strong>Options</strong></td>
+		</tr>
+		<tr class="style9Copy">
+			<td colspan="2">
+			<strong class="style9Copy">Sites to Block</strong></td>
+		</tr>
+		<tr>
+			<td style="width: 491px"><span class="style1">
+			<span class="style2">Enter your web sites you need to block :-</span></span><br class="style1" />
+	<textarea id="siteblock_list" class="style1" style="width: 475px; height: 222px;" name="S1"></textarea>
+	<br class="style1" />
+	<input type="button" onclick="save_options()" value="Block" class="style1" /><span class="style1">&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>
+        <input name="btnblockall" style="width: 110px" type="button" value="Block All" onclick="block_all()">&nbsp;&nbsp;&nbsp;
+		<input name="btnclear" type="button" value="Unblock All" onclick="clear_all()"></td>
+			<td class="style11" style="height: 213px"><span class="style1">
+			<strong>How to ?</strong><br><br>List the websites you want to 
+			block, one per line. For example: <br><br>www.facebook.com<br>
+			www.gamer.lk<br><br><br>If you would like to block all sites except 
+			for a select few, enter a '*' on the first line and the websites you 
+			wish to allow with a '+' before each line. For example: <br></span>
+			<span class="style12">*</span><span class="style1"><br></span>
+			<span class="style8"><span class="style1">+stackoverflow.com</span><br class="style1">
+			<span class="style1">+msdn.microsoft.com</span></span><span class="style1"><br>
+			</span></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+
+		<span class="style1"><strong>
+		<div id="status" class="style8" style="height: 20px; background-color: #BCD9F5; font-size: medium; color: #FFFFFF">
+		</div>
+		</strong>
+		</span>
+
+			</td>
+		</tr>
+	</table>
+	<table cellpadding="0" cellspacing="0" style="width: 100%; height: 164px">
+		<tr class="style9">
+			<td class="style9" colspan="2" style="height: 30px"><strong>Other Settings
+			</strong>
+			</td>
+		</tr>
+		<tr>
+			<td class="style13" style="height: 19px; width: 490px"><strong>Change 
+			display message </strong> </td>
+			<td class="style13" style="height: 19px"><strong>Custom Redirection</strong></td>
+		</tr>
+		<tr>
+			<td class="style11" style="width: 490px">
+    <input id="txtmsg" type="text" 
+        value="This web page is blocked by administrator" />
+    <br>
+    <input id="btnSave" type="button" value="Change " onclick="save_string()" />
+    <input id="btnSave7" type="button" value="Use default" onclick="save_string_diff()" /></td>
+			<td class="style11"><br>
+			<input name="txturl" style="width: 288px" type="text" id="txturl" value="http://www.google.com"><br>&nbsp;<input id="btnSave5" type="button" value="Change " onclick="save_site('1')" />
+    <input id="btnSave6" type="button" value="Use default" onclick="save_site(0)" /><br>
+			</td>
+		</tr>
+	</table>
+	<pre class="style9">
+<span class="style9"><strong>Change Acess Password</strong></span></pre>
+	<div id="txtsta" class="sta">
+	</div>
+	<form action="" method="post" style="height: 173px">
+		<table cellpadding="0" cellspacing="0" style="width: 100%; height: 99px">
+			<tr>
+				<td class="style7" style="height: 35px; width: 198px">
+				<pre class="style7">Current password :</pre>
+				</td>
+				<td style="height: 35px">
+				<pre><input id="txtpassword" class="style7" name="txtpassword" style="width: 173px" type="password"></pre>
+				</td>
+				<td style="height: 35px"></td>
+			</tr>
+			<tr>
+				<td class="style7" style="height: 45px; width: 198px">
+				<pre class="style7">New Password&nbsp; : </pre>
+				</td>
+				<td style="height: 45px"> 		
+				<pre><input id="txtnewpassword" class="style7" name="txtnewpassword" style="width: 173px" type="password"></pre>
+				</td>
+				<td style="height: 45px"></td>
+			</tr>
+			<tr>
+				<td class="style7" style="height: 42px; width: 198px">
+				<pre class="style7">Confirm new Password :</pre>
+				</td>
+				<td style="height: 42px">
+				<pre><input id="txtnewpassword2" class="style7" name="txtnewpassword2" style="width: 173px" type="password"></pre>
+				</td>
+				<td style="height: 42px"></td>
+			</tr>
+		</table>
+		<br>
+		<input name="btnChangepassword" type="button" value="Change" onclick="changepass();"><br />
+    </form>
+
+	<div id="lblchangepass">
+		<hr>
+	</div>
+
+	<p class="style10">Copyright Blockit 2010</p>
+
+</body>
+</html>

@@ -1,0 +1,377 @@
+{
+   "app_webstore": {
+      "message": "Chrome Web Store"
+   },
+   "notepad_default": {
+      "message": "Tapez ce que voulez ici. Tout ce que vous taperez sera enregistr\u00E9 \u00E0 chaque nouvelle frappe.\n\nAttention: il n'y a PAS de sauvegarde, et appuyer sur le bouton \"R\u00E9initialiser\" vous fera perdre le contenu de votre widget!"
+   },
+   "rctm_clear_all": {
+      "message": "Effacer onglets r\u00E9cemment ferm\u00E9s"
+   },
+   "rctm_clear_all_confirm": {
+      "message": "Effacer le menu des onglets ferm\u00E9s r\u00E9cemment n'efface pas l'historique du navigateur de Chrome. Cette fonction efface cette liste uniquement."
+   },
+   "rctm_remove": {
+      "message": "Supprimer"
+   },
+   "ui_about": {
+      "message": "\u00C0 propos"
+   },
+   "ui_about_contrib": {
+      "message": "Contributeurs"
+   },
+   "ui_about_contrib_cta": {
+      "message": "Cliquez sur les liens ci-dessus pour voir (et peut-\u00EAtre rejoindre) ces personnes formidables en pleine action !"
+   },
+   "ui_about_contrib_desc": {
+      "message": "Ce projet n'existerait pas sans travail acharn\u00E9, des avis, des id\u00E9es, des traductions et le soutien de quelques groupes de personnes formidables."
+   },
+   "ui_about_contrib_translators": {
+      "message": "Traducteurs"
+   },
+   "ui_about_contrib_users": {
+      "message": "Utilisateurs"
+   },
+   "ui_about_dev": {
+      "message": "D\u00E9veloppeurs"
+   },
+   "ui_about_rate": {
+      "message": "\u00C9valuer"
+   },
+   "ui_about_rate_desc": {
+      "message": "Vous aimez cette extension ? Prenez une minute pour donner un avis positif sur le Chrome Web Store."
+   },
+   "ui_about_share": {
+      "message": "Partager"
+   },
+   "ui_about_share1": {
+      "message": "Vous aimez cette impressionnant nouvelle page d'onglets ? Pourquoi ne pas la partager avec vos amis et votre famille ?"
+   },
+   "ui_apps_tip_message_title": {
+      "message": "Nouvelle App Install\u00E9e"
+   },
+   "ui_bmb_ob": {
+      "message": "Autres favoris"
+   },
+   "ui_button_about": {
+      "message": "\u00C0 propos"
+   },
+   "ui_button_apps": {
+      "message": "Applications"
+   },
+   "ui_button_cancel": {
+      "message": "Annuler"
+   },
+   "ui_button_close": {
+      "message": "Fermer"
+   },
+   "ui_button_help": {
+      "message": "Aide & Avis"
+   },
+   "ui_button_lock": {
+      "message": "Verrouiller pour interagir avec les Applications et les Widgets"
+   },
+   "ui_button_ok": {
+      "message": "OK"
+   },
+   "ui_button_rct": {
+      "message": "Onglets r\u00E9cemment ferm\u00E9s"
+   },
+   "ui_button_unlock": {
+      "message": "D\u00E9verrouiller"
+   },
+   "ui_button_widgets": {
+      "message": "Widgets"
+   },
+   "ui_c_learnmore": {
+      "message": "En savoir plus"
+   },
+   "ui_config": {
+      "message": "Configurer"
+   },
+   "ui_config_advanced": {
+      "message": "Avanc\u00E9"
+   },
+   "ui_config_advanced_grid_height": {
+      "message": "D\u00E9finir Hauteur Grille"
+   },
+   "ui_config_advanced_grid_width": {
+      "message": "D\u00E9finir Largeur Grille"
+   },
+   "ui_config_amazonlocale": {
+      "message": "Pour l'ic\u00F4ne de \u003Ci\u003Estock\u003C/i\u003E Amazon, s\u00E9lectionnez votre pays."
+   },
+   "ui_config_bg": {
+      "message": "Arri\u00E8re-plan"
+   },
+   "ui_config_bg_changecolor": {
+      "message": "Changer la couleur de fond"
+   },
+   "ui_config_bg_upload": {
+      "message": "Charger une image"
+   },
+   "ui_config_bgimg1": {
+      "message": "\u003Cb\u003EAvanc\u00E9\u003C/b\u003E (Raccourci Fond CSS) : Utiliser une image du web."
+   },
+   "ui_config_bgimg2": {
+      "message": "Exemple (PAS de point-virgule final!):"
+   },
+   "ui_config_bgimg3": {
+      "message": "Effacer le champ pour utiliser l'arri\u00E8re-plan d'origine (couleur unie)."
+   },
+   "ui_config_general": {
+      "message": "G\u00E9n\u00E9ral"
+   },
+   "ui_config_hide_scrollbar": {
+      "message": "Cacher Barre de d\u00E9filement du bas"
+   },
+   "ui_config_hide_scrollbar_tip": {
+      "message": "Cache la barre de d\u00E9filement en bas de page."
+   },
+   "ui_config_onoff_off": {
+      "message": "OFF"
+   },
+   "ui_config_onoff_on": {
+      "message": "ON"
+   },
+   "ui_config_reset": {
+      "message": "R\u00E9initialiser"
+   },
+   "ui_config_reset_desc": {
+      "message": "Ce bouton va annuler tout les changements appliqu\u00E9s \u00E0 l'incroyable nouvelle page d'onglets."
+   },
+   "ui_config_shtlb": {
+      "message": "Afficher les boutons en haut \u00E0 gauche uniquement sur la zone de pointage"
+   },
+   "ui_confirm_reset": {
+      "message": "\u00CAtes-vous s\u00FBr de vouloir r\u00E9initialiser le widgets, l'application et l'emplacement des raccourcis personnalis\u00E9s, ainsi que les pr\u00E9f\u00E9rences du widget stock (bloc-notes, etc.) et les pr\u00E9f\u00E9rences de l'arri\u00E8re-plan ? Toutes les personnalisations seront perdues de fa\u00E7on permanente."
+   },
+   "ui_confirm_uninstall": {
+      "message": "\u00CAtes-vous s\u00FBr de vouloir d\u00E9sinstaller $app$?",
+      "placeholders": {
+         "app": {
+            "content": "$1",
+            "example": "Chrome Web Store"
+         }
+      }
+   },
+   "ui_faw_get_more_apps": {
+      "message": "Obtenir plus d'applications"
+   },
+   "ui_faw_get_more_apps_body": {
+      "message": "Obtenez plus d'applications \u00E0 partir du \u003Ca href='https://chrome.google.com/webstore/?utm_source=download-apps&utm_medium=awesome-new-tab-page'\u003EChrome Web Store\u003C/a\u003E ."
+   },
+   "ui_faw_get_more_widgets": {
+      "message": "Obtenir plus de widgets"
+   },
+   "ui_faw_get_more_widgets_body": {
+      "message": "Trouver plus de widgets."
+   },
+   "ui_faw_install": {
+      "message": "Installer"
+   },
+   "ui_faw_pick": {
+      "message": "Choisir"
+   },
+   "ui_faw_unlock_drag": {
+      "message": "D\u00E9bloquez et faites glisser"
+   },
+   "ui_faw_unlock_drag_apps": {
+      "message": "D\u00E9verrouillez la grille et faites \u003Cb\u003Eglisser\u003C/b\u003E vos applications install\u00E9es sur un emplacement vide."
+   },
+   "ui_faw_unlock_drag_widgets": {
+      "message": "D\u00E9verrouillez la grille et \u003Cb\u003Eglissez\u003C/b\u003E vos widgets install\u00E9s \u00E0 un emplacement vide."
+   },
+   "ui_import_export_btn": {
+      "message": "Importation/exportation"
+   },
+   "ui_import_export_btn2": {
+      "message": "Pr\u00E9c\u00E9dent"
+   },
+   "ui_import_export_btn_export": {
+      "message": "Exportation"
+   },
+   "ui_import_export_btn_import": {
+      "message": "Importation"
+   },
+   "ui_import_export_btn_import_run": {
+      "message": "Appliquer"
+   },
+   "ui_import_export_btn_restore": {
+      "message": "Restaurer"
+   },
+   "ui_import_export_complete_msg": {
+      "message": "Importation termin\u00E9e."
+   },
+   "ui_import_export_confirm_restore": {
+      "message": "\u00CAtes-vous s\u00FBr de vouloir restaurer ? Vos param\u00E8tres actuels seront perdus."
+   },
+   "ui_import_export_confirm_restore_title": {
+      "message": "Confirmer la restauration"
+   },
+   "ui_import_export_desc": {
+      "message": "Prenez vos param\u00E8tres \u00E0 d'autres navigateurs ou restaurer une sauvegarde."
+   },
+   "ui_import_export_desc_export": {
+      "message": "Exportation : G\u00E9n\u00E8re une cha\u00EEne qui contient l'ensemble de vos pr\u00E9f\u00E9rences. Cette cha\u00EEne peut \u00EAtre sauv\u00E9e pour plus tard comme une sauvegarde ou peut \u00EAtre copi\u00E9e sur d'autres ordinateurs pour d\u00E9finir automatiquement leur comme celle-ci. Images t\u00E9l\u00E9charg\u00E9es ne sont pas export\u00E9s ; sont des images sur le web."
+   },
+   "ui_import_export_desc_import": {
+      "message": "Importation : Remplace votre configuration actuelle avec une cha\u00EEne export\u00E9e valide. \u003Cb\u003EAvertissement\u003C/b\u003E : toutes vos pr\u00E9f\u00E9rences actuelles seront irr\u00E9m\u00E9diablement perdues. Il n'y a aucun moyen d'annuler cette op\u00E9ration. Images t\u00E9l\u00E9charg\u00E9es ne sont pas import\u00E9es ; sont des images sur le web."
+   },
+   "ui_import_export_desc_restore": {
+      "message": "Restaurer: Permet d'annuler la derni\u00E8re importation. Votre \u00E9tat actuel sera sauvegard\u00E9 pour une restauration ult\u00E9rieure ainsi."
+   },
+   "ui_import_export_empty_string_msg": {
+      "message": "Entrez la cha\u00EEne importation d'abord !"
+   },
+   "ui_import_export_header": {
+      "message": "Importation/exportation"
+   },
+   "ui_import_export_installed_warning": {
+      "message": "Applications install\u00E9es, les extensions et des widgets ne sont pas import\u00E9s ou export\u00E9s. Les extensions ne peuvent pas installer d'autres applications ou extensions. Utilisez \u003Ca href='http://support.google.com/chrome/bin/answer.py?answer=165139'\u003ESync Chrome\u003C/a\u003E \u00E0 la place."
+   },
+   "ui_import_export_invalid_string_msg": {
+      "message": "Cha\u00EEne d'importation non valide !"
+   },
+   "ui_import_export_msg_header": {
+      "message": "Importation/exportation"
+   },
+   "ui_import_export_no_restore_msg": {
+      "message": "Rien \u00E0 restaurer !"
+   },
+   "ui_import_export_restore_complete_msg": {
+      "message": "Restauration termin\u00E9e."
+   },
+   "ui_install": {
+      "message": "Installer"
+   },
+   "ui_resize_center": {
+      "message": "Centrer"
+   },
+   "ui_resize_contain": {
+      "message": "Contiennent des"
+   },
+   "ui_resize_cover": {
+      "message": "Couverture"
+   },
+   "ui_resize_reset": {
+      "message": "R\u00E9initialiser"
+   },
+   "ui_resize_zoom": {
+      "message": "Zoom"
+   },
+   "ui_screenshot_confirm": {
+      "message": "Afin de capturer la capture d'\u00E9cran, le site sera ouvert dans un nouvel onglet. Apr\u00E8s la fin du chargement de la page, l'onglet se fermera automatiquement et vous allez retourner sur Awesome New Tab Page. Veuillez ne pas fermer ou naviguer plus loin. Cela ne devrait pas prendre que quelques secondes."
+   },
+   "ui_screenshot_confirm_title": {
+      "message": "Prendre une capture d'\u00E9cran"
+   },
+   "ui_screenshot_permission_denied": {
+      "message": "Vous a refus\u00E9 d'accorder \u00E0 Awesome New Tab Page l'autorisation n\u00E9cessaire pour lui permettre de capturer des captures d'\u00E9cran. Si vous souhaitez prendre une capture d'\u00E9cran, veuillez essayer \u00E0 nouveau et accorder \u00E0 Awesome New Tab Page l'autorisation n\u00E9cessaire."
+   },
+   "ui_screenshot_permission_denied_title": {
+      "message": "Autorisation refus\u00E9e"
+   },
+   "ui_shortcut_img": {
+      "message": "Votre image doit \u00EAtre un carr\u00E9 (longueur=largeur) d'au minimum 128px par 128px, au format PNG avec transparence alpha. Pour r\u00E9initialiser les r\u00E9glages par d\u00E9faut, effacer simplement le contenu du champ."
+   },
+   "ui_te": {
+      "message": "\u00C9diteur de carreaux"
+   },
+   "ui_te_app_tip": {
+      "message": "Les options ne sont pas toutes disponibles pour les applis. Si vous avez envie de plus d'options, cr\u00E9ez un raccourci personnalis\u00E9. Il suffit pour cela de cliquer sur un carreau vide sur la grille d\u00E9verrouill\u00E9e."
+   },
+   "ui_te_bg_colorpicker": {
+      "message": "S\u00E9lectionneur de couleur"
+   },
+   "ui_te_bg_note": {
+      "message": "Note : Cette option n'a aucun effet sur l'Ic\u00F4ne & Param\u00E8tres de fond."
+   },
+   "ui_te_bg_tip": {
+      "message": "Astuce : Si vous cochez cette case, vous pouvez \u00E9galement masquer le nom et la favicon."
+   },
+   "ui_te_bg_transparent": {
+      "message": "Fond compl\u00E8tement transparent"
+   },
+   "ui_te_general": {
+      "message": "G\u00E9n\u00E9ral"
+   },
+   "ui_te_ib": {
+      "message": "Ic\u00F4ne & Fond"
+   },
+   "ui_te_ib_advanced": {
+      "message": "Avanc\u00E9 : masquer le nom et la favicon et utiliser une image de 200px par 200px pour personnaliser compl\u00E8tement un carreau de 1x1."
+   },
+   "ui_te_ib_browse": {
+      "message": "Parcourir"
+   },
+   "ui_te_ib_desc": {
+      "message": "Entrez l'adresse URL d'une image, utilisez le bouton Parcourir ou glissez-d\u00E9posez une image pour changer l'ic\u00F4ne."
+   },
+   "ui_te_ib_screenshot": {
+      "message": "Utiliser la capture d'\u00E9cran"
+   },
+   "ui_te_ib_tip": {
+      "message": "Astuce : Laisser en blanc pour aucune ic\u00F4ne."
+   },
+   "ui_te_name": {
+      "message": "Nom"
+   },
+   "ui_te_name_desc": {
+      "message": "Comment voulez-vous l'appeler ?"
+   },
+   "ui_te_newtab": {
+      "message": "Ouvrir dans un nouvel onglet sur clic gauche"
+   },
+   "ui_te_pin": {
+      "message": "\u00C9pingler avec un clic gauche"
+   },
+   "ui_te_search": {
+      "message": "Recherche"
+   },
+   "ui_te_shfavicon": {
+      "message": "Afficher / Masquer favicon"
+   },
+   "ui_te_shname": {
+      "message": "Afficher/Masquer le nom"
+   },
+   "ui_te_url_desc": {
+      "message": "Entrer l'URL vers laquelle acc\u00E9der, comme http://www.google.com/"
+   },
+   "ui_te_url_tip": {
+      "message": "Astuce : Une URL valide contient un protocole (tel que http://) avant le domaine. Sans protocole valide, votre raccourci ne fonctionnera pas."
+   },
+   "ui_tutorial2_app_window_title": {
+      "message": "Fen\u00EAtre Apps"
+   },
+   "ui_tutorial2_completed_title": {
+      "message": "Vous \u00EAtes super !"
+   },
+   "ui_tutorial2_delete_widget": {
+      "message": "Supprimer ce widget"
+   },
+   "ui_tutorial2_finish_string": {
+      "message": "Finir Tutoriel"
+   },
+   "ui_tutorial2_lock_title": {
+      "message": "V\u00E9rouiller/D\u00E9verrouiller Grille"
+   },
+   "ui_tutorial2_main_start": {
+      "message": "Commencer Tutoriel"
+   },
+   "ui_tutorial2_main_welcome": {
+      "message": "Bienvenue sur"
+   },
+   "ui_tutorial2_next": {
+      "message": "Suivant"
+   },
+   "ui_tutorial2_widgets_window_title": {
+      "message": "Fen\u00EAtre Widgets"
+   },
+   "ui_uninstall": {
+      "message": "D\u00E9sinstaller"
+   },
+   "ui_uninstall_title": {
+      "message": "D\u00E9sinstaller App"
+   }
+}

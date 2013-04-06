@@ -1,0 +1,188 @@
+
+<head>
+<style type="text/css">
+.style1 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style2 {
+	font-size: x-small;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style3 {
+	margin-top: 1px;
+}
+.style4 {
+	font-size: x-small;
+}
+.style5 {
+	font-size: x-small;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+.style6 {
+	font-size: small;
+}
+</style>
+</head>
+
+<script>
+// <!--
+   	 
+   var path_white;
+   var path_black;
+
+   updatePaths = function() {
+	var paths = localStorage['siteblock_list'];
+        if (paths === undefined)
+	  return;
+
+	paths = paths.split("\n");
+	path_white = new Array();
+	path_black = new Array();
+
+	for (var i = 0 ; i < paths.length; ++i) {
+	    var p = paths[i];
+	    if (p.match(/^\s*$/)) {
+	    } else {
+	       var add = path_black;	    
+	       if (p[0] == '+') {
+		  p = p.substr(1);
+		  add = path_white;
+	       }
+	       p = p.replace('.', '\\.');
+	       p = p.replace('*', '.*');
+	       add.push(new RegExp(p, 'ig'));
+            }
+	}
+   }
+
+   updatePaths();
+   
+
+
+   chrome.tabs.onUpdated.addListener(function(tabid, changeinfo, tab) {
+	var url = tab.url;
+        if (url !== undefined && url.match(/https?:/)) {
+           var blocked = false;
+	   var p;
+	   for (p in path_black) {
+		 if (url.search(path_black[p]) != -1) {
+                     blocked = true;
+		     break;
+		 }
+	   }
+	   for (p in path_white) {
+		 if (url.search(path_white[p]) != -1) {
+                     blocked = false;
+		     break;
+		 }
+	   }
+           if (blocked) {
+              up = new Object();
+			  
+			  var which=localStorage['urlset'];
+			  
+			  var theurl=localStorage['theurl'];
+			  
+			  	  var notification = webkitNotifications.createNotification(
+			  'icon.png',  // icon url - can be relative
+			  'Web Site Blocked',  // notification title
+			  tab.url+' is blocked' // notification body text
+			);
+			
+			  
+			  if(which==1){
+			  
+				up.url=theurl;
+				chrome.tabs.update(tab.id, up);
+					notification.show();
+					
+					setTimeout(function() {
+            	notification.cancel();
+				},         2750);
+				
+				break;
+				
+				
+			  }else if(which==0){
+			  
+			  up.url = chrome.extension.getURL("blocked.html");
+			  chrome.tabs.update(tab.id, up);
+			 
+			  
+			  }
+			 
+		
+			
+			
+		
+		
+					  
+	   }
+	}
+   });
+   
+   
+   
+   			 
+
+
+   
+   
+ 
+// -->
+</script>
+<p>
+<form method="post">
+	<fieldset class="style3" name="Group1" style="height: 83px">
+	<legend>
+<p class="style1" style="width: 98px"><strong>1.1 Version</strong></p>
+<p class="style2">File size reduced and descriptions fixed.</p>
+	</legend>
+	</fieldset></form>
+</p>
+
+<p style="height: 51px">
+<form method="post">
+	<fieldset name="Group1">
+	<legend class="style1"><strong>2.0 Version</strong></legend>
+	<br>&nbsp;&nbsp;&nbsp; <span class="style2">Password protection support<br>
+	</span><br class="style2"><span class="style2">&nbsp;&nbsp;&nbsp; Updated 
+	layout</span><br class="style2"><span class="style2"><br>&nbsp;&nbsp;&nbsp; 
+	New help features </span><br>
+        <br />
+&nbsp;<span class="style1"><strong>2.5 Version<br />
+        <br />
+&nbsp;&nbsp;&nbsp; </strong><span class="style4">Support customizable blocked messages<br>
+	<br></span><strong><span class="style6">&nbsp;5.0 Version (Code name 
+	Warsaqw)<br><br>&nbsp;&nbsp;&nbsp; </span> </strong><span class="style4">
+	Ultra lite edition<br>&nbsp;&nbsp;&nbsp; Bug fixses<br>&nbsp;&nbsp;&nbsp; 
+	Desktop nortifications<br>&nbsp;&nbsp;&nbsp; Custom redirection support<br>&nbsp;&nbsp;&nbsp; 
+	Friendly new interface style<br>&nbsp;&nbsp;&nbsp; </span></span><br />
+        <br />
+    </fieldset></form>
+<form method="post">
+	<br />
+	<fieldset name="Group1" style="height: 125px">
+	<legend class="style1"><strong>About</strong></legend>
+	<br>&nbsp;&nbsp;&nbsp; <span class="style1">Please send your comments and 
+	suggesions </span><br>
+	<br>&nbsp;&nbsp;&nbsp; <span class="style2"><strong>Developed by</strong> : 
+	Sudantha Gunawardena</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<span class="style2"><a href="mailto:sudantha@vista.aero">
+	sudantha@vista.aero</a></span> <br class="style2"><span class="style1">
+	<span class="style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><a href="mailto:sudantha.sulochana@gmail.com"><span class="style4">
+	sudantha.sulochana@gmail.com</span></a></span><br class="style2">
+	<span class="style1"><span class="style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><span class="style4">
+	<a href="mailto:sudantha@ymail.com">sudantha@ymail.com</a></span></span><br>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<span class="style1"><span class="style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span><a href="http://www.sudantha.wordpress.com"><span class="style4">
+	www.sudantha.wordpress.com</span></a></span><br><br></fieldset></form>
+</p>
+<p class="style5">
+		<span class="style3">&#65533; Blockit 2010</span></p>
+
+

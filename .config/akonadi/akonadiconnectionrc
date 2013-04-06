@@ -1,0 +1,6 @@
+[Data]
+Method=UnixPath
+UnixPath=/home/jordan/.local/share/akonadi/socket-fenrir/akonadiserver.socket
+
+[DBUS]
+Address="unix:abstract=/tmp/dbus-ZmvNhm0hbT,guid=904f26547bbcb57fe49e0622511f1c6a"

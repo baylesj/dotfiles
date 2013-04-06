@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+		<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+		<script type="text/javascript">
+		if(localStorage["language"] == null) localStorage["language"] = "en";
+		if(localStorage["effect"]		== null) localStorage["effect"] 	= "effect_on";
+
+		/* Send Response */
+		chrome.extension.onRequest.addListener(
+		  function(request, sender, sendResponse) {
+				/* Open image of definition page */
+				if(request.name == "openUrl"){
+					chrome.tabs.getSelected(
+						null,
+						function(tab){
+							chrome.tabs.create({url:request.url,selected:true,index:tab.index});
+						}
+					);
+				}
+				/* Get definition from Google */
+				else if(request.name == "getDefinitions") {
+					var url = "http://www.google.com/search?hl="+ localStorage["language"] +"&q="+ request.query +"&tbs=dfn:1";
+					$.get(url,
+						function(data){
+							var responseData = new Array();
+							var listOfDefinitions = new Array();
+							$(data).find("td > div[class=std] > ul > li").each(
+								function(index) {
+									var def = $(this).html();
+									listOfDefinitions[listOfDefinitions.length] = def;
+								}
+							);
+							
+							$(data).find("td > div[class=std] > div > cite > span > a").each(
+								function(index) {
+									var source = $(this).attr("href");
+									var url = "http://www.google.com"+ source;
+									escape(url);
+									var definition = listOfDefinitions[index];
+									responseData.push({definition:definition, url:url});
+								}
+							);
+							
+							sendResponse({name:"definitions",message:responseData.reverse()});
+						}
+					);
+				}
+				/* Get Settings */
+				else if(request.name == "getSettings") {
+					var settings = {effect: localStorage["effect"] == "effect_on"};
+					sendResponse({name:"settings",message:settings});
+				}
+				/* Get Images */
+				else {
+					var url = "http://ajax.googleapis.com/ajax/services/search/images?&start="+ request.start +"&v=1.0&q="+request.query+"&key=ABQIAAAAhnlYbtKtqnk2BqUEE8-VGhSsTL4WIgxhMZ0ZK_kHjwHeQuOD4xQodl8sXD-v2DCvamEObaktcCsiuA&JSONCallback=?";
+					$.get(url,
+						function(data){
+							sendResponse({name:"images",message:data});
+						}
+					);
+				}
+			}
+		);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

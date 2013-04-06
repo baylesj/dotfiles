@@ -1,0 +1,296 @@
+{
+   "app_webstore": {
+      "message": "Chrome Web Store"
+   },
+   "notepad_default": {
+      "message": "Non scrivere nulla qui. Sar\u00E0 salvato tutto ci\u00F2 che si digita.\n\nAttenzione per\u00F2, non ci sono backup, e il pulsante di reset * NON * ripristina questo widget!"
+   },
+   "rctm_clear_all": {
+      "message": "Cancella Tab chiusi recentemente"
+   },
+   "rctm_clear_all_confirm": {
+      "message": "Cancellando i Tab chiusi recentemente non cancelli la cronologia di Chrome. Questa funzione cancella solo la lista."
+   },
+   "rctm_remove": {
+      "message": "Rimuovi"
+   },
+   "ui_about": {
+      "message": "Informazioni su"
+   },
+   "ui_about_contrib": {
+      "message": "Collaboratori"
+   },
+   "ui_about_contrib_cta": {
+      "message": "Clicca i link sopra per vedere (e magari unirsi) queste impressionanti persone in azione!"
+   },
+   "ui_about_contrib_desc": {
+      "message": "Questo progetto non esisterebbe senza il duro lavoro, i feedback, le idee, le traduzioni e il supporto di alcuni gruppi di persone molto speciali."
+   },
+   "ui_about_contrib_translators": {
+      "message": "Traduttori"
+   },
+   "ui_about_contrib_users": {
+      "message": "Utenti"
+   },
+   "ui_about_dev": {
+      "message": "Sviluppatori"
+   },
+   "ui_about_rate": {
+      "message": "Vota"
+   },
+   "ui_about_rate_desc": {
+      "message": "Ti piace questa estensione? Prendi un minuto per dare una recensione positiva su Chrome Web Store."
+   },
+   "ui_about_share": {
+      "message": "Condividi"
+   },
+   "ui_about_share1": {
+      "message": "Ti piace l'Awesome New Tab Page? Perch\u00E8 non la condividi con gli amici e la famiglia?"
+   },
+   "ui_bmb_ob": {
+      "message": "Altri segnalibri"
+   },
+   "ui_button_about": {
+      "message": "Informazioni su"
+   },
+   "ui_button_apps": {
+      "message": "Apps"
+   },
+   "ui_button_close": {
+      "message": "Chiudi"
+   },
+   "ui_button_lock": {
+      "message": "Bloccare per interagire con Apps e Widgets"
+   },
+   "ui_button_rct": {
+      "message": "Schede chiuse di recente"
+   },
+   "ui_button_unlock": {
+      "message": "Sblocca"
+   },
+   "ui_button_widgets": {
+      "message": "Widget"
+   },
+   "ui_c_learnmore": {
+      "message": "Ulteriori informazioni"
+   },
+   "ui_config": {
+      "message": "Configura"
+   },
+   "ui_config_amazonlocale": {
+      "message": "Per il link \u003Ci\u003Estock\u003C/i\u003E di Amazon, seleziona il tuo stato."
+   },
+   "ui_config_bg": {
+      "message": "Sfondo"
+   },
+   "ui_config_bg_changecolor": {
+      "message": "Cambia il colore di sfondo"
+   },
+   "ui_config_bg_upload": {
+      "message": "Carica Immagine"
+   },
+   "ui_config_bgimg1": {
+      "message": "\u003Cb\u003EAvanzato\u003C/b\u003E (CSS di sfondo): Usa un'immagine dal web."
+   },
+   "ui_config_bgimg2": {
+      "message": "Esempio (NO, punto e virgola!):"
+   },
+   "ui_config_bgimg3": {
+      "message": "Cancellare la casella per utilizzare lo sfondo predefinito (tinta unita)."
+   },
+   "ui_config_general": {
+      "message": "Generale"
+   },
+   "ui_config_reset": {
+      "message": "Reset"
+   },
+   "ui_config_reset_desc": {
+      "message": "Questo bottone ti consentir\u00E0 di annullare tutti i cambiamenti fatti alla Awesome New Tab Page."
+   },
+   "ui_config_shtlb": {
+      "message": "Mostra i bottoni a sinistra solo al passaggio del mouse"
+   },
+   "ui_confirm_reset": {
+      "message": "Sei sicuro di voler resettare i widget, le applicazioni, i link personalizzati, le impostazioni dei widget (blocco note, ecc...) e quelle dello sfondo? Tutti i cambiamenti saranno persi irrevocabilmente."
+   },
+   "ui_confirm_uninstall": {
+      "message": "Sei sicuro di che voler disinstallare questa $app$?",
+      "placeholders": {
+         "app": {
+            "content": "$1",
+            "example": "Chrome Web Store"
+         }
+      }
+   },
+   "ui_faw_get_more_apps": {
+      "message": "Ottieni pi\u00F9 Apps"
+   },
+   "ui_faw_get_more_apps_body": {
+      "message": "Ottieni pi\u00F9 Apps dal \u003Ca href='https://chrome.google.com/webstore/?utm_source=download-apps&utm_medium=awesome-new-tab-page'\u003EChrome Web Store\u003C/a\u003E."
+   },
+   "ui_faw_get_more_widgets": {
+      "message": "Ottieni pi\u00F9 Widget"
+   },
+   "ui_faw_unlock_drag": {
+      "message": "Sblocca&Trascina"
+   },
+   "ui_faw_unlock_drag_apps": {
+      "message": "Sblocca la griglia e \u003Cb\u003Etrascina\u003C/b\u003E le tue apps installate in uno slot vuoto."
+   },
+   "ui_faw_unlock_drag_widgets": {
+      "message": "Sblocca la griglia e \u003Cb\u003Etrascina\u003C/b\u003E i tuoi widget installati in uno slot vuoto."
+   },
+   "ui_import_export_btn": {
+      "message": "Importa/Esporta"
+   },
+   "ui_import_export_btn2": {
+      "message": "Indietro"
+   },
+   "ui_import_export_btn_export": {
+      "message": "Esporta"
+   },
+   "ui_import_export_btn_import": {
+      "message": "Importa"
+   },
+   "ui_import_export_btn_import_run": {
+      "message": "Applica"
+   },
+   "ui_import_export_btn_restore": {
+      "message": "Ripristina"
+   },
+   "ui_import_export_complete_msg": {
+      "message": "Importazione completata."
+   },
+   "ui_import_export_confirm_restore": {
+      "message": "Sei sicuro di ripristinare? Le tue impostazioni andranno perse."
+   },
+   "ui_import_export_confirm_restore_title": {
+      "message": "Conferma ripristino"
+   },
+   "ui_import_export_desc": {
+      "message": "Porta le impostazioni ad altri browser o ripristina un backup."
+   },
+   "ui_import_export_desc_export": {
+      "message": "Esporta: Genera una stringa che contiene tutte le tue impostazioni. La stringa pu\u00F2 essere salvata pi\u00F9 tardi come backup o pu\u00F2 essere copiata ad altri computer per impostarli automaticamente come questo. Le immagini caricate non sono esportate; le immagini sul web s\u00EC."
+   },
+   "ui_import_export_desc_import": {
+      "message": "Importa: Sovrascrivi la tua configurazione corrente con una stringa valida. \u003Cb\u003EATTENZIONE\u003C/b\u003E: Tutte le tue attuali impostazioni saranno perse. Non si pu\u00F2 tornare indietro. Le immagini caricate non sono importate; le immagini sul web s\u00EC."
+   },
+   "ui_import_export_desc_restore": {
+      "message": "Ripristina: ti permette di annullare l'ultima importazione. Il tuo stato corrente  verr\u00E0 salvato per un altro ripristino."
+   },
+   "ui_import_export_empty_string_msg": {
+      "message": "Inserisci prima la stringa di importazione!"
+   },
+   "ui_import_export_header": {
+      "message": "Importa/Esporta"
+   },
+   "ui_import_export_installed_warning": {
+      "message": "Apps installate, estensioni e widget non sono importati o esportati. Le estensioni non possono installare altre apps o estensioni. In alternativa, usa \u003Ca href='http://support.google.com/chrome/bin/answer.py?answer=165139'\u003EChrome Sync\u003C/a\u003E."
+   },
+   "ui_import_export_invalid_string_msg": {
+      "message": "Stringa di importazione invalida!"
+   },
+   "ui_import_export_msg_header": {
+      "message": "Importa/Esporta"
+   },
+   "ui_import_export_no_restore_msg": {
+      "message": "Niente da ripristinare!"
+   },
+   "ui_import_export_restore_complete_msg": {
+      "message": "Ripristino completato."
+   },
+   "ui_resize_center": {
+      "message": "Centro"
+   },
+   "ui_resize_contain": {
+      "message": "Contieni"
+   },
+   "ui_resize_cover": {
+      "message": "Copri"
+   },
+   "ui_resize_reset": {
+      "message": "Reset"
+   },
+   "ui_resize_zoom": {
+      "message": "Zoom"
+   },
+   "ui_screenshot_confirm": {
+      "message": "Per catturare uno screenshot, il sito verr\u00E0 aperto in una nuova scheda. Appena la pagina ha finito il caricamento, il tab si chiuder\u00E0 automaticamente e tornerai ad ANTP. Non chiudere o cambiare scheda. Dovrebbe prendere alcuni secondi."
+   },
+   "ui_screenshot_confirm_title": {
+      "message": "Fare uno screenshot"
+   },
+   "ui_screenshot_permission_denied": {
+      "message": "Hai declinato il permesso ad ANTP necessario a catturare screenshots. Se vuoi fare uno screenshot, prova di nuovo e dai ad ANTP i permessi necessari."
+   },
+   "ui_screenshot_permission_denied_title": {
+      "message": "Permesso negato"
+   },
+   "ui_shortcut_img": {
+      "message": "URL dell'immagine deve essere esattamente 128px per 128px, preferibilmente in formato PNG con trasparenza alfa. Per ripristinare le impostazioni predefinite, basta cancellare il campo di testo"
+   },
+   "ui_te": {
+      "message": "Tile Editor"
+   },
+   "ui_te_app_tip": {
+      "message": "Non tutte le opzioni sono disponibili per le applicazioni. Se vorresti averne di pi\u00F9, crea un collegamento personalizzato. Semplicemente clicca su una tile vuota con la griglia sbloccata."
+   },
+   "ui_te_bg_colorpicker": {
+      "message": "Apri il contagocce"
+   },
+   "ui_te_bg_note": {
+      "message": "Nota: Questa opzione non ha effetto sulle opzioni delle Icone e sfondo."
+   },
+   "ui_te_bg_tip": {
+      "message": "Consiglio: se spunti questa casella, \u00E8 possibile nascondere il nome e la favicon."
+   },
+   "ui_te_bg_transparent": {
+      "message": "Sfondo completamente trasparente"
+   },
+   "ui_te_general": {
+      "message": "Generale"
+   },
+   "ui_te_ib": {
+      "message": "Icone e sfondo"
+   },
+   "ui_te_ib_advanced": {
+      "message": "Avanzato: Nascondi il nome ed icona e usa un'immagine che sia 200x200 per adattarsi ad una tile 1x1."
+   },
+   "ui_te_ib_browse": {
+      "message": "Sfoglia"
+   },
+   "ui_te_ib_desc": {
+      "message": "Inserisci un URL web di un'immagine, usa il tasto Sfoglia o trascina un'immagine qui sopra per cambiare l'icona."
+   },
+   "ui_te_ib_screenshot": {
+      "message": "Usa screenshot"
+   },
+   "ui_te_ib_tip": {
+      "message": "Consiglio: Lascia vuoto per nessuna icona."
+   },
+   "ui_te_name": {
+      "message": "Nome"
+   },
+   "ui_te_name_desc": {
+      "message": "Come volete chiamarlo?\n"
+   },
+   "ui_te_newtab": {
+      "message": "Apri in Nuova scheda al click sinistro"
+   },
+   "ui_te_pin": {
+      "message": "Fare clic sul tasto sinistro"
+   },
+   "ui_te_shfavicon": {
+      "message": "Mostra/Nascondi Favicon"
+   },
+   "ui_te_shname": {
+      "message": "Mostra/Nascondi Nome"
+   },
+   "ui_te_url_desc": {
+      "message": "Immettere l'URL che si desidera collegare, ad esempio http://www.google.com/"
+   },
+   "ui_te_url_tip": {
+      "message": "Consiglio: Un URL valido contiene un protocollo (come \"http://\") prima del dominio. Senza un protocollo valido, il link non funzioner\u00E0."
+   }
+}

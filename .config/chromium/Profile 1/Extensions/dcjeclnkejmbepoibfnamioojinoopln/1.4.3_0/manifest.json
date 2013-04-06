@@ -1,0 +1,27 @@
+{
+   "api_console_project_id": "786020221780",
+   "app": {
+      "launch": {
+         "web_url": "https://www.autocadws.com/gdrive/gdrive.html"
+      },
+      "urls": [ "https://www.autocadws.com/" ]
+   },
+   "container": "GOOGLE_DRIVE",
+   "description": "View, edit, and share DWG drawings through your web browser with the AutoCAD WS web and mobile application.",
+   "icons": {
+      "128": "icon_128.png"
+   },
+   "intents": {
+      "http://drive.google.com/intents/opendrivedoc": [ {
+         "disposition": "window",
+         "href": "https://www.autocadws.com/gdrive/gdrive.html",
+         "title": "Open",
+         "type": [ "image/x-dwg", "application/x-autoca", "application/acad", "drawing/dwg", "application/x-acad", "image/vnd.dwg", "application/autocad_dwg", "application/dwg", "application/x-dwg", "application/vnd.google.drive.ext-type.dwg", "application/vnd.google.drive.ext-type.dxf" ]
+      } ]
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDOrv3RdtuAU5nxWgsHbIj0Rf7WwdpXwQKLud9SQtmaHvq63hCHGREdDh83jYIzet/dQRkcdKSBh627aXV6LqI/qItreORmIG2oIccWak3L8C+MECehuttXD1gL8ickOJPFYKpU4Uvw2Dod3BFxo4MJb8rFb7MHrSHCRd2PG1frfwIDAQAB",
+   "name": "AutoCAD WS",
+   "permissions": [ "unlimited_storage", "notifications" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.4.3"
+}

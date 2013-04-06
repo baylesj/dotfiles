@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>AirMech</title>
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="check_browser.js"></script>
+		<meta property="og:title" content="AirMech">
+		<meta name="Description" content="AirMech is a multiplayer action RTS where you control a giant transforming robot, fighting alongside your army on the battlefield.">
+		<meta property="og:description" content="AirMech is a multiplayer action RTS where you control a giant transforming robot, fighting alongside your army on the battlefield.">
+		
+		<style type="text/css">
+			html
+			{
+				padding: 0;
+				margin: 0;
+				height: 100%;
+			}
+			body
+			{
+				overflow: hidden;
+				cursor: url(MouseCursorBlue.png), auto;
+				-webkit-user-select: auto;
+				padding: 0;
+				margin: 0;
+				height: 100%;
+				color: #DDDDDD;
+				background: #000000;
+				font-size: 8pt;
+				font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+			}
+			h1
+			{
+				font-family: Tahoma, Arial, Georgia;
+				font-size: 24px;
+				color: #FFFFFF;
+				text-decoration: none;
+				text-shadow: 1px 1px 1px #000000;
+				margin: 0px;
+			}
+			h2
+			{
+				font-family: Tahoma, Arial, Georgia;
+				font-size: 14px;
+				color: #FFFFFF;
+				text-decoration: none;
+				text-shadow: 1px 1px 1px #000000;
+			}
+			ul, h4
+			{
+				margin: 0;
+				padding: 0;
+			}
+			a
+			{
+				cursor: url(MouseCursorBlueHover.png), auto;
+				font-size: 14px;
+				color: #FFFFFF;
+				text-decoration: underline;
+				text-shadow: 1px 1px 1px #000000;
+			}
+			img.displayed {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			img.social {
+				cursor: url(MouseCursorBlueHover.png), auto;
+				margin: 10px 5px 0 5px;
+			}
+			#outer
+			{
+				height:100%;
+				width:100%;
+				display:table;
+			}
+			#listener
+			{
+				vertical-align: middle;
+				margin: auto;
+				display:table-cell;
+				text-align: center;
+			}
+			#social
+			{
+				vertical-align: middle;
+				margin: 20px auto;
+				text-align: center;
+			}
+			#info
+			{
+				width: 50%;
+				vertical-align: middle;
+				margin: 20px auto;
+				text-align: left;
+			}
+			#AirMech
+			{
+				background-image: url(noise_bg.png);
+				background-color: #000000;
+			}
+			.play-area 
+			{
+				position: absolute;
+				cursor: url(MouseCursorBlue.png), auto;
+			}
+			#cursor-hide {
+				z-index: 100;
+				cursor: url(MouseCursorBlue.png), auto;
+			}
+			#overlay { 
+				display: none; 
+			}
+			#loading {
+				height: auto;
+				width: 100%;
+				margin: auto;
+				position: absolute;
+			}
+			.progress-bar {
+				background-color: #1A1A1A;
+				height: 24px;
+				padding: 4px;
+				width: 350px;
+				margin: auto;
+				-webkit-border-radius: 5px;
+				-webkit-box-shadow: 0 1px 5px #000000 inset, 0 1px 0 #444;
+			}
+			.progress-bar span 
+			{
+				background-color: #DA792C;
+				background-image: -webkit-gradient(linear, left  , left bottom, from(#FECF23), to(#FD9215));
+				background-image: -webkit-linear-gradient(top, #FECF23, #FD9215);
+				background-image: linear-gradient(top, #FECF23, #FD9215);
+				display: inline-block;
+				height: 24px;
+				width: 200px;
+				-webkit-border-radius: 3px;
+				-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+				-webkit-transition: width .4s ease-in-out;
+			}
+			.button 
+			{
+				width: 250px;
+				height: 50px;
+				margin: 45px auto 20px auto;
+				padding: 3px;
+			}
+			.button a 
+			{
+				cursor: url(MouseCursorBlueHover.png), auto;
+				display: block;
+				width: 250px;
+				height: 50px;
+
+				color: #FFFFFF;
+				font: 17px/50px Tahoma, Arial, Georgia;
+				font-weight: bold;
+				text-decoration: none;
+				text-shadow: 1px 1px 1px #000000, 0 0 1px rgba(0,0,0,0.35);
+				text-align: center;
+
+				position: relative;
+				z-index: 2;
+				
+				border-radius: 2px;
+				-webkit-border-radius: 2px;
+				-moz-border-radius: 2px;
+
+				background-color: #333333;
+				background-image: -webkit-gradient(linear, top, bottom, from(rgba(255,255,255,0.1)), to(rgba(0,0,0,0.15))), url(noise_bg.png);
+				background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.1), rgba(0,0,0,0.15)), url(noise_bg.png);
+				background-image: -moz-linear-gradient(top, rgba(255,255,255,0.1), rgba(0,0,0,0.15)), url(noise_bg.png);
+				background-image: -ms-linear-gradient(top, rgba(255,255,255,0.1), rgba(0,0,0,0.15)), url(noise_bg.png);
+				background-image: -o-linear-gradient(top, rgba(255,255,255,0.1), rgba(0,0,0,0.15)), url(noise_bg.png);
+				
+				border-top: 1px solid rgba(0,0,0,0.35);
+				border-bottom: 1px solid rgba(0,0,0,0.35);
+				border-right: 1px solid rgba(0,0,0,0.35);
+				border-left: 1px solid rgba(0,0,0,0.35);
+
+				box-shadow:  0 0 4px rgba(0,0,0,.75), inset 1px 1px 0 rgba(255,255,255,0.25), inset -1px -1px 0 rgba(255,255,255,0.25), 1px 1px 0 rgba(0,0,0,0.35), -1px -1px 0 rgba(0,0,0,0.35);
+				-webkit-box-shadow: 0 0 4px rgba(0,0,0,.75), inset 1px 1px 0 rgba(255,255,255,0.25), inset -1px -1px 0 rgba(255,255,255,0.25), 1px 1px 0 rgba(0,0,0,0.35), -1px -1px 0 rgba(0,0,0,0.35);
+				-moz-box-shadow:  0 0 4px rgba(0,0,0,.75), inset 1px 1px 0 rgba(255,255,255,0.25), inset -1px -1px 0 rgba(255,255,255,0.25), 1px 1px 0 rgba(0,0,0,0.35), -1px -1px 0 rgba(0,0,0,0.35);
+			}
+			.button a:active
+			{
+				cursor: url(MouseCursorBlueHover.png), auto;
+				background-image: -webkit-gradient(linear, top, bottom, from(rgba(255,255,255,0.1)), to(rgba(0,0,0,0.15))), url(noise_bg.png);
+				background-image: -webkit-linear-gradient(top, rgba(255,255,255,0.1), rgba(0,0,0,0.15)), url(noise_bg.png);
+				background-image: -moz-linear-gradient(top, rgba(255,255,255,0.1), rgba(0,0,0,0.15)), url(noise_bg.png);
+				background-image: -ms-linear-gradient(top, rgba(255,255,255,0.1), rgba(0,0,0,0.15)), url(noise_bg.png);
+				background-image: -o-linear-gradient(top, rgba(255,255,255,0.1), rgba(0,0,0,0.15)), url(noise_bg.png);
+
+				-webkit-backface-visibility: hidden;
+				box-shadow: 0 0 6px rgba(0,0,0,1), inset 1px 1px 0 rgba(255,255,255,0.25), inset -1px -1px 0 rgba(255,255,255,0.25), 1px 1px 0 rgba(0,0,0,0.35), -1px -1px 0 rgba(0,0,0,0.35);
+				-webkit-box-shadow: 0 0 6px rgba(0,0,0,1), inset 1px 1px 0 rgba(255,255,255,0.25), inset -1px -1px 0 rgba(255,255,255,0.25), 1px 1px 0 rgba(0,0,0,0.35), -1px -1px 0 rgba(0,0,0,0.35);
+				-moz-box-shadow: 0 0 6px rgba(0,0,0,1), inset 1px 1px 0 rgba(255,255,255,0.25), inset -1px -1px 0 rgba(255,255,255,0.25), 1px 1px 0 rgba(0,0,0,0.35), -1px -1px 0 rgba(0,0,0,0.35);
+			}
+			.top
+			{
+				background: #c34421;
+				display: inline-block;
+				height: 40px;
+				width: 240px; 
+				margin: -45px 5px 0 5px;
+
+				color: #FFFFFF;
+				font: 14px/45px Tahoma, Arial, Georgia;
+				font-weight: bold;
+				text-decoration: none;
+				text-shadow: 0 -1px 1px rgba(0,0,0,0.45);
+				text-align: center;
+				padding: 0;
+
+				position: absolute;
+				z-index: 1;
+
+				border-radius: 4px;
+				-moz-border-radius: 4px;
+				-webkit-border-radius: 4px;
+				
+				-box-shadow: 0 0 4px rgba(0,0,0,0.75), inset 0 0 1px rgba(255,255,255,0.65);
+				-moz-box-shadow: 0 0 4px rgba(0,0,0,0.75), inset 0 0 1px rgba(255,255,255,0.65);
+				-webkit-box-shadow: 0 0 4px rgba(0,0,0,0.75), inset 0 0 1px rgba(255,255,255,0.65);
+				 
+				border-top: 1px solid rgba(0,0,0,0.35);
+				border-right: 1px solid rgba(0,0,0,0.35);
+				border-left: 1px solid rgba(0,0,0,0.35);
+
+				-webkit-transition: all 0.5s ease;
+				-moz-transition: all 0.5s ease;
+				-o-transition: all 0.5s ease;
+				-ms-transition: all 0.5s ease;
+				transition: all 0.5s ease;
+			}
+			.button:hover .top 
+			{
+				margin: -84px 5px 0 5px;
+				line-height: 35px;
+			}
+			.button:active .top 
+			{
+				background-color: #c33100; 
+			}
+		</style>
+
+		<script type="text/javascript" src="AirMech.js"></script>
+	</head>
+
+	<body>
+		<div id="outer">
+			<div id="overlay">
+				<div id="loading">
+					<img class="displayed" src='AirMech-chrome128.png' alt="AirMech Icon" />
+					<div class="progress-bar">
+    					<span style="width: 0%"></span>
+					</div>
+				</div>
+			</div>
+			<div id="listener">
+				<div id="cursor-hide" class="play-area"></div>
+			</div>
+		</div>
+	</body>
+</html>

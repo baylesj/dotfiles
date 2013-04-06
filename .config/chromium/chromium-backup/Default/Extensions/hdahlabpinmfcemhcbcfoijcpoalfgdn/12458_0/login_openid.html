@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<script type="text/javascript">
+
+			function getUrlVars() {
+
+				var vars = [], hash;
+				var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+				for(var i = 0; i < hashes.length; i++) {
+					hash = hashes[i].split('=');
+					vars.push(hash[0]);
+					vars[hash[0]] = hash[1];
+				}
+				return vars;
+			}
+
+			var vars = getUrlVars();
+
+			if (vars["auth"] == undefined) {
+				// Get auth ticket
+				var openidParams = {
+					"openid.ns": "http://specs.openid.net/auth/2.0",
+					"openid.mode": "checkid_setup",
+					"openid.return_to": "https://rs.carbongames.com:26988/getAuthTicketOpenid?mode=nacl&appid=" + window.location.host,
+					"openid.claimed_id": "http://specs.openid.net/auth/2.0/identifier_select",
+					"openid.identity": "http://specs.openid.net/auth/2.0/identifier_select",
+					"openid.realm": "https://*.carbongames.com:26988",
+					"openid.ns.ui": "http://specs.openid.net/extensions/ui/1.0",
+					"openid.ui.mode": "popup",
+					"openid.ns.ax": "http://openid.net/srv/ax/1.0",
+					"openid.ax.mode": "fetch_request",
+					"openid.ax.required": "email",
+					"openid.ax.type.email": "http://axschema.org/contact/email",
+				};
+
+				var query = "";
+				for (key in openidParams) {
+					if (query.length > 0) {
+						query += "&";
+					}
+					query += encodeURIComponent(key) + "=" + encodeURIComponent(openidParams[key]);
+				}
+
+				window.location = "https://www.google.com/accounts/o8/ud?" + query;
+				return;
+			}
+
+			// Send auth ticket back to application
+			window.opener.loginComplete(vars["auth"]);
+			window.close();
+		</script>
+	</head>
+</html>

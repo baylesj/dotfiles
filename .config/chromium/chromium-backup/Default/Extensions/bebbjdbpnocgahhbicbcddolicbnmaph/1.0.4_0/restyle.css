@@ -1,0 +1,103 @@
+.gis__ic {
+	position: relative !important;
+	margin: 0px 10px !important;
+	padding: 0px !important;
+	display: inline-block !important;
+	vertical-align: middle !important;
+}
+
+.gis__i {
+  border: 0px solid #CCCCCC !important;
+  -webkit-box-shadow: 2px 2px 10px #5c5480 !important;
+	margin: 0px !important !important;
+	padding: 0px !important !important;
+}
+
+.gis__d {
+	-webkit-box-shadow: #5C5480 2px 2px 10px !important;
+	background: rgba(255, 255, 255, 0.898438) !important;
+	-webkit-border-radius: 3px !important;
+	display: inline-block !important;
+	font-family: verdana !important;
+	font-size: 11px !important;
+	color: black !important;
+	margin: 5px !important;
+	max-width: 189px;
+	overflow: hidden !important;
+	padding: 5px !important;
+	position: relative !important;
+	text-align: left !important;
+	vertical-align: top !important;
+	white-space: normal !important;
+	cursor: pointer !important;
+}
+
+.gis__d:hover {
+	-webkit-box-shadow: 2px 2px 10px rgba(92,84,128,0.6) !important;
+}
+
+.gis__is:hover {
+  -webkit-box-shadow: 2px 2px 10px rgba(92,84,128,0.6) !important;
+}
+
+#gis__c::-webkit-scrollbar {
+	height: 5px !important;
+}
+
+#gis__c::-webkit-scrollbar-thumb {
+    border-top: 1px solid #fff !important;
+    background: rgba(204,217,200,0.6) -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(240, 240, 240)), to(rgb(210, 210, 210))) !important;
+		-webkit-border-radius: 1ex !important;
+		-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .4) !important;
+}
+
+#gis__c {
+	z-index: 10000 !important;
+	position: fixed !important;
+	bottom: 0px !important;
+	padding: 10px !important;
+	left: 0px !important;
+	right: 0px !important;
+	margin: 0px !important;
+	width: 100% !important;
+	overflow: scroll !important;
+	text-align: center !important;
+	white-space: nowrap !important;
+	background-color: rgba(204,217,200,0.6) !important;
+	-webkit-box-shadow: 0px -2px 10px rgba(144,153,141,0.6) !important;
+	display: none;
+	border: 0px !important;
+	align: center !important;
+}
+
+#gis__t, #gis__preload {
+	display: none;
+}
+
+.gis__n {
+	background-color: rgba(255,255,255,0.7) !important;
+	color: #222 !important;
+	display: none;
+	font-family: verdana !important;
+	font-size: 13px !important;
+	position: absolute !important;
+	white-space: normal !important;
+	overflow: hidden !important;
+	text-align: left !important;
+	border: 0px !important;
+	padding: 0px !important;
+	margin: 0px !important;
+	cursor: pointer !important;
+}
+
+#gis__message {
+	background-color: #F0F2A6;
+	border-bottom: 1px solid #FC8582;
+	bottom: 28px;
+	color: #7CA794;
+	display: none;
+	left: 0px;
+	padding: 5px;
+	position: fixed;
+	z-index: 10001;
+}

@@ -1,0 +1,15 @@
+{
+   "background_page": "background.html",
+   "description": "Block web sites you want locally",
+   "icons": {
+      "16": "icon16.png",
+      "32": "icon.png",
+      "48": "icon.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJQScbpwGZUkBoOdhoEdiIkdEWFXyfVhEf42k9TXm4Q7Uz31AqRLqlozC+jgxR85hBrS1Voq1KBEPgMSSy0LPP5NkRuXdd2yJcWSI+3oOCwLdjUkiHEzQDrxGMfWmKcVz2AEeDGvAV6oP7FIRSfs9OV8KvTLFnuFCMkKbsAj9XYwIDAQAB",
+   "name": "BlockIt",
+   "options_page": "login.html",
+   "permissions": [ "tabs", "notifications" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "0.5.1"
+}

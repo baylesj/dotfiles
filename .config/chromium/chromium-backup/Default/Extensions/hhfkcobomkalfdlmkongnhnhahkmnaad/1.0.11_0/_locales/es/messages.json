@@ -1,0 +1,149 @@
+{
+   "background_view_title": {
+      "message": "P\u00E1gina en segundo plano de B\u00FAsqueda por Voz"
+   },
+   "bing_search_name": {
+      "message": "Bing"
+   },
+   "bing_search_uri_template": {
+      "message": "http://www.bing.com/search?q=%s"
+   },
+   "changelog": {
+      "message": "Registro de cambios"
+   },
+   "donate": {
+      "message": "Donar"
+   },
+   "duckduckgo_search_name": {
+      "message": "DuckDuckGo"
+   },
+   "duckduckgo_search_uri_template": {
+      "message": "http://duckduckgo.com/?q=%s"
+   },
+   "extension_description": {
+      "message": "Buscar hablando."
+   },
+   "extension_name": {
+      "message": "B\u00FAsqueda por voz"
+   },
+   "google_images_search_name": {
+      "message": "Google Imagenes"
+   },
+   "google_images_search_uri_template": {
+      "message": "http://www.google.es/images?q=%s"
+   },
+   "google_maps_search_name": {
+      "message": "Google Maps"
+   },
+   "google_maps_search_uri_template": {
+      "message": "http://maps.google.es/maps?q=%s"
+   },
+   "google_search_name": {
+      "message": "Google"
+   },
+   "google_search_uri_template": {
+      "message": "http://www.google.es/search?q=%s"
+   },
+   "google_videos_search_name": {
+      "message": "Google Videos"
+   },
+   "google_videos_search_uri_template": {
+      "message": "http://www.google.es/search?q=%s&tbs=vid:1"
+   },
+   "opts_default_engine": {
+      "message": "El primer motor de b\u00FAsqueda es el usado por defecto al buscar."
+   },
+   "opts_delete_drag": {
+      "message": "Arrastre a la parapelera para eliminar"
+   },
+   "opts_delete_search_engine": {
+      "message": "Arrastre los motores de b\u00FAsqueda a la papelera para eliminarlos."
+   },
+   "opts_name_column": {
+      "message": "Nombre"
+   },
+   "opts_restore_defaults_button": {
+      "message": "Restaurar configuraci\u00F3n por defecto"
+   },
+   "opts_save_button": {
+      "message": "Guardar"
+   },
+   "opts_search_engines": {
+      "message": "Motores de b\u00FAsqueda"
+   },
+   "opts_settings_saved": {
+      "message": "Configuraci\u00F3n guardada."
+   },
+   "opts_title": {
+      "message": "Opciones de la b\u00FAsqueda de voz"
+   },
+   "opts_uri_column": {
+      "message": "URL"
+   },
+   "opts_uri_format": {
+      "message": "Inserte %s donde deber\u00EDa ir la consulta."
+   },
+   "opts_website_integration": {
+      "message": "Integraci\u00F3n en las p\u00E1ginas web"
+   },
+   "opts_website_integration_all": {
+      "message": "todos los campos"
+   },
+   "opts_website_integration_label": {
+      "message": "A\u00F1adir botones de b\u00FAsqueda por voz en "
+   },
+   "opts_website_integration_none": {
+      "message": "ning\u00FAn lugar"
+   },
+   "opts_website_integration_search": {
+      "message": "campos de b\u00FAsqueda"
+   },
+   "popup_debug_engine_name": {
+      "message": "Motor de b\u00FAsqueda:"
+   },
+   "popup_debug_query": {
+      "message": "Consulta:"
+   },
+   "popup_debug_test_query": {
+      "message": "Prueba"
+   },
+   "popup_debug_uri": {
+      "message": "URI:"
+   },
+   "popup_search_engines_select": {
+      "message": "Motores de b\u00FAsqueda"
+   },
+   "popup_title": {
+      "message": "B\u00FAsqueda por voz"
+   },
+   "report_bug": {
+      "message": "Reportar un error"
+   },
+   "version_message": {
+      "message": "Versi\u00F3n 1.0.11"
+   },
+   "wikipedia_search_name": {
+      "message": "Wikipedia"
+   },
+   "wikipedia_search_uri_template": {
+      "message": "http://es.wikipedia.org/w/index.php?title=Special:Search&search=%s"
+   },
+   "wolframalpha_search_name": {
+      "message": "Wolfram Alfa"
+   },
+   "wolframalpha_search_uri_template": {
+      "message": "http://www.wolframalpha.com/input/?i=%s"
+   },
+   "yahoo_search_name": {
+      "message": "Yahoo!"
+   },
+   "yahoo_search_uri_template": {
+      "message": "http://search.yahoo.com/search?p=%s"
+   },
+   "youtube_search_name": {
+      "message": "YouTube"
+   },
+   "youtube_search_uri_template": {
+      "message": "http://www.youtube.com/results?search_query=%s"
+   }
+}
