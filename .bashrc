@@ -6,8 +6,6 @@
 # This file contains aliases, functions, and other features for bash
 #==============================================================================
 
-shopt -s extglob
-
 #==============================================================================
 # Exports
 #==============================================================================
@@ -24,9 +22,13 @@ source /usr/share/git/completion/git-completion.bash
 source ~/.git-prompt.sh
 source /opt/intel/bin/compilervars.sh intel64
 
+eval $( dircolors -b $HOME/LS_COLORS )
+
 #==============================================================================
 # Aliases
 #==============================================================================
+alias python='python3'
+alias svn='python2 /home/jordan/bin/svn-color/svn-color.py'
 alias sbrc='source ~/.bashrc'
 alias vi='vim'
 alias rm='rm -i'
@@ -79,34 +81,30 @@ alias db='cd /home/jordan/Dropbox'
 alias sw='cd /home/jordan/Dropbox/schoolwork/'
 
 # Course specific aliases
-alias gibson='cd /home/jordan/Dropbox/extracurricular/gibson_research/'
-alias share='if mount|grep "/media/science"; 
-             then cd /media/science/Share/gibsonn/Bayles
-             else sudo mount /media/science && cd /media/science/Share/gibsonn/Bayles
-             fi'
-alias cs='sw && cd cs311'
+alias cs='sw && cd cs411'
 alias kelleymac='sudo macchanger -e eth0 --mac=24:BE:05:0E:57:EF'
 alias osc='ssh baylesj@os-class.engr.oregonstate.edu'
-alias python='python2'
 
 # General aliases
-alias fbstatus='fbcmd STATUS'
 alias minecraft='optirun java -jar -Xmx1024M -Xms512M /home/jordan/bin/minecraft.jar'
 alias cctags='ctags -R --languages=C,C++ --c++-kinds=+p --fields=+iaS --extra=+q ./'
 alias indentkr='indent -kr -i8'
+
+# Things i'll forget otherwise...
+alias wgetall='wget --mirror -p --convert-links -P' # ./LOCAL_DIR WEBSITE-URL
 
 #==============================================================================
 # Some general settings
 #==============================================================================
 
 # Use extended pattern matching (not sure if toggled on reboot or not)
-# shopt -s extglob
+shopt -s extglob
 # Check using rm !(args).
 
 export TERM=xterm-color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
+#export LSCOLORS=ExFxCxDxBxegedabagacad
 
 ulimit -S -c 0 # Don't post core dumps
 
@@ -187,9 +185,6 @@ local UC=$COLOR_BLUE                # user's color
 # "$" character, otherwise it is expanded on instantiation of the bash instance.
 PS1="$TITLEBAR\n${UC}\u@\h ${COLOR_LIGHT_GREEN}\${PWD} ${COLOR_CYAN}\$(__git_ps1)${COLOR_NC}\n-> "
 
-# Single quotes do NOT expand variable names. The following $PS1 fixes the git
-# issue, but adds some color related ones.
-#PS1='$TITLEBAR\n${UC}\u@\h ${COLOR_LIGHT_GREEN}\${PWD} ${COLOR_CYAN}$(__git_ps1)${COLOR_NC}\n-> '
 }
 
 #fastprompt
@@ -210,7 +205,7 @@ function ii()   # get current host related info
     echo -e "\n${RED}Current date :$NC " ; date
     echo -e "\n${RED}Machine stats :$NC " ; uptime
     echo -e "\n${RED}Memory stats :$NC " ; free
-	echo
+    echo
 }
 
 # Misc utilities:

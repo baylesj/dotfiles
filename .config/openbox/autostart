@@ -1,0 +1,46 @@
+# These things are run when an Openbox X Session is started.
+
+# Enable Ctrl+Alt+Backspace restart X server
+setxkbmap -option terminate:ctrl_alt_bksp
+
+# Panel
+tint2 &
+
+# Clipboard manager
+clipit &
+
+# Terminal server
+urxvtd &
+
+# Wallpaper
+nitrogen --restore &
+
+#gnome-keyring-daemon --daemonize --login &
+#nm-applet &
+
+# Compositing Manager
+#/usr/bin/cairo-compmgr &
+compton &
+
+#wicd-client --tray &
+
+# Battery monitor
+#xfce4-power-manager &
+
+# Control volume in tray
+pnmixer &
+
+# Hide mouse when not in use
+unclutter &
+
+# Dropbox daemon - only viable with valid connection
+#dropboxd &
+
+# Monitor
+/home/jordan/bin/conkyinit
+
+# Adjust colortemp
+xflux -z 97321
+
+# Music daemon
+mpd &
