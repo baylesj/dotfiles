@@ -1,8 +1,8 @@
 delay=1
-region=2
+region=3
 action=1
 show_mouse=1
-screenshot_dir=file:/home/jordan
+screenshot_dir=file:/home/jordan/Dropbox/schoolwork/cs411/1/personal/figures
 app=eog
 last_user=
 
