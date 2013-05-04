@@ -12,8 +12,12 @@
 export EDITOR='vim'
 export TERM='xterm-256color'
 export UNCRUSTIFY_CONFIG='/home/jordan/dotfiles/uncrustify.cfg'
-PATH=$PATH:"/home/jordan/matlab2011b/bin:/usr/local/texlive/2011/bin/x86_64-linux:/home/jordan/bin:/home/jordan/android-sdk-linux/platform-tools"
-export PATH
+
+export PATH="~/bin:$PATH"
+export PATH=${PATH}:"/usr/local/bin"
+export PATH=${PATH}:"~/matlab2011b/bin"
+export PATH=${PATH}:"/usr/local/texlive/2011/bin/x86_64-linux"
+export PATH=${PATH}:"~/android-sdk-linux/platform-tools"
 
 #==============================================================================
 # Sources
@@ -89,7 +93,7 @@ alias osc='ssh baylesj@os-class.engr.oregonstate.edu'
 alias minecraft='optirun java -jar -Xmx1024M -Xms512M /home/jordan/bin/minecraft.jar'
 alias cctags='ctags -R --languages=C,C++ --c++-kinds=+p --fields=+iaS --extra=+q ./'
 alias indentkr='indent -kr -i8'
-
+alias indentkernel='indent -kr -i8 -ts8 -sob -l80 -ss -bs -psl'
 # Things i'll forget otherwise...
 alias wgetall='wget --mirror -p --convert-links -P' # ./LOCAL_DIR WEBSITE-URL
 
@@ -115,6 +119,15 @@ export HOSTFILE=$HOME/.hosts # Put list of remote hosts in local file
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+# Erase duplicates in history
+export HISTCONTROL=erasedups
+
+# Store 10k history entries
+export HISTSIZE=10000
+
+# Append to the history file when exiting instead of overwriting it
+shopt -s histappend
 
 #==============================================================================
 # Greeting, motd (message of the day) settings
