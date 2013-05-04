@@ -81,10 +81,12 @@ set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/gl
 set tags+=~/.vim/tags/sdl
 set tags+=~/.vim/tags/qt4
-" Build tags of your own project with Ctrl-F12
-map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+" Build tags of your own project
+map <F5> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
 " Update tags (more efficient method)
-map <F4> :!ctags -R -languages=C++ --c++-kinds=+p --fields=+iaS --extra=+q ./
+map <F4> :!ctags -R --languages=C++ --c++-kinds=+p --fields=+iaS --extra=+q ./
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Find file word count
