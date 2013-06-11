@@ -1,0 +1,18 @@
+[Data Source]
+DisplayName=jangofett481@gmail.com
+Enabled=true
+Parent=1368470202.1682.12@fenrir
+
+[Mail Transport]
+BackendName=smtp
+
+[Authentication]
+Host=smtp.googlemail.com
+Method=LOGIN
+Port=465
+User=jangofett481@gmail.com
+
+RememberPassword=true
+
+[Security]
+Method=ssl-on-alternate-port

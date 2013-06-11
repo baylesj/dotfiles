@@ -44,3 +44,6 @@ xflux -z 97321
 
 # Music daemon
 mpd &
+
+# Chat client
+pidgin &

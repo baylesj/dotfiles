@@ -37,6 +37,7 @@
 ; (gtk_accel_path "<Actions>/ThunarStandardView/sort-by-size" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/sendto-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/edit-menu" "")
+; (gtk_accel_path "<Actions>/ThunarActions/uca-action-1369254560541156-1" "")
 ; (gtk_accel_path "<Actions>/ThunarLocationButtons/location-buttons-properties" "")
 ; (gtk_accel_path "<Actions>/ThunarLauncher/open-with-other" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/view-location-selector-toolbar" "")
