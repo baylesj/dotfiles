@@ -1,5 +1,5 @@
 ﻿###
-###  vlc 2.0.5
+###  vlc 2.0.6
 ###
 
 ###
@@ -212,11 +212,6 @@
 #dts-dynrng=1
 
 [telepathy] # Telepathy "Now Playing" (MissionControl)
-
-[notify] # LibNotify Notification Plugin
-
-# Timeout (ms) (integer)
-#notify-timeout=4000
 
 [cdda] # Audio CD input
 
@@ -789,6 +784,32 @@
 
 # Sync on Intra Frame (boolean)
 #packetizer-mpegvideo-sync-iframe=0
+
+[projectm] # libprojectM effect
+
+# projectM preset path (string)
+#projectm-preset-path=/usr/share/projectM/presets
+
+# Title font (string)
+#projectm-title-font=/usr/share/fonts/TTF/DejaVuSans.ttf
+
+# Font menu (string)
+#projectm-menu-font=/usr/share/fonts/TTF/DejaVuSansMono.ttf
+
+# Video width (integer)
+#projectm-width=800
+
+# Video height (integer)
+#projectm-height=500
+
+# Mesh width (integer)
+#projectm-meshx=32
+
+# Mesh height (integer)
+#projectm-meshy=24
+
+# Texture size (integer)
+#projectm-texture-size=1024
 
 [visual] # Visualizer filter
 
@@ -2438,7 +2459,7 @@
 #ffmpeg-hw=0
 
 # Threads (integer)
-#ffmpeg-threads=1
+#ffmpeg-threads=0
 
 # Codec name (string)
 #sout-ffmpeg-codec=
@@ -4616,3 +4637,6 @@ album-art=2
 # Playlist bookmark 10 (string)
 #bookmark10=
 
+[notify] # LibNotify Notification Plugin
+# Timeout (ms) (integer)
+#notify-timeout=4000

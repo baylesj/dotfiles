@@ -1,0 +1,18 @@
+[Data Source]
+DisplayName=jangofett481@gmail.com
+Enabled=true
+Parent=
+
+[Collection]
+BackendName=google
+CalendarEnabled=false
+ContactsEnabled=true
+Identity=jangofett481@gmail.com
+MailEnabled=true
+
+[Authentication]
+Host=
+Method=none
+Port=0
+User=
+RememberPassword=true

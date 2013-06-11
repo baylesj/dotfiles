@@ -1,0 +1,49 @@
+[Data Source]
+DisplayName=jangofett481@gmail.com
+Enabled=true
+Parent=1368470202.1682.12@fenrir
+
+[Offline]
+StaySynchronized=false
+
+[Refresh]
+Enabled=true
+IntervalMinutes=60
+
+[Authentication]
+Host=imap.googlemail.com
+Method=none
+Port=993
+User=jangofett481@gmail.com
+
+RememberPassword=true
+
+[Mail Account]
+BackendName=imapx
+IdentityUid=1368470202.1682.0@fenrir
+
+[Security]
+Method=ssl-on-alternate-port
+
+[Imapx Backend]
+FilterInbox=false
+BatchFetchCount=500
+CheckAll=false
+CheckSubscribed=false
+ConcurrentConnections=5
+FetchOrder=ascending
+FilterAll=false
+FilterJunk=false
+FilterJunkInbox=false
+MobileMode=false
+Namespace=
+RealJunkPath=
+RealTrashPath=
+ShellCommand=ssh -C -l %u %h exec /usr/sbin/imapd
+UseIdle=false
+UseNamespace=false
+UseQresync=false
+UseRealJunkPath=false
+UseRealTrashPath=false
+UseShellCommand=false
+UseSubscriptions=false
