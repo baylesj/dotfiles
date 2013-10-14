@@ -2,7 +2,7 @@ delay=1
 region=3
 action=1
 show_mouse=1
-screenshot_dir=file:/home/jordan/Dropbox/schoolwork/cs411/1/personal/figures
+screenshot_dir=file:///home/jordan/Pictures
 app=eog
 last_user=
 

@@ -54,8 +54,9 @@ Battery level: (${color}${battery_percent BAT0}${color}) ${alignr}${color 003399
 ${font sans-serif:bold:size=8}PROCESSORS${hr 1}
 ${font sans-serif:normal:size=8}${cpugraph cpu1 ffcc00 ff0000}
 ${font sans-serif:normal:size=8}${cpugraph cpu2 ffcc00 ff0000}
-CPU1: ${cpu cpu1}% ${color 119933}${cpubar cpu1}${color}
-CPU2: ${cpu cpu2}% ${color 119933}${cpubar cpu2}${color}
+${font sans-serif:normal:size=8}${cpugraph cpu3 ffcc00 ff0000}
+${font sans-serif:normal:size=8}${cpugraph cpu4 ffcc00 ff0000}
+#CPU: ${cpu cpu1}% ${color 119933}${cpubar cpu}${color}
 
 # MEMORY
 ${font sans-serif:bold:size=8}MEMORY${hr 1}
@@ -76,7 +77,6 @@ ${font sans-serif:normal:size=8}${top_time name 1}${alignr}${top_time time 1}
 $font${top_time name 2}${alignr}${top_time time 2}
 $font${top_time name 3}${alignr}${top_time time 3}
 $font${top_time name 4}${alignr}${top_time time 4}
-$font${top_time name 5}${alignr}${top_time time 5}
 
 # NETWORKING
 ${font sans-serif:bold:size=8}NETWORK${hr 1}
@@ -85,7 +85,6 @@ ESSID: $alignr ${wireless_essid wlan0}
 Connection quality: $alignr ${wireless_link_qual_perc wlan0}%
 ${downspeedgraph wlan0 ffcc00 ff0000}
 DLS:${downspeed wlan0} $alignr total: ${totaldown wlan0}
-${upspeedgraph wlan0}
 ULS:${upspeed wlan0} kb/s $alignr total: ${totalup wlan0}
 
 # SHORTCUTS

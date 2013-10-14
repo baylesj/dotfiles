@@ -26,7 +26,7 @@ source /usr/share/git/completion/git-completion.bash
 source ~/.git-prompt.sh
 source /opt/intel/bin/compilervars.sh intel64
 
-eval $( dircolors -b $HOME/LS_COLORS )
+eval $( dircolors -b $HOME/.config/LS_COLORS )
 
 #==============================================================================
 # Aliases
@@ -77,17 +77,18 @@ alias upgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # Oregon State related aliases
 alias flip='ssh baylesj@flip.engr.oregonstate.edu'
-#alias gcc='gcc -lm -Wall -Werror -std=gnu99 -g'
+alias gcc='gcc -lm -Wall -Werror -std=gnu99 -g'
 alias gcc99='gcc -lm -Wall -Werror -std=c99 -g'
 alias g++='g++ -ansi -pedantic -Wall'
 alias valgrindv='valgrind --leak-check=full --track-origins=yes --show-reachable=yes -v'
 alias db='cd /home/jordan/Dropbox'
 alias sw='cd /home/jordan/Dropbox/schoolwork/'
+alias cs='cd /home/jordan/Dropbox/schoolwork/classes'
 
 # Course specific aliases
-alias cs='sw && cd cs411'
 alias kelleymac='sudo macchanger -e eth0 --mac=24:BE:05:0E:57:EF'
 alias osc='ssh baylesj@os-class.engr.oregonstate.edu'
+alias avr-gcc='avr-gcc -mmcu=atmega128'
 
 # General aliases
 alias minecraft='optirun java -jar -Xmx1024M -Xms512M /home/jordan/bin/minecraft.jar'
