@@ -1,5 +1,5 @@
 ﻿###
-###  vlc 2.0.6
+###  vlc 2.0.8
 ###
 
 ###
@@ -3444,7 +3444,7 @@ skins2-transparency=1
 #audio=1
 
 # Default audio volume (integer)
-#volume=256
+volume=371
 
 # Audio output volume step (integer)
 #volume-step=32
