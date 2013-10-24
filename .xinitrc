@@ -26,6 +26,12 @@ setxkbmap -option terminate:ctrl_alt_bksp
 # Start urxvt daemon
 urxvtd &
 
+# Start apache daemon
+sudo apachectl -k start
+
+# Start murmur
+sudo murmurd &
+
 DEFAULT_SESSION=openbox-session
 
 case $1 in

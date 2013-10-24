@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rdesktop baywifi.dyndns.org -u jangofett481@gmail.com -p live1Pineapple! -g1360x710
+

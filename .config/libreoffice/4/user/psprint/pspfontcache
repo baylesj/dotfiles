@@ -1,20 +1,15 @@
 LibreOffice PspFontCacheFile format 5
-FontCacheDirectory:1365484390:/usr/lib/libreoffice/share/fonts/truetype
+FontCacheDirectory:1381351151:/usr/lib/libreoffice/share/fonts/truetype
 File:opens___.ttf
 2;1
 OpenSymbol
 0;OpenSymbol;0;5;5;2;65535;799;200;-1;0;1262;999;1262;999;0;0;0;8;Regular
 
-FontCacheDirectory:1363368499:/usr/share/fonts/TTF
+FontCacheDirectory:1380670317:/usr/share/fonts/TTF
 File:JosefinSlab-Regular.ttf
 2;1
 Josefin Slab
 0;JosefinSlab;0;5;5;2;65535;750;250;150;0;1197;1000;1197;1000;0;0;0;0;Regular
-
-File:Marvel-BoldItalic.ttf
-2;1
-Marvel
-0;Marvel-BoldItalic;2;8;5;2;65535;951;259;210;0;947;1210;947;1210;0;0;0;0;Bold Italic
 
 File:verdanab.ttf
 2;1
@@ -25,6 +20,11 @@ File:Roboto-Black.ttf
 2;1
 Roboto
 0;Roboto-Black;0;5;5;2;65535;1047;270;317;0;1954;1317;1954;1317;0;0;0;0;Black
+
+File:Marvel-BoldItalic.ttf
+2;1
+Marvel
+0;Marvel-BoldItalic;2;8;5;2;65535;951;259;210;0;947;1210;947;1210;0;0;0;0;Bold Italic
 
 File:Paprika-Regular.ttf
 2;1
@@ -46,15 +46,15 @@ File:ChauPhilomeneOne-Regular.ttf
 Chau Philomene One
 0;ChauPhilomeneOne-Regular;0;5;5;2;65535;1033;334;367;0;1227;1367;1227;1367;0;0;0;0;Regular
 
-File:Economica-BoldItalic.ttf
-2;1
-Economica
-0;Economica-BoldItalic;2;8;5;2;65535;949;200;149;0;841;1149;841;1149;0;0;0;0;Bold Italic
-
 File:Raleway-Thin.ttf
 2;1
 Raleway
 0;Raleway-Thin;0;1;5;2;65535;940;234;174;0;1387;1174;1387;1174;0;0;0;0;Thin
+
+File:Economica-BoldItalic.ttf
+2;1
+Economica
+0;Economica-BoldItalic;2;8;5;2;65535;949;200;149;0;841;1149;841;1149;0;0;0;0;Bold Italic
 
 File:MetalMania-Regular.ttf
 2;1
@@ -91,11 +91,6 @@ File:SquadaOne-Regular.ttf
 Squada One
 0;SquadaOne-Regular;0;5;5;2;65535;861;196;57;0;770;1057;770;1057;0;0;0;0;Regular
 
-File:Butcherman-Regular.ttf
-2;1
-Butcherman
-0;Butcherman-Regular;0;5;5;2;65535;1269;665;934;0;1509;1934;1509;1934;0;0;0;0;Regular
-
 File:TitilliumWeb-SemiBoldItalic.ttf
 2;1
 Titillium Web
@@ -106,10 +101,20 @@ File:NanumGothic-ExtraBold.ttf
 NanumGothicExtraBold;나눔고딕 ExtraBold
 0;NanumGothic-ExtraBold;0;9;5;2;65535;920;230;150;0;1049;1150;1049;1150;0;0;0;8;ExtraBold
 
+File:Butcherman-Regular.ttf
+2;1
+Butcherman
+0;Butcherman-Regular;0;5;5;2;65535;1269;665;934;0;1509;1934;1509;1934;0;0;0;0;Regular
+
 File:ChelaOne-Regular.ttf
 2;1
 Chela One
 0;ChelaOne-Regular;0;5;5;2;65535;942;235;177;0;1565;1177;1565;1177;0;0;0;0;Regular
+
+File:Ruda-Regular.ttf
+2;1
+Ruda
+0;Ruda;0;5;5;2;65535;922;295;217;0;882;1217;882;1217;0;0;0;0;Regular
 
 File:NixieOne-Regular.ttf
 2;1
@@ -120,11 +125,6 @@ File:Italiana-Regular.ttf
 2;1
 Italiana
 0;Italiana-Regular;0;5;5;2;65535;928;250;178;0;1059;1178;1059;1178;0;0;0;0;Regular
-
-File:Ruda-Regular.ttf
-2;1
-Ruda
-0;Ruda;0;5;5;2;65535;922;295;217;0;882;1217;882;1217;0;0;0;0;Regular
 
 File:SourceSansPro-BlackItalic.ttf
 2;1
@@ -316,15 +316,15 @@ File:YanoneKaffeesatz-ExtraLight.ttf
 Yanone Kaffeesatz
 0;YanoneKaffeesatz-ExtraLight;0;2;5;2;65535;957;200;157;0;1078;1157;1078;1157;0;0;0;0;ExtraLight
 
-File:Chivo-Regular.ttf
-2;1
-Chivo
-0;Chivo-Regular;0;5;5;2;65535;937;250;187;0;1084;1187;1084;1187;0;0;0;0;Regular
-
 File:RobotoCondensed-Italic.ttf
 2;1
 Roboto Condensed
 0;RobotoCondensed-Italic;2;5;5;2;65535;1047;270;317;0;1630;1317;1630;1317;0;0;0;0;Italic
+
+File:Chivo-Regular.ttf
+2;1
+Chivo
+0;Chivo-Regular;0;5;5;2;65535;937;250;187;0;1084;1187;1084;1187;0;0;0;0;Regular
 
 File:PT_Sans-Web-BoldItalic.ttf
 2;1
@@ -341,15 +341,15 @@ File:DroidSansEthiopic-Bold.ttf
 Droid Sans Ethiopic
 0;DroidSansEthiopic-Bold;0;8;5;2;65535;963;240;203;0;1816;1203;1816;1203;0;0;0;8;Bold
 
-File:BigelowRules-Regular.ttf
-2;1
-Bigelow Rules
-0;BigelowRules-Regular;0;5;5;2;65535;906;251;157;0;708;1157;708;1157;0;0;0;0;Regular
-
 File:PirataOne-Regular.ttf
 2;1
 Pirata One
 0;PirataOne-Regular;0;5;5;2;65535;1006;279;285;0;1063;1285;1063;1285;0;0;0;0;Regular
+
+File:BigelowRules-Regular.ttf
+2;1
+Bigelow Rules
+0;BigelowRules-Regular;0;5;5;2;65535;906;251;157;0;708;1157;708;1157;0;0;0;0;Regular
 
 File:Arbutus-Regular.ttf
 2;1
@@ -361,15 +361,15 @@ File:CreepsterCaps-Regular.ttf
 Creepster Caps
 0;CreepsterCaps-Regular;0;5;5;2;65535;951;217;168;0;905;1168;905;1168;0;0;0;0;Regular
 
-File:BenchNine-Light.ttf
-2;1
-BenchNine
-0;BenchNine-Light;0;3;5;2;65535;986;351;337;0;1041;1337;1041;1337;0;0;0;0;Light
-
 File:NewRocker-Regular.ttf
 2;1
 New Rocker
 0;NewRocker-Regular;0;5;5;2;65535;946;283;229;0;1424;1229;1424;1229;0;0;0;0;Regular
+
+File:BenchNine-Light.ttf
+2;1
+BenchNine
+0;BenchNine-Light;0;3;5;2;65535;986;351;337;0;1041;1337;1041;1337;0;0;0;0;Light
 
 File:HermeneusOne-Regular.ttf
 2;1
@@ -401,45 +401,45 @@ File:AutourOne-Regular.ttf
 Autour One
 0;AutourOne-Regular;0;5;5;2;65535;981;268;249;0;1700;1249;1700;1249;0;0;0;0;Regular
 
-File:PT_Sans-Narrow-Web-Bold.ttf
-2;1
-PT Sans Narrow
-0;PTSans-NarrowBold;0;8;3;2;65535;1018;276;294;0;1433;1294;1433;1294;0;0;0;0;Bold
-
 File:Radley-Italic.ttf
 2;1
 Radley
 0;Radley-Italic;2;5;5;2;65535;963;300;263;0;1224;1263;1224;1263;0;0;0;0;Italic
 
-File:Neuton-ExtraBold.ttf
+File:PT_Sans-Narrow-Web-Bold.ttf
 2;1
-Neuton
-0;Neuton-ExtraBold;0;9;5;2;65535;1028;236;264;0;1242;1264;1242;1264;0;0;0;0;ExtraBold
-
-File:Overlock-Italic.ttf
-2;1
-Overlock
-0;Overlock-Italic;2;5;5;2;65535;966;254;220;0;1168;1220;1168;1220;0;0;0;0;Italic
+PT Sans Narrow
+0;PTSans-NarrowBold;0;8;3;2;65535;1018;276;294;0;1433;1294;1433;1294;0;0;0;0;Bold
 
 File:Unkempt-Bold.ttf
 2;1
 Unkempt
 0;Unkempt-Bold;0;8;5;2;65535;954;240;194;0;1194;1194;1194;1194;0;0;0;0;Bold
 
+File:Overlock-Italic.ttf
+2;1
+Overlock
+0;Overlock-Italic;2;5;5;2;65535;966;254;220;0;1168;1220;1168;1220;0;0;0;0;Italic
+
 File:NotoSansHebrew-Bold.ttf
 2;1
 Noto Sans Hebrew
 0;NotoSansHebrew-Bold;0;7;5;2;65535;979;203;182;0;1086;1182;1086;1182;0;0;0;8;Bold
 
-File:Economica-Regular.ttf
+File:Neuton-ExtraBold.ttf
 2;1
-Economica
-0;Economica-Regular;0;5;5;2;65535;949;200;149;0;728;1149;728;1149;0;0;0;0;Regular
+Neuton
+0;Neuton-ExtraBold;0;9;5;2;65535;1028;236;264;0;1242;1264;1242;1264;0;0;0;0;ExtraBold
 
 File:Shanti-Regular.ttf
 2;1
 Shanti
 0;Shanti;0;5;5;2;65535;982;292;274;0;1190;1274;1190;1274;0;0;0;256;Regular
+
+File:Economica-Regular.ttf
+2;1
+Economica
+0;Economica-Regular;0;5;5;2;65535;949;200;149;0;728;1149;728;1149;0;0;0;0;Regular
 
 File:AdventPro-SemiBold.ttf
 2;1
@@ -471,11 +471,6 @@ File:Galindo-Regular.ttf
 Galindo
 0;Galindo-Regular;0;5;5;2;65535;983;431;414;0;1398;1414;1398;1414;0;0;0;0;Regular
 
-File:Miltonian-Regular.ttf
-2;1
-Miltonian
-0;Miltonian-Regular;0;5;5;2;65535;918;274;192;0;1148;1192;1148;1192;0;0;0;0;Regular
-
 File:Trykker-Regular.ttf
 2;1
 Trykker
@@ -485,6 +480,11 @@ File:Strong-Regular.ttf
 2;1
 Strong
 0;Strong-Regular;0;5;5;2;65535;944;250;194;0;1530;1194;1530;1194;0;0;0;0;Regular
+
+File:Miltonian-Regular.ttf
+2;1
+Miltonian
+0;Miltonian-Regular;0;5;5;2;65535;918;274;192;0;1148;1192;1148;1192;0;0;0;0;Regular
 
 File:ExpletusSans-SemiBold.ttf
 2;1
@@ -516,35 +516,35 @@ File:Allan-Regular.ttf
 Allan
 0;Allan-Regular;0;5;5;2;65535;941;201;142;0;1026;1142;1026;1142;0;0;0;0;Regular
 
-File:Felipa-Regular.ttf
-2;1
-Felipa
-0;Felipa-Regular;0;5;5;2;65535;966;319;285;0;1413;1285;1413;1285;0;0;0;0;Regular
-
 File:OleoScript-Bold.ttf
 2;1
 Oleo Script
 0;OleoScript-Bold;0;8;5;2;65535;1004;379;383;0;1146;1383;1146;1383;0;0;0;0;Bold
+
+File:Felipa-Regular.ttf
+2;1
+Felipa
+0;Felipa-Regular;0;5;5;2;65535;966;319;285;0;1413;1285;1413;1285;0;0;0;0;Regular
 
 File:AdventPro-ExtraLight.ttf
 2;1
 Advent Pro
 0;AdventPro-ExtraLight;0;2;5;2;65535;964;232;196;0;1928;1196;1928;1196;0;0;0;0;ExtraLight
 
-File:Ribeye-Regular.ttf
+File:TitilliumWeb-BoldItalic.ttf
 2;1
-Ribeye
-0;Ribeye-Regular;0;5;5;2;65535;1040;326;366;0;1483;1366;1483;1366;0;0;0;0;Regular
+Titillium Web
+0;TitilliumWeb-BoldItalic;2;8;5;2;65535;1133;388;521;0;1240;1521;1240;1521;0;0;0;8;Bold Italic
 
 File:StalinistOne-Regular.ttf
 2;1
 Stalinist One
 0;StalinistOne-Regular;0;5;5;2;65535;1037;439;476;0;1947;1476;1947;1476;0;0;0;0;Regular
 
-File:TitilliumWeb-BoldItalic.ttf
+File:Ribeye-Regular.ttf
 2;1
-Titillium Web
-0;TitilliumWeb-BoldItalic;2;8;5;2;65535;1133;388;521;0;1240;1521;1240;1521;0;0;0;8;Bold Italic
+Ribeye
+0;Ribeye-Regular;0;5;5;2;65535;1040;326;366;0;1483;1366;1483;1366;0;0;0;0;Regular
 
 File:Roboto-Light.ttf
 2;1
@@ -566,15 +566,15 @@ File:Fondamento-Italic.ttf
 Fondamento
 0;Fondamento-Italic;2;5;5;2;65535;1005;377;382;0;1694;1382;1694;1382;0;0;0;0;Italic
 
-File:Iceberg-Regular.ttf
-2;1
-Iceberg
-0;Iceberg-Regular;0;5;5;2;65535;936;284;220;0;1765;1220;1765;1220;0;0;0;0;Regular
-
 File:Sansation-Italic.ttf
 2;1
 Sansation
 0;Sansation-Italic;2;5;5;2;65535;905;213;118;0;1257;1118;1257;1118;0;0;0;8;Italic
+
+File:Iceberg-Regular.ttf
+2;1
+Iceberg
+0;Iceberg-Regular;0;5;5;2;65535;936;284;220;0;1765;1220;1765;1220;0;0;0;0;Regular
 
 File:Muli-Italic.ttf
 2;1
@@ -596,30 +596,30 @@ File:OldStandard-Bold.ttf
 Old Standard TT
 0;OldStandardTT-Bold;0;8;5;2;65535;948;282;230;0;1110;1230;1110;1230;0;0;0;0;Bold
 
-File:KarlaTamilInclined-Bold.ttf
-2;1
-Karla Tamil Inclined
-0;KarlaTamilInclined-Bold;2;8;5;2;65535;796;345;141;0;2718;1141;2718;1141;0;0;0;0;Bold
-
 File:PT_Sans-Caption-Web-Regular.ttf
 2;1
 PT Sans Caption
 0;PTSans-Caption;0;5;5;2;65535;1018;276;294;0;1551;1294;1551;1294;0;0;0;0;Regular
+
+File:KarlaTamilInclined-Bold.ttf
+2;1
+Karla Tamil Inclined
+0;KarlaTamilInclined-Bold;2;8;5;2;65535;796;345;141;0;2718;1141;2718;1141;0;0;0;0;Bold
 
 File:Simonetta-BlackItalic.ttf
 2;1
 Simonetta
 0;Simonetta-BlackItalic;2;10;5;2;65535;961;290;251;0;1123;1251;1123;1251;0;0;0;0;Black Italic
 
-File:Kameron-Bold.ttf
-2;1
-Kameron
-0;Kameron-Bold;0;8;5;2;65535;917;352;269;0;1351;1269;1351;1269;0;0;0;0;Bold
-
 File:Overlock-BoldItalic.ttf
 2;1
 Overlock
 0;Overlock-BoldItalic;2;8;5;2;65535;966;254;220;0;1249;1220;1249;1220;0;0;0;0;Bold Italic
+
+File:Kameron-Bold.ttf
+2;1
+Kameron
+0;Kameron-Bold;0;8;5;2;65535;917;352;269;0;1351;1269;1351;1269;0;0;0;0;Bold
 
 File:Amaranth-Bold.ttf
 2;1
@@ -686,30 +686,30 @@ File:DeliusSwashCaps-Regular.ttf
 Delius Swash Caps
 0;DeliusSwashCaps-Regular;0;5;5;2;65535;986;270;256;0;1253;1256;1253;1256;0;0;0;0;Regular
 
-File:MerriweatherSans-ExtraBold.ttf
-2;1
-Merriweather Sans
-0;MerriweatherSans-ExtraBold;0;9;5;2;65535;983;273;256;0;1597;1256;1597;1256;0;0;0;0;ExtraBold
-
 File:Thabit-Bold.ttf
 2;1
 Thabit-Bold;ثابت
 0;Thabit-Bold;0;8;5;2;65535;986;515;501;0;925;1501;925;1501;0;0;0;0;Bold
+
+File:MerriweatherSans-ExtraBold.ttf
+2;1
+Merriweather Sans
+0;MerriweatherSans-ExtraBold;0;9;5;2;65535;983;273;256;0;1597;1256;1597;1256;0;0;0;0;ExtraBold
 
 File:Exo-Bold.ttf
 2;1
 Exo
 0;Exo-Bold;0;8;5;2;65535;1002;327;329;0;1427;1329;1427;1329;0;0;0;0;Bold
 
-File:DejaVuSerifCondensed.ttf
-2;1
-DejaVu Serif Condensed
-0;DejaVuSerifCondensed;0;5;4;2;65535;928;235;163;0;2203;1163;2203;1163;0;0;0;0;Condensed
-
 File:Overlock-Regular.ttf
 2;1
 Overlock
 0;Overlock-Regular;0;5;5;2;65535;966;254;220;0;1209;1220;1209;1220;0;0;0;0;Regular
+
+File:DejaVuSerifCondensed.ttf
+2;1
+DejaVu Serif Condensed
+0;DejaVuSerifCondensed;0;5;4;2;65535;928;235;163;0;2203;1163;2203;1163;0;0;0;0;Condensed
 
 File:MavenPro-Medium.ttf
 2;1
@@ -741,15 +741,15 @@ File:PT_Sans-Web-Regular.ttf
 PT Sans
 0;PTSans-Regular;0;5;5;2;65535;1018;276;294;0;1448;1294;1448;1294;0;0;0;0;Regular
 
-File:JustAnotherHand.ttf
-2;1
-Just Another Hand
-0;JustAnotherHand-Regular;0;5;5;2;65535;899;368;267;0;843;1267;843;1267;0;0;0;0;Regular
-
 File:Quicksand-Italic.ttf
 2;1
 Quicksand
 0;Quicksand-Italic;2;5;5;2;65535;923;206;129;0;1156;1129;1156;1129;0;0;0;0;Italic
+
+File:JustAnotherHand.ttf
+2;1
+Just Another Hand
+0;JustAnotherHand-Regular;0;5;5;2;65535;899;368;267;0;843;1267;843;1267;0;0;0;0;Regular
 
 File:arialbd.ttf
 2;1
@@ -841,15 +841,15 @@ File:NotoSansThaiUI-Bold.ttf
 Noto Sans Thai UI
 0;NotoSansThaiUI-Bold;0;8;5;2;65535;1068;292;360;0;1471;1360;1471;1360;0;0;0;8;Bold
 
-File:Ovo-Regular.ttf
-2;1
-Ovo
-0;Ovo;0;5;5;2;65535;864;260;124;0;1174;1124;1174;1124;0;0;0;0;Regular
-
 File:RussoOne-Regular.ttf
 2;1
 Russo One
 0;RussoOne-Regular;0;5;5;2;65535;926;279;205;0;1470;1205;1470;1205;0;0;0;4;Regular
+
+File:Ovo-Regular.ttf
+2;1
+Ovo
+0;Ovo;0;5;5;2;65535;864;260;124;0;1174;1124;1174;1124;0;0;0;0;Regular
 
 File:OpenSans-CondLight.ttf
 2;1
@@ -881,15 +881,20 @@ File:Merriweather-Black.ttf
 Merriweather
 0;Merriweather-Heavy;0;10;5;2;65535;937;312;249;0;1512;1249;1512;1249;0;0;0;0;Heavy
 
+File:Quando-Regular.ttf
+2;1
+Quando
+0;Quando-Regular;0;5;5;2;65535;991;258;249;0;1439;1249;1439;1249;0;0;0;0;Regular
+
 File:OdorMeanChey.ttf
 2;1
 OdorMeanChey
 0;OdorMeanChey;0;5;5;2;65535;1220;585;805;0;3795;1805;3795;1805;0;0;0;8;Regular
 
-File:Quando-Regular.ttf
+File:WireOne.ttf
 2;1
-Quando
-0;Quando-Regular;0;5;5;2;65535;991;258;249;0;1439;1249;1439;1249;0;0;0;0;Regular
+Wire One
+0;WireOne;0;5;5;2;65535;889;209;98;0;1080;1098;1080;1098;0;0;0;0;Regular
 
 File:MiltonianTattoo-Regular.ttf
 2;1
@@ -900,11 +905,6 @@ File:GenBkBasI.ttf
 2;1
 Gentium Book Basic
 0;GentiumBookBasic-Italic;2;5;5;2;65535;874;283;157;0;1330;1157;1330;1157;0;0;0;0;Italic
-
-File:WireOne.ttf
-2;1
-Wire One
-0;WireOne;0;5;5;2;65535;889;209;98;0;1080;1098;1080;1098;0;0;0;0;Regular
 
 File:Marcellus-Regular.ttf
 2;1
@@ -1056,15 +1056,15 @@ File:TitilliumWeb-Black.ttf
 Titillium Web
 0;TitilliumWeb-Black;0;10;5;2;65535;1133;388;521;0;1142;1521;1142;1521;0;0;0;8;Black
 
-File:DroidSerif.ttf
-2;1
-Droid Serif
-0;DroidSerif;0;5;5;2;65535;931;240;171;0;1218;1171;1218;1171;0;0;0;8;Regular
-
 File:PermanentMarker.ttf
 2;1
 Permanent Marker
 0;PermanentMarker;0;5;5;2;65535;1109;317;426;0;1528;1426;1528;1426;0;0;0;0;Regular
+
+File:DroidSerif.ttf
+2;1
+Droid Serif
+0;DroidSerif;0;5;5;2;65535;931;240;171;0;1218;1171;1218;1171;0;0;0;8;Regular
 
 File:Alegreya-Bold.ttf
 2;1
@@ -1086,15 +1086,15 @@ File:Chenla.ttf
 Chenla
 0;Chenla;0;5;5;2;65535;1220;585;805;0;3795;1805;3795;1805;0;0;0;8;Regular
 
-File:Molengo-Regular.ttf
-2;1
-Molengo
-0;Molengo-Regular;0;5;5;2;65535;941;254;195;0;1129;1195;1129;1195;0;0;0;0;Regular
-
 File:YanoneKaffeesatz-Light.ttf
 2;1
 Yanone Kaffeesatz
 0;YanoneKaffeesatz-Light;0;3;5;2;65535;957;200;157;0;1063;1157;1063;1157;0;0;0;0;Light
+
+File:Molengo-Regular.ttf
+2;1
+Molengo
+0;Molengo-Regular;0;5;5;2;65535;941;254;195;0;1129;1195;1129;1195;0;0;0;0;Regular
 
 File:Monda-Regular.ttf
 2;1
@@ -1121,15 +1121,15 @@ File:ExpletusSans-Medium.ttf
 Expletus Sans
 0;ExpletusSans-Medium;0;6;5;2;65535;895;293;188;0;1086;1188;1086;1188;0;0;0;4;Medium
 
-File:Economica-Italic.ttf
-2;1
-Economica
-0;Economica-Italic;2;5;5;2;65535;949;200;149;0;823;1149;823;1149;0;0;0;0;Italic
-
 File:Ubuntu-Bold.ttf
 2;1
 Ubuntu
 0;Ubuntu-Bold;0;8;5;2;65535;932;189;121;0;3645;1121;3645;1121;0;0;0;0;Bold
+
+File:Economica-Italic.ttf
+2;1
+Economica
+0;Economica-Italic;2;5;5;2;65535;949;200;149;0;823;1149;823;1149;0;0;0;0;Italic
 
 File:Oregano-Italic.ttf
 2;1
@@ -1151,15 +1151,15 @@ File:Mate-Italic.ttf
 Mate
 0;Mate-Italic;2;5;5;2;65535;958;262;220;0;1083;1220;1083;1220;0;0;0;0;Italic
 
-File:Oxygen-Light.ttf
-2;1
-Oxygen
-0;Oxygen-Light;0;3;5;2;65535;1026;235;261;0;1348;1261;1348;1261;0;0;0;0;Light
-
 File:Share-Italic.ttf
 2;1
 Share
 0;Share-Italic;2;5;5;2;65535;885;242;127;0;1207;1127;1207;1127;0;0;0;0;Italic
+
+File:Oxygen-Light.ttf
+2;1
+Oxygen
+0;Oxygen-Light;0;3;5;2;65535;1026;235;261;0;1348;1261;1348;1261;0;0;0;0;Light
 
 File:NotoSansThaiUI-Regular.ttf
 2;1
@@ -1176,15 +1176,15 @@ File:DejaVuSerif-Bold.ttf
 DejaVu Serif
 0;DejaVuSerif-Bold;0;8;5;2;65535;938;235;173;0;2630;1173;2630;1173;0;0;0;0;Bold
 
-File:Metrophobic.ttf
-2;1
-Metrophobic
-0;Metrophobic;0;5;5;2;65535;1008;224;232;0;1165;1232;1165;1232;0;0;0;0;Regular
-
 File:NovaScript.ttf
 2;1
 Nova Script
 0;NovaScript;2;5;5;2;65535;959;247;206;0;1433;1206;1433;1206;0;0;0;0;Book
+
+File:Metrophobic.ttf
+2;1
+Metrophobic
+0;Metrophobic;0;5;5;2;65535;1008;224;232;0;1165;1232;1165;1232;0;0;0;0;Regular
 
 File:Magra-Bold.ttf
 2;1
@@ -1226,15 +1226,15 @@ File:OpenSans-Light.ttf
 Open Sans Light
 0;OpenSans-Light;0;3;5;2;65535;1068;292;360;0;1660;1360;1660;1360;0;0;0;8;Light
 
-File:NotoSansLycian-Regular.ttf
-2;1
-Noto Sans Lycian
-0;NotoSansLycian;0;5;5;2;65535;1068;292;360;0;828;1360;828;1360;0;0;0;8;Regular
-
 File:PlayfairDisplay-Bold.ttf
 2;1
 Playfair Display
 0;PlayfairDisplay-Bold;0;8;5;2;65535;1082;250;332;0;1536;1332;1536;1332;0;0;0;8;Bold
+
+File:NotoSansLycian-Regular.ttf
+2;1
+Noto Sans Lycian
+0;NotoSansLycian;0;5;5;2;65535;1068;292;360;0;828;1360;828;1360;0;0;0;8;Regular
 
 File:GreatVibes-Regular.ttf
 2;1
@@ -1286,15 +1286,15 @@ File:Chivo-Italic.ttf
 Chivo
 0;Chivo-Italic;2;5;5;2;65535;937;250;187;0;1133;1187;1133;1187;0;0;0;0;Italic
 
-File:Cabin-Medium.ttf
-2;1
-Cabin
-0;Cabin-Medium;0;6;5;2;65535;965;250;215;0;1200;1215;1200;1215;0;0;0;0;Medium
-
 File:Neuton-Light.ttf
 2;1
 Neuton
 0;Neuton-Light;0;3;5;2;65535;1028;236;264;0;975;1264;975;1264;0;0;0;0;Light
+
+File:Cabin-Medium.ttf
+2;1
+Cabin
+0;Cabin-Medium;0;6;5;2;65535;965;250;215;0;1200;1215;1200;1215;0;0;0;0;Medium
 
 File:Tharlon-Regular.ttf
 2;1
@@ -1371,15 +1371,15 @@ File:Alegreya-Black.ttf
 Alegreya
 0;Alegreya-Black;0;10;5;2;65535;1016;345;361;0;1295;1361;1295;1361;0;0;0;0;Black
 
-File:DenkOne-Regular.ttf
-2;1
-Denk One
-0;DenkOne-Regular;0;5;5;2;65535;1034;215;249;0;993;1249;993;1249;0;0;0;0;Regular
-
 File:Trochut-Italic.ttf
 2;1
 Trochut
 0;Trochut-Italic;2;5;5;2;65535;967;210;177;0;1152;1177;1152;1177;0;0;0;0;Italic
+
+File:DenkOne-Regular.ttf
+2;1
+Denk One
+0;DenkOne-Regular;0;5;5;2;65535;1034;215;249;0;993;1249;993;1249;0;0;0;0;Regular
 
 File:Asul-Regular.ttf
 2;1
@@ -1411,15 +1411,15 @@ File:ModernAntiqua-Regular.ttf
 Modern Antiqua
 0;ModernAntiqua-Regular;0;6;5;2;65535;886;248;134;0;1130;1134;1130;1134;0;0;0;0;Regular
 
-File:AdventPro-Regular.ttf
-2;1
-Advent Pro
-0;AdventPro-Regular;0;5;5;2;65535;964;232;196;0;1940;1196;1940;1196;0;0;0;0;Regular
-
 File:SpecialElite.ttf
 2;1
 Special Elite
 0;SpecialElite-Regular;0;5;5;2;65535;703;296;-1;0;1083;999;1083;999;0;0;0;0;Regular
+
+File:AdventPro-Regular.ttf
+2;1
+Advent Pro
+0;AdventPro-Regular;0;5;5;2;65535;964;232;196;0;1940;1196;1940;1196;0;0;0;0;Regular
 
 File:DroidSerifThai-Bold.ttf
 2;1
@@ -1471,15 +1471,15 @@ File:Sacramento-Regular.ttf
 Sacramento
 0;Sacramento-Regular;0;5;5;2;65535;930;529;459;0;1831;1459;1831;1459;0;0;0;0;Regular
 
-File:DejaVuSansCondensed-BoldOblique.ttf
-2;1
-DejaVu Sans Condensed
-0;DejaVuSansCondensed-BoldOblique;1;8;4;2;65535;928;235;163;0;2758;1163;2758;1163;0;0;0;0;Condensed Bold Oblique
-
 File:NovaSlim.ttf
 2;1
 Nova Slim
 0;NovaSlim;0;5;5;2;65535;959;247;206;0;1412;1206;1412;1206;0;0;0;0;Book
+
+File:DejaVuSansCondensed-BoldOblique.ttf
+2;1
+DejaVu Sans Condensed
+0;DejaVuSansCondensed-BoldOblique;1;8;4;2;65535;928;235;163;0;2758;1163;2758;1163;0;0;0;0;Condensed Bold Oblique
 
 File:IstokWeb-Bold.ttf
 2;1
@@ -1491,15 +1491,15 @@ File:Fresca-Regular.ttf
 Fresca
 0;Fresca-Regular;0;5;5;2;65535;869;285;154;0;1383;1154;1383;1154;0;0;0;0;Regular
 
-File:couri.ttf
-2;1
-Courier New
-0;CourierNewPS-ItalicMT;2;5;5;1;65535;832;300;132;0;867;1132;867;1132;0;0;0;0;Italic
-
 File:NotoSansDevanagariUI-Bold.ttf
 2;1
 Noto Sans Devanagari UI
 0;NotoSansDevanagariUI-Bold;0;8;5;2;65535;1068;292;360;0;2087;1360;2087;1360;0;0;0;8;Bold
+
+File:couri.ttf
+2;1
+Courier New
+0;CourierNewPS-ItalicMT;2;5;5;1;65535;832;300;132;0;867;1132;867;1132;0;0;0;0;Italic
 
 File:Cardo-Regular.ttf
 2;1
@@ -1531,20 +1531,20 @@ File:Salsa-Regular.ttf
 Salsa
 0;Salsa-Regular;0;5;5;2;65535;974;252;226;0;1465;1226;1465;1226;0;0;0;0;Regular
 
-File:Quantico-Bold.ttf
+File:Yesteryear-Regular.ttf
 2;1
-Quantico
-0;Quantico-Bold;0;8;5;2;65535;1063;367;430;0;1413;1430;1413;1430;0;0;0;0;Bold
+Yesteryear
+0;Yesteryear-Regular;0;5;5;2;65535;977;490;467;0;1431;1467;1431;1467;0;0;0;0;Regular
 
 File:SnowburstOne-Regular.ttf
 2;1
 Snowburst One
 0;SnowburstOne-Regular;0;5;5;2;65535;1041;221;262;0;1296;1262;1296;1262;0;0;0;0;Regular
 
-File:Yesteryear-Regular.ttf
+File:Quantico-Bold.ttf
 2;1
-Yesteryear
-0;Yesteryear-Regular;0;5;5;2;65535;977;490;467;0;1431;1467;1431;1467;0;0;0;0;Regular
+Quantico
+0;Quantico-Bold;0;8;5;2;65535;1063;367;430;0;1413;1430;1413;1430;0;0;0;0;Bold
 
 File:Dosis-SemiBold.ttf
 2;1
@@ -1566,15 +1566,15 @@ File:GravitasOne.ttf
 Gravitas One
 0;GravitasOne;0;5;5;2;65535;945;326;271;0;1377;1271;1377;1271;0;0;0;0;Regular
 
-File:Mate-Regular.ttf
-2;1
-Mate
-0;Mate-Regular;0;5;5;2;65535;958;262;220;0;1103;1220;1103;1220;0;0;0;0;Regular
-
 File:Ubuntu-LightItalic.ttf
 2;1
 Ubuntu Light
 0;Ubuntu-LightItalic;2;3;5;2;65535;932;189;121;0;3731;1121;3731;1121;0;0;0;0;Light Italic
+
+File:Mate-Regular.ttf
+2;1
+Mate
+0;Mate-Regular;0;5;5;2;65535;958;262;220;0;1103;1220;1103;1220;0;0;0;0;Regular
 
 File:Arizonia-Regular.ttf
 2;1
@@ -1591,15 +1591,15 @@ File:Cousine-Italic.ttf
 Cousine
 0;Cousine-Italic;2;5;5;1;65535;832;300;132;0;778;1132;778;1132;0;0;0;8;Italic
 
-File:CantoraOne-Regular.ttf
-2;1
-CantoraOne
-0;CantoraOne-Regular;0;5;5;2;65535;1000;250;250;0;1329;1250;1329;1250;0;0;0;0;Regular
-
 File:Oswald-Light.ttf
 2;1
 Oswald
 0;Oswald-Light;0;3;5;2;65535;1193;288;481;0;1006;1481;1006;1481;0;0;0;0;Light
+
+File:CantoraOne-Regular.ttf
+2;1
+CantoraOne
+0;CantoraOne-Regular;0;5;5;2;65535;1000;250;250;0;1329;1250;1329;1250;0;0;0;0;Regular
 
 File:HammersmithOne-Regular.ttf
 2;1
@@ -1616,45 +1616,45 @@ File:Poly-Italic.ttf
 Poly
 0;Poly-Italic;2;5;5;2;65535;964;224;188;0;1317;1188;1317;1188;0;0;0;0;Italic
 
-File:Asul-Bold.ttf
-2;1
-Asul
-0;Asul-Bold;0;8;5;2;65535;949;264;213;0;1195;1213;1195;1213;0;0;0;0;Bold
-
 File:Tuffy-Italic.ttf
 2;1
 Tuffy
 0;Tuffy-Italic;2;5;5;2;65535;1142;340;482;0;1789;1482;1789;1482;0;0;0;0;Italic
+
+File:Asul-Bold.ttf
+2;1
+Asul
+0;Asul-Bold;0;8;5;2;65535;949;264;213;0;1195;1213;1195;1213;0;0;0;0;Bold
 
 File:LibreBaskerville-Bold.ttf
 2;1
 Libre Baskerville
 0;LibreBaskerville-Bold;0;8;5;2;65535;970;270;240;0;1984;1240;1984;1240;0;0;0;0;Bold
 
-File:JosefinSlab-Light.ttf
-2;1
-Josefin Slab
-0;JosefinSlab-Light;0;3;5;2;65535;931;250;181;0;1198;1181;1198;1181;0;0;0;0;Light
-
 File:Quintessential-Regular.ttf
 2;1
 Quintessential
 0;Quintessential-Regular;0;5;5;2;65535;1143;390;533;0;1450;1533;1450;1533;0;0;0;0;Regular
+
+File:JosefinSlab-Light.ttf
+2;1
+Josefin Slab
+0;JosefinSlab-Light;0;3;5;2;65535;931;250;181;0;1198;1181;1198;1181;0;0;0;0;Light
 
 File:Exo-Thin.ttf
 2;1
 Exo
 0;Exo-Thin;0;1;5;2;65535;1002;327;329;0;1445;1329;1445;1329;0;0;0;0;Thin
 
-File:Revalia-Regular.ttf
-2;1
-Revalia
-0;Revalia-Regular;0;5;5;2;65535;1047;186;233;0;1129;1233;1129;1233;0;0;0;0;Regular
-
 File:TitilliumWeb-ExtraLightItalic.ttf
 2;1
 Titillium Web
 0;TitilliumWeb-ThinItalic;2;2;5;2;65535;1133;388;521;0;1290;1521;1290;1521;0;0;0;8;Thin Italic
+
+File:Revalia-Regular.ttf
+2;1
+Revalia
+0;Revalia-Regular;0;5;5;2;65535;1047;186;233;0;1129;1233;1129;1233;0;0;0;0;Regular
 
 File:Quicksand-Regular.ttf
 2;1
@@ -1736,6 +1736,11 @@ File:MerriweatherSans-Bold.ttf
 Merriweather Sans
 0;MerriweatherSans-Bold;0;8;5;2;65535;983;273;256;0;1524;1256;1524;1256;0;0;0;0;Bold
 
+File:VT323-Regular.ttf
+2;1
+VT323
+0;VT323-Regular;0;5;5;1;65535;799;199;-2;0;416;998;416;998;0;0;0;0;Regular
+
 File:NotoSansThai-Bold.ttf
 2;1
 Noto Sans Thai
@@ -1746,35 +1751,30 @@ File:NotoSansArmenian-Bold.ttf
 Noto Sans Armenian
 0;NotoSansArmenian-Bold;0;8;5;2;65535;1068;292;360;0;1642;1360;1642;1360;0;0;0;8;Bold
 
-File:VT323-Regular.ttf
-2;1
-VT323
-0;VT323-Regular;0;5;5;1;65535;799;199;-2;0;416;998;416;998;0;0;0;0;Regular
-
 File:MrDafoe-Regular.ttf
 2;1
 Mr Dafoe
 0;MrDafoe-Regular;0;5;5;2;65535;981;416;397;0;1770;1397;1770;1397;0;0;0;0;Regular
-
-File:Englebert-Regular.ttf
-2;1
-Englebert
-0;Englebert-Regular;0;5;5;2;65535;954;311;265;0;863;1265;863;1265;0;0;0;0;Regular
 
 File:Sunshiney.ttf
 2;1
 Sunshiney
 0;Sunshiney;0;5;5;2;65535;995;298;293;0;1156;1293;1156;1293;0;0;0;0;Regular
 
-File:ArchivoNarrow-BoldItalic.ttf
+File:Englebert-Regular.ttf
 2;1
-Archivo Narrow
-0;ArchivoNarrow-BoldItalic;2;8;5;2;65535;935;211;146;0;1181;1146;1181;1146;0;0;0;0;Bold Italic
+Englebert
+0;Englebert-Regular;0;5;5;2;65535;954;311;265;0;863;1265;863;1265;0;0;0;0;Regular
 
 File:Slackey.ttf
 2;1
 Slackey
 0;Slackey;0;5;5;2;65535;1052;342;394;0;1406;1394;1406;1394;0;0;0;0;Regular
+
+File:ArchivoNarrow-BoldItalic.ttf
+2;1
+Archivo Narrow
+0;ArchivoNarrow-BoldItalic;2;8;5;2;65535;935;211;146;0;1181;1146;1181;1146;0;0;0;0;Bold Italic
 
 File:JosefinSansStd-Light.ttf
 2;1
@@ -1786,15 +1786,15 @@ File:Sanchez-Italic.ttf
 Sanchez
 0;Sanchez-Italic;2;5;5;2;65535;1004;274;278;0;1175;1278;1175;1278;0;0;0;0;Italic
 
-File:AndadaSC-Italic.ttf
-2;1
-Andada SC
-0;AndadaSC-Italic;2;5;5;2;65535;1039;280;319;0;1325;1319;1325;1319;0;0;0;0;Italic
-
 File:OFLGoudyStMTT.ttf
 2;1
 OFL Sorts Mill Goudy TT
 0;OFLGoudyStMTT;0;6;5;2;65535;960;438;398;0;1473;1398;1473;1398;0;0;0;0;Regular
+
+File:AndadaSC-Italic.ttf
+2;1
+Andada SC
+0;AndadaSC-Italic;2;5;5;2;65535;1039;280;319;0;1325;1319;1325;1319;0;0;0;0;Italic
 
 File:SignikaNegative-Semibold.ttf
 2;1
@@ -1821,15 +1821,15 @@ File:Caudex-Regular.ttf
 Caudex
 0;Caudex;0;5;5;2;65535;993;295;288;0;2201;1288;2201;1288;0;0;0;0;Regular
 
-File:Marvel-Regular.ttf
-2;1
-Marvel
-0;Marvel-Regular;0;5;5;2;65535;951;259;210;0;868;1210;868;1210;0;0;0;0;Regular
-
 File:NotoSerifGeorgian-Regular.ttf
 2;1
 Noto Serif Georgian
 0;NotoSerifGeorgian;0;5;5;2;65535;1068;292;360;0;1081;1360;1081;1360;0;0;0;8;Regular
+
+File:Marvel-Regular.ttf
+2;1
+Marvel
+0;Marvel-Regular;0;5;5;2;65535;951;259;210;0;868;1210;868;1210;0;0;0;0;Regular
 
 File:SeaweedScript-Regular.ttf
 2;1
@@ -1941,15 +1941,15 @@ File:Changa-Regular.ttf
 Changa
 0;Changa-Regular;0;5;5;2;65535;914;267;181;0;1194;1181;1194;1181;0;0;0;0;Regular
 
-File:AdventPro-Light.ttf
-2;1
-Advent Pro
-0;AdventPro-Light;0;3;5;2;65535;962;232;194;0;1946;1194;1946;1194;0;0;0;0;Light
-
 File:TenorSans-Regular.ttf
 2;1
 Tenor Sans
 0;TenorSans;0;5;5;2;65535;920;250;170;0;1252;1170;1252;1170;0;0;0;0;Regular
+
+File:AdventPro-Light.ttf
+2;1
+Advent Pro
+0;AdventPro-Light;0;3;5;2;65535;962;232;194;0;1946;1194;1946;1194;0;0;0;0;Light
 
 File:Stoke-Regular.ttf
 2;1
@@ -1966,25 +1966,30 @@ File:AveriaLibre-Italic.ttf
 Averia Libre
 0;AveriaLibre-Italic;2;6;5;2;65535;953;240;193;0;1074;1193;1074;1193;0;0;0;8;Italic
 
+File:Skranji-Regular.ttf
+2;1
+Skranji
+0;Skranji;0;5;5;2;65535;984;374;358;0;1123;1358;1123;1358;0;0;0;0;Regular
+
 File:Rosario-Bold.ttf
 2;1
 Rosario
 0;Rosario-Bold;0;8;5;2;65535;977;235;212;0;1286;1212;1286;1212;0;0;0;0;Bold
 
-File:Skranji-Regular.ttf
+File:StardosStencil-Bold.ttf
 2;1
-Skranji
-0;Skranji;0;5;5;2;65535;984;374;358;0;1123;1358;1123;1358;0;0;0;0;Regular
+Stardos Stencil
+0;StardosStencil-Bold;0;8;5;2;65535;973;405;378;0;1453;1378;1453;1378;0;0;0;0;Bold
 
 File:ExpletusSans-Bold.ttf
 2;1
 Expletus Sans
 0;ExpletusSans-Bold;0;8;5;2;65535;903;293;196;0;1124;1196;1124;1196;0;0;0;4;Bold
 
-File:StardosStencil-Bold.ttf
+File:OleoScriptSwashCaps-Bold.ttf
 2;1
-Stardos Stencil
-0;StardosStencil-Bold;0;8;5;2;65535;973;405;378;0;1453;1378;1453;1378;0;0;0;0;Bold
+Oleo Script Swash Caps
+0;OleoScriptSwashCaps-Bold;0;8;5;2;65535;1004;379;383;0;1217;1383;1217;1383;0;0;0;0;Bold
 
 File:LaBelleAurore.ttf
 2;1
@@ -1995,11 +2000,6 @@ File:DonegalOne-Regular.ttf
 2;1
 Donegal One
 0;DonegalOne-Regular;0;5;5;2;65535;976;273;249;0;1348;1249;1348;1249;0;0;0;0;Regular
-
-File:OleoScriptSwashCaps-Bold.ttf
-2;1
-Oleo Script Swash Caps
-0;OleoScriptSwashCaps-Bold;0;8;5;2;65535;1004;379;383;0;1217;1383;1217;1383;0;0;0;0;Bold
 
 File:Scada-Bold.ttf
 2;1
@@ -2031,6 +2031,16 @@ File:Average-Regular.ttf
 Average
 0;Average-Regular;0;5;5;2;65535;953;263;216;0;1128;1216;1128;1216;0;0;0;0;Regular
 
+File:SignikaNegative-Bold.ttf
+2;1
+Signika Negative
+0;SignikaNegative-Bold;0;8;5;2;65535;940;292;232;0;1129;1232;1129;1232;0;0;0;0;Bold
+
+File:Share-Regular.ttf
+2;1
+Share
+0;Share-Regular;0;5;5;2;65535;885;242;127;0;1178;1127;1178;1127;0;0;0;0;Regular
+
 File:AveriaSansLibre-LightItalic.ttf
 2;1
 Averia Sans Libre
@@ -2041,25 +2051,15 @@ File:MrsSaintDelafield-Regular.ttf
 Mrs Saint Delafield
 0;MrsSaintDelafield-Regular;0;5;5;2;65535;906;619;525;0;1719;1525;1719;1525;0;0;0;0;Regular
 
-File:Share-Regular.ttf
+File:SourceSansPro-ExtraLight.ttf
 2;1
-Share
-0;Share-Regular;0;5;5;2;65535;885;242;127;0;1178;1127;1178;1127;0;0;0;0;Regular
-
-File:SignikaNegative-Bold.ttf
-2;1
-Signika Negative
-0;SignikaNegative-Bold;0;8;5;2;65535;940;292;232;0;1129;1232;1129;1232;0;0;0;0;Bold
+Source Sans Pro ExtraLight
+0;SourceSansPro-ExtraLight;0;2;5;2;65535;984;273;257;0;1272;1257;1272;1257;0;0;0;0;ExtraLight
 
 File:Roboto-BoldItalic.ttf
 2;1
 Roboto
 0;Roboto-BoldItalic;2;8;5;2;65535;1047;270;317;0;1886;1317;1886;1317;0;0;0;0;Bold Italic
-
-File:SourceSansPro-ExtraLight.ttf
-2;1
-Source Sans Pro ExtraLight
-0;SourceSansPro-ExtraLight;0;2;5;2;65535;984;273;257;0;1272;1257;1272;1257;0;0;0;0;ExtraLight
 
 File:Armata-Regular.ttf
 2;1
@@ -2081,15 +2081,15 @@ File:NotoSans-Bold.ttf
 Noto Sans
 0;NotoSans-Bold;0;8;5;2;65535;1068;292;360;0;2060;1360;2060;1360;0;0;0;8;Bold
 
-File:Anton.ttf
-2;1
-Anton
-0;Anton;0;5;5;2;65535;1175;329;504;0;1555;1504;1555;1504;0;0;0;4;Regular
-
 File:NotoSansOsmanya-Regular.ttf
 2;1
 Noto Sans Osmanya
 0;NotoSansOsmanya;0;5;5;2;65535;1068;292;360;0;967;1360;967;1360;0;0;0;8;Regular
+
+File:Anton.ttf
+2;1
+Anton
+0;Anton;0;5;5;2;65535;1175;329;504;0;1555;1504;1555;1504;0;0;0;4;Regular
 
 File:Signika-Light.ttf
 2;1
@@ -2141,20 +2141,15 @@ File:SpicyRice-Regular.ttf
 Spicy Rice
 0;SpicyRice-Regular;0;5;5;2;65535;1020;357;377;0;1263;1377;1263;1377;0;0;0;0;Regular
 
-File:Orbitron-Black.ttf
-2;1
-Orbitron
-0;Orbitron-Black;0;10;5;2;65535;973;230;203;0;1470;1203;1470;1203;0;0;0;4;Black
-
 File:Sansation-Regular.ttf
 2;1
 Sansation
 0;Sansation-Regular;0;5;5;2;65535;905;213;118;0;1270;1118;1270;1118;0;0;0;8;Regular
 
-File:Amiri-Regular.ttf
+File:Orbitron-Black.ttf
 2;1
-Amiri
-0;Amiri-Regular;0;5;5;2;65535;1862;883;1745;0;12040;2745;12040;2745;0;0;0;0;Regular
+Orbitron
+0;Orbitron-Black;0;10;5;2;65535;973;230;203;0;1470;1203;1470;1203;0;0;0;4;Black
 
 File:TerminalDosis-Light.ttf
 2;1
@@ -2165,6 +2160,11 @@ File:RumRaisin-Regular.ttf
 2;1
 Rum Raisin
 0;RumRaisin-Regular;0;5;5;2;65535;982;307;289;0;1121;1289;1121;1289;0;0;0;0;Regular
+
+File:Amiri-Regular.ttf
+2;1
+Amiri
+0;Amiri-Regular;0;5;5;2;65535;1862;883;1745;0;12040;2745;12040;2745;0;0;0;0;Regular
 
 File:Phetsarath-Bold.ttf
 2;1
@@ -2186,15 +2186,15 @@ File:Asset.ttf
 Asset
 0;Asset;0;5;5;2;65535;962;287;249;0;2147;1249;2147;1249;0;0;0;0;Regular
 
-File:NotoSansShavian-Regular.ttf
-2;1
-Noto Sans Shavian
-0;NotoSansShavian;0;5;5;2;65535;1068;292;360;0;681;1360;681;1360;0;0;0;8;Regular
-
 File:Telex-Regular.ttf
 2;1
 Telex Regular
 0;Telex-Regular;0;5;5;2;65535;945;260;205;0;1082;1205;1082;1205;0;0;0;0;Regular
+
+File:NotoSansShavian-Regular.ttf
+2;1
+Noto Sans Shavian
+0;NotoSansShavian;0;5;5;2;65535;1068;292;360;0;681;1360;681;1360;0;0;0;8;Regular
 
 File:Dangrek.ttf
 2;1
@@ -2276,15 +2276,15 @@ File:Neuton-Italic.ttf
 Neuton
 0;Neuton-Italic;2;5;5;2;65535;940;204;144;0;993;1144;993;1144;0;0;0;0;Italic
 
-File:JotiOne-Regular.ttf
-2;1
-Joti One
-0;JotiOne-Regular;0;5;5;2;65535;1003;331;334;0;1163;1334;1163;1334;0;0;0;0;Regular
-
 File:Roboto-Bold.ttf
 2;1
 Roboto
 0;Roboto-Bold;0;8;5;2;65535;1047;270;317;0;1696;1317;1696;1317;0;0;0;0;Bold
+
+File:JotiOne-Regular.ttf
+2;1
+Joti One
+0;JotiOne-Regular;0;5;5;2;65535;1003;331;334;0;1163;1334;1163;1334;0;0;0;0;Regular
 
 File:Capriola-Regular.ttf
 2;1
@@ -2301,15 +2301,15 @@ File:IstokWeb-BoldItalic.ttf
 Istok Web
 0;IstokWeb-BoldItalic;2;6;5;2;65535;1006;433;439;0;1693;1439;1693;1439;0;0;0;8;BoldItalic
 
-File:Chewy.ttf
-2;1
-Chewy
-0;Chewy;0;5;5;2;65535;979;302;281;0;1281;1281;1281;1281;0;0;0;0;Regular
-
 File:OldStandard-Regular.ttf
 2;1
 Old Standard TT
 0;OldStandardTT-Regular;0;5;5;2;65535;948;282;230;0;1082;1230;1082;1230;0;0;0;0;Regular
+
+File:Chewy.ttf
+2;1
+Chewy
+0;Chewy;0;5;5;2;65535;979;302;281;0;1281;1281;1281;1281;0;0;0;0;Regular
 
 File:JosefinSans-Bold.ttf
 2;1
@@ -2531,25 +2531,25 @@ File:DroidSansThai-Bold.ttf
 Droid Sans Thai
 0;DroidSansThai-Bold;0;8;5;2;65535;1116;255;371;0;1471;1371;1471;1371;0;0;0;8;Bold
 
-File:MeieScript-Regular.ttf
-2;1
-Meie Script
-0;MeieScript-Regular;0;5;5;2;65535;885;380;265;0;2111;1265;2111;1265;0;0;0;0;Regular
-
 File:Norican-Regular.ttf
 2;1
 Norican
 0;Norican-Regular;0;5;5;2;65535;1022;386;408;0;1649;1408;1649;1408;0;0;0;0;Regular
 
-File:AlegreyaSC-BlackItalic.ttf
+File:MeieScript-Regular.ttf
 2;1
-Alegreya SC
-0;AlegreyaSC-BlackItalic;2;10;5;2;65535;1016;345;361;0;1292;1361;1292;1361;0;0;0;0;Black Italic
+Meie Script
+0;MeieScript-Regular;0;5;5;2;65535;885;380;265;0;2111;1265;2111;1265;0;0;0;0;Regular
 
 File:NotoSansGeorgian-Bold.ttf
 2;1
 Noto Sans Georgian
 0;NotoSansGeorgian-Bold;0;8;5;2;65535;1068;292;360;0;1167;1360;1167;1360;0;0;0;8;Bold
+
+File:AlegreyaSC-BlackItalic.ttf
+2;1
+Alegreya SC
+0;AlegreyaSC-BlackItalic;2;10;5;2;65535;1016;345;361;0;1292;1361;1292;1361;0;0;0;0;Black Italic
 
 File:PortLligatSans-Regular.ttf
 2;1
@@ -2571,15 +2571,15 @@ File:Roboto-Medium.ttf
 Roboto
 0;Roboto-Medium;0;6;5;2;65535;1047;270;317;0;1671;1317;1671;1317;0;0;0;0;Medium
 
-File:PlayfairDisplay-BoldItalic.ttf
-2;1
-Playfair Display
-0;PlayfairDisplay-BoldItalic;2;8;5;2;65535;1082;250;332;0;1565;1332;1565;1332;0;0;0;8;Bold Italic
-
 File:Tinos-Bold.ttf
 2;1
 Tinos
 0;Tinos-Bold;0;8;5;2;65535;891;216;107;0;1887;1107;1887;1107;0;0;0;8;Bold
+
+File:PlayfairDisplay-BoldItalic.ttf
+2;1
+Playfair Display
+0;PlayfairDisplay-BoldItalic;2;8;5;2;65535;1082;250;332;0;1565;1332;1565;1332;0;0;0;8;Bold Italic
 
 File:Spinnaker-Regular.ttf
 2;1
@@ -2636,15 +2636,15 @@ File:OpenSans-ExtraBold.ttf
 Open Sans Extrabold
 0;OpenSans-Extrabold;0;9;5;2;65535;1068;292;360;0;2134;1360;2134;1360;0;0;0;8;Extrabold
 
-File:Fascinate-Regular.ttf
-2;1
-Fascinate
-0;Fascinate-Regular;0;10;5;2;65535;1037;288;325;0;1548;1325;1548;1325;0;0;0;0;Regular
-
 File:Signika-Bold.ttf
 2;1
 Signika
 0;Signika-Bold;0;8;5;2;65535;940;292;232;0;1142;1232;1142;1232;0;0;0;0;Bold
+
+File:Fascinate-Regular.ttf
+2;1
+Fascinate
+0;Fascinate-Regular;0;10;5;2;65535;1037;288;325;0;1548;1325;1548;1325;0;0;0;0;Regular
 
 File:NovaFlat.ttf
 2;1
@@ -2656,6 +2656,11 @@ File:DroidKufi-Bold.ttf
 Droid Arabic Kufi
 0;DroidArabicKufi-Bold;0;8;5;2;65535;1281;615;896;0;2070;1896;2070;1896;0;0;0;8;Bold
 
+File:Rosario-BoldItalic.ttf
+2;1
+Rosario
+0;Rosario-BoldItalic;2;8;5;2;65535;977;235;212;0;1325;1212;1325;1212;0;0;0;0;Bold Italic
+
 File:Coustard-Black.ttf
 2;1
 Coustard
@@ -2665,11 +2670,6 @@ File:AveriaLibre-Bold.ttf
 2;1
 Averia Libre
 0;AveriaLibre-Bold;0;8;5;2;65535;953;240;193;0;1059;1193;1059;1193;0;0;0;8;Bold
-
-File:Rosario-BoldItalic.ttf
-2;1
-Rosario
-0;Rosario-BoldItalic;2;8;5;2;65535;977;235;212;0;1325;1212;1325;1212;0;0;0;0;Bold Italic
 
 File:Lusitana-Bold.ttf
 2;1
@@ -2691,15 +2691,15 @@ File:DroidSans.ttf
 Droid Sans
 0;DroidSans;0;5;5;2;65535;931;240;171;0;1130;1171;1130;1171;0;0;0;8;Regular
 
-File:AllertaStencil-Regular.ttf
-2;1
-Allerta Stencil
-0;AllertaStencil-Regular;0;5;5;2;65535;1032;246;278;0;1059;1278;1059;1278;0;0;0;0;Regular
-
 File:jsMath-cmmi10.ttf
 2;1
 jsMath-cmmi10
 0;jsMath-cmmi10;2;6;5;2;65535;750;251;1;0;1101;1001;1101;1001;0;0;0;0;cmmi10
+
+File:AllertaStencil-Regular.ttf
+2;1
+Allerta Stencil
+0;AllertaStencil-Regular;0;5;5;2;65535;1032;246;278;0;1059;1278;1059;1278;0;0;0;0;Regular
 
 File:NanumPenScript-Regular.ttf
 2;1
@@ -2746,15 +2746,15 @@ File:Raleway-Bold.ttf
 Raleway
 0;Raleway-Bold;0;8;5;2;65535;940;234;174;0;1340;1174;1340;1174;0;0;0;0;Bold
 
-File:KaushanScript-Regular.ttf
-2;1
-Kaushan Script
-0;KaushanScript-Regular;0;5;5;2;65535;1084;367;451;0;1364;1451;1364;1451;0;0;0;0;Regular
-
 File:SourceSansPro-Regular.ttf
 2;1
 Source Sans Pro
 0;SourceSansPro-Regular;0;5;5;2;65535;984;273;257;0;1352;1257;1352;1257;0;0;0;0;Regular
+
+File:KaushanScript-Regular.ttf
+2;1
+Kaushan Script
+0;KaushanScript-Regular;0;5;5;2;65535;1084;367;451;0;1364;1451;1364;1451;0;0;0;0;Regular
 
 File:LobsterTwo-BoldItalic.ttf
 2;1
@@ -2781,15 +2781,15 @@ File:Qwigley-Regular.ttf
 Qwigley
 0;Qwigley-Regular;0;5;5;2;65535;750;500;250;0;1457;1250;1457;1250;0;0;0;0;Regular
 
-File:LobsterTwo-Regular.ttf
-2;1
-Lobster Two
-0;LobsterTwo;0;5;5;2;65535;1000;250;250;0;1301;1250;1301;1250;0;0;0;0;Regular
-
 File:NotoSansLaoUI-Bold.ttf
 2;1
 Noto Sans Lao UI
 0;NotoSansLaoUI-Bold;0;8;5;2;65535;1056;270;326;0;1673;1326;1673;1326;0;0;0;8;Bold
+
+File:LobsterTwo-Regular.ttf
+2;1
+Lobster Two
+0;LobsterTwo;0;5;5;2;65535;1000;250;250;0;1301;1250;1301;1250;0;0;0;0;Regular
 
 File:Domine-Regular.ttf
 2;1
@@ -2896,15 +2896,20 @@ File:CroissantOne-Regular.ttf
 Croissant One
 0;CroissantOne-Regular;0;5;5;2;65535;1071;344;415;0;1376;1415;1376;1415;0;0;0;0;Regular
 
+File:Siemreap.ttf
+2;1
+Siemreap
+0;Siemreap;0;5;5;2;65535;1220;585;805;0;3795;1805;3795;1805;0;0;0;8;Regular
+
 File:Italianno-Regular.ttf
 2;1
 Italianno
 0;Italianno-Regular;0;5;5;2;65535;800;450;250;0;1728;1250;1728;1250;0;0;0;0;Regular
 
-File:Siemreap.ttf
+File:TerminalDosis-ExtraBold.ttf
 2;1
-Siemreap
-0;Siemreap;0;5;5;2;65535;1220;585;805;0;3795;1805;3795;1805;0;0;0;8;Regular
+Terminal Dosis
+0;TerminalDosis-ExtraBold;0;9;5;2;65535;1027;237;264;0;1262;1264;1262;1264;0;0;0;0;ExtraBold
 
 File:PlayfairDisplay-SemiBoldItalic.ttf
 2;1
@@ -2916,11 +2921,6 @@ File:Exo-Black.ttf
 Exo
 0;Exo-Black;0;10;5;2;65535;1002;326;328;0;1525;1328;1525;1328;0;0;0;0;Black
 
-File:TerminalDosis-ExtraBold.ttf
-2;1
-Terminal Dosis
-0;TerminalDosis-ExtraBold;0;9;5;2;65535;1027;237;264;0;1262;1264;1262;1264;0;0;0;0;ExtraBold
-
 File:Padauk-Regular.ttf
 2;1
 Padauk;áá­áá±á¬ááº
@@ -2931,25 +2931,25 @@ File:Radley-Regular.ttf
 Radley
 0;Radley;0;5;5;2;65535;963;300;263;0;1446;1263;1446;1263;0;0;0;0;Regular
 
-File:GiveYouGlory.ttf
-2;1
-Give You Glory
-0;GiveYouGlory;0;5;5;2;65535;996;606;602;0;1735;1602;1735;1602;0;0;0;0;Regular
-
 File:SourceSansPro-Black.ttf
 2;1
 Source Sans Pro Black
 0;SourceSansPro-Black;0;10;5;2;65535;984;273;257;0;1494;1257;1494;1257;0;0;0;0;Black
 
-File:Margarine-Regular.ttf
+File:GiveYouGlory.ttf
 2;1
-Margarine
-0;Margarine-Regular;0;5;5;2;65535;1013;331;344;0;1151;1344;1151;1344;0;0;0;0;Regular
+Give You Glory
+0;GiveYouGlory;0;5;5;2;65535;996;606;602;0;1735;1602;1735;1602;0;0;0;0;Regular
 
 File:TheGirlNextDoor.ttf
 2;1
 The Girl Next Door
 0;TheGirlNextDoor;0;5;5;2;65535;1112;730;842;0;1347;1842;1347;1842;0;0;0;0;Regular
+
+File:Margarine-Regular.ttf
+2;1
+Margarine
+0;Margarine-Regular;0;5;5;2;65535;1013;331;344;0;1151;1344;1151;1344;0;0;0;0;Regular
 
 File:Dynalight-Regular.ttf
 2;1
@@ -2961,20 +2961,20 @@ File:AveriaSansLibre-Light.ttf
 Averia Sans Libre
 0;AveriaSansLibre-Light;0;5;5;2;65535;993;243;236;0;1053;1236;1053;1236;0;0;0;8;Light
 
-File:Molle-Regular.ttf
+File:TitilliumWeb-Regular.ttf
 2;1
-Molle
-0;Molle-Regular;2;5;5;2;65535;904;342;246;0;1605;1246;1605;1246;0;0;0;0;Regular
+Titillium Web
+0;TitilliumWeb-Regular;0;5;5;2;65535;1133;388;521;0;1291;1521;1291;1521;0;0;0;8;Regular
 
 File:SourceCodePro-Semibold.ttf
 2;1
 Source Code Pro Semibold
 0;SourceCodePro-Semibold;0;7;5;1;65535;984;273;257;0;759;1257;759;1257;0;0;0;0;Semibold
 
-File:TitilliumWeb-Regular.ttf
+File:Molle-Regular.ttf
 2;1
-Titillium Web
-0;TitilliumWeb-Regular;0;5;5;2;65535;1133;388;521;0;1291;1521;1291;1521;0;0;0;8;Regular
+Molle
+0;Molle-Regular;2;5;5;2;65535;904;342;246;0;1605;1246;1605;1246;0;0;0;0;Regular
 
 File:JosefinSans-Light.ttf
 2;1
@@ -2996,15 +2996,15 @@ File:RobotoCondensed-Light.ttf
 Roboto Condensed
 0;RobotoCondensed-Light;0;3;5;2;65535;1047;270;317;0;1577;1317;1577;1317;0;0;0;0;Light
 
-File:Andika-R.ttf
-2;1
-Andika
-0;Andika;0;5;5;2;65535;1220;390;610;0;2693;1610;2693;1610;0;0;0;0;Regular
-
 File:PassionOne-Regular.ttf
 2;1
 Passion One
 0;PassionOne-Regular;0;5;5;2;65535;835;266;101;0;1236;1101;1236;1101;0;0;0;0;Bold
+
+File:Andika-R.ttf
+2;1
+Andika
+0;Andika;0;5;5;2;65535;1220;390;610;0;2693;1610;2693;1610;0;0;0;0;Regular
 
 File:Lohit-Devanagari.ttf
 2;1
@@ -3031,15 +3031,15 @@ File:Frijole-Regular.ttf
 Frijole
 0;Frijole;0;5;5;2;65535;1049;329;378;0;1476;1378;1476;1378;0;0;0;8;Regular
 
-File:Eater-Regular.ttf
-2;1
-Eater
-0;Eater-Regular;0;5;5;2;65535;1415;448;863;0;1859;1863;1859;1863;0;0;0;0;Regular
-
 File:PT_Serif-Web-Bold.ttf
 2;1
 PT Serif
 0;PTSerif-Bold;0;8;5;2;65535;1039;286;325;0;1592;1325;1592;1325;0;0;0;0;Bold
+
+File:Eater-Regular.ttf
+2;1
+Eater
+0;Eater-Regular;0;5;5;2;65535;1415;448;863;0;1859;1863;1859;1863;0;0;0;0;Regular
 
 File:Exo-BlackItalic.ttf
 2;1
@@ -3116,15 +3116,15 @@ File:KottaOne-Regular.ttf
 Kotta One
 0;KottaOne-Regular;0;5;5;2;65535;915;288;203;0;1185;1203;1185;1203;0;0;0;0;Regular
 
-File:AlmendraSC-Regular.ttf
-2;1
-Almendra SC
-0;AlmendraSC-Regular;0;5;5;2;65535;951;345;296;0;1106;1296;1106;1296;0;0;0;0;Regular
-
 File:Neuton-ExtraLight.ttf
 2;1
 Neuton
 0;Neuton-ExtraLight;0;2;5;2;65535;1028;236;264;0;982;1264;982;1264;0;0;0;0;ExtraLight
+
+File:AlmendraSC-Regular.ttf
+2;1
+Almendra SC
+0;AlmendraSC-Regular;0;5;5;2;65535;951;345;296;0;1106;1296;1106;1296;0;0;0;0;Regular
 
 File:VampiroOne-Regular.ttf
 2;1
@@ -3161,20 +3161,25 @@ File:Quicksand-BoldItalic.ttf
 Quicksand
 0;Quicksand-BoldItalic;2;8;5;2;65535;950;198;148;0;1137;1148;1137;1148;0;0;0;0;BoldItalic
 
-File:MarkoOne-Regular.ttf
-2;1
-Marko One
-0;MarkoOne-Regular;0;5;5;2;65535;985;354;339;0;1746;1339;1746;1339;0;0;0;0;Regular
-
 File:NotoSerif-Bold.ttf
 2;1
 Noto Serif
 0;NotoSerif-Bold;0;8;5;2;65535;1068;292;360;0;2059;1360;2059;1360;0;0;0;8;Bold
 
+File:MarkoOne-Regular.ttf
+2;1
+Marko One
+0;MarkoOne-Regular;0;5;5;2;65535;985;354;339;0;1746;1339;1746;1339;0;0;0;0;Regular
+
 File:comicbd.ttf
 2;1
 Comic Sans MS
 0;ComicSansMS-Bold;0;8;5;2;65535;1102;291;393;0;1340;1393;1340;1393;0;0;0;0;Bold
+
+File:jsMath-cmr10.ttf
+2;1
+jsMath-cmr10
+0;jsMath-cmr10;0;6;5;2;65535;751;251;2;0;1074;1002;1074;1002;0;0;0;0;cmr10
 
 File:CrimsonText-Roman.ttf
 2;1
@@ -3185,11 +3190,6 @@ File:DroidSansEthiopic-Regular.ttf
 2;1
 Droid Sans Ethiopic
 0;DroidSansEthiopic;0;5;5;2;65535;963;240;203;0;1671;1203;1671;1203;0;0;0;8;Regular
-
-File:jsMath-cmr10.ttf
-2;1
-jsMath-cmr10
-0;jsMath-cmr10;0;6;5;2;65535;751;251;2;0;1074;1002;1074;1002;0;0;0;0;cmr10
 
 File:Almendra-BoldItalic.ttf
 2;1
@@ -3276,15 +3276,15 @@ File:GenBasBI.ttf
 Gentium Basic
 0;GentiumBasic-BoldItalic;2;8;5;2;65535;874;283;157;0;1407;1157;1407;1157;0;0;0;0;Bold Italic
 
-File:JosefinSlab-SemiBoldItalic.ttf
-2;1
-Josefin Slab
-0;JosefinSlab-SemiBoldItalic;2;7;5;2;65535;932;250;182;0;1312;1182;1312;1182;0;0;0;0;SemiBold Italic
-
 File:NotoSans-Regular.ttf
 2;1
 Noto Sans
 0;NotoSans;0;5;5;2;65535;1068;292;360;0;1877;1360;1877;1360;0;0;0;8;Regular
+
+File:JosefinSlab-SemiBoldItalic.ttf
+2;1
+Josefin Slab
+0;JosefinSlab-SemiBoldItalic;2;7;5;2;65535;932;250;182;0;1312;1182;1312;1182;0;0;0;0;SemiBold Italic
 
 File:cour.ttf
 2;1
@@ -3341,15 +3341,15 @@ File:Exo-BoldItalic.ttf
 Exo
 0;Exo-BoldItalic;2;8;5;2;65535;1002;327;329;0;1431;1329;1431;1329;0;0;0;0;BoldItalic
 
-File:LobsterTwo-Italic.ttf
-2;1
-Lobster Two
-0;LobsterTwo-Italic;2;5;5;2;65535;1000;250;250;0;1320;1250;1320;1250;0;0;0;0;Italic
-
 File:WaitingfortheSunrise.ttf
 2;1
 Waiting for the Sunrise
 0;WaitingfortheSunrise;0;3;5;2;65535;1119;534;653;0;1223;1653;1223;1653;0;0;0;0;Regular
+
+File:LobsterTwo-Italic.ttf
+2;1
+Lobster Two
+0;LobsterTwo-Italic;2;5;5;2;65535;1000;250;250;0;1320;1250;1320;1250;0;0;0;0;Italic
 
 File:Lekton-Regular.ttf
 2;1
@@ -3366,6 +3366,11 @@ File:OpenSans-BoldItalic.ttf
 Open Sans
 0;OpenSans-BoldItalic;2;8;5;2;65535;1068;292;360;0;1805;1360;1805;1360;0;0;0;8;Bold Italic
 
+File:Prata-Regular.ttf
+2;1
+Prata
+0;Prata-Regular;0;5;5;2;65535;993;303;296;0;1217;1296;1217;1296;0;0;0;0;Regular
+
 File:NotoSerifGeorgian-Bold.ttf
 2;1
 Noto Serif Georgian
@@ -3375,11 +3380,6 @@ File:Candal.ttf
 2;1
 Candal
 0;Candal;0;5;5;2;65535;1086;210;296;0;1988;1296;1988;1296;0;0;0;0;Regular
-
-File:Prata-Regular.ttf
-2;1
-Prata
-0;Prata-Regular;0;5;5;2;65535;993;303;296;0;1217;1296;1217;1296;0;0;0;0;Regular
 
 File:Strait-Regular.ttf
 2;1
@@ -3416,20 +3416,20 @@ File:NotoSansLisu-Regular.ttf
 Noto Sans Lisu
 0;NotoSansLisu;0;5;5;2;65535;1068;292;360;0;916;1360;916;1360;0;0;0;8;Regular
 
-File:GenBkBasBI.ttf
+File:Rosario-Regular.ttf
 2;1
-Gentium Book Basic
-0;GentiumBookBasic-BoldItalic;2;8;5;2;65535;874;283;157;0;1445;1157;1445;1157;0;0;0;0;Bold Italic
+Rosario
+0;Rosario-Regular;0;5;5;2;65535;977;235;212;0;1308;1212;1308;1212;0;0;0;0;Regular
 
 File:PT_Serif-Web-Regular.ttf
 2;1
 PT Serif
 0;PTSerif-Regular;0;5;5;2;65535;1039;286;325;0;1521;1325;1521;1325;0;0;0;0;Regular
 
-File:Rosario-Regular.ttf
+File:GenBkBasBI.ttf
 2;1
-Rosario
-0;Rosario-Regular;0;5;5;2;65535;977;235;212;0;1308;1212;1308;1212;0;0;0;0;Regular
+Gentium Book Basic
+0;GentiumBookBasic-BoldItalic;2;8;5;2;65535;874;283;157;0;1445;1157;1445;1157;0;0;0;0;Bold Italic
 
 File:JosefinSlab-Thin.ttf
 2;1
@@ -3441,15 +3441,15 @@ File:Freehand.ttf
 Freehand
 0;Freehand;0;5;5;2;65535;1220;585;805;0;4635;1805;4635;1805;0;0;0;8;Regular
 
-File:LilitaOne-Regular.ttf
-2;1
-Lilita One
-0;LilitaOne;0;5;5;2;65535;923;220;143;0;1071;1143;1071;1143;0;0;0;0;Regular
-
 File:Philosopher-Italic.ttf
 2;1
 Philosopher
 0;Philosopher-Italic;2;5;5;2;65535;864;220;84;0;1080;1084;1080;1084;0;0;0;0;Italic
+
+File:LilitaOne-Regular.ttf
+2;1
+Lilita One
+0;LilitaOne;0;5;5;2;65535;923;220;143;0;1071;1143;1071;1143;0;0;0;0;Regular
 
 File:DejaVuSerif.ttf
 2;1
@@ -3616,6 +3616,11 @@ File:FascinateInline-Regular.ttf
 Fascinate Inline
 0;FascinateInline-Regular;0;10;5;2;65535;1037;288;325;0;1548;1325;1548;1325;0;0;0;0;Regular
 
+File:Tinos-Regular.ttf
+2;1
+Tinos
+0;Tinos;0;5;5;2;65535;891;216;107;0;1821;1107;1821;1107;0;0;0;8;Regular
+
 File:KarlaTamilUpright-Regular.ttf
 2;1
 Karla Tamil Upright
@@ -3636,10 +3641,15 @@ File:Kreon-Regular.ttf
 Kreon
 0;Kreon-Regular;0;5;5;2;65535;974;286;260;0;926;1260;926;1260;0;0;0;0;Regular
 
-File:Tinos-Regular.ttf
+File:ShadowsIntoLightTwo-Regular.ttf
 2;1
-Tinos
-0;Tinos;0;5;5;2;65535;891;216;107;0;1821;1107;1821;1107;0;0;0;8;Regular
+Shadows Into Light Two
+0;ShadowsIntoLightTwo-Regular;0;5;5;2;65535;1118;333;451;0;1599;1451;1599;1451;0;0;0;0;Regular
+
+File:Philosopher-Bold.ttf
+2;1
+Philosopher
+0;Philosopher-Bold;0;8;5;2;65535;864;220;84;0;1081;1084;1081;1084;0;0;0;0;Bold
 
 File:Calligraffitti-Regular.ttf
 2;1
@@ -3655,16 +3665,6 @@ File:HomemadeApple.ttf
 2;1
 Homemade Apple
 0;HomemadeApple;0;5;5;2;65535;1295;845;1140;0;1987;2140;1987;2140;0;0;0;0;Regular
-
-File:ShadowsIntoLightTwo-Regular.ttf
-2;1
-Shadows Into Light Two
-0;ShadowsIntoLightTwo-Regular;0;5;5;2;65535;1118;333;451;0;1599;1451;1599;1451;0;0;0;0;Regular
-
-File:Philosopher-Bold.ttf
-2;1
-Philosopher
-0;Philosopher-Bold;0;8;5;2;65535;864;220;84;0;1081;1084;1081;1084;0;0;0;0;Bold
 
 File:BlackOpsOne-Regular.ttf
 2;1
@@ -3706,15 +3706,15 @@ File:Volkhov-BoldItalic.ttf
 Volkhov
 0;Volkhov-BoldItalic;2;8;5;2;65535;971;319;290;0;1371;1290;1371;1290;0;0;0;0;Bold Italic
 
-File:Fruktur-Regular.ttf
-2;1
-Fruktur
-0;Fruktur-Regular;0;5;5;2;65535;986;263;249;0;1428;1249;1428;1249;0;0;0;0;Regular
-
 File:SourceCodePro-Light.ttf
 2;1
 Source Code Pro Light
 0;SourceCodePro-Light;0;3;5;1;65535;984;273;257;0;729;1257;729;1257;0;0;0;0;Light
+
+File:Fruktur-Regular.ttf
+2;1
+Fruktur
+0;Fruktur-Regular;0;5;5;2;65535;986;263;249;0;1428;1249;1428;1249;0;0;0;0;Regular
 
 File:JacquesFrancoisShadow-Regular.ttf
 2;1
@@ -3736,11 +3736,6 @@ File:GFSDidot-Regular.ttf
 GFS Didot
 0;GFSDidot-Regular;0;5;5;2;65535;947;277;224;0;1420;1224;1420;1224;0;0;0;0;Regular
 
-File:Nunito-Regular.ttf
-2;1
-Nunito
-0;Nunito-Regular;0;5;5;2;65535;991;329;320;0;1167;1320;1167;1320;0;0;0;0;Regular
-
 File:PurplePurse-Regular.ttf
 2;1
 Purple Purse
@@ -3750,6 +3745,11 @@ File:PatuaOne-Regular.ttf
 2;1
 Patua One
 0;PatuaOne-Regular;0;5;5;2;65535;972;247;219;0;1366;1219;1366;1219;0;0;0;0;Regular
+
+File:Nunito-Regular.ttf
+2;1
+Nunito
+0;Nunito-Regular;0;5;5;2;65535;991;329;320;0;1167;1320;1167;1320;0;0;0;0;Regular
 
 File:GenBasB.ttf
 2;1
@@ -3895,6 +3895,11 @@ File:Share-BoldItalic.ttf
 2;1
 Share
 0;Share-BoldItalic;2;8;5;2;65535;885;242;127;0;1331;1127;1331;1127;0;0;0;0;Bold Italic
+
+File:DroidNaskh-Bold.ttf
+2;1
+Droid Arabic Naskh
+0;DroidArabicNaskh-Bold;0;8;5;2;65535;1208;701;909;0;2256;1909;2256;1909;0;0;0;8;Bold
 
 File:ChangaOne-Regular.ttf
 2;1
@@ -4525,11 +4530,6 @@ File:CrimsonText-BoldItalic.ttf
 2;1
 Crimson Text
 0;CrimsonText-BoldItalic;2;8;5;2;65535;916;232;148;0;1400;1148;1400;1148;0;0;0;0;Bold Italic
-
-File:DroidKufi-Regular.ttf
-2;1
-Droid Arabic Kufi
-0;DroidArabicKufi;0;5;5;2;65535;1281;615;896;0;1752;1896;1752;1896;0;0;0;8;Regular
 
 File:Karla-Italic.ttf
 2;1
@@ -8667,15 +8667,15 @@ File:constani.ttf
 Constantia
 0;Constantia-Italic;2;5;5;2;65535;952;268;220;0;1585;1220;1585;1220;0;0;0;8;Italic
 
-File:l_10646.ttf
-2;1
-Lucida Sans Unicode
-0;LucidaSansUnicode;0;5;5;2;65535;1096;439;535;0;1998;1535;1998;1535;0;0;0;8;Regular
-
 File:cordia.ttf
 2;1
 Cordia New
 0;CordiaNew;0;5;5;2;65535;897;488;385;0;1228;1385;1228;1385;0;0;0;8;Regular
+
+File:l_10646.ttf
+2;1
+Lucida Sans Unicode
+0;LucidaSansUnicode;0;5;5;2;65535;1096;439;535;0;1998;1535;1998;1535;0;0;0;8;Regular
 
 File:angsaub.ttf
 2;1
@@ -8697,15 +8697,15 @@ File:GARA.TTF
 Garamond
 0;Garamond;0;5;5;2;65535;861;263;124;0;1200;1124;1200;1124;0;0;0;8;Regular
 
-File:mangal.ttf
-2;1
-Mangal
-0;Mangal;0;5;5;2;65535;1241;438;679;0;1893;1679;1893;1679;0;0;0;8;Regular
-
 File:framd.ttf
 2;1
 Franklin Gothic Medium
 0;FranklinGothic-Medium;0;5;5;2;65535;916;217;133;0;1308;1133;1308;1133;0;0;0;8;Regular
+
+File:mangal.ttf
+2;1
+Mangal
+0;Mangal;0;5;5;2;65535;1241;438;679;0;1893;1679;1893;1679;0;0;0;8;Regular
 
 File:constanb.ttf
 2;1
@@ -8717,20 +8717,20 @@ File:HelveticaLTStd-BoldObl.otf
 Helvetica LT Std
 0;HelveticaLTStd-BoldObl;1;8;5;2;65535;962;228;190;0;1288;1190;1288;1190;0;0;0;65540;Bold Oblique
 
-File:verdana.ttf
+File:gautamib.ttf
 2;1
-Verdana
-0;Verdana;0;5;5;2;65535;1005;209;214;0;2005;1214;2005;1214;0;0;0;8;Regular
+Gautami
+0;Gautami-Bold;0;8;5;2;65535;923;812;735;0;3118;1735;3118;1735;0;0;0;8;Bold
 
 File:couri.ttf
 2;1
 Courier New
 0;CourierNewPS-ItalicMT;2;5;5;1;65535;832;300;132;0;867;1132;867;1132;0;0;0;8;Italic
 
-File:gautamib.ttf
+File:verdana.ttf
 2;1
-Gautami
-0;Gautami-Bold;0;8;5;2;65535;923;812;735;0;3118;1735;3118;1735;0;0;0;8;Bold
+Verdana
+0;Verdana;0;5;5;2;65535;1005;209;214;0;2005;1214;2005;1214;0;0;0;8;Regular
 
 File:ANTQUAI.TTF
 2;1
@@ -8772,45 +8772,45 @@ File:HelveticaNeueLTCom-UltLtCn.ttf
 HelveticaNeueLT Com 27 UltLtCn
 0;HelveticaNeueLTCom-UltLtCn;0;3;3;2;65535;899;184;83;0;1166;1083;1166;1083;0;0;0;4;27 Ultra Light Condensed
 
-File:segoeuii.ttf
-2;1
-Segoe UI
-0;SegoeUI-Italic;2;5;5;2;65535;1079;250;329;0;1796;1329;1796;1329;0;0;0;8;Italic
-
 File:HelveticaNeueLTCom-HvIt.ttf
 2;1
 HelveticaNeueLT Com 65 Md
 0;HelveticaNeueLTCom-HvIt;2;9;5;2;65535;952;228;180;0;1304;1180;1304;1180;0;0;0;4;86 Heavy Italic
 
-File:HelveticaNeueLTCom-Th.ttf
+File:segoeuii.ttf
 2;1
-HelveticaNeueLT Com 35 Th
-0;HelveticaNeueLTCom-Th;0;3;5;2;65535;927;214;141;0;1210;1141;1210;1141;0;0;0;4;35 Thin
+Segoe UI
+0;SegoeUI-Italic;2;5;5;2;65535;1079;250;329;0;1796;1329;1796;1329;0;0;0;8;Italic
 
 File:Aller_Std_Bd.ttf
 2;1
 Aller
 0;Aller-Bold;0;8;5;2;65535;936;249;185;0;1651;1185;1651;1185;0;0;0;4;Bold
 
-File:AllerDisplay_Std_Rg.ttf
+File:HelveticaNeueLTCom-Th.ttf
 2;1
-Aller Display
-0;AllerDisplay-Regular;0;5;5;2;65535;924;243;167;0;1662;1167;1662;1167;0;0;0;4;Regular
+HelveticaNeueLT Com 35 Th
+0;HelveticaNeueLTCom-Th;0;3;5;2;65535;927;214;141;0;1210;1141;1210;1141;0;0;0;4;35 Thin
 
 File:PAPYRUS.TTF
 2;1
 Papyrus
 0;Papyrus-Regular;0;5;5;2;65535;1052;521;573;0;1913;1573;1913;1573;0;0;0;8;Regular
 
-File:times.ttf
+File:AllerDisplay_Std_Rg.ttf
 2;1
-Times New Roman
-0;TimesNewRomanPSMT;0;5;5;2;65535;891;216;107;0;2568;1107;2568;1107;0;0;0;8;Regular
+Aller Display
+0;AllerDisplay-Regular;0;5;5;2;65535;924;243;167;0;1662;1167;1662;1167;0;0;0;4;Regular
 
 File:GOTHICI.TTF
 2;1
 Century Gothic
 0;CenturyGothic-Italic;2;5;5;2;65535;971;220;191;0;1364;1191;1364;1191;0;0;0;0;Italic
+
+File:times.ttf
+2;1
+Times New Roman
+0;TimesNewRomanPSMT;0;5;5;2;65535;891;216;107;0;2568;1107;2568;1107;0;0;0;8;Regular
 
 File:browauz.ttf
 2;1
@@ -8832,30 +8832,30 @@ File:segoeuib.ttf
 Segoe UI
 0;SegoeUI-Bold;0;8;5;2;65535;1079;250;329;0;2258;1329;2258;1329;0;0;0;8;Bold
 
-File:verdanaz.ttf
-2;1
-Verdana
-0;Verdana-BoldItalic;2;8;5;2;65535;1005;209;214;0;2241;1214;2241;1214;0;0;0;8;Bold Italic
-
 File:HelveticaLTStd-CondObl.otf
 2;1
 Helvetica LT Std Cond
 0;HelveticaLTStd-CondObl;1;5;3;2;65535;990;288;278;0;1293;1278;1293;1278;0;0;0;65540;Condensed Oblique
+
+File:verdanaz.ttf
+2;1
+Verdana
+0;Verdana-BoldItalic;2;8;5;2;65535;1005;209;214;0;2241;1214;2241;1214;0;0;0;8;Bold Italic
 
 File:gautami.ttf
 2;1
 Gautami
 0;Gautami;0;5;5;2;65535;923;812;735;0;3183;1735;3183;1735;0;0;0;8;Regular
 
-File:vrinda.ttf
-2;1
-Vrinda
-0;Vrinda;0;5;5;2;65535;984;379;363;0;1890;1363;1890;1363;0;0;0;8;Regular
-
 File:DroidKufi-Bold.ttf
 2;1
 Droid Arabic Kufi
 0;DroidArabicKufi-Bold;0;8;5;2;65535;1281;615;896;0;2070;1896;2070;1896;0;0;0;8;Bold
+
+File:vrinda.ttf
+2;1
+Vrinda
+0;Vrinda;0;5;5;2;65535;984;379;363;0;1890;1363;1890;1363;0;0;0;8;Regular
 
 File:REFSAN.TTF
 2;1
@@ -8898,15 +8898,15 @@ File:ariali.ttf
 Arial
 0;Arial-ItalicMT;2;5;5;2;65535;905;211;116;0;1875;1116;1875;1116;0;0;0;8;Italic
 
-File:arialbi.ttf
-2;1
-Arial
-0;Arial-BoldItalicMT;2;8;5;2;65535;905;211;116;0;1949;1116;1949;1116;0;0;0;8;Bold Italic
-
 File:arial.ttf
 2;1
 Arial
 0;ArialMT;0;5;5;2;65535;905;211;116;0;2664;1116;2664;1116;0;0;0;8;Regular
+
+File:arialbi.ttf
+2;1
+Arial
+0;Arial-BoldItalicMT;2;8;5;2;65535;905;211;116;0;1949;1116;1949;1116;0;0;0;8;Bold Italic
 
 FontCacheDirectory:1363820705:/usr/share/fonts/truetype/conkyforecast
 File:ConkyWindNESW.otf
@@ -8919,43 +8919,43 @@ File:Moon Phases.ttf
 Moon Phases
 0;Moon Phases;0;5;5;2;65535;997;0;2;0;948;997;948;997;0;0;0;0;Regular
 
-File:ConkyWeather.otf
-2;1
-ConkyWeather
-0;ConkyWeather;0;6;5;2;65535;955;0;90;0;910;955;910;955;0;0;0;65544;Medium
-
 File:Arrows.ttf
 2;1
 Arrows
 0;Arrows;0;5;5;2;65535;717;55;-228;0;948;772;948;772;0;0;0;8;Regular
 
-File:StyleBats.ttf
+File:ConkyWeather.otf
 2;1
-StyleBats
-0;StyleBatsCleanCut;0;5;5;2;65535;800;200;150;0;975;1000;975;1000;0;0;0;0;CleanCut
+ConkyWeather
+0;ConkyWeather;0;6;5;2;65535;955;0;90;0;910;955;910;955;0;0;0;65544;Medium
 
 File:ConkyWindN.otf
 2;1
 ConkyWindN
 0;ConkyWindN;0;6;5;2;65535;800;200;90;0;800;1000;800;1000;0;0;0;65536;Medium
 
+File:StyleBats.ttf
+2;1
+StyleBats
+0;StyleBatsCleanCut;0;5;5;2;65535;800;200;150;0;975;1000;975;1000;0;0;0;0;CleanCut
+
 File:ConkyWind.otf
 2;1
 ConkyWind
 0;ConkyWind;0;6;5;2;65535;800;200;90;0;800;1000;800;1000;0;0;0;65536;Medium
 
-FontCacheDirectory:1359131305:/usr/share/fonts/cantarell
+FontCacheDirectory:1380670292:/usr/share/fonts/cantarell
 File:Cantarell-Bold.otf
 2;1
 Cantarell
-0;Cantarell-Bold;0;8;5;2;65535;1053;286;339;0;1541;1339;1541;1339;0;0;0;65536;Bold
+0;Cantarell-Bold;0;8;5;2;65535;1053;286;339;0;1337;1339;1337;1339;0;0;0;65536;Bold
 
 File:Cantarell-Regular.otf
 2;1
 Cantarell
-0;Cantarell-Regular;0;5;5;2;65535;1058;286;344;0;1377;1344;1377;1344;0;0;0;65536;Regular
+0;Cantarell-Regular;0;5;5;2;65535;1058;286;344;0;1158;1344;1158;1344;0;0;0;65536;Regular
 
-FontCacheDirectory:1349217517:/usr/share/fonts/Type1
+FontCacheDirectory:1380670356:/usr/share/fonts/Type1
 File:b018012l.pfb
 1;1
 URW Bookman L
