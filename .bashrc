@@ -10,7 +10,7 @@
 # Exports
 #==============================================================================
 export EDITOR='vim'
-export TERM='xterm-256color'
+export TERM='rxvt'
 export UNCRUSTIFY_CONFIG='/home/jordan/dotfiles/uncrustify.cfg'
 
 export PATH="~/bin:$PATH"
@@ -88,10 +88,10 @@ alias cs='cd /home/jordan/Dropbox/schoolwork/classes'
 # Course specific aliases
 alias kelleymac='sudo macchanger -e eth0 --mac=24:BE:05:0E:57:EF'
 alias osc='ssh baylesj@os-class.engr.oregonstate.edu'
-alias avr-gcc='avr-gcc -mmcu=atmega128'
+alias avr-flash='avrdude -c osuisp2 -p m128 -U'
 
 # General aliases
-alias minecraft='optirun java -jar -Xmx1024M -Xms512M /home/jordan/bin/minecraft.jar'
+alias minecraft='java -jar -Xmx1024M -Xms512M /home/jordan/bin/Minecraft.jar'
 alias cctags='ctags -R --languages=C,C++ --c++-kinds=+p --fields=+iaS --extra=+q ./'
 alias indentkr='indent -kr -i8'
 alias indentkernel='indent -kr -i8 -ts8 -sob -l80 -ss -bs -psl'

@@ -1,0 +1,2 @@
+#! /bin/bash
+rdesktop windows.engr.oregonstate.edu -g1360x710 -d ENGINEERING -u baylesj -p Tore709risk335

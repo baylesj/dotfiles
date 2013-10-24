@@ -148,3 +148,16 @@ command! -range Md5 :echo system('echo '.shellescape(join(getline(<line1>, <line
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" (Re?)map Ctrl+S
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command -nargs=0 -bar Update if &modified
+			\|	if empty(bufname('%'))
+			\|		browse confirm write
+			\|	else
+			\|		confirm write
+			\|	endif
+			\|  endif
+
+nnoremap <silent> <C-S> :<C-u>Update<CR>
