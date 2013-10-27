@@ -51,3 +51,6 @@ mpd &
 
 # Chat client
 pidgin &
+
+# Network client
+wicd-gtk &

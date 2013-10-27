@@ -24,7 +24,7 @@ export PATH=${PATH}:"~/android-sdk-linux/platform-tools"
 #==============================================================================
 source /usr/share/git/completion/git-completion.bash
 source ~/.git-prompt.sh
-source /opt/intel/bin/compilervars.sh intel64
+#source /opt/intel/bin/compilervars.sh intel64
 
 eval $( dircolors -b $HOME/.config/LS_COLORS )
 
@@ -88,13 +88,14 @@ alias cs='cd /home/jordan/Dropbox/schoolwork/classes'
 # Course specific aliases
 alias kelleymac='sudo macchanger -e eth0 --mac=24:BE:05:0E:57:EF'
 alias osc='ssh baylesj@os-class.engr.oregonstate.edu'
-alias avr-flash='avrdude -c osuisp2 -p m128 -U'
+alias avr-gcc='avr-gcc -mmcu=atmega128'
 
 # General aliases
-alias minecraft='java -jar -Xmx1024M -Xms512M /home/jordan/bin/Minecraft.jar'
+alias minecraft='optirun java -jar -Xmx1024M -Xms512M /home/jordan/bin/minecraft.jar'
 alias cctags='ctags -R --languages=C,C++ --c++-kinds=+p --fields=+iaS --extra=+q ./'
 alias indentkr='indent -kr -i8'
 alias indentkernel='indent -kr -i8 -ts8 -sob -l80 -ss -bs -psl'
+
 # Things i'll forget otherwise...
 alias wgetall='wget --mirror -p --convert-links -P' # ./LOCAL_DIR WEBSITE-URL
 
@@ -106,7 +107,6 @@ alias wgetall='wget --mirror -p --convert-links -P' # ./LOCAL_DIR WEBSITE-URL
 shopt -s extglob
 # Check using rm !(args).
 
-export TERM=xterm-color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
 #export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -154,7 +154,7 @@ export COLOR_LIGHT_GRAY='\e[0;37m'
 
 echo -e "${COLOR_BLUE}Welcome to BASH, version ${COLOR_LIGHT_BLUE}${BASH_VERSION%.*}${COLOR_NC}"
 function_exit() { # Function to run when exiting shell
-	echo -e "${RED}exiting...${NC}"
+	echo -e "${COLOR_RED}exiting...${NC}"
 }
 trap _exit EXIT
 
@@ -162,47 +162,30 @@ trap _exit EXIT
 # Shell Prompt
 #==============================================================================
 
-if [[ "${DISPLAY%%:0*}" != "" ]]; then
-	HILIT=${red} # remote machine
+if [ "$SSH_CONNECTION" ]; then
+	UC=$COLOR_CYAN
+elif [ $UID -eq "0" ]; then
+	UC=$COLOR_RED
 else
-	HILIT=${cyan} # local machine
+	UC=$COLOR_BLUE
 fi
 
 # Replace \W with \w in promts for full paths
+# Important lesson here:
+# For variables to change after bash is instantiated, you need to escape the
+# "$" character, otherwise it is expanded on instantiation of the bash instance.
 function fastprompt() {
     case $TERM in
         *term | rxvt )
-             PS1='\e[33;1m\u@\h: \xe[31m\W\e[0m\$ '  ;;
-             #PS1="${red}[\u@\h]${blue} \W > \[\033]0;\${TERM} [\u@\h] \w\007" ;;
+	     PS1="$TITLEBAR\n${UC}\u@\h ${COLOR_LIGHT_GREEN}\${PWD} ${COLOR_CYAN}\$(__git_ps1)${COLOR_NC}\n-> " ;;
          linux )
-             PS1="${HILIT}[\h]$NC \W > " ;;
+             PS1="${UC}[\h]$NC \W > " ;;
         *)
             PS1="[\h] \W > " ;;
     esac
 }
 
-function testprompt() {
-case $TERM in
-     xterm*|rxvt*)
-         local TITLEBAR='\[\033]0;\u: ${PWD}\007\]'
-          ;;
-     *)
-         local TITLEBAR=""
-          ;;
-    esac
-
-local UC=$COLOR_BLUE                # user's color
-[ $UID -eq "0" ] && UC=$COLOR_RED   # root's color
-
-# Important lesson here:
-# For variables to change after bash is instantiated, you need to escape the
-# "$" character, otherwise it is expanded on instantiation of the bash instance.
-PS1="$TITLEBAR\n${UC}\u@\h ${COLOR_LIGHT_GREEN}\${PWD} ${COLOR_CYAN}\$(__git_ps1)${COLOR_NC}\n-> "
-
-}
-
-#fastprompt
-testprompt
+fastprompt
 
 #==============================================================================
 # Process/system related functions:

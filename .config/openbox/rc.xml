@@ -32,7 +32,7 @@
     <primaryMonitor/>
   </placement>
   <theme>
-    <name>Bamboo</name>
+    <name>Clearlooks-Zenburn</name>
     <titleLayout>DSLIMC</titleLayout>
     <!--
       avaible characters are NDSLIMC, each can occur at most once.
@@ -302,7 +302,7 @@
       <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
-        <width>840</width>
+        <width>683</width>
       </action>
       <action name="MoveToEdgeWest"/>
     </keybind>
@@ -310,7 +310,7 @@
       <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
-        <width>840</width>
+        <width>683</width>
       </action>
       <action name="MoveToEdgeEast"/>
     </keybind>
