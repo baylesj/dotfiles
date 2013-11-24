@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <channel name="xfce4-mixer" version="1.0">
-  <property name="sound-card" type="string" value="PlaybackCMI8786XonarDGAnalogStereoPulseAudioMixer"/>
+  <property name="sound-card" type="string" value="HDAIntelMIDAlsamixer"/>
   <property name="sound-cards" type="empty">
     <property name="HDAIntelAlsamixer" type="array">
       <value type="string" value="Master"/>
@@ -30,6 +30,12 @@
       <value type="string" value="Master"/>
     </property>
     <property name="PlaybackCMI8786XonarDGAnalogStereoPulseAudioMixer" type="array">
+      <value type="string" value="Master"/>
+    </property>
+    <property name="PlaybackBuiltinAudioDigitalStereoHDMIPulseAudioMixer" type="array">
+      <value type="string" value="Master"/>
+    </property>
+    <property name="CaptureMonitorofBuiltinAudioDigitalStereoHDMIPulseAudioMixer" type="array">
       <value type="string" value="Master"/>
     </property>
   </property>

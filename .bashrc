@@ -2,7 +2,6 @@
 # Personal ~/.bashrc FILE
 # By Jordan Bayles (jangofett481@gmail.com)
 #
-# Last modified: Mon May 14 14:08:16 PDT 2012
 # This file contains aliases, functions, and other features for bash
 #==============================================================================
 
@@ -77,6 +76,7 @@ alias upgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # Oregon State related aliases
 alias flip='ssh baylesj@flip.engr.oregonstate.edu'
+alias onid='ssh baylesj@shell.onid.oregonstate.edu'
 alias gcc='gcc -lm -Wall -Werror -std=gnu99 -g'
 alias gcc99='gcc -lm -Wall -Werror -std=c99 -g'
 alias g++='g++ -ansi -pedantic -Wall'
@@ -95,6 +95,8 @@ alias minecraft='optirun java -jar -Xmx1024M -Xms512M /home/jordan/bin/minecraft
 alias cctags='ctags -R --languages=C,C++ --c++-kinds=+p --fields=+iaS --extra=+q ./'
 alias indentkr='indent -kr -i8'
 alias indentkernel='indent -kr -i8 -ts8 -sob -l80 -ss -bs -psl'
+
+alias packer='packer-color'
 
 # Things i'll forget otherwise...
 alias wgetall='wget --mirror -p --convert-links -P' # ./LOCAL_DIR WEBSITE-URL
@@ -297,3 +299,5 @@ function swap()         # swap 2 filenames around
 # mode:shell-script
 # sh-shell:bash
 # End:
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
