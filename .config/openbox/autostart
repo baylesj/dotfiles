@@ -3,9 +3,8 @@
 # Enable Ctrl+Alt+Backspace restart X server
 setxkbmap -option terminate:ctrl_alt_bksp
 
-# Authentication agent
-#/usr/lib/lxpolkit/lxpolkit &
-#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# GTK3 theme support
+/usr/lib/gnome-settings-daemon/gnome-settings-daemon &
 
 # Panel
 tint2 &
@@ -19,14 +18,8 @@ urxvtd &
 # Wallpaper
 nitrogen --restore &
 
-#gnome-keyring-daemon --daemonize --login &
-#nm-applet &
-
 # Compositing Manager
-#/usr/bin/cairo-compmgr &
 compton &
-
-#wicd-client --tray &
 
 # Battery monitor
 #xfce4-power-manager &
@@ -54,3 +47,5 @@ pidgin &
 
 # Network client
 wicd-gtk &
+
+

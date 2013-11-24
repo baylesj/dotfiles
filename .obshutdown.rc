@@ -11,7 +11,7 @@ theme =          foom-tiny
 buttons =        cancel logout lock shutdown restart suspend #hibernate
 
 [actions]
-logout =         openbox --exit
+#logout =         echo 'awesome.restart()' | awesome-client
 shutdown =       sudo systemctl poweroff
 restart =        sudo systemctl reboot
 lock =           slimlock
@@ -19,7 +19,7 @@ lock =           slimlock
 suspend =        sudo systemctl suspend
 
 [shortcuts]
-logout =         x
+#logout =         x
 shutdown =       s
 restart =        r
 lock =           l
