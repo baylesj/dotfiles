@@ -24,10 +24,10 @@ TERM="rxvt"
 
 PATH=$PATH:$HOME/bin
 PATH=$PATH:/usr/local/bin
-PATH=$PATH:/usr/local/texlive/2011/bin/x86_64-linux
-PATH=$PATH:~/android-sdk-linux/platform-tools
-PATH=$PATH:$HOME/.rvm/bin
+PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
+PLAY2_HOME=/Users/jbayles/expedia/mbap/BidManager
+SBT_EXECUTABLE_NAME=activator
 #==============================================================================
 # Aliases
 #==============================================================================
@@ -66,41 +66,14 @@ alias lm="ls -al |more"    # pipe through "more"
 alias lr="ls -lR"          # recursive ls
 alias tree="tree -Csu"     # nice alternative to "recursive ls"
 
-# Compile alias
-alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias exp="cd ~/expedia"
+alias mbap="exp && cd mbap"
 
-# Oregon State related aliases
-alias flip="ssh baylesj@flip.engr.oregonstate.edu"
-alias onid="ssh baylesj@shell.onid.oregonstate.edu"
-alias gcc="gcc -lm -Wall -Werror -std=gnu99 -g"
-alias gcc99="gcc -lm -Wall -Werror -std=c99 -g"
-alias g++="g++ -ansi -pedantic -Wall"
-alias valgrindv="valgrind --leak-check=full --track-origins=yes --show-reachable=yes -v"
-alias db="cd /home/jordan/Dropbox"
-alias sw="cd /home/jordan/Dropbox/schoolwork/"
-alias cs="cd /home/jordan/Dropbox/schoolwork/classes"
+alias src="source ~/.zshrc"
+alias edit="vim ~/.zshrc"
 
-# Course specific aliases
-alias kelleymac="sudo macchanger -e eth0 --mac=24:BE:05:0E:57:EF"
-alias osc="ssh baylesj@os-class.engr.oregonstate.edu"
-alias avr-gcc="avr-gcc -mmcu=atmega128"
-
-# General aliases
-alias minecraft="optirun java -jar -Xmx1024M -Xms512M /home/jordan/bin/minecraft.jar"
-alias cctags="ctags -R --languages=C,C++ --c++-kinds=+p --fields=+iaS --extra=+q ./"
-alias indentkr="indent -kr -i8"
-alias indentkernel="indent -kr -i8 -ts8 -sob -l80 -ss -bs -psl"
-
-#==============================================================================
-# OPTIONAL CONFIGURATION SETTINGS
-#==============================================================================
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+alias git-brd="git branch -r --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git push --delete origin"
+alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v master | xargs -n 1 git branch -d"
 
 #==============================================================================
 # PLUGINS
