@@ -64,6 +64,8 @@
 	#############
 	l = log --oneline
 	lg = log --oneline --graph --decorate
+	lgm = log --oneline --merges
+
 	#############
 	ls = ls-files
 	lsf = "!git ls-files | grep -i"
