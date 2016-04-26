@@ -22,12 +22,13 @@ ZSH_THEME="crcandy"
 EDITOR="vim"
 TERM="rxvt"
 
-PATH=$PATH:$HOME/bin
-PATH=$PATH:/usr/local/bin
+PATH=/bin:/sbin:/usr/bin:/usr/local/bin:user/local/sbin:$PATH
 PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+PATH=/usr/local/texlive/2015/bin/x86_64-darwin:$PATH
 
 PLAY2_HOME=/Users/jbayles/expedia/mbap/BidManager
 SBT_EXECUTABLE_NAME=activator
+
 #==============================================================================
 # Aliases
 #==============================================================================
@@ -68,12 +69,14 @@ alias tree="tree -Csu"     # nice alternative to "recursive ls"
 
 alias exp="cd ~/expedia"
 alias mbap="exp && cd mbap"
+alias mollie="exp && cd molecule"
 
 alias src="source ~/.zshrc"
 alias edit="vim ~/.zshrc"
 
 alias git-brd="git branch -r --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git push --delete origin"
 alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v master | xargs -n 1 git branch -d"
+alias git-sync="git co master && git pull && git remote prune origin && git-brd && git-bdm"
 
 #==============================================================================
 # PLUGINS
@@ -89,3 +92,5 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
