@@ -1,4 +1,6 @@
-google-chrome/
-chromium/
-google-googletalkplugin/
-banshee*/
+.vscode
+.idea
+bin
+CMakeLists.txt
+build/
+*.pyc

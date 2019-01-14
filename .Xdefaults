@@ -5,13 +5,13 @@ URxvt.foreground: #d0d0d0
 URxvt.background: rgba:1c00/1c00/1c00/ddee
 URxvt.scrollBar: off
 !URxvt.font: -*-terminus-medium-*-normal-*-*-*-100-100-*-*-*-*
-URxvt.font: xft:DroidSansMonoSlashed:size=9
+URxvt.font: xft:DroidSansMonoSlashed:size=10
 URxvt.letterSpace: -1
 
 ! OS Integration
 URxvt.iconFile:        /usr/share/icons/Tango/scalable/apps/terminal.svg
 URxvt.perl-ext-common: default, matcher, tabbed
-URxvt.urlLauncher:     /usr/bin/chromium
+URxvt.urlLauncher:     /usr/bin/google-chrome
 URxvt.matcher.button:  1
 URxvt.keysym.F11:      perl:fullscreen:switch
 
