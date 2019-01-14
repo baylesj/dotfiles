@@ -2,7 +2,7 @@
 # Personal ~/.zshrc FILE
 # By Jordan Bayles (bayles.jordan@gmail.com)
 #
-# This file contains aliases, functions, and other features for zsh 
+# This file contains aliases, functions, and other features for zsh
 #==============================================================================
 
 #==============================================================================
@@ -23,12 +23,14 @@ EDITOR="vim"
 TERM="rxvt"
 
 PATH=/bin:/sbin:/usr/bin:/usr/local/bin:user/local/sbin:$PATH
-PATH=/usr/local/texlive/2015/bin/x86_64-darwin:$PATH
-PATH=/opt/local/bin:$PATH
-PATH=~/.rvm/bin:$PATH
+PATH=/user/local/google/home/jophba/bin:$PATH
+PATH=/usr/local/src/depot_tools:$PATH
+PATH=/usr/local/src/openscreen:$PATH
+PATH=/usr/lib/llvm-7/bin/:$PATH
 
-P4CONFIG=/Users/jbayles/expedia/p4.ini
-BUNDLE_GEMFILE=~/expedia/expweb/trunk/ui/smoketest/cucumber/Gemfile
+CHROME_BUILDTOOLS_PATH=/usr/local/src/depot_tools
+
+DEFAULT_SIZES="1200x800,1800x1200,2400x1600,1440x900,2160x1350,2880x1800"
 
 #==============================================================================
 # Aliases
@@ -36,9 +38,16 @@ BUNDLE_GEMFILE=~/expedia/expweb/trunk/ui/smoketest/cucumber/Gemfile
 alias sai="sudo aptitude install"
 alias sau="sudo aptitude update"
 alias sadu="sudo aptitude dist-upgrade"
-alias as="aptitude search"
+alias sas="aptitude search"
 
-alias svn="python2 /home/jordan/bin/svn-color/svn-color.py"
+# Openscreen aliases
+alias os="cd /usr/local/src/openscreen"
+alias gngen="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
+alias gngens="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
+alias ncd="autoninja -C out/Default"
+alias ut="./out/Default/unittests"
+alias ntc="ninja -t compdb cc cxx objc objcxx > compile_commands.json"
+
 alias vi="vim"
 alias rm="rm -i"
 alias cp="cp -i"
@@ -75,18 +84,6 @@ alias lt="ls -ltr"         # sort by date, most recent last
 alias lm="ls -al |more"    # pipe through "more"
 alias lr="ls -lR"          # recursive ls
 alias tree="tree -Csu"     # nice alternative to "recursive ls"
-
-alias gcb="sudo rm -rf build; ./gradlew clean build"
-alias gcbf="sudo rm -rf build; ./gradlew -x :minification:minifyResources clean -xCheck build"
-alias gds="./gradlew -x test -Pdebug startExpwebNoSpawn"
-alias gdss="./gradlew -Pdebug -Pstub startExpwebNoSpawn"
-alias gss="./gradlew -Pstub startExpwebNoSpawn"
-
-alias p4="p4 set P4CONFIG=/Users/jbayles/expedia/p4.in && p4 -p perforce:1994"
-
-alias exp="cd ~/expedia"
-alias ew="exp && cd expweb"
-alias trunk="ew && cd trunk"
 
 alias src="source ~/.zshrc"
 alias edit="vim ~/.zshrc"

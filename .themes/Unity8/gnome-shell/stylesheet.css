@@ -1,0 +1,88 @@
+.bottom-panel {
+  /* .window-button-icon height +
+     .window-button vertical padding +
+     .window-button > StWidget vertical padding) */
+  height: 2.25em;
+}
+
+.window-list {
+  spacing: 2px;
+}
+
+.window-button {
+  padding: 1px;
+}
+
+.window-button:first-child:ltr {
+  padding-left: 2px;
+}
+
+.window-button:last-child:rtl {
+  padding-right: 2px;
+}
+
+.window-button-box {
+  spacing: 4px;
+}
+
+.window-button > StWidget {
+  -st-natural-width: 18.75em;
+  max-width: 18.75em;
+     	color: #969696;
+   	background-color: rgba(20,20,20,0.01);
+        border-radius: 0px;
+	transition-duration: 0;
+  padding: 3px 6px 1px;
+}
+
+.window-button:hover > StWidget {
+ background-color: rgba(20,20,20,0.02);
+        border-radius: 0px;
+	color: #fff;
+}
+
+.window-button:active > StWidget,
+.window-button:focus > StWidget {
+    	background-color: rgba(25,25,25,0.01);
+        border-radius: 0px;
+	color: #fff;
+	box-shadow: inset 0px -2px 0px 0px rgba(233,84,32,1);
+	transition-duration: 250;  
+}
+
+.window-button.focused > StWidget {
+  color: white;
+  box-shadow: inset 0px -2px 0px 0px rgba(233,84,32,1);
+}
+
+.window-button.focused:active > StWidget {
+  box-shadow: inset 0px -2px 0px 0px rgba(233,84,32,1);
+}
+
+.window-button.minimized > StWidget {
+
+}
+
+.window-button.minimized:active > StWidget {
+   color: white;
+  box-shadow: inset 0px -2px 0px 0px rgba(233,84,32,1);
+
+}
+
+.window-button-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.window-list-workspace-indicator {
+  padding: 3px;
+}
+
+.window-list-workspace-indicator > StWidget {
+  background-color: rgba(200, 200, 200, .3);
+  border: 1px solid #cccccc;
+}
+
+.notification {
+  font-weight: normal;
+}

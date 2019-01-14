@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/jordan/bin'
 let g:netrw_dirhist_2='/home/jordan/Dropbox/schoolwork/classes/graphics-cs450/1/include'
 let g:netrw_dirhist_3='/home/jordan/cs311/2/turn_in'
 let g:netrw_dirhist_4='/Users/jbayles/.m2/repository'
 let g:netrw_dirhist_5='/usr/local/Cellar/openvpn/2.3.10/share/doc/openvpn'
 let g:netrw_dirhist_6='/Users/jbayles/dotfiles'
+let g:netrw_dirhist_7='/usr/local/src/openscreen/build/toolchain/linux'

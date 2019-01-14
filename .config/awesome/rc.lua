@@ -38,7 +38,8 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
+beautiful.font = "Droid Sans Mono Slashed 10"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvtc"
@@ -260,16 +261,9 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
-    -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey            }, "c", function() awful.util.spawn_with_shell("code") end),
+    awful.key({ modkey            }, "r", function() awful.util.spawn_with_shell("rofi -show run") end),
 
-    awful.key({ modkey }, "x",
-              function ()
-                  awful.prompt.run({ prompt = "Run Lua code: " },
-                  mypromptbox[mouse.screen].widget,
-                  awful.util.eval, nil,
-                  awful.util.getdir("cache") .. "/history_eval")
-              end),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end)
 )
@@ -354,6 +348,7 @@ awful.rules.rules = {
                      keys = clientkeys,
                      maximized_vertical   = false,
                      maximized_horizontal = false,
+		     maximized = false,
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
@@ -461,12 +456,10 @@ awful.util.spawn_with_shell("compton")
 awful.util.spawn_with_shell("dropboxd &")
 awful.util.spawn_with_shell("pnmixer &")
 awful.util.spawn_with_shell("unclutter &")
-awful.util.spawn_with_shell("/home/jordan/bin/conkyinit")
-awful.util.spawn_with_shell("xflux -z 97321 &")
+awful.util.spawn_with_shell("xflux -z 98105 &")
 awful.util.spawn_with_shell("mpd &")
-awful.util.spawn_with_shell("pidgin &")
-awful.util.spawn_with_shell("wicd-gtk &")
 awful.util.spawn_with_shell("xbindkeys &")
+awful.util.spawn_with_shell("nvidia-settings --assign CurrentMetaMode=\"nvidia-auto-select +0+0 { ForceCompositionPipeline = On }\"")
 
 function get_conky()
 local clients = client.get()
