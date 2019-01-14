@@ -1,6 +1,6 @@
 #==============================================================================
 # Personal ~/.zshrc FILE
-# By Jordan Bayles (jangofett481@gmail.com)
+# By Jordan Bayles (bayles.jordan@gmail.com)
 #
 # This file contains aliases, functions, and other features for zsh 
 #==============================================================================
@@ -23,7 +23,6 @@ EDITOR="vim"
 TERM="rxvt"
 
 PATH=/bin:/sbin:/usr/bin:/usr/local/bin:user/local/sbin:$PATH
-PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 PATH=/usr/local/texlive/2015/bin/x86_64-darwin:$PATH
 PATH=/opt/local/bin:$PATH
 PATH=~/.rvm/bin:$PATH
@@ -34,12 +33,13 @@ BUNDLE_GEMFILE=~/expedia/expweb/trunk/ui/smoketest/cucumber/Gemfile
 #==============================================================================
 # Aliases
 #==============================================================================
-alias python="python3"
+
 alias svn="python2 /home/jordan/bin/svn-color/svn-color.py"
 alias vi="vim"
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
+
 # -> Prevents accidentally clobbering files.
 alias mkdir="mkdir -p"
 alias encoding="file -bi"
@@ -47,6 +47,9 @@ alias encoding="file -bi"
 alias h="history"
 alias j="jobs -l"
 alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
 alias path="echo -e ${PATH//:/\\n}"
 alias libpath="echo -e ${LD_LIBRARY_PATH//:/\\n}"
 
@@ -100,11 +103,4 @@ plugins=(git systemd github gnu-utils battery archlinux colorize)
 # Sources
 #==============================================================================
 source $ZSH/oh-my-zsh.sh
-source /Users/jbayles/.rvm/scripts/rvm
 
-# Customize to your needs...
-
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
