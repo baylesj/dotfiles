@@ -33,6 +33,10 @@ BUNDLE_GEMFILE=~/expedia/expweb/trunk/ui/smoketest/cucumber/Gemfile
 #==============================================================================
 # Aliases
 #==============================================================================
+alias sai="sudo aptitude install"
+alias sau="sudo aptitude update"
+alias sadu="sudo aptitude dist-upgrade"
+alias as="aptitude search"
 
 alias svn="python2 /home/jordan/bin/svn-color/svn-color.py"
 alias vi="vim"
