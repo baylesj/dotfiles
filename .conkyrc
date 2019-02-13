@@ -1,0 +1,112 @@
+##############################################
+# Settings
+##############################################
+
+background yes
+use_xft yes
+xftfont Droid Sans:size=9
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+
+default_shade_color black
+lua_load /home/jordan/bin/draw_bg.lua
+lua_draw_hook_pre draw_bg
+
+own_window yes
+own_window_transparent yes
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+double_buffer yes
+minimum_size 400 100
+maximum_width 200
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+
+#default_color 656667
+default_color 999999
+default_shade_color 444444
+default_outline_color 828282
+#alignment top_right
+alignment top_left
+gap_x 5
+#gap_y 34
+gap_y 100
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+
+##############################################
+#  Output
+##############################################
+TEXT
+
+${font sans-serif:bold:size=9}SYSTEM${hr 1}
+${font sans-serif:normal:size=9}Kernel:  ${alignr}${kernel}
+Hostname:$alignr$nodename
+Uptime:$alignr$uptime
+#Battery level: (${color}${battery_percent BAT0}${color}) ${alignr}${color 003399}${battery_bar 8,85 BAT0}${color}
+
+${font sans-serif:bold:size=9}PROCESSORS${hr 1}
+CPU1: ${cpu cpu1}% ${color 119933}${cpubar cpu}${color}
+${font sans-serif:normal:size=9}${cpugraph cpu1 ffcc00 ff0000}
+CPU2: ${cpu cpu2}% ${color 119933}${cpubar cpu}${color}
+${font sans-serif:normal:size=9}${cpugraph cpu2 ffcc00 ff0000}
+CPU3: ${cpu cpu3}% ${color 119933}${cpubar cpu}${color}
+${font sans-serif:normal:size=9}${cpugraph cpu3 ffcc00 ff0000}
+CPU4: ${cpu cpu4}% ${color 119933}${cpubar cpu}${color}
+${font sans-serif:normal:size=9}${cpugraph cpu4 ffcc00 ff0000}
+
+# MEMORY
+${font sans-serif:bold:size=9}MEMORY${hr 1}
+${font sans-serif:normal:size=9}RAM $alignc $mem / $memmax $alignr $memperc%
+${color 119933}$membar${color}
+# DISKS
+#${font sans-serif:bold:size=9}DISKS ${hr 1}
+${font sans-serif:normal:size=9}/ $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
+${color 119933}${fs_bar /}${color}
+#${font sans-serif:normal:size=9}/home $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home}%
+#${color 119933}${fs_bar /home}${color}
+#SWAP $alignc ${swap} / ${swapmax} $alignr ${swapperc}%
+#${color 119933}${swapbar}${color}
+
+# TOP PROCESSES (by current CPU usage)
+${font sans-serif:bold:size=9}TOP PROCESSES${hr 1}
+${font sans-serif:normal:size=9}${top_time name 1}${alignr}${top_time time 1}
+$font${top_time name 2}${alignr}${top_time time 2}
+$font${top_time name 3}${alignr}${top_time time 3}
+$font${top_time name 4}${alignr}${top_time time 4}
+
+# NETWORKING
+${font sans-serif:bold:size=9}NETWORK${hr 1}
+${font sans-serif:normal:size=9}IP address: $alignr ${addr wlan0}
+ESSID: $alignr ${wireless_essid wlan0}
+onnection quality: $alignr ${wireless_link_qual_perc wlan0}%
+${downspeedgraph wlan0 ffcc00 ff0000}
+DLS:${downspeed wlan0} $alignr total: ${totaldown wlan0}
+ULS:${upspeed wlan0} kb/s $alignr total: ${totalup wlan0}
+
+# SHORTCUTS
+${font sans-serif:bold:size=9}SHORTCUTS${hr 1}
+${font sans-serif:normal:size=9}Alt+F2$alignr Run Dialog
+Alt+F3$alignr Alt Menu
+Alt+F5$alignr Xrandr settings
+Super+Space$alignr Main Menu
+Super+Tab$alignr Client Menu
+Super+t$alignr Terminal
+Super+f$alignr File Manager
+Super+e$alignr Editor
+Super+m$alignr Media Player
+Super+w$alignr Web Browser
+Super+l$alignr Lock Screen
+Super+v$alignr Volume Control
+Super+x$alignr Logout
+Super+Left$alignr Snap Left
+Super+Right$alignr Snap Right
+Super+Up$alignr Maximize
+

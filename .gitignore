@@ -1,0 +1,14 @@
+.config/
+.icons/
+.idea/
+.themes/
+.vim/cache/
+.vscode/
+build/
+bin/
+
+*.pyc
+
+.zsh-update
+.zsh_history
+CMakeLists.txt
