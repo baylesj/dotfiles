@@ -1,8 +1,12 @@
-.vscode
-.idea
-bin
-CMakeLists.txt
+.icons/
+.idea/
+.vim/cache/
+.vscode/
 build/
+bin/
+
 *.pyc
-.vim/cache
+
+.zsh-update
 .zsh_history
+CMakeLists.txt
