@@ -77,7 +77,7 @@ alias grep="grep --color=auto"
 
 # ls family
 alias ll="ls -l --group-directories-first"
-alias ls="ls -hF --color"  # add colors for filetype recognition
+alias ls="ls -hF"
 alias la="ls -Al"          # show hidden files
 alias lx="ls -lXB"         # sort by extension
 alias lk="ls -lSr"         # sort by size, biggest last
