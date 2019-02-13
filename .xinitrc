@@ -27,12 +27,10 @@ setxkbmap -option terminate:ctrl_alt_bksp
 urxvtd &
 
 # Start apache daemon
-sudo apachectl -k start
+DEFAULT_SESSION=awesome
 
-# Start murmur
-sudo murmurd &
-
-DEFAULT_SESSION=openbox-session
+# Start xscreensaver
+xscreensaver -no-splash &
 
 case $1 in
 xfce4)
