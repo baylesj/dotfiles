@@ -40,6 +40,9 @@ alias sau="sudo aptitude update"
 alias sadu="sudo aptitude dist-upgrade"
 alias sas="aptitude search"
 
+# Helpful coding aliases
+alias gs='grep -rnw . -e'
+
 # Openscreen aliases
 alias os="cd /usr/local/src/openscreen"
 alias gngen="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"

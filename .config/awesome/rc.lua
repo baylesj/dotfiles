@@ -10,6 +10,8 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+-- Application menu
+local freedesktop = require("freedesktop")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -40,6 +42,8 @@ end
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 beautiful.font = "Droid Sans Mono Slashed 10"
+beautiful.wallpaper = awful.util.get_configuration_dir() .. "wallpapers/wallhaven-635006.jpg"
+
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvtc"
@@ -97,10 +101,16 @@ myawesomemenu = {
    { "quit", awesome.quit }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
-                        })
+mymainmenu = freedesktop.menu.build({
+    before = {
+        { "Awesome", myawesomemenu, beautiful.awesome_icon },
+        -- other triads can be put here
+    },
+    after = {
+        { "Open terminal", terminal },
+        -- other triads can be put here
+    }
+})
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
@@ -250,7 +260,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
-    awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
@@ -261,8 +270,10 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
+    awful.key({ modkey, "Control" }, "l", function() awful.util.spawn_with_shell("xscreensaver-command -lock") end),
     awful.key({ modkey            }, "c", function() awful.util.spawn_with_shell("code") end),
     awful.key({ modkey            }, "r", function() awful.util.spawn_with_shell("rofi -show run") end),
+    awful.key({ modkey            }, "w", function() awful.util.spawn_with_shell("google-chrome") end),
 
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end)
@@ -460,6 +471,7 @@ awful.util.spawn_with_shell("xflux -z 98105 &")
 awful.util.spawn_with_shell("mpd &")
 awful.util.spawn_with_shell("xbindkeys &")
 awful.util.spawn_with_shell("nvidia-settings --assign CurrentMetaMode=\"nvidia-auto-select +0+0 { ForceCompositionPipeline = On }\"")
+awful.util.spawn_with_shell("xscreensaver -no-splash &")
 
 function get_conky()
 local clients = client.get()
