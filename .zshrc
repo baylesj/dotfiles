@@ -95,7 +95,6 @@ alias git-brd="git branch -r --merged | grep -v master | sed 's/origin\///' | xa
 alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v master | xargs -n 1 git branch -d"
 alias git-sync="git co master && git pull && git remote prune origin && git-brd && git-bdm"
 
-
 #==============================================================================
 # PLUGINS
 #==============================================================================
@@ -107,4 +106,9 @@ plugins=(git systemd github gnu-utils battery archlinux colorize)
 # Sources
 #==============================================================================
 source $ZSH/oh-my-zsh.sh
+
+#==============================================================================
+# Commands to run
+#==============================================================================
+eval $(keychain --eval id_rsa)
 

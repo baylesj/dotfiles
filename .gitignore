@@ -5,3 +5,4 @@ CMakeLists.txt
 build/
 *.pyc
 .vim/cache
+.zsh_history
