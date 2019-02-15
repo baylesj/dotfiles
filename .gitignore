@@ -12,3 +12,4 @@ bin/
 .zsh-update
 .zsh_history
 CMakeLists.txt
+*-notes.txt

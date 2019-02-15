@@ -22,7 +22,10 @@ ZSH_THEME="crcandy"
 EDITOR="vim"
 TERM="rxvt"
 
-PATH=/bin:/sbin:/usr/bin:/usr/local/bin:user/local/sbin:$PATH
+# Make sure that /usr/local/bin is before /usr/bin on Mac OS X, otherwise
+# homebrew versions won't supercede older OS versions.
+PATH=/usr/local/bin:user/local/sbin:/usr/bin:/bin:/sbin:$PATH
+
 PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin":$PATH
 
 PATH=/user/local/google/home/jophba/bin:$PATH
@@ -31,6 +34,7 @@ PATH=/usr/local/src/openscreen:$PATH
 PATH=/usr/lib/llvm-7/bin/:$PATH
 
 CHROME_BUILDTOOLS_PATH=/usr/local/src/depot_tools
+DYLD_INSERT_LIBRARIES=/usr/local/src/openscreen/third_party/llvm-build/Release+Asserts/lib/clang/9.0.0/lib/darwin/libclang_rt.asan_osx_dynamic.dylib
 
 DEFAULT_SIZES="1200x800,1800x1200,2400x1600,1440x900,2160x1350,2880x1800"
 
@@ -47,7 +51,10 @@ alias gs='grep -rnw . -e'
 
 # Openscreen aliases
 alias os="cd /usr/local/src/openscreen"
-alias gngen="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
+alias gngen="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_debug=true\" out/Default"
+
+# Only work easily on Linux...
+alias gngena="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
 alias gngens="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
 alias ncd="autoninja -C out/Default"
 alias ut="./out/Default/unittests"

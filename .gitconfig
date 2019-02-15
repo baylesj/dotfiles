@@ -3,10 +3,11 @@
 	email = jophba@chromium.org
 
 [http]
-	cookiefile = /usr/local/google/home/jophba/.gitcookies
+	cookiefile = /Users/jophba/.gitcookies
+	#cookiefile = /usr/local/google/home/jophba/.gitcookies
 
 [core]
-	editor = code --wait
+	editor = vim
 	whitespace = fix, -indent-with-non-tab, trailing-space, cr-at-eol
 	excludesfile = ~/.gitignore
 
@@ -29,7 +30,7 @@
 ################################################################################
 # Some handy aliases for working with Gerrit:
 	up = push origin HEAD:refs/for/master
-	cma = commit --amend --no-edit
+	can = commit --amend --no-edit
 
 ################################################################################
 
