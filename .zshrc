@@ -49,16 +49,22 @@ alias sas="aptitude search"
 # Helpful coding aliases
 alias gs='grep -rnw . -e'
 
+# Google aliases
+alias jpb="gcert && ssh -v -X jophba@jpb.kir.corp.google.com"
+
 # Openscreen aliases
 alias os="cd /usr/local/src/openscreen"
+alias os2="cd /usr/local/src/openscreen2"
 alias gngen="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_debug=true\" out/Default"
 
 # Only work easily on Linux...
 alias gngena="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
 alias gngens="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
-alias ncd="autoninja -C out/Default"
-alias ut="./out/Default/unittests"
-alias ntc="ninja -t compdb cc cxx objc objcxx > compile_commands.json"
+
+
+alias ncd="os && autoninja -C out/Default"
+alias ut="os && ./out/Default/unittests"
+alias ntc="os && ninja C out/Default -t compdb cc cxx objc objcxx > compile_commands.json"
 
 alias vi="vim"
 alias rm="rm -i"
