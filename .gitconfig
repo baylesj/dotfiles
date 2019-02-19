@@ -6,7 +6,7 @@
 	cookiefile = /usr/local/google/home/jophba/.gitcookies
 
 [core]
-	editor = code --wait
+	editor = vim
 	whitespace = fix, -indent-with-non-tab, trailing-space, cr-at-eol
 	excludesfile = ~/.gitignore
 
