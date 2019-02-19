@@ -53,6 +53,7 @@ alias ncd="autoninja -C out/Default"
 alias ut="./out/Default/unittests"
 alias ntc="ninja -t compdb cc cxx objc objcxx > compile_commands.json"
 
+alias lock="xscreensaver-command -lock"
 alias vi="vim"
 alias rm="rm -i"
 alias cp="cp -i"

@@ -1,12 +1,39 @@
+
+!!!!!!!!!!!
+! General !
+!!!!!!!!!!!
+
+! Fonts
+! *.dpi: 192 ! Disabled, respecting Xserver dpi config
+
+! Cursor
+Xcursor.theme: Adwaita
+Xcursor.size: 28
+
+!!!!!!!!!
+! XTerm !
+!!!!!!!!!
+
+xterm*faceName: Droid Sans Mono Slashed
+xterm*faceSize: 10
+
+!!!!!!!!!
+! URxvt !
+!!!!!!!!!
+
+! Fonts
+URxvt.font: xft:Droid Sans Mono Slashed:size=10,style=medium
+URxvt.boldFont: xft:Droid Sans Mono Slashed:size=10,style=bold
+URxvt.italicFont: xft:Droid Sans Mono Slashed:size=10,style=bold
+URxvt.boldItalicFont: xft:Droid Sans Mono Slashed:size=10,style=bold
+URxvt.letterSpace: -1
+
+
 URxvt.depth: 32
 URxvt.transparent: false
 URxvt.shading: 15
 URxvt.foreground: #d0d0d0
-URxvt.background: rgba:1c00/1c00/1c00/ddee
-URxvt.scrollBar: off
-!URxvt.font: -*-terminus-medium-*-normal-*-*-*-100-100-*-*-*-*
-URxvt.font: xft:DroidSansMonoSlashed:size=10
-URxvt.letterSpace: -1
+URxvt.background: #202020
 
 ! OS Integration
 URxvt.iconFile:        /usr/share/icons/Tango/scalable/apps/terminal.svg
@@ -15,7 +42,18 @@ URxvt.urlLauncher:     /usr/bin/google-chrome
 URxvt.matcher.button:  1
 URxvt.keysym.F11:      perl:fullscreen:switch
 
+! UI
+URxvt*borderless: true
+URxvt.internalBorder: 10
+URxvt*scrollBar: false
+URxvt*saveLines: 20000
+URxvt*dynamicColors: true
+URxvt*termName: rxvt-unicode
+URxvt*fading: 10
+
 ! Colors
+URxvt.depth: 32
+URxvt.intensityStyles: false
 !black.normal     : xoria256.LineNr.guibg
 !black.bright     : black.normal.rgb - 8
 URxvt.color0      : #121212
@@ -67,3 +105,28 @@ URxvt.cursorColor : #eeeeee
 !underline        : xoria256.htmlValue.guifg
 URxvt.colorBD     : #afafdf
 URxvt.colorUL     : #dfdfaf
+
+! Extensions
+URxvt.perl-ext: default,url-select,clipboard
+URxvt.perl-ext-common: default,matcher
+
+URxvt.keysym.Control-Alt-C: perl:clipboard:copy
+URxvt.keysym.Control-Alt-V: perl:clipboard:paste
+
+URxvt.url-launcher: /usr/bin/google-chrome
+URxvt.matcher.button: 1
+
+!!!!!!!!
+! Rofi !
+!!!!!!!!
+
+rofi.font: Droid Sans Mono Slashed Medium 12
+rofi.lines: 3
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.opacity: 96
+rofi.bw: 6
+rofi.padding: 10
+
+rofi.fuzzy: true
+rofi.sidebar-mode: false
