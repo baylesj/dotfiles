@@ -31,7 +31,7 @@ URxvt.letterSpace: -1
 
 URxvt.depth: 32
 URxvt.foreground: #d0d0d0
-URxvt.background: rgba:0000/0000/0200/0800
+URxvt.background: rgba:0000/0000/0200/0900
 
 ! OS Integration
 URxvt.iconFile:        /usr/share/icons/Tango/scalable/apps/terminal.svg

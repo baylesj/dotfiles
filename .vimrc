@@ -53,42 +53,6 @@ else
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Omnicompletion
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if v:version >= 700
-  set omnifunc=syntaxcomplete#Complete " override built-in C omnicomplete with C++ OmniCppComplete plugin
-  let OmniCpp_GlobalScopeSearch   = 1
-  let OmniCpp_DisplayMode         = 1
-  let OmniCpp_ShowScopeInAbbr     = 0 "do not show namespace in pop-up
-  let OmniCpp_ShowPrototypeInAbbr = 1 "show prototype in pop-up
-  let OmniCpp_ShowAccess          = 1 "show access in pop-up
-  let OmniCpp_SelectFirstItem     = 1 "select first item in pop-up
-  set completeopt=menuone,menu,longest
-endif
-
-"Super tab completion instead of C-X C-O
-if version >= 700
-  let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-  highlight   clear
-  highlight   Pmenu         ctermfg=0 ctermbg=2
-  highlight   PmenuSel      ctermfg=0 ctermbg=7
-  highlight   PmenuSbar     ctermfg=7 ctermbg=0
-  highlight   PmenuThumb    ctermfg=0 ctermbg=7
-endif
-
-" Configure tags - add additional tags here or comment out not-used ones
-set tags+=~/.vim/tags/cpp
-set tags+=~/.vim/tags/gl
-set tags+=~/.vim/tags/sdl
-set tags+=~/.vim/tags/qt4
-
-" Build tags of your own project
-map <F5> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
-" Update tags (more efficient method)
-map <F4> :!ctags -R --languages=C++ --c++-kinds=+p --fields=+iaS --extra=+q ./
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Find file word count
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! WC()
@@ -108,9 +72,9 @@ map <F10> <Esc>:WC<CR>
 autocmd syntax * SpaceHi
 
 "Autocommand for indent settings
-  au FileType matlab setl tabstop=2 shiftwidth=2 expandtab
-  au FileType html setlocal shiftwidth=2 tabstop=2 expandtab
-  au FileType python setl shiftwidth=4 sts=0 tabstop=4 expandtab
+au FileType matlab setl tabstop=2 shiftwidth=2 expandtab
+au FileType html setlocal shiftwidth=2 tabstop=2 expandtab
+au FileType python setl shiftwidth=4 sts=0 tabstop=4 expandtab
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
@@ -128,6 +92,7 @@ set t_Co=256
 
 " Color has to be last for some reason
 color xoria256
+hi Normal guibg=NONE ctermbg=NONE
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OPEN FILES IN DIRECTORY OF CURRENT FILE
@@ -147,7 +112,6 @@ command! -range Md5 :echo system('echo '.shellescape(join(getline(<line1>, <line
 " Insert the current time
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " (Re?)map Ctrl+S
