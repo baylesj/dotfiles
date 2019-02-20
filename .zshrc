@@ -47,6 +47,7 @@ alias gs='grep -rnw . -e'
 
 # Openscreen aliases
 alias os="cd /usr/local/src/openscreen"
+alias os2="cd /usr/local/src/openscreen2"
 alias gngen="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
 alias gngens="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
 alias ncd="autoninja -C out/Default"
@@ -54,6 +55,12 @@ alias ut="./out/Default/unittests"
 alias ntc="ninja -t compdb cc cxx objc objcxx > compile_commands.json"
 
 alias lock="xscreensaver-command -lock"
+
+alias set-wallpaper="feh --bg-scale"
+alias awm="pushd ~/.config/awesome && vim ./rc.lua"
+alias zrc="vim ~/.zshrc"
+alias src="source ~/.zshrc"
+
 alias vi="vim"
 alias rm="rm -i"
 alias cp="cp -i"
@@ -91,8 +98,6 @@ alias lm="ls -al |more"    # pipe through "more"
 alias lr="ls -lR"          # recursive ls
 alias tree="tree -Csu"     # nice alternative to "recursive ls"
 
-alias src="source ~/.zshrc"
-alias edit="vim ~/.zshrc"
 
 alias git-brd="git branch -r --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git push --delete origin"
 alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v master | xargs -n 1 git branch -d"
