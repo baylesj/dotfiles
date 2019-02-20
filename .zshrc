@@ -118,7 +118,30 @@ alias git-sync="git co master && git pull && git remote prune origin && git-brd 
 #==============================================================================
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git systemd github gnu-utils battery archlinux colorize)
+plugins=(
+	archlinux
+	autopep8
+	battery
+	colorize
+	common-aliases
+	debian
+	encode64
+	git
+	github
+	gnu-utils
+	jsontools
+	osx
+	pep8
+	pip
+	pylint
+	python
+	ssh-agent
+	sudo
+	systemd
+	urltools
+	vi-mode
+	vscode
+)
 
 #==============================================================================
 # Sources
