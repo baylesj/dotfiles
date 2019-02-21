@@ -34,8 +34,6 @@ PATH=/usr/local/src/openscreen:$PATH
 PATH=/usr/lib/llvm-7/bin/:$PATH
 
 CHROME_BUILDTOOLS_PATH=/usr/local/src/depot_tools
-DYLD_INSERT_LIBRARIES=/usr/local/src/openscreen/third_party/llvm-build/Release+Asserts/lib/clang/9.0.0/lib/darwin/libclang_rt.asan_osx_dynamic.dylib
-
 DEFAULT_SIZES="1200x800,1800x1200,2400x1600,1440x900,2160x1350,2880x1800"
 
 #==============================================================================
@@ -62,10 +60,17 @@ alias gngen="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is
 alias gngena="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
 alias gngens="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
 
-
 alias ncd="os && autoninja -C out/Default"
 alias ut="os && ./out/Default/unittests"
 alias ntc="os && ninja C out/Default -t compdb cc cxx objc objcxx > compile_commands.json"
+
+alias lock="xscreensaver-command -lock"
+
+alias cmpr="killall compton && compton -b &"
+alias set-wallpaper="feh --bg-scale"
+alias awm="pushd ~/.config/awesome && vim ./rc.lua"
+alias zrc="vim ~/.zshrc"
+alias src="source ~/.zshrc"
 
 alias vi="vim"
 alias rm="rm -i"
@@ -104,8 +109,6 @@ alias lm="ls -al |more"    # pipe through "more"
 alias lr="ls -lR"          # recursive ls
 alias tree="tree -Csu"     # nice alternative to "recursive ls"
 
-alias src="source ~/.zshrc"
-alias edit="vim ~/.zshrc"
 
 alias git-brd="git branch -r --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git push --delete origin"
 alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v master | xargs -n 1 git branch -d"
@@ -116,7 +119,30 @@ alias git-sync="git co master && git pull && git remote prune origin && git-brd 
 #==============================================================================
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git systemd github gnu-utils battery archlinux colorize)
+plugins=(
+	archlinux
+	autopep8
+	battery
+	colorize
+	common-aliases
+	debian
+	encode64
+	git
+	github
+	gnu-utils
+	jsontools
+	osx
+	pep8
+	pip
+	pylint
+	python
+	ssh-agent
+	sudo
+	systemd
+	urltools
+	vi-mode
+	vscode
+)
 
 #==============================================================================
 # Sources
