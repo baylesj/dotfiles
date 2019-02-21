@@ -55,6 +55,7 @@ alias jpb="gcert && ssh -v -X jophba@jpb.kir.corp.google.com"
 # Openscreen aliases
 alias os="cd /usr/local/src/openscreen"
 alias os2="cd /usr/local/src/openscreen2"
+alias rfm="os && git branch --set-upstream-to=origin/master && ./tools/cl-format.sh"
 alias gngen="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_debug=true\" out/Default"
 
 # Only work easily on Linux...
@@ -127,3 +128,18 @@ source $ZSH/oh-my-zsh.sh
 #==============================================================================
 eval $(keychain --eval id_rsa)
 
+#==============================================================================
+# Functions
+#==============================================================================
+function check_last_exit_code() {
+  local LAST_EXIT_CODE=$?
+  if [[ $LAST_EXIT_CODE -ne 0 ]]; then
+    local EXIT_CODE_PROMPT=' '
+    EXIT_CODE_PROMPT+="%{$fg[red]%}-%{$reset_color%}"
+    EXIT_CODE_PROMPT+="%{$fg_bold[red]%}$LAST_EXIT_CODE%{$reset_color%}"
+    EXIT_CODE_PROMPT+="%{$fg[red]%}-%{$reset_color%}"
+    echo "$EXIT_CODE_PROMPT"
+  fi
+}
+
+RPROMPT='$(check_last_exit_code)'
