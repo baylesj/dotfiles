@@ -9,6 +9,19 @@ syntax on
 " Toggle line counter on/off
 set number
 
+" Enable visual autocomplete
+set wildmenu
+
+" Keeps vim from redrawing unnecessarily
+set lazyredraw
+
+" Highlight bracket pairs
+set showmatch
+
+" Change search settings
+set incsearch
+set hlsearch
+
 " Don't allow mouse to select line numbers when copying
 se mouse+=a
 set hls
@@ -72,8 +85,10 @@ map <F10> <Esc>:WC<CR>
 autocmd syntax * SpaceHi
 
 "Autocommand for indent settings
+filetype indent on
+setl tabstop=2 shiftwidth=2 expandtab
 au FileType matlab setl tabstop=2 shiftwidth=2 expandtab
-au FileType html setlocal shiftwidth=2 tabstop=2 expandtab
+au FileType html setl shiftwidth=2 tabstop=2 expandtab
 au FileType python setl shiftwidth=4 sts=0 tabstop=4 expandtab
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -93,6 +108,7 @@ set t_Co=256
 " Color has to be last for some reason
 color xoria256
 hi Normal guibg=NONE ctermbg=NONE
+set cursorline
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OPEN FILES IN DIRECTORY OF CURRENT FILE
