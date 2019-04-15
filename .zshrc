@@ -51,17 +51,19 @@ alias gs='grep -rnw . -e'
 alias jpb="gcert && ssh -v -X jophba@jpb.kir.corp.google.com"
 
 # Openscreen aliases
+alias cdrt="cd $(git rev-parse --show-toplevel)"
 alias os="cd /usr/local/src/openscreen"
 alias os2="cd /usr/local/src/openscreen2"
-alias rfm="os && git branch --set-upstream-to=origin/master && ./tools/cl-format.sh"
-alias gngen="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_debug=true\" out/Default"
+alias rfm="cdrt && git branch --set-upstream-to=origin/master && ./tools/cl-format.sh"
+alias gngen="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_debug=true\" out/Default"
 
 # Only work easily on Linux...
-alias gngena="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
-alias gngens="os && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
+alias gngena="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
+alias gngens="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
 
-alias ncd="os && autoninja -C out/Default"
-alias ut="os && ./out/Default/unittests"
+alias ncd="cdrt && autoninja -C out/Default"
+alias ut="cdrt && ./out/Default/unittests"
+
 alias ntc="os && ninja C out/Default -t compdb cc cxx objc objcxx > compile_commands.json"
 
 alias lock="xscreensaver-command -lock"
