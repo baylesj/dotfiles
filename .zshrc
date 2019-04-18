@@ -51,6 +51,7 @@ alias gs='grep -rnw . -e'
 
 # Google aliases
 alias jpb="gcert && ssh -v -X jophba@jpb.kir.corp.google.com"
+alias jpb-fs="sshfs jophba@jpb.kir.corp.google.com:/usr/local/src jpb-src"
 alias uls="cd /usr/local/src/"
 alias goma="${GOMA_DIR}/goma_ctl.py ensure_start"
 
