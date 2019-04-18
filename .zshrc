@@ -33,8 +33,10 @@ PATH=/usr/local/src/depot_tools:$PATH
 PATH=/usr/local/src/openscreen:$PATH
 PATH=/usr/lib/llvm-7/bin/:$PATH
 
-CHROME_BUILDTOOLS_PATH=/usr/local/src/depot_tools
+CHROME_BUILDTOOLS_PATH=/usr/local/src/chromium/src/buildtools
+CHROMIUM_BUILDTOOLS_PATH=$CHROME_BUILDTOOLS_PATH
 DEFAULT_SIZES="1200x800,1800x1200,2400x1600,1440x900,2160x1350,2880x1800"
+GOMA_DIR=$HOME/goma
 
 #==============================================================================
 # Aliases
@@ -49,11 +51,16 @@ alias gs='grep -rnw . -e'
 
 # Google aliases
 alias jpb="gcert && ssh -v -X jophba@jpb.kir.corp.google.com"
+alias uls="cd /usr/local/src/"
+alias goma="${GOMA_DIR}/goma_ctl.py ensure_start"
 
 # Openscreen aliases
-alias cdrt="cd $(git rev-parse --show-toplevel)"
-alias os="cd /usr/local/src/openscreen"
-alias os2="cd /usr/local/src/openscreen2"
+alias os="uls && cd openscreen"
+alias os2="uls && cd openscreen2"
+alias crm="uls && cd chromium/src"
+alias osp="uls && cd openscreenprotocol"
+
+alias cdrt="pushd \$(git rev-parse --show-toplevel)"
 alias rfm="cdrt && git branch --set-upstream-to=origin/master && ./tools/cl-format.sh"
 alias gngen="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_debug=true\" out/Default"
 
