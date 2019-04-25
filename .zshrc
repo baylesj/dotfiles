@@ -51,9 +51,9 @@ alias gs='grep -rnw . -e'
 
 # Google aliases
 alias jpb="gcert && ssh -v -X jophba@jpb.kir.corp.google.com"
-alias jpb-fs="sshfs jophba@jpb.kir.corp.google.com:/usr/local/src jpb-src"
 alias uls="cd /usr/local/src/"
 alias goma="${GOMA_DIR}/goma_ctl.py ensure_start"
+alias jpb-fs="sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3 jophba@jpb.kir.corp.google.com:/usr/local/src ~/jpb-src"
 
 # Openscreen aliases
 alias os="uls && cd openscreen"
