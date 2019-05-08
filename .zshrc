@@ -72,6 +72,7 @@ alias osp="rd && cd openscreenprotocol"
 alias cdrt="pushd \$(git rev-parse --show-toplevel)"
 alias rfm="cdrt && git branch --set-upstream-to=origin/master && ./tools/cl-format.sh"
 alias gngen="cdrt && mkdir -p out/Default && gn gen out/Default"
+alias gngeng="cdrt && mkdir -p out/Default && gn gen --args=\"use_goma=true\" out/Default"
 
 # Only work easily on Linux...
 alias gngenc="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_debug=true\" out/Default"
