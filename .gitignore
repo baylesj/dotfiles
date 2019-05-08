@@ -8,7 +8,7 @@ build/
 bin/
 
 *.pyc
-
+gn
 .zsh-update
 .zsh_history
 CMakeLists.txt

@@ -36,7 +36,7 @@ PATH=/usr/lib/llvm-7/bin/:$PATH
 CHROME_BUILDTOOLS_PATH=/usr/local/src/chromium/src/buildtools
 CHROMIUM_BUILDTOOLS_PATH=$CHROME_BUILDTOOLS_PATH
 DEFAULT_SIZES="1200x800,1800x1200,2400x1600,1440x900,2160x1350,2880x1800"
-GOMA_DIR=$HOME/goma
+GOMA_DIR=$HOME/client/out/Release
 
 #==============================================================================
 # Aliases
@@ -50,22 +50,31 @@ alias sas="aptitude search"
 alias gs='grep -rnw . -e'
 
 # Google aliases
-alias jpb="gcert && ssh -v -X jophba@jpb.kir.corp.google.com"
-alias uls="cd /usr/local/src/"
+REPO_DIR="/usr/local/src/"
+JPB_HOST="jophba@jpb.kir.corp.google.com"
+
+alias jpb="gcert && ssh -v -X ${JPB_HOST}"
+alias jpbd="gcert && ssh -X ${JPB_HOST}"
+alias rd="cd ${REPO_DIR}"
 alias goma="${GOMA_DIR}/goma_ctl.py ensure_start"
-alias jpb-fs="sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3 jophba@jpb.kir.corp.google.com:/usr/local/src ~/jpb-src"
+
+FUSE_POINT="${HOME}/jpb-src"
+FUSE_FLAGS="reconnect,ServerAliveInterval=15,ServerAliveCountMax=3"
+alias jpb-fs="umount ${FUSE_POINT} && gcert && sshfs -o ${FUSE_FLAGS} ${JPB_HOST}:${REPO_DIR} ${FUSE_POINT}"
+alias jpb-fsd="umount ${FUSE_POINT} && gcert && sshfs -o debug,${FUSE_FLAGS} ${JPB_HOST}:${REPO_DIR} ${FUSE_POINT}"
 
 # Openscreen aliases
-alias os="uls && cd openscreen"
-alias os2="uls && cd openscreen2"
-alias crm="uls && cd chromium/src"
-alias osp="uls && cd openscreenprotocol"
+alias os="rd && cd openscreen"
+alias os2="rd && cd openscreen2"
+alias crm="rd && cd chromium/src"
+alias osp="rd && cd openscreenprotocol"
 
 alias cdrt="pushd \$(git rev-parse --show-toplevel)"
 alias rfm="cdrt && git branch --set-upstream-to=origin/master && ./tools/cl-format.sh"
-alias gngen="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_debug=true\" out/Default"
+alias gngen="cdrt && mkdir -p out/Default && gn gen out/Default"
 
 # Only work easily on Linux...
+alias gngenc="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_debug=true\" out/Default"
 alias gngena="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
 alias gngens="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
 
