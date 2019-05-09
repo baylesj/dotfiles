@@ -60,8 +60,8 @@ alias goma="${GOMA_DIR}/goma_ctl.py ensure_start"
 
 FUSE_POINT="${HOME}/jpb-src"
 FUSE_FLAGS="reconnect,ServerAliveInterval=15,ServerAliveCountMax=3"
-alias jpb-fs="umount ${FUSE_POINT} && gcert && sshfs -o ${FUSE_FLAGS} ${JPB_HOST}:${REPO_DIR} ${FUSE_POINT}"
-alias jpb-fsd="umount ${FUSE_POINT} && gcert && sshfs -o debug,${FUSE_FLAGS} ${JPB_HOST}:${REPO_DIR} ${FUSE_POINT}"
+alias jpb-fs="umount ${FUSE_POINT} || echo unmounted && gcert && sshfs -o ${FUSE_FLAGS} ${JPB_HOST}:${REPO_DIR} ${FUSE_POINT}"
+alias jpb-fsd="umount ${FUSE_POINT} || echo unmounted  && gcert && sshfs -o debug,${FUSE_FLAGS} ${JPB_HOST}:${REPO_DIR} ${FUSE_POINT}"
 
 # Openscreen aliases
 alias os="rd && cd openscreen"
