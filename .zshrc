@@ -132,10 +132,13 @@ alias lm="ls -al |more"    # pipe through "more"
 alias lr="ls -lR"          # recursive ls
 alias tree="tree -Csu"     # nice alternative to "recursive ls"
 
-
 alias git-brd="git branch -r --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git push --delete origin"
 alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v master | xargs -n 1 git branch -d"
 alias git-sync="git co master && git pull && git remote prune origin && git-brd && git-bdm"
+
+# Annoying git workflow stuff
+alias hide-git-status="cdrt && echo '\n\n[oh-my-zsh]\n\thide-status=1\n\n' >> .git/config"
+alias set-commit-hook="cdrt && cp ~/Dotfiles/commit-msg.chromium-hook ./.git/hooks/commit-msg"
 
 #==============================================================================
 # PLUGINS
