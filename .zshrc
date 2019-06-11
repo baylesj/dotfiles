@@ -83,7 +83,7 @@ alias gngena="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\
 alias gngens="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
 
 alias ncd="cdrt && autoninja -C out/Default"
-alias ut="cdrt && ./out/Default/unittests"
+alias ut="cdrt && ./out/Default/openscreen_unittests"
 
 alias ntc="os && ninja C out/Default -t compdb cc cxx objc objcxx > compile_commands.json"
 
