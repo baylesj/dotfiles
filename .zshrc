@@ -32,6 +32,7 @@ PATH=/user/local/google/home/jophba/bin:$PATH
 PATH=/usr/local/src/depot_tools:$PATH
 PATH=/usr/local/src/openscreen:$PATH
 PATH=/usr/lib/llvm-7/bin/:$PATH
+PATH=/usr/local/opt/llvm/bin:$PATH
 
 CHROME_BUILDTOOLS_PATH=/usr/local/src/chromium/src/buildtools
 CHROMIUM_BUILDTOOLS_PATH=$CHROME_BUILDTOOLS_PATH
@@ -80,7 +81,7 @@ alias gngeng="cdrt && mkdir -p out/Default && gn gen --args=\"use_goma=true\" ou
 # Only work easily on Linux...
 alias gngenc="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_debug=true\" out/Default"
 alias gngena="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
-alias gngens="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
+alias gngens="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true use_static_analyzer=true is_debug=true\" out/Default"
 
 alias ncd="cdrt && autoninja -C out/Default"
 alias ut="cdrt && ./out/Default/openscreen_unittests"
