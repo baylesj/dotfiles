@@ -33,6 +33,7 @@ PATH=/usr/local/src/depot_tools:$PATH
 PATH=/usr/local/src/openscreen:$PATH
 PATH=/usr/lib/llvm-7/bin/:$PATH
 PATH=/usr/local/opt/llvm/bin:$PATH
+PATH=/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 
 CHROME_BUILDTOOLS_PATH=/usr/local/src/chromium/src/buildtools
 CHROMIUM_BUILDTOOLS_PATH=$CHROME_BUILDTOOLS_PATH
@@ -163,7 +164,8 @@ plugins=(
 	pip
 	pylint
 	python
-	ssh-agent
+  # Disable for accessing Google network
+  # ssh-agent
 	sudo
 	systemd
 	urltools
@@ -196,3 +198,6 @@ function check_last_exit_code() {
 }
 
 RPROMPT='$(check_last_exit_code)'
+
+# added by travis gem
+[ -f /Users/jophba/.travis/travis.sh ] && source /Users/jophba/.travis/travis.sh
