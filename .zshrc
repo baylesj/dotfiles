@@ -33,6 +33,7 @@ PATH=/usr/local/src/depot_tools:$PATH
 PATH=/usr/local/src/openscreen:$PATH
 PATH=/usr/lib/llvm-7/bin/:$PATH
 PATH=/usr/local/opt/llvm/bin:$PATH
+PATH=/snap/bin:$PATH
 
 CHROME_BUILDTOOLS_PATH=/usr/local/src/chromium/src/buildtools
 CHROMIUM_BUILDTOOLS_PATH=$CHROME_BUILDTOOLS_PATH
@@ -78,15 +79,12 @@ alias rfm="cdrt && git branch --set-upstream-to=origin/master && ./tools/cl-form
 alias gngen="cdrt && mkdir -p out/Default && gn gen out/Default"
 alias gngeng="cdrt && mkdir -p out/Default && gn gen --args=\"use_goma=true\" out/Default"
 
-# Only work easily on Linux...
-alias gngenc="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_debug=true\" out/Default"
-alias gngena="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
-alias gngens="cdrt && rm -rf out/Default && mkdir out/Default && gn gen --args=\"is_asan=true use_static_analyzer=true is_debug=true\" out/Default"
+alias gngend="cdrt && mkdir -p out/Default && gn gen --args=\"is_debug=true\" out/Default"
+alias gngena="cdrt && mkdir -p out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
+alias gngens="cdrt && mkdir -p out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
 
-alias ncd="cdrt && autoninja -C out/Default"
-alias ut="cdrt && ./out/Default/openscreen_unittests"
-
-alias ntc="os && ninja C out/Default -t compdb cc cxx objc objcxx > compile_commands.json"
+alias ncd="cdrt && ninja -j 1000 -C out/Default"
+alias ut="cdrt && ./out/Default/*unittests"
 
 alias lock="xscreensaver-command -lock"
 
@@ -163,7 +161,9 @@ plugins=(
 	pip
 	pylint
 	python
-	ssh-agent
+
+# Breaks prodaccess....
+#	ssh-agent
 	sudo
 	systemd
 	urltools
@@ -196,3 +196,5 @@ function check_last_exit_code() {
 }
 
 RPROMPT='$(check_last_exit_code)'
+
+source /etc/bash_completion.d/g4d
