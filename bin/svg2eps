@@ -1,0 +1,15 @@
+#!/bin/bash
+ 
+INPUT=$1
+ 
+if [ -n "$2" ]
+then
+    OUTPUT=$2
+else
+    OUTPUT=${INPUT%.*}.eps
+fi
+ 
+echo Converting $INPUT to $OUTPUT...
+ 
+#inkscape --export-text-to-path --export-bbox-page --without-gui --file=$INPUT --export-eps=$OUTPUT &> /dev/null
+inkscape --export-text-to-path --without-gui --file=$INPUT --export-eps=$OUTPUT
