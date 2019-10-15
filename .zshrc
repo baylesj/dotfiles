@@ -38,10 +38,19 @@ PATH=/snap/bin:$PATH
 CHROME_BUILDTOOLS_PATH=/usr/local/src/chromium/src/buildtools
 CHROMIUM_BUILDTOOLS_PATH=$CHROME_BUILDTOOLS_PATH
 DEFAULT_SIZES="1200x800,1800x1200,2400x1600,1440x900,2160x1350,2880x1800"
+DEV_HOST="jophba@jpb.kir.corp.google.com"
+FUSE_POINT="${HOME}/jpb-src"
+FUSE_FLAGS="reconnect,ServerAliveInterval=15,ServerAliveCountMax=3"
+REPO_DIR="/usr/local/src/"
 
 GOMA_DIR=$HOME/goma
 # Mac override
 [ ! -d $GOMA_DIR ] && GOMA_DIR=$HOME/client/out/Release
+
+#==============================================================================
+# Sources
+#==============================================================================
+source $ZSH/oh-my-zsh.sh
 
 #==============================================================================
 # Aliases
@@ -52,52 +61,47 @@ alias sadu="sudo aptitude dist-upgrade"
 alias sas="aptitude search"
 
 # Helpful coding aliases
+# Recursive search for lines matching a regex. E.g. "gs foo"
 alias gs='grep -rnw . -e'
 
 # Google aliases
-REPO_DIR="/usr/local/src/"
-JPB_HOST="jophba@jpb.kir.corp.google.com"
-
-alias jpb="gcert && ssh -v -X ${JPB_HOST}"
-alias jpbd="gcert && ssh -X ${JPB_HOST}"
-alias red="cd ${REPO_DIR}"
+alias ssh-devbox="gcert && ssh -v -X ${DEV_HOST}"
 alias goma="${GOMA_DIR}/goma_ctl.py ensure_start"
 
-FUSE_POINT="${HOME}/jpb-src"
-FUSE_FLAGS="reconnect,ServerAliveInterval=15,ServerAliveCountMax=3"
-alias jpb-fs="umount ${FUSE_POINT} || echo unmounted && gcert && sshfs -o ${FUSE_FLAGS} ${JPB_HOST}:${REPO_DIR} ${FUSE_POINT}"
-alias jpb-fsd="umount ${FUSE_POINT} || echo unmounted  && gcert && sshfs -o debug,${FUSE_FLAGS} ${JPB_HOST}:${REPO_DIR} ${FUSE_POINT}"
+alias ssh-devbox-fs="umount ${FUSE_POINT} || echo unmounted && gcert && sshfs -o ${FUSE_FLAGS} ${DEV_HOST}:${REPO_DIR} ${FUSE_POINT}"
+alias ssh-devbox-fsd="umount ${FUSE_POINT} || echo unmounted && gcert && sshfs -o debug,${FUSE_FLAGS} ${DEV_HOST}:${REPO_DIR} ${FUSE_POINT}"
 
 # Openscreen aliases
+alias red="cd ${REPO_DIR}"
 alias os="red && cd openscreen"
 alias os2="red && cd openscreen2"
 alias crm="red && cd chromium/src"
 alias osp="red && cd openscreenprotocol"
 
 alias cdrt="pushd \$(git rev-parse --show-toplevel)"
-alias rfm="cdrt && git branch --set-upstream-to=origin/master && ./tools/cl-format.sh"
 alias gngen="cdrt && mkdir -p out/Default && gn gen out/Default"
 alias gngeng="cdrt && mkdir -p out/Default && gn gen --args=\"use_goma=true\" out/Default"
-
 alias gngend="cdrt && mkdir -p out/Default && gn gen --args=\"is_debug=true\" out/Default"
 alias gngena="cdrt && mkdir -p out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
 alias gngens="cdrt && mkdir -p out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
 
+alias ca="cdrt && python ./tools/traffic_annotation/scripts/check_annotations.py --build-path ./out/Default"
 alias ncd="cdrt && ninja -j 1000 -C out/Default"
 alias ut="cdrt && ./out/Default/*unittests"
 
+# AwesomeWM shortcuts
 alias lock="xscreensaver-command -lock"
-
 alias cmpr="killall compton && compton -b &"
 alias set-wallpaper="feh --bg-scale"
 alias awm="pushd ~/.config/awesome && vim ./rc.lua"
+
+# ZShell shortcuts
 alias zrc="vim ~/.zshrc"
 alias src="source ~/.zshrc"
 
+# General shell aliases
+# See https://explainshell.com/explain for a breakdown of any command.
 alias vi="vim"
-alias rm="rm -i"
-alias cp="cp -i"
-alias mv="mv -i"
 
 # -> Prevents accidentally clobbering files.
 alias mkdir="mkdir -p"
@@ -112,25 +116,20 @@ alias ....="cd ../../.."
 alias path="echo -e ${PATH//:/\\n}"
 alias libpath="echo -e ${LD_LIBRARY_PATH//:/\\n}"
 
-alias du="du -kh"       # Makes a more readable output.
+# More readable file size outputs
+alias du="du -kh"
 alias df="df -kTh"
 
 alias dt="dmesg | tail"
 alias grep="grep --color=auto"
 
-# ls family
-alias ll="ls -l --group-directories-first"
-alias ls="ls -hF"
-alias la="ls -Al"          # show hidden files
-alias lx="ls -lXB"         # sort by extension
-alias lk="ls -lSr"         # sort by size, biggest last
-alias lc="ls -ltcr"        # sort by and show change time, most recent last
-alias lu="ls -ltur"        # sort by and show access time, most recent last
-alias lt="ls -ltr"         # sort by date, most recent last
-alias lm="ls -al |more"    # pipe through "more"
-alias lr="ls -lR"          # recursive ls
-alias tree="tree -Csu"     # nice alternative to "recursive ls"
+# ls family. We don't want zsh trying to colorize through the alias, when we
+# can use exa instead.
+DISABLE_LS_COLORS=true
+alias ls="exa"
+alias la="exa -la"
 
+# Annoying branch cleanup
 alias git-brd="git branch -r --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git push --delete origin"
 alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v master | xargs -n 1 git branch -d"
 alias git-sync="git co master && git pull && git remote prune origin && git-brd && git-bdm"
@@ -149,7 +148,6 @@ plugins=(
 	autopep8
 	battery
 	colorize
-	common-aliases
 	debian
 	encode64
 	git
@@ -170,11 +168,6 @@ plugins=(
 	vi-mode
 	vscode
 )
-
-#==============================================================================
-# Sources
-#==============================================================================
-source $ZSH/oh-my-zsh.sh
 
 #==============================================================================
 # Commands to run
