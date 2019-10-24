@@ -7,6 +7,7 @@
 build/
 bin/
 
+.DS_Store
 *.pyc
 gn
 .zsh-update
