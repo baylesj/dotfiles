@@ -197,7 +197,7 @@ function check_last_exit_code() {
   fi
 }
 
-RPROMPT='$(check_last_exit_code)'
-
 # added by travis gem
 [ -f /Users/jophba/.travis/travis.sh ] && source /Users/jophba/.travis/travis.sh
+
+RPROMPT='$(check_last_exit_code)'
