@@ -14,7 +14,7 @@ Xcursor.size: 28
 ! XTerm !
 !!!!!!!!!
 
-xterm*faceName: Droid Sans Mono Slashed
+xterm*faceName: Fira Code
 xterm*faceSize: 12
 
 !!!!!!!!!
@@ -22,16 +22,8 @@ xterm*faceSize: 12
 !!!!!!!!!
 
 ! Fonts
-URxvt.font: xft:Droid Sans Mono Slashed:size=10,style=medium
-URxvt.boldFont: xft:Droid Sans Mono Slashed:size=10,style=bold
-URxvt.italicFont: xft:Droid Sans Mono Slashed:size=10,style=bold
-URxvt.boldItalicFont: xft:Droid Sans Mono Slashed:size=10,style=bold
+URxvt.font: xft:Fira Code:style=Retina:pixelsize=17:antialias=true:hinting=true
 URxvt.letterSpace: -1
-
-
-URxvt.depth: 32
-URxvt.foreground: #d0d0d0
-URxvt.background: rgba:0000/0000/0200/0900
 
 ! OS Integration
 URxvt.iconFile:        /usr/share/icons/Tango/scalable/apps/terminal.svg
@@ -40,91 +32,78 @@ URxvt.urlLauncher:     /usr/bin/google-chrome
 URxvt.matcher.button:  1
 URxvt.keysym.F11:      perl:fullscreen:switch
 
-! UI
-URxvt*borderless: true
-URxvt.internalBorder: 10
-URxvt*scrollBar: false
-URxvt*saveLines: 20000
-URxvt*dynamicColors: true
-URxvt*termName: rxvt-unicode
-URxvt*fading: 10
+!! Common Keybinds for Navigations
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.Control-Left: \033[1;5D
 
-! Colors
-URxvt.depth: 32
-URxvt.intensityStyles: false
-!black.normal     : xoria256.LineNr.guibg
-!black.bright     : black.normal.rgb - 8
-URxvt.color0      : #121212
-URxvt.color8      : #0a0a0a
+!! Copy Paste & Other Extensions
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
 
-!red.normal       : red.bright.r - 8
-!red.bright       : xoria256.Special.guifg
-URxvt.color1      : #d78787
-URxvt.color9      : #df8787
+!! Additional Appearance configs
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.internalBorder: 24
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+URxvt.iso14755: false
 
-!green.normal     : green.bright.g - 8
-!green.bright     : xoria256.PreProc.guifg
-URxvt.color2      : #afd787
-URxvt.color10     : #afdf87
+!! Color Scheme
+!
+! special
+*.foreground:   #d3d0c8
+*.background:   #2d2d2d
+*.cursorColor:  #d3d0c8
 
-!yellow.normal    : yellow.bright.rg - 8
-!yellow.bright    : xoria256.Special.guifg
-URxvt.color3      : #f7f7af
-URxvt.color11     : #ffffaf
+! black
+*.color0:       #2d2d2d
+*.color8:       #747369
 
-!blue.normal      : blue.bright.b - 8
-!blue.bright      : xoria256.Statement.guifg
-URxvt.color4      : #87afd7
-URxvt.color12     : #87afdf
+! red
+*.color1:       #f2777a
+*.color9:       #f2777a
 
-!magenta.normal   : magenta.bright.rb - 8
-!magenta.bright   : xoria256.Identifier.guifg
-URxvt.color5      : #d7afd7
-URxvt.color13     : #dfafdf
+! green
+*.color2:       #99cc99
+*.color10:      #99cc99
 
-!cyan.normal      : cyan.bright.gb - 8
-!cyan.bright      : green.bright + blue.bright
-URxvt.color6      : #afd7d7
-URxvt.color14     : #afdfdf
+! yellow
+*.color3:       #ffcc66
+*.color11:      #ffcc66
 
-!white.normal     : white.bright.rgb - 8
-!white.bright     : xoria256.Folded.guifg
-URxvt.color7      : #e6e6e6
-URxvt.color15     : #eeeeee
+! blue
+*.color4:       #6699cc
+*.color12:      #6699cc
 
-!foreground       : xoria256.Normal.guifg
-!background       : xoria256.Normal.guibg
-!cursor           : xoria256.
-!URxvt.foreground  : #d0d0d0
-!URxvt.background  : #1c1c1c
-URxvt.cursorColor : #eeeeee
+! magenta
+*.color5:       #cc99cc
+*.color13:      #cc99cc
 
-!bold             : xoria256.Type.guifg
-!underline        : xoria256.htmlValue.guifg
-URxvt.colorBD     : #afafdf
-URxvt.colorUL     : #dfdfaf
+! cyan
+*.color6:       #66cccc
+*.color14:      #66cccc
 
-! Extensions
-URxvt.perl-ext: default,url-select,clipboard
-URxvt.perl-ext-common: default,matcher
+! white
+*.color7:       #d3d0c8
+*.color15:      #f2f0ec
 
-URxvt.keysym.Control-Alt-C: perl:clipboard:copy
-URxvt.keysym.Control-Alt-V: perl:clipboard:paste
-
-URxvt.url-launcher: /usr/bin/google-chrome
-URxvt.matcher.button: 1
-
-!!!!!!!!
-! Rofi !
-!!!!!!!!
-
-rofi.font: Droid Sans Mono Slashed Medium 12
-rofi.lines: 3
-rofi.separator-style: none
-rofi.hide-scrollbar: true
-rofi.opacity: 96
-rofi.bw: 6
-rofi.padding: 10
-
-rofi.fuzzy: true
-rofi.sidebar-mode: false

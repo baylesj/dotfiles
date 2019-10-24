@@ -185,3 +185,33 @@
 
 [push]
 	default = current
+
+[color]
+	ui = auto
+
+# Annoying Eureka URL links.
+[url "persistent-https://eureka-internal.git.corp.google.com/"]
+	insteadOf = https://eureka-internal.googlesource.com/
+	pushInsteadOf = https://eureka-internal.googlesource.com/
+[url "persistent-https://eureka-internal-review.git.corp.google.com/"]
+	insteadOf = https://eureka-internal-review.googlesource.com/
+[url "persistent-https://widevine-partner.git.corp.google.com/"]
+	insteadOf = https://widevine-partner.googlesource.com/
+[url "persistent-https://eureka-partner.git.corp.google.com/"]
+	insteadOf = https://eureka-partner.googlesource.com/
+[url "persistent-https://chrome-internal.git.corp.google.com/"]
+	insteadOf = https://chrome-internal.googlesource.com/
+[url "persistent-https://libassistant-internal.git.corp.google.com/"]
+	insteadOf = https://libassistant-internal.googlesource.com/
+[url "persistent-https://team.git.corp.google.com/"]
+	insteadOf = https://team.googlesource.com/
+[url "persistent-https://nest-internal.git.corp.google.com/"]
+	insteadOf = https://nest-internal.googlesource.com/
+	pushInsteadOf = https://nest-internal.googlesource.com/
+[url "persistent-https://nest-internal-review.git.corp.google.com/"]
+	insteadOf = https://nest-internal-review.googlesource.com/
+[url "persistent-https://nest-camera-internal.git.corp.google.com/"]
+	insteadOf = https://nest-camera-internal.googlesource.com/
+	pushInsteadOf = https://nest-camera-internal.googlesource.com/
+[url "persistent-https://nest-camera-internal-review.git.corp.google.com/"]
+	insteadOf = https://nest-camera-internal-review.googlesource.com/
