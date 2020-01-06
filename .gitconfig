@@ -12,7 +12,8 @@
 	# Gitconfig doesn't support conditionals or environment vars,
 	# so need a crossplatform cookiefile location. Make sure to move
 	# the cookie file from its default location
-	cookiefile = /usr/local/src/.gitcookies
+	cookiefile = /usr/local/google/home/jophba/.gitcookies
+	sslVerify = false
 
 [core]
 	editor = vim
