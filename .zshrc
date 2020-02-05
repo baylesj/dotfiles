@@ -35,6 +35,7 @@ PATH=/usr/lib/llvm-7/bin/:$PATH
 PATH=/usr/local/opt/llvm/bin:$PATH
 PATH=/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 PATH=/snap/bin:$PATH
+PATH=$HOME/.cargo/bin:$PATH
 
 CHROME_BUILDTOOLS_PATH=/usr/local/src/chromium/src/buildtools
 CHROMIUM_BUILDTOOLS_PATH=$CHROME_BUILDTOOLS_PATH
@@ -136,6 +137,7 @@ alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v master | xargs -n 
 alias git-sync="git co master && git pull && git remote prune origin && git-brd && git-bdm"
 
 # Annoying git workflow stuff
+alias acp="git add -A && git can && git cl presubmit --upload"
 alias hide-git-status="cdrt && echo '\n\n[oh-my-zsh]\n\thide-status=1\n\n' >> .git/config"
 alias set-commit-hook="cdrt && cp ~/Dotfiles/commit-msg.chromium-hook ./.git/hooks/commit-msg"
 

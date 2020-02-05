@@ -35,7 +35,7 @@
 
 [alias]
   # Some handy aliases for working with Gerrit:
-	up = push origin HEAD:refs/for/master
+	up = cl upload
 	can = commit --amend --no-edit
 	bsu = branch --set-upstream-to=origin/master
 

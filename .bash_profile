@@ -9,3 +9,5 @@ then
     export PATH=$HOME/bin:$PATH
 fi
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
