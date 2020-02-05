@@ -139,7 +139,7 @@ alias git-sync="git co master && git pull && git remote prune origin && git-brd 
 # Annoying git workflow stuff
 alias acp="git add -A && git can && git cl presubmit --upload"
 alias hide-git-status="cdrt && echo '\n\n[oh-my-zsh]\n\thide-status=1\n\n' >> .git/config"
-alias set-commit-hook="cdrt && cp ~/Dotfiles/commit-msg.chromium-hook ./.git/hooks/commit-msg"
+alias set-commit-hook="cdrt && cp ~/dotfiles/commit-msg.chromium-hook ./.git/hooks/commit-msg"
 
 #==============================================================================
 # PLUGINS
@@ -192,5 +192,7 @@ function check_last_exit_code() {
 
 # added by travis gem
 [ -f /Users/jophba/.travis/travis.sh ] && source /Users/jophba/.travis/travis.sh
+
+source $HOME/.cargo/env
 
 RPROMPT='$(check_last_exit_code)'
