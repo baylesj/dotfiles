@@ -6,13 +6,12 @@
 	branch = false
 
 [http]
-	#cookiefile = /Users/jophba/.gitcookies
-	#cookiefile = /usr/local/google/home/jophba/.gitcookies
-
 	# Gitconfig doesn't support conditionals or environment vars,
 	# so need a crossplatform cookiefile location. Make sure to move
 	# the cookie file from its default location
-	cookiefile = /usr/local/google/home/jophba/.gitcookies
+	#cookiefile = /Users/jophba/.gitcookies
+	#cookiefile = /usr/local/google/home/jophba/.gitcookies
+	cookiefile = /usr/local/src/.gitcookies
 	sslVerify = false
 
 [core]
@@ -36,7 +35,9 @@
 
 [alias]
   # Some handy aliases for working with Gerrit:
-	up = cl upload
+	# cl upload is too "smart"...
+	# up = cl upload
+	up = push origin HEAD:refs/for/master
 	can = commit --amend --no-edit
 	bsu = branch --set-upstream-to=origin/master
 
