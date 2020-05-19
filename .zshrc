@@ -22,12 +22,7 @@ ZSH_THEME="crcandy"
 EDITOR="vim"
 TERM="rxvt"
 
-# Make sure that /usr/local/bin is before /usr/bin on Mac OS X, otherwise
-# homebrew versions won't supercede older OS versions.
-PATH=/usr/local/bin:user/local/sbin:/usr/bin:/bin:/sbin:$PATH
-
 PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin":$PATH
-
 PATH=/user/local/google/home/jophba/bin:$PATH
 PATH=/usr/local/src/depot_tools:$PATH
 PATH=/usr/local/src/openscreen:$PATH
@@ -35,11 +30,15 @@ PATH=/usr/lib/llvm-7/bin/:$PATH
 PATH=/usr/local/opt/llvm/bin:$PATH
 PATH=/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 PATH=/snap/bin:$PATH
+PATH=$HOME/.cargo/bin:$PATH
+# Make sure that /usr/local/bin is before /usr/bin on Mac OS X, otherwise
+# homebrew versions won't supercede older OS versions.
+PATH=/usr/local/bin:user/local/sbin:/usr/bin:/bin:/sbin:$PATH
 
 CHROME_BUILDTOOLS_PATH=/usr/local/src/chromium/src/buildtools
 CHROMIUM_BUILDTOOLS_PATH=$CHROME_BUILDTOOLS_PATH
 DEFAULT_SIZES="1200x800,1800x1200,2400x1600,1440x900,2160x1350,2880x1800"
-DEV_HOST="jophba@jpb.kir.corp.google.com"
+DEV_HOST="jophba@jophba.bve.corp.google.com"
 FUSE_POINT="${HOME}/jpb-src"
 FUSE_FLAGS="reconnect,ServerAliveInterval=15,ServerAliveCountMax=3"
 REPO_DIR="/usr/local/src/"
@@ -137,6 +136,7 @@ alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v master | xargs -n 
 alias git-sync="git co master && git pull && git remote prune origin && git-brd && git-bdm"
 
 # Annoying git workflow stuff
+alias acp="git add -A && git can && git cl presubmit --upload"
 alias hide-git-status="cdrt && echo '\n\n[oh-my-zsh]\n\thide-status=1\n\n' >> .git/config"
 alias set-commit-hook="cdrt && cp ~/dotfiles/commit-msg.chromium-hook ./.git/hooks/commit-msg"
 

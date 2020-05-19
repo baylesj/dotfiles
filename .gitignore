@@ -1,11 +1,8 @@
-.config/
 .icons/
 .idea/
 .themes/
 .vim/cache/
 .vscode/
-build/
-bin/
 
 .DS_Store
 *.pyc
