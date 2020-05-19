@@ -21,6 +21,7 @@
 	excludesfile = ~/.gitignore
 	pager = cat
 	precomposeUnicode = true
+	trustctime = false
 
 [merge]
 	tool = vscode

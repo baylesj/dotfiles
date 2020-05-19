@@ -66,6 +66,7 @@ alias sas="aptitude search"
 alias gs='grep -rnw . -e'
 
 # Google aliases
+alias ssh-status="echo \"available agents:\n\" && ls /tmp/ssh-* && echo \"\nSSH_AUTH_SOCK:\" $SSH_AUTH_SOCK"
 alias ssh-devbox="gcert && ssh -v -X ${DEV_HOST}"
 alias goma="${GOMA_DIR}/goma_ctl.py ensure_start"
 
@@ -192,5 +193,6 @@ function check_last_exit_code() {
 [ -f /Users/jophba/.travis/travis.sh ] && source /Users/jophba/.travis/travis.sh
 
 source $HOME/.cargo/env
+source /etc/bash_completion.d/g4d
 
 RPROMPT='$(check_last_exit_code)'
