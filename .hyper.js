@@ -115,7 +115,8 @@ module.exports = {
     "hyper-search",
     "hypercwd",
     "hyper-yes",
-    "hyper-fading-scrollbar"
+    "hyper-fading-scrollbar",
+    "hyper-solarized-light"
   ],
 
   // in development, you can create a directory under

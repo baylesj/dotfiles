@@ -195,7 +195,7 @@ function check_last_exit_code() {
 # added by travis gem
 [ -f /Users/jophba/.travis/travis.sh ] && source /Users/jophba/.travis/travis.sh
 
-source $HOME/.cargo/env
-source /etc/bash_completion.d/g4d
+source $HOME/.cargo/env > /dev/null 2>&1
+source /etc/bash_completion.d/g4d > /dev/null 2>&1
 
 RPROMPT='$(check_last_exit_code)'
