@@ -105,8 +105,8 @@ map <Down> <Nop>
 "Coloring!
 set t_Co=256
 
-" Color has to be last for some reason
-color xoria256
+"color xoria256
+color buttercream
 hi Normal guibg=NONE ctermbg=NONE
 set cursorline
 
