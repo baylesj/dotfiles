@@ -87,8 +87,11 @@ alias gngena="cdrt && mkdir -p out/Default && gn gen --args=\"is_asan=true is_de
 alias gngens="cdrt && mkdir -p out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
 
 alias ca="cdrt && python ./tools/traffic_annotation/scripts/check_annotations.py --build-path ./out/Default"
-alias ncd="cdrt && ninja -j 1000 -C out/Default"
+alias acd="cdrt && autoninja -C out/Default"
+alias fcd="cdrt && ninja -j 50 -C out/Default"
+alias mcd="cdrt && ninja -j 1000 -C out/Default"
 alias ut="cdrt && ./out/Default/*unittests"
+alias e2e="cdrt && ./out/Default/e2e*"
 
 # AwesomeWM shortcuts
 alias lock="xscreensaver-command -lock"
