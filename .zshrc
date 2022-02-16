@@ -26,7 +26,8 @@ PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin":$PATH
 PATH=/user/local/google/home/jophba/bin:$PATH
 PATH=/usr/local/src/depot_tools:$PATH
 PATH=/usr/local/src/openscreen:$PATH
-PATH=/usr/lib/llvm-7/bin/:$PATH
+PATH=/usr/lib/llvm-7/bin:$PATH
+PATH=/usr/local/opt:$PATH
 PATH=/usr/local/opt/llvm/bin:$PATH
 PATH=/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 PATH=/snap/bin:$PATH
@@ -44,6 +45,11 @@ FUSE_FLAGS="reconnect,ServerAliveInterval=15,ServerAliveCountMax=3"
 REPO_DIR="/usr/local/src/"
 
 GOMA_DIR=$(goma_ctl goma_dir)
+
+HOMEBREW_EXE="/opt/homebrew/bin/brew"
+if [[ -f "$HOMEBREW_EXE" ]]; then
+	eval "$($HOMEBREW_EXE shellenv)"
+fi
 
 #===============================================================================
 # Sources
@@ -157,7 +163,7 @@ plugins=(
 	github
 	gnu-utils
 	jsontools
-	osx
+	macos
 	pep8
 	pip
 	pylint
@@ -174,7 +180,9 @@ plugins=(
 #===============================================================================
 # Commands to run
 #===============================================================================
-eval $(keychain --eval id_rsa github_rsa)
+if type "$keychain" > /dev/null; then
+	eval $(keychain --eval id_rsa github_rsa)
+fi
 
 #===============================================================================
 # Functions
