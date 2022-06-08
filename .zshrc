@@ -32,6 +32,7 @@ PATH=/usr/local/opt/llvm/bin:$PATH
 PATH=/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/bin:$PATH
 PATH=/snap/bin:$PATH
 PATH=$HOME/.cargo/bin:$PATH
+PATH=$HOME/bin:$PATH
 # Make sure that /usr/local/bin is before /usr/bin on Mac OS X, otherwise
 # homebrew versions won't supercede older OS versions.
 PATH=/usr/local/bin:user/local/sbin:/usr/bin:/bin:/sbin:$PATH

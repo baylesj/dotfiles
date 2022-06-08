@@ -11,7 +11,7 @@
 	# the cookie file from its default location
 	#cookiefile = /Users/jophba/.gitcookies
 	#cookiefile = /usr/local/google/home/jophba/.gitcookies
-	cookiefile = /usr/local/src/.gitcookies
+	cookiefile = /Users/jophba/.gitcookies
 	sslVerify = false
 
 [core]
@@ -37,9 +37,9 @@
 [alias]
   # Some handy aliases for working with Gerrit:
 	up = cl upload
-	# up = push origin HEAD:refs/for/master
+	poh = push origin HEAD:refs/for/main
 	can = commit --amend --no-edit
-	bsu = branch --set-upstream-to=origin/master
+	bsu = branch --set-upstream-to=origin/main
 
 	a = add --all
 	ai = add -i
