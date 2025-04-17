@@ -1,7 +1,12 @@
 #!/usr/bin/env sh
 
-echo "merging main into all local branches..."
-for branch in $(git branch --format '%(refname:short)'); do
+echo "Merging main into all local branches..."
+
+git checkout main
+git pull
+gclient sync
+
+for branch in $(git branch --format '%(refname:short)' | grep -v "\-stale$"); do
     if [[ "$branch" != "main" ]]; then
         git checkout "$branch"
         git merge main
