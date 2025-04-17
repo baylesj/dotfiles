@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import re
 import xmlrpclib
@@ -26,38 +26,38 @@ def main():
     optp.add_option('--extip6', help='Force external IPv6. This can be used to update a record with an IP different than the IP of the server/workstation from which the script is executed')
     optp.add_option('-q', '--quiet',    help='No output except to stderr on error', action='store_true')
     (opts, args) = optp.parse_args()
-   
+
     # Process
     if opts.ipv4: rtypes.append('A')
     if opts.ipv6: rtypes.append('AAAA')
     domain = opts.domain
     apikey = opts.api
-    record = opts.record    
+    record = opts.record
     extip4 = opts.extip4
     extip6 = opts.extip6
     if opts.quiet: quiet=True
-    
+
     if apikey == None or apikey == '':
         print >> sys.stderr, ("No Apikey specified")
         usage()
         sys.exit(79)
-        
-    #This call will always return true. cf comment regarding check_if_apikey_exists    
+
+    #This call will always return true. cf comment regarding check_if_apikey_exists
     if check_if_apikey_exists(apikey) == False:
         print >> sys.stderr, ("Apikey " + apikey + " does not exist or is malformed")
         usage()
         sys.exit(80)
-        
+
     if domain == None:
         print >> sys.stderr, ("No Domain specified")
         usage()
         sys.exit(81)
-        
+
 #    if check_if_domain_exists(apikey, domain) == False:
 #        print >> sys.stderr, ("Domain " + domain + " does not exist")
 #        usage()
 #        sys.exit(82)
-    
+
     # Default
     if not rtypes:
         rtypes = ['A']
@@ -84,21 +84,21 @@ def main():
             print >> sys.stderr,  ("Can't find address for record type '" + rtype + "'")
             sys.exit(84)
         addresses[rtype] = address
-        
+
     # Fetch the active zone id
     zone_id = get_zoneid_by_domain(apikey, domain)
-    
+
     # Check if the current IPv4 address changed
     for rtype in rtypes:
         ip_changed = check_if_ip_changed(apikey, zone_id, record, rtype, addresses[rtype])
         if not ip_changed:
             if not quiet:
                 print ("The IP for '" + record + "' did not change")
-            sys.exit(0) 
-    
+            sys.exit(0)
+
     # Create a new zone version for zone id
     version_id = create_new_zone_version(apikey, zone_id)
-    
+
     for rtype in rtypes:
         # Update the record for the zone id and zone version
         update_record(apikey, zone_id, version_id, record, rtype, addresses[rtype])
@@ -145,7 +145,7 @@ def get_public_ipv6():
 
 def update_record(apikey, zone_id, zone_version, record, rtype, value):
     delete_record(apikey, zone_id, zone_version, record, rtype)
-    insert_record(apikey, zone_id, zone_version, record, rtype, value)    
+    insert_record(apikey, zone_id, zone_version, record, rtype, value)
 
 def delete_record(apikey, zone_id, zone_version, record, rtype):
     recordListOptions = {"name": record,
@@ -154,9 +154,9 @@ def delete_record(apikey, zone_id, zone_version, record, rtype):
     records = api.domain.zone.record.delete(apikey, zone_id, zone_version, recordListOptions)
 
 def insert_record(apikey, zone_id, zone_version, record, rtype, value):
-    zoneRecord = {"name": record, 
-                  "ttl": 10800, 
-                  "type": rtype, 
+    zoneRecord = {"name": record,
+                  "ttl": 10800,
+                  "type": rtype,
                   "value": value}
 
     api.domain.zone.record.add(apikey, zone_id, zone_version, zoneRecord)
@@ -178,8 +178,8 @@ def check_if_apikey_exists(apikey):
     except xmlrpclib.Fault as err:
         return False
 
-def check_if_record_exists(apikey, zone_id, record, rtype): 
-    recordListOptions = {"name": record, 
+def check_if_record_exists(apikey, zone_id, record, rtype):
+    recordListOptions = {"name": record,
                          "type": rtype}
 
     records = api.domain.zone.record.list(apikey, zone_id, 0, recordListOptions)
@@ -191,15 +191,15 @@ def check_if_record_exists(apikey, zone_id, record, rtype):
 def check_if_ip_changed(apikey, zone_id, record, rtype, external_ip):
     recordListOptions = {"name": record,
                          "type": rtype}
-    
+
     records = api.domain.zone.record.list(apikey, zone_id, 0, recordListOptions)
     if len(records) > 0:
         for record in records:
             if record['value'] == external_ip:
                 return False
-            
+
         return True
-        
+
     return False
 
 if __name__ == "__main__":

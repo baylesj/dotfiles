@@ -146,6 +146,7 @@ alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v main | xargs -n 1 
 alias git-sync="git co main && git pull && git remote prune origin && git-brd && git-bdm"
 alias git-update="git fetch origin main:main && git merge main"
 
+alias git-update-all="~/bin/git-update-all"
 alias git-unset-dirs="print \"GIT_DIR={$GIT_DIR}, GIT_WORK_TREE={$GIT_WORK_TREE}. Unsetting...\" && unset GIT_WORK_TREE && unset GIT_DIR"
 
 # Annoying git workflow stuff

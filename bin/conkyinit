@@ -1,4 +1,0 @@
-#!/bin/bash
-sleep 3 &&
-# support multiple conky instances
-conky -d &
