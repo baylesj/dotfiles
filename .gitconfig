@@ -11,7 +11,6 @@
 	# the cookie file from its default location
 	#cookiefile = /Users/jophba/.gitcookies
 	#cookiefile = /usr/local/google/home/jophba/.gitcookies
-	cookiefile = /Users/jophba/.gitcookies
 	sslVerify = false
 
 [core]
@@ -217,3 +216,20 @@
 	pushInsteadOf = https://nest-camera-internal.googlesource.com/
 [url "persistent-https://nest-camera-internal-review.git.corp.google.com/"]
 	insteadOf = https://nest-camera-internal-review.googlesource.com/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[url "sso://chromium"]
+	insteadOf = https://chromium.googlesource.com
+	insteadOf = https://chromium-review.googlesource.com
+[url "sso://chrome-internal"]
+	insteadOf = https://chrome-internal.googlesource.com
+	insteadOf = https://chrome-internal-review.googlesource.com
+[depot-tools]
+	useNewAuthStack = 1
+[protocol "sso"]
+	allow = always
+[url "sso://chromium/"]
+	insteadOf = https://chromium.googlesource.com/

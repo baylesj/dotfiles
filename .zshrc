@@ -23,19 +23,22 @@ EDITOR="vim"
 TERM="rxvt"
 
 PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin":$PATH
+PATH="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/":$PATH
 PATH=/user/local/google/home/jophba/bin:$PATH
 PATH=/usr/local/src/depot_tools:$PATH
 PATH=/usr/local/src/openscreen:$PATH
 PATH=/usr/lib/llvm-7/bin:$PATH
 PATH=/usr/local/opt:$PATH
 PATH=/usr/local/opt/llvm/bin:$PATH
-PATH=/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/bin:$PATH
+PATH=/opt/homebrew/Cellar/python@3.11/3.11.3/bin/:$PATH
 PATH=/snap/bin:$PATH
 PATH=$HOME/.cargo/bin:$PATH
 PATH=$HOME/bin:$PATH
 # Make sure that /usr/local/bin is before /usr/bin on Mac OS X, otherwise
 # homebrew versions won't supercede older OS versions.
 PATH=/usr/local/bin:user/local/sbin:/usr/bin:/bin:/sbin:$PATH
+
+echo "set path..."
 
 CHROME_BUILDTOOLS_PATH=/usr/local/src/chromium/src/buildtools
 CHROMIUM_BUILDTOOLS_PATH=$CHROME_BUILDTOOLS_PATH
@@ -44,8 +47,6 @@ DEV_HOST="jophba@jophba.bve.corp.google.com"
 FUSE_POINT="${HOME}/jpb-src"
 FUSE_FLAGS="reconnect,ServerAliveInterval=15,ServerAliveCountMax=3"
 REPO_DIR="/usr/local/src/"
-
-GOMA_DIR=$(goma_ctl goma_dir)
 
 HOMEBREW_EXE="/opt/homebrew/bin/brew"
 if [[ -f "$HOMEBREW_EXE" ]]; then
@@ -56,6 +57,8 @@ fi
 # Sources
 #===============================================================================
 source $ZSH/oh-my-zsh.sh
+
+echo "set oh my zsh..."
 
 #===============================================================================
 # Aliases
@@ -72,7 +75,6 @@ alias gs='grep -rnw . -e'
 # Google aliases
 alias ssh-status="echo \"available agents:\n\" && ls /tmp/ssh-* && echo \"\nSSH_AUTH_SOCK:\" $SSH_AUTH_SOCK"
 alias ssh-devbox="gcert && ssh -v -X ${DEV_HOST}"
-alias goma="${GOMA_DIR}/goma_ctl.py ensure_start"
 
 alias ssh-devbox-fs="umount ${FUSE_POINT} || echo unmounted && gcert && sshfs -o ${FUSE_FLAGS} ${DEV_HOST}:${REPO_DIR} ${FUSE_POINT}"
 alias ssh-devbox-fsd="umount ${FUSE_POINT} || echo unmounted && gcert && sshfs -o debug,${FUSE_FLAGS} ${DEV_HOST}:${REPO_DIR} ${FUSE_POINT}"
@@ -86,7 +88,6 @@ alias osp="red && cd openscreenprotocol"
 
 alias cdrt="pushd \$(git rev-parse --show-toplevel)"
 alias gngen="cdrt && mkdir -p out/Default && gn gen out/Default"
-alias gngeng="cdrt && mkdir -p out/Default && gn gen --args=\"use_goma=true\" out/Default"
 alias gngend="cdrt && mkdir -p out/Default && gn gen --args=\"is_debug=true\" out/Default"
 alias gngena="cdrt && mkdir -p out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
 alias gngens="cdrt && mkdir -p out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
@@ -139,14 +140,24 @@ alias ls="exa"
 alias la="exa -la"
 
 # Annoying branch cleanup
-alias git-brd="git branch -r --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git push --delete origin"
-alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v master | xargs -n 1 git branch -d"
-alias git-sync="git co master && git pull && git remote prune origin && git-brd && git-bdm"
+alias git-brm="git branch -r --merged | grep -v main | sed 's/origin\///'"
+alias git-brd="git branch -r --merged | grep -v main | sed 's/origin\///' | xargs -n 1 git push --delete origin"
+alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v main | xargs -n 1 git branch -d"
+alias git-sync="git co main && git pull && git remote prune origin && git-brd && git-bdm"
+alias git-update="git fetch origin main:main && git merge main"
+
+alias git-unset-dirs="print \"GIT_DIR={$GIT_DIR}, GIT_WORK_TREE={$GIT_WORK_TREE}. Unsetting...\" && unset GIT_WORK_TREE && unset GIT_DIR"
 
 # Annoying git workflow stuff
 alias acp="git add -A && git can && git cl presubmit --upload"
 alias hide-git-status="cdrt && echo '\n\n[oh-my-zsh]\n\thide-status=1\n\n' >> .git/config"
 alias set-commit-hook="cdrt && cp ~/dotfiles/commit-msg.chromium-hook ./.git/hooks/commit-msg"
+
+# On Mac, don't use git cl -- it uses the wrong CIPD client.
+alias gcl="git-cl"
+alias gcf="git-cl format"
+
+echo "set aliases..."
 
 #===============================================================================
 # PLUGINS
@@ -178,6 +189,8 @@ plugins=(
 	vscode
 )
 
+echo "set plugins..."
+
 #===============================================================================
 # Commands to run
 #===============================================================================
@@ -206,3 +219,12 @@ source $HOME/.cargo/env > /dev/null 2>&1
 source /etc/bash_completion.d/g4d > /dev/null 2>&1
 
 RPROMPT='$(check_last_exit_code)'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jophba/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jophba/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jophba/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jophba/google-cloud-sdk/completion.zsh.inc'; fi
+
+echo "ran commands..."
+echo "done"

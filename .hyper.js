@@ -27,16 +27,16 @@ module.exports = {
     letterSpacing: 0,
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
+    //cursorColor: 'rgba(248,28,229,0.8)',
 
     // terminal text color under BLOCK cursor
-    cursorAccentColor: '#000',
+    //cursorAccentColor: '#000',
 
     // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
-    cursorShape: 'BLOCK',
+    cursorShape: 'BEAM',
 
     // set to `true` (without backticks and without quotes) for blinking cursor
-    cursorBlink: false,
+    cursorBlink: true,
 
     // custom CSS to embed in the main window
     css: '',
@@ -116,7 +116,11 @@ module.exports = {
     "hypercwd",
     "hyper-yes",
     "hyper-fading-scrollbar",
-    "hyper-solarized-light"
+//    "hyper-solarized-light",
+//    "hyper-material-theme",
+//    "hyper-solarized-dark",
+//    "hyper-subliminal-theme",
+    "gruvbox"
   ],
 
   // in development, you can create a directory under

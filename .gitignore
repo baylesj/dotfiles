@@ -11,3 +11,8 @@ gn
 .zsh_history
 CMakeLists.txt
 *-notes.txt
+third_party/cros-components
+CMake*
+cmake*
+
+.../
