@@ -1,0 +1,40 @@
+#!/bin/bash
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+  echo "Usage: $0 <commit1> <commit2>"
+  exit 1
+fi
+
+COMMIT1=$1
+COMMIT2=$2
+
+ADDED_SIZE=0
+REMOVED_SIZE=0
+
+# Use process substitution to feed the loop, avoiding a subshell.
+# This is the key change.
+while read -r old_mode new_mode old_sha new_sha status file; do
+  case $status in
+    A) # Added file
+      size=$(git cat-file -s "$new_sha")
+      ADDED_SIZE=$((ADDED_SIZE + size))
+      ;;
+    M) # Modified file
+      old_size=$(git cat-file -s "$old_sha")
+      new_size=$(git cat-file -s "$new_sha")
+      # Properly calculate net change
+      if [ "$new_size" -gt "$old_size" ]; then
+        ADDED_SIZE=$((ADDED_SIZE + new_size - old_size))
+      else
+        REMOVED_SIZE=$((REMOVED_SIZE + old_size - new_size))
+      fi
+      ;;
+    D) # Deleted file
+      size=$(git cat-file -s "$old_sha")
+      REMOVED_SIZE=$((REMOVED_SIZE + size))
+      ;;
+  esac
+done < <(git diff-tree -r --raw "$COMMIT1" "$COMMIT2")
+
+echo "Bytes added:   $ADDED_SIZE"
+echo "Bytes removed: $REMOVED_SIZE"

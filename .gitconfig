@@ -233,3 +233,5 @@
 	allow = always
 [url "sso://chromium/"]
 	insteadOf = https://chromium.googlesource.com/
+[url "sso://chrome-internal/"]
+	insteadOf = https://chrome-internal.googlesource.com/

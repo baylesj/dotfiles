@@ -41,12 +41,6 @@ PATH=/usr/local/bin:user/local/sbin:/usr/bin:/bin:/sbin:$PATH
 echo "set path..."
 
 SKIP_GCE_AUTH_FOR_GIT=1
-CHROME_BUILDTOOLS_PATH=/usr/local/src/chromium/src/buildtools
-CHROMIUM_BUILDTOOLS_PATH=$CHROME_BUILDTOOLS_PATH
-DEFAULT_SIZES="1200x800,1800x1200,2400x1600,1440x900,2160x1350,2880x1800"
-DEV_HOST="jophba@jophba.bve.corp.google.com"
-FUSE_POINT="${HOME}/jpb-src"
-FUSE_FLAGS="reconnect,ServerAliveInterval=15,ServerAliveCountMax=3"
 REPO_DIR="/usr/local/src/"
 
 HOMEBREW_EXE="/opt/homebrew/bin/brew"
@@ -75,10 +69,7 @@ alias gs='grep -rnw . -e'
 
 # Google aliases
 alias ssh-status="echo \"available agents:\n\" && ls /tmp/ssh-* && echo \"\nSSH_AUTH_SOCK:\" $SSH_AUTH_SOCK"
-alias ssh-devbox="gcert && ssh -v -X ${DEV_HOST}"
-
-alias ssh-devbox-fs="umount ${FUSE_POINT} || echo unmounted && gcert && sshfs -o ${FUSE_FLAGS} ${DEV_HOST}:${REPO_DIR} ${FUSE_POINT}"
-alias ssh-devbox-fsd="umount ${FUSE_POINT} || echo unmounted && gcert && sshfs -o debug,${FUSE_FLAGS} ${DEV_HOST}:${REPO_DIR} ${FUSE_POINT}"
+alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
 
 # Openscreen aliases
 alias red="cd ${REPO_DIR}"
@@ -94,7 +85,7 @@ alias gngend="cdrt && mkdir -p out/Default && gn gen --args=\"is_debug=true\" ou
 alias gngena="cdrt && mkdir -p out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
 alias gngens="cdrt && mkdir -p out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
 
-alias gngencc="gn gen --add-export-compile-commands="*" out/Default"
+alias gngencc="gn gen --add-export-compile-commands=\"*\" out/Default"
 
 alias ca="cdrt && python ./tools/traffic_annotation/scripts/check_annotations.py --build-path ./out/Default"
 alias acd="cdrt && autoninja -C out/Default"
@@ -219,6 +210,9 @@ function check_last_exit_code() {
 
 source $HOME/.cargo/env > /dev/null 2>&1
 source /etc/bash_completion.d/g4d > /dev/null 2>&1
+
+export PATH=/usr/local/src/fuchsia/.jiri_root/bin:$PATH
+source /usr/local/src/fuchsia/scripts/fx-env.sh
 
 RPROMPT='$(check_last_exit_code)'
 
