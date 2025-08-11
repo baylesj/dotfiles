@@ -10,7 +10,7 @@
 	# so need a crossplatform cookiefile location. Make sure to move
 	# the cookie file from its default location
 	#cookiefile = /Users/jophba/.gitcookies
-	#cookiefile = /usr/local/google/home/jophba/.gitcookies
+	cookiefile = /usr/local/google/home/jophba/.gitcookies
 	sslVerify = false
 
 [core]

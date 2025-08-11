@@ -40,6 +40,7 @@ PATH=/usr/local/bin:user/local/sbin:/usr/bin:/bin:/sbin:$PATH
 
 echo "set path..."
 
+SKIP_GCE_AUTH_FOR_GIT=1
 CHROME_BUILDTOOLS_PATH=/usr/local/src/chromium/src/buildtools
 CHROMIUM_BUILDTOOLS_PATH=$CHROME_BUILDTOOLS_PATH
 DEFAULT_SIZES="1200x800,1800x1200,2400x1600,1440x900,2160x1350,2880x1800"
@@ -88,9 +89,12 @@ alias osp="red && cd openscreenprotocol"
 
 alias cdrt="pushd \$(git rev-parse --show-toplevel)"
 alias gngen="cdrt && mkdir -p out/Default && gn gen out/Default"
+alias gngeng="cdrt && mkdir -p out/Default && gn gen --args=\"use_reclient=true\" out/Default"
 alias gngend="cdrt && mkdir -p out/Default && gn gen --args=\"is_debug=true\" out/Default"
 alias gngena="cdrt && mkdir -p out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
 alias gngens="cdrt && mkdir -p out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
+
+alias gngencc="gn gen --add-export-compile-commands="*" out/Default"
 
 alias ca="cdrt && python ./tools/traffic_annotation/scripts/check_annotations.py --build-path ./out/Default"
 alias acd="cdrt && autoninja -C out/Default"
@@ -145,7 +149,6 @@ alias git-brd="git branch -r --merged | grep -v main | sed 's/origin\///' | xarg
 alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v main | xargs -n 1 git branch -d"
 alias git-sync="git co main && git pull && git remote prune origin && git-brd && git-bdm"
 alias git-update="git fetch origin main:main && git merge main"
-alias git-unset-dirs="print \"GIT_DIR={$GIT_DIR}, GIT_WORK_TREE={$GIT_WORK_TREE}. Unsetting...\" && unset GIT_WORK_TREE && unset GIT_DIR"
 
 # Annoying git workflow stuff
 alias acp="git add -A && git can && git cl presubmit --upload"
