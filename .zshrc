@@ -43,12 +43,7 @@ PATH=/opt/homebrew/bin/:$PATH
 
 echo "set path..."
 
-CHROME_BUILDTOOLS_PATH=/usr/local/src/chromium/src/buildtools
-CHROMIUM_BUILDTOOLS_PATH=$CHROME_BUILDTOOLS_PATH
-DEFAULT_SIZES="1200x800,1800x1200,2400x1600,1440x900,2160x1350,2880x1800"
-DEV_HOST="jophba@jophba.bve.corp.google.com"
-FUSE_POINT="${HOME}/jpb-src"
-FUSE_FLAGS="reconnect,ServerAliveInterval=15,ServerAliveCountMax=3"
+SKIP_GCE_AUTH_FOR_GIT=1
 REPO_DIR="/usr/local/src/"
 
 HOMEBREW_EXE="/opt/homebrew/bin/brew"
@@ -77,10 +72,7 @@ alias gs='grep -rnw . -e'
 
 # Google aliases
 alias ssh-status="echo \"available agents:\n\" && ls /tmp/ssh-* && echo \"\nSSH_AUTH_SOCK:\" $SSH_AUTH_SOCK"
-alias ssh-devbox="gcert && ssh -v -X ${DEV_HOST}"
-
-alias ssh-devbox-fs="umount ${FUSE_POINT} || echo unmounted && gcert && sshfs -o ${FUSE_FLAGS} ${DEV_HOST}:${REPO_DIR} ${FUSE_POINT}"
-alias ssh-devbox-fsd="umount ${FUSE_POINT} || echo unmounted && gcert && sshfs -o debug,${FUSE_FLAGS} ${DEV_HOST}:${REPO_DIR} ${FUSE_POINT}"
+alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
 
 # Openscreen aliases
 alias red="cd ${REPO_DIR}"
@@ -91,9 +83,12 @@ alias osp="red && cd openscreenprotocol"
 
 alias cdrt="pushd \$(git rev-parse --show-toplevel)"
 alias gngen="cdrt && mkdir -p out/Default && gn gen out/Default"
+alias gngeng="cdrt && mkdir -p out/Default && gn gen --args=\"use_reclient=true\" out/Default"
 alias gngend="cdrt && mkdir -p out/Default && gn gen --args=\"is_debug=true\" out/Default"
 alias gngena="cdrt && mkdir -p out/Default && gn gen --args=\"is_asan=true is_debug=true\" out/Default"
 alias gngens="cdrt && mkdir -p out/Default && gn gen --args=\"is_asan=true is_static_analyzer=true is_debug=true\" out/Default"
+
+alias gngencc="gn gen --add-export-compile-commands=\"*\" out/Default"
 
 alias ca="cdrt && python ./tools/traffic_annotation/scripts/check_annotations.py --build-path ./out/Default"
 alias acd="cdrt && autoninja -C out/Default"
@@ -148,7 +143,6 @@ alias git-brd="git branch -r --merged | grep -v main | sed 's/origin\///' | xarg
 alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v main | xargs -n 1 git branch -d"
 alias git-sync="git co main && git pull && git remote prune origin && git-brd && git-bdm"
 alias git-update="git fetch origin main:main && git merge main"
-alias git-unset-dirs="print \"GIT_DIR={$GIT_DIR}, GIT_WORK_TREE={$GIT_WORK_TREE}. Unsetting...\" && unset GIT_WORK_TREE && unset GIT_DIR"
 
 # Annoying git workflow stuff
 alias acp="git add -A && git can && git cl presubmit --upload"
@@ -219,6 +213,9 @@ function check_last_exit_code() {
 
 source $HOME/.cargo/env > /dev/null 2>&1
 source /etc/bash_completion.d/g4d > /dev/null 2>&1
+
+export PATH=/usr/local/src/fuchsia/.jiri_root/bin:$PATH
+source /usr/local/src/fuchsia/scripts/fx-env.sh
 
 RPROMPT='$(check_last_exit_code)'
 

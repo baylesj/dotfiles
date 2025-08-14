@@ -10,7 +10,7 @@
 	# so need a crossplatform cookiefile location. Make sure to move
 	# the cookie file from its default location
 	#cookiefile = /Users/jophba/.gitcookies
-	#cookiefile = /usr/local/google/home/jophba/.gitcookies
+	cookiefile = /usr/local/google/home/jophba/.gitcookies
 	sslVerify = false
 
 [core]
@@ -234,10 +234,12 @@
 [url "sso://chromium/"]
 	insteadOf = https://chromium.googlesource.com/
 [core]
-    packedGitLimit = 512m
-    packedGitWindowSize = 512m
+	packedGitLimit = 512m
+	packedGitWindowSize = 512m
 [pack]
 	window = 1
-    deltaCacheSize = 2047m
-    packSizeLimit = 2047m
-    windowMemory = 2047m
+	deltaCacheSize = 2047m
+	packSizeLimit = 2047m
+	windowMemory = 2047m
+[url "sso://chrome-internal/"]
+	insteadOf = https://chrome-internal.googlesource.com/
