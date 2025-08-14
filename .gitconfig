@@ -233,3 +233,11 @@
 	allow = always
 [url "sso://chromium/"]
 	insteadOf = https://chromium.googlesource.com/
+[core]
+    packedGitLimit = 512m
+    packedGitWindowSize = 512m
+[pack]
+	window = 1
+    deltaCacheSize = 2047m
+    packSizeLimit = 2047m
+    windowMemory = 2047m

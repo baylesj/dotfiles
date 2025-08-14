@@ -37,6 +37,9 @@ PATH=$HOME/bin:$PATH
 # Make sure that /usr/local/bin is before /usr/bin on Mac OS X, otherwise
 # homebrew versions won't supercede older OS versions.
 PATH=/usr/local/bin:user/local/sbin:/usr/bin:/bin:/sbin:$PATH
+PATH=/Users/jophba/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/:$PATH
+
+PATH=/opt/homebrew/bin/:$PATH
 
 echo "set path..."
 
