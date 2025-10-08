@@ -1,18 +1,73 @@
-.icons/
-.idea/
-.themes/
-.vim/cache/
-.vscode/
-
+# macOS
 .DS_Store
-*.pyc
-gn
+.AppleDouble
+.LSOverride
+._*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Vim
+.vim/cache/
+.vim/plugged/
+.vim/.netrwhist
+
+# Desktop themes/icons
+.icons/
+.themes/
+
+# ZSH
 .zsh-update
 .zsh_history
+.zcompdump*
+
+# Python
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+env/
+ENV/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build artifacts
+gn
 CMakeLists.txt
-*-notes.txt
-third_party/cros-components
 CMake*
 cmake*
+build/
+dist/
+*.o
+*.a
 
-.../
+# Personal notes
+*-notes.txt
+
+# Project-specific
+third_party/cros-components
+
+# Backups from make-links.sh
+*.ml-orig
+
+# SSH keys (safety)
+*.pem
+*.key
+id_rsa*
+!id_rsa*.pub

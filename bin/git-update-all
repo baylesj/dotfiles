@@ -4,10 +4,15 @@ echo "Merging main into all local branches..."
 
 git checkout main
 git pull
-gclient sync
+
+# Only run gclient sync if .gclient exists (Chromium/depot_tools repos)
+if [ -f ".gclient" ]; then
+    echo "Running gclient sync..."
+    gclient sync
+fi
 
 for branch in $(git branch --format '%(refname:short)' | grep -v "\-stale$"); do
-    if [[ "$branch" != "main" ]]; then
+    if [ "$branch" != "main" ]; then
         git checkout "$branch"
         git merge main
     fi

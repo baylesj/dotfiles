@@ -110,17 +110,10 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    "hyper-spotify",
-    "hyper-afterglow",
     "hyper-search",
     "hypercwd",
-    "hyper-yes",
     "hyper-fading-scrollbar",
-//    "hyper-solarized-light",
-//    "hyper-material-theme",
-//    "hyper-solarized-dark",
-//    "hyper-subliminal-theme",
-    "gruvbox"
+    "hyper-gruvbox",  // Modern maintained gruvbox theme
   ],
 
   // in development, you can create a directory under

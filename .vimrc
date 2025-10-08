@@ -1,6 +1,24 @@
 " Jordan Bayles (not copyrighted, feel free to steal any of it)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VIM-PLUG PLUGIN MANAGER
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Auto-install vim-plug if not present
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plugin list (run :PlugInstall to install)
+call plug#begin('~/.vim/plugged')
+" Add your plugins here in the future, for example:
+" Plug 'tpope/vim-sensible'
+" Plug 'tpope/vim-fugitive'
+" Plug 'preservim/nerdtree'
+call plug#end()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Set color syntax highlighting on

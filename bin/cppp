@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-echo "copying $1.h to $2.h..."
-cp $1.h $2.h
-
-echo "copying $1.cc to $2.cc..."
-cp $1.cc $2.cc
