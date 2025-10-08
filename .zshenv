@@ -18,3 +18,4 @@ export TERM="rxvt"
 # ──────────────────────────────────────────────────────────────────────────────
 export SKIP_GCE_AUTH_FOR_GIT=1
 export REPO_DIR="/usr/local/src/"
+export GEMINI_API_KEY=AIzaSyAEKVLqqoMA_yVip0QRKIb7c9fHwYnfMZE
