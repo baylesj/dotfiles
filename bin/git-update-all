@@ -6,9 +6,14 @@ echo "Updating main to latest..."
 git checkout main
 git pull
 
-for branch in $(git branch --format '%(refname:short)' | grep -v "\-stale$")
-do
-    if [[ "$branch" != "main" ]]; then
+# Only run gclient sync if .gclient exists (Chromium/depot_tools repos)
+if [ -f ".gclient" ]; then
+    echo "Running gclient sync..."
+    gclient sync
+fi
+
+for branch in $(git branch --format '%(refname:short)' | grep -v "\-stale$"); do
+    if [ "$branch" != "main" ]; then
         echo "Updating branch $branch..."
         git checkout "$branch"
         git merge --no-edit main

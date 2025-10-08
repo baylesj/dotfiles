@@ -24,6 +24,7 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
 	git pull
 	popd
 else
-	git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+	echo "Installing oh-my-zsh..."
+	git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
 fi
 
