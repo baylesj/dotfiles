@@ -16,6 +16,18 @@ export TERM="rxvt"
 # ──────────────────────────────────────────────────────────────────────────────
 # Google/Chromium Development
 # ──────────────────────────────────────────────────────────────────────────────
-export SKIP_GCE_AUTH_FOR_GIT=1
-export REPO_DIR="/usr/local/src/"
-export GEMINI_API_KEY=AIzaSyAEKVLqqoMA_yVip0QRKIb7c9fHwYnfMZE
+
+# Skip GCE authentication for git if on a Cloudtop.
+if hostname | grep -q -- '\.c\.googlers\.com$'; then
+  export SKIP_GCE_AUTH_FOR_GIT=1
+fi
+
+if [ -f /usr/local/src/ ]; then
+  export REPO_DIR="/usr/local/src/"
+fi
+
+if [ -f ~/.zshenv.local ]; then
+  source ~/.zshenv.local
+else
+  echo "No ~/.zshenv.local file found. You can create one to set local environment variables, such as API keys."
+fi
