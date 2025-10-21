@@ -199,13 +199,8 @@ fi
 # ──────────────────────────────────────────────────────────────────────────────
 # Aliases - Google/Chromium Workflow
 # ──────────────────────────────────────────────────────────────────────────────
-
 # SSH utilities
 alias ssh-status="echo \"available agents:\n\" && ls /tmp/ssh-* && echo \"\nSSH_AUTH_SOCK:\" $SSH_AUTH_SOCK"
-
-# Conditional Gemini alias. On MacOS, Gemini is installed via Homebrew.
-[[ -d /google/bin/releases/gemini-cli/tools ]] && alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
-alias gemini='GEMINI_API_KEY=${GEMINI_API_KEY} gemini'
 
 # GN/Build configuration
 alias gngen="cdrt && mkdir -p out/Default && gn gen out/Default"
