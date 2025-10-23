@@ -11,6 +11,8 @@
 	pager = cat
 	precomposeUnicode = true
 	trustctime = false
+	packedGitLimit = 512m
+	packedGitWindowSize = 512m
 
 # Default Branches
 [init]
@@ -71,6 +73,13 @@
 # Depot Tools
 [depot-tools]
 	useNewAuthStack = 1
+
+# Pack Settings
+[pack]
+	window = 1
+	deltaCacheSize = 2047m
+	packSizeLimit = 2047m
+	windowMemory = 2047m
 
 # Protocol Settings
 [protocol "sso"]

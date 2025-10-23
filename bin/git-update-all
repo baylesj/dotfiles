@@ -2,6 +2,7 @@
 
 echo "Merging main into all local branches..."
 
+echo "Updating main to latest..."
 git checkout main
 git pull
 
@@ -13,8 +14,18 @@ fi
 
 for branch in $(git branch --format '%(refname:short)' | grep -v "\-stale$"); do
     if [ "$branch" != "main" ]; then
+        echo "Updating branch $branch..."
         git checkout "$branch"
-        git merge main
+        git merge --no-edit main
+        if [ $? -ne 0 ]; then
+            echo "Merge was not clean. Marking branch as stale."
+            git merge --abort
+            git branch -m "$branch" "$branch-stale"
+        fi
     fi
 done
+
+echo "Updated all branches. Checking out main and doing a clean build."
 git checkout main
+gclient sync
+autoninja -C out/Default
