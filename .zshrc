@@ -86,6 +86,8 @@ if [[ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]]; t
 	path=("/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $path)
 fi
 
+# Homebrew (macOS)
+
 # User tools (highest priority)
 [[ -d $HOME/.cargo/bin ]] && path=($HOME/.cargo/bin $path)
 [[ -d $HOME/bin ]] && path=($HOME/bin $path)
@@ -199,7 +201,7 @@ alias dusage='du -h -d 1 | sort -h'
 
 # Shell management
 alias zrc="vim ~/.zshrc"
-alias src="source ~/.zshrc"
+alias src="source ~/.zshrc && source ~/.zshenv && source ~/.zshenv.local"
 alias reload='exec zsh'
 
 # Network utilities
@@ -378,3 +380,13 @@ fi
 if [[ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]]; then
 	source "$HOME/google-cloud-sdk/completion.zsh.inc"
 fi
+
+. "$HOME/.local/bin/env"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Homebrew Path Prioritization
+# ──────────────────────────────────────────────────────────────────────────────
+if [[ -f "/opt/homebrew/bin" ]]; then
+eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
