@@ -17,6 +17,13 @@ for f in .[a-z]* bin; do
 	ln -f -s $rf $hf
 done
 
+# Create kitty config directory
+mkdir -p $HOME/.config/kitty
+
+# Link kitty.conf
+echo "Linking kitty.conf..."
+ln -f -s $root/kitty.conf $HOME/.config/kitty/kitty.conf
+
 if [ -d "$HOME/.oh-my-zsh" ]; then
 	echo "Updating oh my zsh..."
 	pushd $HOME/.oh-my-zsh
@@ -39,23 +46,32 @@ else
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $P10K_DIR
 fi
 
-# Install fzf
-if ! [ -x "$(command -v fzf)" ]; then
-    echo "Installing fzf..."
-    if [[ "$(uname)" == "Darwin" ]]; then
-        if ! [ -x "$(command -v brew)" ]; then
-            echo "Installing Homebrew..."
-            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        fi
-        brew install fzf
-    else
-        if [ -f /etc/debian_version ]; then
-            sudo apt-get update
-            sudo apt-get install -y fzf
-        else
-            git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-            ~/.fzf/install --all
-        fi
+# Install packages
+if [[ "$(uname)" == "Darwin" ]]; then
+    if ! [ -x "$(command -v brew)" ]; then
+        echo "Installing Homebrew..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+    echo "Installing packages with Homebrew..."
+    brew install kitty fzf bat eza fd ripgrep
+elif [ -f /etc/debian_version ]; then
+    echo "Installing packages with apt..."
+    sudo apt-get update
+    sudo apt-get install -y kitty fzf bat fd-find ripgrep
+
+    # Create symlinks for bat and fd
+    if [ ! -f /usr/local/bin/fd ]; then
+        sudo ln -s /usr/bin/fdfind /usr/local/bin/fd
+    fi
+    if [ ! -f /usr/local/bin/bat ]; then
+        sudo ln -s /usr/bin/batcat /usr/local/bin/bat
+    fi
+else
+    echo "Please install the following packages manually: kitty, fzf, bat, eza, fd, ripgrep"
+    if ! [ -x "$(command -v fzf)" ]; then
+        echo "Installing fzf from git..."
+        git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+        ~/.fzf/install --all
     fi
 fi
 
