@@ -88,14 +88,6 @@
 # Google/Chromium URL Rewrites
 [url "persistent-https://chrome-internal.git.corp.google.com/"]
 	insteadOf = https://chrome-internal.googlesource.com/
-
-[url "sso://chromium/"]
-	insteadOf = https://chromium.googlesource.com/
-
-[url "sso://chromium"]
-	insteadOf = https://chromium.googlesource.com
-	insteadOf = https://chromium-review.googlesource.com
-
 [url "sso://chrome-internal/"]
 	insteadOf = https://chrome-internal.googlesource.com/
 
@@ -279,42 +271,42 @@
 	serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 [credential "https://android.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://aomedia.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://beto-core.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://boringssl.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://dawn.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://pdfium.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://quiche.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://skia.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://swiftshader.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://webrtc.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
