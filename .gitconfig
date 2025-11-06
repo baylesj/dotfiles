@@ -28,7 +28,6 @@
 	# so need a crossplatform cookiefile location. Make sure to move
 	# the cookie file from its default location
 	#cookiefile = /Users/jophba/.gitcookies
-	cookiefile = ~/.gitcookies
 	sslVerify = false
 
 # Pager Settings
@@ -271,42 +270,44 @@
 	serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 [credential "https://android.googlesource.com"]
-	helper =
-	helper = luci
+	helper = 
 	useHttpPath = yes
+	helper = luci
 [credential "https://aomedia.googlesource.com"]
-	helper =
-	helper = luci
+	helper = 
 	useHttpPath = yes
+	helper = luci
 [credential "https://beto-core.googlesource.com"]
-	helper =
-	helper = luci
+	helper = 
 	useHttpPath = yes
+	helper = luci
 [credential "https://boringssl.googlesource.com"]
-	helper =
-	helper = luci
+	helper = 
 	useHttpPath = yes
+	helper = luci
 [credential "https://dawn.googlesource.com"]
-	helper =
-	helper = luci
+	helper = 
 	useHttpPath = yes
+	helper = luci
 [credential "https://pdfium.googlesource.com"]
-	helper =
-	helper = luci
+	helper = 
 	useHttpPath = yes
+	helper = luci
 [credential "https://quiche.googlesource.com"]
-	helper =
-	helper = luci
+	helper = 
 	useHttpPath = yes
+	helper = luci
 [credential "https://skia.googlesource.com"]
-	helper =
-	helper = luci
+	helper = 
 	useHttpPath = yes
+	helper = luci
 [credential "https://swiftshader.googlesource.com"]
-	helper =
-	helper = luci
+	helper = 
 	useHttpPath = yes
+	helper = luci
 [credential "https://webrtc.googlesource.com"]
-	helper =
-	helper = luci
+	helper = 
 	useHttpPath = yes
+	helper = luci
+[url "sso://chromium/"]
+	insteadOf = https://chromium.googlesource.com/
