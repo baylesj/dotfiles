@@ -56,6 +56,14 @@ setopt AUTO_LIST
 # ──────────────────────────────────────────────────────────────────────────────
 # PATH Configuration
 # ──────────────────────────────────────────────────────────────────────────────
+# Execute path_helper to set up the PATH environment variable. This is crucial
+# for macOS to correctly resolve system binaries and ensures that the intended
+# versions of tools (like the Google internal git from mule) are used, preventing
+# conflicts with other installed versions (e.g., Apple's git or Homebrew's git).
+if [[ -x "/usr/libexec/path_helper" ]]; then
+  eval "$(/usr/libexec/path_helper -s)"
+fi
+
 # Using ZSH path array - entries added to beginning have highest priority
 
 # Initialize with system paths (lowest priority)
@@ -162,10 +170,10 @@ alias ....="cd ../../.."
 alias cdrt="pushd \$(git rev-parse --show-toplevel)"
 
 # Repository shortcuts
-alias red="cd ${REPO_DIR}"
+alias red="cd /usr/local/src"
 alias os="red && cd openscreen"
 alias os2="red && cd openscreen2"
-alias crm="red && cd chromium/src"
+alias crs="red && cd chromium/src"
 alias osp="red && cd openscreenprotocol"
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -409,3 +417,14 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Created by `pipx` on 2025-11-13 05:28:05
+export PATH="$PATH:/Users/jophba/.local/bin"
+
+# macOS-specific configuration for bikeshed
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  export PATH="/Users/jophba/.local/bin:$PATH"
+  export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+  export LDFLAGS="-L/opt/homebrew/opt/libxml2/lib -L/opt/homebrew/opt/libxslt/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/libxml2/include -I/opt/homebrew/opt/libxslt/include"
+fi

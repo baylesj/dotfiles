@@ -55,3 +55,6 @@ fi
 if [ -f "$HOME/.cargo/env" ]; then
     source "$HOME/.cargo/env"
 fi
+
+# Created by `pipx` on 2025-11-13 05:26:57
+export PATH="$PATH:/Users/jophba/.local/bin"
