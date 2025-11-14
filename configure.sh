@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rm -rf $HOME/.*.ml-orig
+rm -rf $HOME/.*~
 
 root=$(git rev-parse --show-toplevel)
 
@@ -12,7 +12,7 @@ for f in .[a-z]* bin; do
 
     rf="$root/$f"
     hf="$HOME/$f"
-    mv $hf $hf.ml-orig
+    mv $hf $hf~
 
     ln -f -s $rf $hf
 done
@@ -53,11 +53,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
     echo "Installing packages with Homebrew..."
-    brew install kitty fzf bat eza fd ripgrep git-delta
+    brew install kitty fzf bat eza fd ripgrep git-delta node
 elif [ -f /etc/debian_version ]; then
     echo "Installing packages with apt..."
     sudo apt-get update
-    sudo apt-get install -y kitty fzf bat fd-find ripgrep git-delta
+    sudo apt-get install -y kitty fzf bat fd-find ripgrep git-delta node
 
     # Create symlinks for bat and fd
     if [ ! -f /usr/local/bin/fd ]; then
