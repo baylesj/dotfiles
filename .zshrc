@@ -308,6 +308,31 @@ function groot() {
 	fi
 }
 
+# Update the current branch to be based on the latest main
+function gup() {
+  if ! git diff-index --quiet HEAD --; then
+    echo "Error: You have uncommitted changes. Please commit or stash them first." >&2
+    return 1
+  fi
+
+  local current_branch
+  current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+  if [[ "$current_branch" == "main" ]]; then
+    echo "Already on main branch. Pulling latest changes."
+    git pull && gclient sync -D
+    return
+  fi
+
+  echo "Updating main branch..."
+  git checkout main && \
+  git pull && \
+  gclient sync -D && \
+  echo "Rebasing $current_branch onto main..." && \
+  git checkout "$current_branch" && \
+  git rebase main
+}
+
 # ──────────────────────────────────────────────────────────────────────────────
 # FZF Integration
 # ──────────────────────────────────────────────────────────────────────────────
@@ -322,6 +347,8 @@ if command -v fzf &> /dev/null; then
 	elif [[ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]]; then
 		source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
 		source /opt/homebrew/opt/fzf/shell/completion.zsh
+   else
+     source <(fzf --zsh)
 	fi
 
 	# FZF options
