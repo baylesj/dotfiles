@@ -65,47 +65,35 @@ if [[ -x "/usr/libexec/path_helper" ]]; then
 fi
 
 # Using ZSH path array - entries added to beginning have highest priority
-
-# Initialize with system paths (lowest priority)
 path=(
-	/usr/local/bin
-	/usr/local/sbin
-	/usr/bin
-	/bin
-	/sbin
-	$path
+  # User tools (highest priority)
+  "$HOME/bin"
+  "$HOME/.cargo/bin"
+  "$HOME/.local/bin"
+
+  # Development tools
+  "/usr/local/src/depot_tools"
+  "/usr/local/google/home/jophba/bin"
+  "/snap/bin"
+  "/usr/local/opt"
+  "/usr/local/opt/llvm/bin"
+
+  # Python (use latest available)
+  "$(ls -d /opt/homebrew/Cellar/python@3.*/*/bin(N) | head -n 1)"
+
+  # Xcode tools (macOS only)
+  "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
+
+  # VS Code (macOS)
+  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+  # System paths (lowest priority)
+  /usr/local/bin
+  /usr/local/sbin
+  /usr/bin
+  /bin
+  /sbin
 )
-
-# Development tools (conditional)
-[[ -d /snap/bin ]] && path=(/snap/bin $path)
-[[ -d /usr/local/opt ]] && path=(/usr/local/opt $path)
-[[ -d /usr/local/opt/llvm/bin ]] && path=(/usr/local/opt/llvm/bin $path)
-
-# Python (use latest available)
-for pydir in /opt/homebrew/Cellar/python@3.*/*/bin(N); do
-	path=($pydir $path)
-	break
-done
-
-# Google/Chromium tools (conditional)
-[[ -d /usr/local/src/depot_tools ]] && path=(/usr/local/src/depot_tools $path)
-[[ -d /usr/local/google/home/jophba/bin ]] && path=(/usr/local/google/home/jophba/bin $path)
-
-# Xcode tools (macOS only)
-if [[ -d "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin" ]]; then
-	path=("/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin" $path)
-fi
-
-# VS Code (macOS)
-if [[ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]]; then
-	path=("/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $path)
-fi
-
-# Homebrew (macOS)
-
-# User tools (highest priority)
-[[ -d $HOME/.cargo/bin ]] && path=($HOME/.cargo/bin $path)
-[[ -d $HOME/bin ]] && path=($HOME/bin $path)
 
 # Export path and remove duplicates
 typeset -U path
@@ -117,6 +105,7 @@ export PATH
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Plugins
@@ -167,7 +156,6 @@ alias sas="aptitude search"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias cdrt="pushd \$(git rev-parse --show-toplevel)"
 
 # Repository shortcuts
 alias red="cd /usr/local/src"
@@ -202,34 +190,11 @@ command -v fd &> /dev/null && alias find="fd"
 # Only override grep if rg is available, otherwise keep colorized grep
 if command -v rg &> /dev/null; then
 	alias grep="rg"
+	alias gs="rg -i"
 else
 	alias grep="grep --color=auto"
+	alias gs='grep -rnw . -e'
 fi
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Aliases - Shell Utilities
-# ──────────────────────────────────────────────────────────────────────────────
-alias h="history"
-alias j="jobs -l"
-alias path="echo -e ${PATH//:/\\n}"
-alias libpath="echo -e ${LD_LIBRARY_PATH//:/\\n}"
-alias dt="dmesg | tail"
-alias dusage='du -h -d 1 | sort -h'
-
-# Shell management
-alias zrc="vim ~/.zshrc"
-alias src="source ~/.zshrc && source ~/.zshenv && source ~/.zshenv.local"
-alias reload='exec zsh'
-
-# Network utilities
-alias ports='lsof -i -P'
-alias myip='curl -s ifconfig.me'
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Aliases - Development & Search
-# ──────────────────────────────────────────────────────────────────────────────
-# Recursive search for lines matching a regex (e.g., "gs foo")
-alias gs='grep -rnw . -e'
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Aliases - Google/Chromium Workflow
@@ -394,12 +359,9 @@ fi
 [[ -f /etc/bash_completion.d/g4d ]] && source /etc/bash_completion.d/g4d 2>/dev/null
 
 # Google Cloud SDK
-if [[ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]]; then
-	source "$HOME/google-cloud-sdk/path.zsh.inc"
-fi
-
-if [[ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]]; then
-	source "$HOME/google-cloud-sdk/completion.zsh.inc"
+if [[ -d "$HOME/google-cloud-sdk" ]]; then
+  source "$HOME/google-cloud-sdk/path.zsh.inc"
+  source "$HOME/google-cloud-sdk/completion.zsh.inc"
 fi
 
 # Local environment variables
@@ -407,23 +369,11 @@ if [[ -f "$HOME/.local/bin/env" ]]; then
 	source "$HOME/.local/bin/env"
 fi
 
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Homebrew Path Prioritization
-# ──────────────────────────────────────────────────────────────────────────────
-if [[ -f "/opt/homebrew/bin" ]]; then
-eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Created by `pipx` on 2025-11-13 05:28:05
-export PATH="$PATH:/Users/jophba/.local/bin"
-
 # macOS-specific configuration for bikeshed
 if [[ "$(uname -s)" == "Darwin" ]]; then
-  export PATH="/Users/jophba/.local/bin:$PATH"
   export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
   export LDFLAGS="-L/opt/homebrew/opt/libxml2/lib -L/opt/homebrew/opt/libxslt/lib"
   export CPPFLAGS="-I/opt/homebrew/opt/libxml2/include -I/opt/homebrew/opt/libxslt/include"

@@ -53,11 +53,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
     echo "Installing packages with Homebrew..."
-    brew install kitty fzf bat eza fd ripgrep
+    brew install kitty fzf bat eza fd ripgrep git-delta
 elif [ -f /etc/debian_version ]; then
     echo "Installing packages with apt..."
     sudo apt-get update
-    sudo apt-get install -y kitty fzf bat fd-find ripgrep
+    sudo apt-get install -y kitty fzf bat fd-find ripgrep git-delta
 
     # Create symlinks for bat and fd
     if [ ! -f /usr/local/bin/fd ]; then

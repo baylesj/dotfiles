@@ -20,13 +20,13 @@ Plug 'vim-airline/vim-airline' " Lean & mean status/tabline
 Plug 'Yggdroot/indentLine' " Displays indent levels with thin vertical lines
 Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pairs
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intelligent autocompletion & language server protocol client
-Plug 'dracula/vim'
+Plug 'sainnhe/gruvbox-material' " Gruvbox theme for Vim
 call plug#end()
 
 " vim-airline configuration
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'dracula'
+let g:airline_theme = 'gruvbox_material'
 
 " indentLine configuration
 let g:indentLine_char = '┆'
@@ -134,8 +134,7 @@ map <Down> <Nop>
 "Coloring!
 set t_Co=256
 
-"color xoria256
-color dracula
+color gruvbox-material
 hi Normal guibg=NONE ctermbg=NONE
 set cursorline
 
