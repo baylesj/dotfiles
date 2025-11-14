@@ -196,6 +196,9 @@ else
 	alias gs='grep -rnw . -e'
 fi
 
+# Old alias for reloading zshell dependencies
+alias src="omz reload"
+
 # ──────────────────────────────────────────────────────────────────────────────
 # Aliases - Google/Chromium Workflow
 # ──────────────────────────────────────────────────────────────────────────────
@@ -203,6 +206,7 @@ fi
 alias ssh-status="echo \"available agents:\n\" && ls /tmp/ssh-* && echo \"\nSSH_AUTH_SOCK:\" $SSH_AUTH_SOCK"
 
 # GN/Build configuration
+alias cdrt="pushd $(git rev-parse --show-toplevel)"
 alias gngen="cdrt && mkdir -p out/Default && gn gen out/Default"
 alias gngeng="cdrt && mkdir -p out/Default && gn gen --args=\"use_reclient=true\" out/Default"
 alias gngend="cdrt && mkdir -p out/Default && gn gen --args=\"is_debug=true\" out/Default"
