@@ -24,11 +24,8 @@
 
 # HTTP Settings
 [http]
-	# Gitconfig doesn't support conditionals or environment vars,
-	# so need a crossplatform cookiefile location. Make sure to move
-	# the cookie file from its default location
-	#cookiefile = /Users/jophba/.gitcookies
-	# sslVerify = false # This is a security risk. It's better to configure Git to trust your corporate SSL certificates.
+	cookiefile = ~/.gitcookies
+	sslVerify = false
 
 # Pager Settings
 [pager]
@@ -269,8 +266,10 @@
 	human = name-rev --name-only --refs=refs/heads/*
 	serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+
 [credential "https://*.googlesource.com"]
 	helper = luci
-	useHttpPath = yes
+    useHttpPath = yes
+
 [url "sso://chromium/"]
 	insteadOf = https://chromium.googlesource.com/
