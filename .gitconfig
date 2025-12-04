@@ -24,7 +24,6 @@
 
 # HTTP Settings
 [http]
-	cookiefile = ~/.gitcookies
 	sslVerify = false
 
 # Pager Settings
@@ -275,3 +274,43 @@
 # Prefer SSO over HTTPS for Chromium related projects
 [url "sso://chromium/"]
 	insteadOf = https://chromium.googlesource.com/
+[credential "https://android.googlesource.com"]
+	helper = 
+	helper = luci
+	useHttpPath = yes
+[credential "https://aomedia.googlesource.com"]
+	helper = 
+	helper = luci
+	useHttpPath = yes
+[credential "https://beto-core.googlesource.com"]
+	helper = 
+	helper = luci
+	useHttpPath = yes
+[credential "https://boringssl.googlesource.com"]
+	helper = 
+	helper = luci
+	useHttpPath = yes
+[credential "https://dawn.googlesource.com"]
+	helper = 
+	helper = luci
+	useHttpPath = yes
+[credential "https://pdfium.googlesource.com"]
+	helper = 
+	helper = luci
+	useHttpPath = yes
+[credential "https://quiche.googlesource.com"]
+	helper = 
+	helper = luci
+	useHttpPath = yes
+[credential "https://skia.googlesource.com"]
+	helper = 
+	helper = luci
+	useHttpPath = yes
+[credential "https://swiftshader.googlesource.com"]
+	helper = 
+	helper = luci
+	useHttpPath = yes
+[credential "https://webrtc.googlesource.com"]
+	helper = 
+	helper = luci
+	useHttpPath = yes

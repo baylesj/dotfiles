@@ -56,14 +56,6 @@ setopt AUTO_LIST
 # ──────────────────────────────────────────────────────────────────────────────
 # PATH Configuration
 # ──────────────────────────────────────────────────────────────────────────────
-# Execute path_helper to set up the PATH environment variable. This is crucial
-# for macOS to correctly resolve system binaries and ensures that the intended
-# versions of tools (like the Google internal git from mule) are used, preventing
-# conflicts with other installed versions (e.g., Apple's git or Homebrew's git).
-if [[ -x "/usr/libexec/path_helper" ]]; then
-  eval "$(/usr/libexec/path_helper -s)"
-fi
-
 # Using ZSH path array - entries added to beginning have highest priority
 path=(
   # User tools (highest priority)
@@ -98,6 +90,14 @@ path=(
 # Export path and remove duplicates
 typeset -U path
 export PATH
+
+# Execute path_helper to set up the PATH environment variable. This is crucial
+# for macOS to correctly resolve system binaries and ensures that the intended
+# versions of tools (like the Google internal git from mule) are used, preventing
+# conflicts with other installed versions (e.g., Apple's git or Homebrew's git).
+if [[ -x "/usr/libexec/path_helper" ]]; then
+  eval "$(/usr/libexec/path_helper -s)"
+fi
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Homebrew Setup (macOS)
@@ -314,7 +314,7 @@ function groot() {
 }
 
 # Update the current branch to be based on the latest main
-function gup() {
+function git-up() {
   if ! git diff-index --quiet HEAD --; then
     echo "Error: You have uncommitted changes. Please commit or stash them first." >&2
     return 1
@@ -327,6 +327,8 @@ function gup() {
     echo "Already on main branch. Pulling latest changes."
     git pull && gclient sync -D
     return
+	else
+		echo "On branch $current_branch..."
   fi
 
   echo "Updating main branch..."
@@ -335,7 +337,7 @@ function gup() {
   gclient sync -D && \
   echo "Rebasing $current_branch onto main..." && \
   git checkout "$current_branch" && \
-  git rebase main
+  git merge main
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
