@@ -206,7 +206,7 @@ alias src="omz reload"
 alias ssh-status="echo \"available agents:\n\" && ls /tmp/ssh-* && echo \"\nSSH_AUTH_SOCK:\" $SSH_AUTH_SOCK"
 
 # GN/Build configuration
-alias cdrt="pushd $(git rev-parse --show-toplevel)"
+alias cdrt="pushd git rev-parse --show-toplevel"
 alias gngen="cdrt && mkdir -p out/Default && gn gen out/Default"
 alias gngeng="cdrt && mkdir -p out/Default && gn gen --args=\"use_reclient=true\" out/Default"
 alias gngend="cdrt && mkdir -p out/Default && gn gen --args=\"is_debug=true\" out/Default"
@@ -217,6 +217,7 @@ alias gngencc="gn gen --add-export-compile-commands=\"*\" out/Default"
 # Build & test
 alias ca="cdrt && python ./tools/traffic_annotation/scripts/check_annotations.py --build-path ./out/Default"
 alias acd="cdrt && autoninja -C out/Default"
+alias acf="cdrt && autoninja -C out/Fuzzer"
 alias fcd="cdrt && ninja -j 50 -C out/Default"
 alias mcd="cdrt && ninja -j 1000 -C out/Default"
 alias ut="cdrt && ./out/Default/*unittests"
