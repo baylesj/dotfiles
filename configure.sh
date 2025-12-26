@@ -38,6 +38,9 @@ mkdir -p $HOME/.config/kitty
 echo "Linking kitty.conf..."
 ln -f -s $root/kitty.conf $HOME/.config/kitty/kitty.conf
 
+echo "Linking kitty theme.conf..."
+ln -f -s $root/kitty-theme.conf $HOME/.config/kitty/theme.conf
+
 if [ -d "$HOME/.oh-my-zsh" ]; then
 	echo "Updating oh my zsh..."
 	pushd $HOME/.oh-my-zsh
@@ -67,11 +70,12 @@ if [[ "$(uname)" == "Darwin" ]]; then
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	fi
 	echo "Installing packages with Homebrew..."
-	brew install kitty fzf bat eza fd ripgrep git-delta nodejs shfmt
+	brew install kitty fzf bat eza fd ripgrep git-delta nodejs shfmt helix
 elif [ -f /etc/debian_version ]; then
 	echo "Installing packages with apt..."
-	sudo apt-get update
-	sudo apt-get install -y kitty fzf bat fd-find ripgrep git-delta nodejs shfmt
+	sudo apt update
+	sudo apt install -y kitty fzf bat fd-find ripgrep git-delta nodejs shfmt snapd
+	sudo snap install helix --classic
 
 	# Create symlinks for bat and fd
 	if [ ! -f /usr/local/bin/fd ]; then
@@ -81,7 +85,7 @@ elif [ -f /etc/debian_version ]; then
 		sudo ln -s /usr/bin/batcat /usr/local/bin/bat
 	fi
 else
-	echo "Please install the following packages manually: kitty, fzf, bat, eza, fd, ripgrep"
+	echo "Please install the following packages manually: kitty, fzf, bat, eza, fd, ripgrep helix"
 	if ! [ -x "$(command -v fzf)" ]; then
 		echo "Installing fzf from git..."
 		git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
