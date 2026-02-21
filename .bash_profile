@@ -10,6 +10,9 @@ then
 fi
 
 
-export PATH="$HOME/.cargo/bin:$PATH"
 
 . "$HOME/.local/bin/env"
+
+# Created by `pipx` on 2025-11-13 05:26:57
+export PATH="$PATH:/Users/jophba/.local/bin"
+. "$HOME/.cargo/env"

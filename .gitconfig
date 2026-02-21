@@ -8,7 +8,7 @@
 	editor = vim
 	whitespace = fix, -indent-with-non-tab, trailing-space, cr-at-eol
 	excludesfile = ~/.gitignore
-	pager = cat
+	pager = delta
 	precomposeUnicode = true
 	trustctime = false
 	packedGitLimit = 512m
@@ -24,11 +24,6 @@
 
 # HTTP Settings
 [http]
-	# Gitconfig doesn't support conditionals or environment vars,
-	# so need a crossplatform cookiefile location. Make sure to move
-	# the cookie file from its default location
-	#cookiefile = /Users/jophba/.gitcookies
-	cookiefile = ~/.gitcookies
 	sslVerify = false
 
 # Pager Settings
@@ -57,7 +52,7 @@
 
 # Pull Settings
 [pull]
-	rebase = false
+	rebase = true
 
 # Fetch Settings
 [fetch]
@@ -88,14 +83,6 @@
 # Google/Chromium URL Rewrites
 [url "persistent-https://chrome-internal.git.corp.google.com/"]
 	insteadOf = https://chrome-internal.googlesource.com/
-
-[url "sso://chromium/"]
-	insteadOf = https://chromium.googlesource.com/
-
-[url "sso://chromium"]
-	insteadOf = https://chromium.googlesource.com
-	insteadOf = https://chromium-review.googlesource.com
-
 [url "sso://chrome-internal/"]
 	insteadOf = https://chrome-internal.googlesource.com/
 
@@ -107,7 +94,7 @@
 [alias]
 	# Gerrit/Code Review Workflow
 	up = cl upload
-	poh = push origin HEAD:refs/for/main
+	poh = "!git push origin HEAD:refs/for/$(git rev-parse --abbrev-ref HEAD)"
 	can = commit --amend --no-edit
 	bsu = branch --set-upstream-to=origin/main
 
@@ -175,7 +162,7 @@
 
 	# Log
 	l = log --oneline
-	lg = log --oneline --graph --decorate
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
 	lgm = log --oneline --merges
 
 	# List Files
@@ -278,6 +265,15 @@
 	human = name-rev --name-only --refs=refs/heads/*
 	serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+
+# Google Source credential helper
+[credential "https://*.googlesource.com"]
+	helper = luci
+  useHttpPath = yes
+
+# Prefer SSO over HTTPS for Chromium related projects
+[url "sso://chromium/"]
+	insteadOf = https://chromium.googlesource.com/
 [credential "https://android.googlesource.com"]
 	helper = 
 	helper = luci

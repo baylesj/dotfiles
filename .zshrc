@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # ──────────────────────────────────────────────────────────────────────────────
 # Personal ~/.zshrc
 # By Jordan Bayles (bayles.jordan@gmail.com)
@@ -16,6 +9,13 @@ fi
 # ──────────────────────────────────────────────────────────────────────────────
 # Oh-My-Zsh Configuration
 # ──────────────────────────────────────────────────────────────────────────────
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -57,55 +57,48 @@ setopt AUTO_LIST
 # PATH Configuration
 # ──────────────────────────────────────────────────────────────────────────────
 # Using ZSH path array - entries added to beginning have highest priority
-
-# Initialize with system paths (lowest priority)
 path=(
-	/usr/local/bin
-	/usr/local/sbin
-	/usr/bin
-	/bin
-	/sbin
-	$path
+  # User tools (highest priority)
+  "$HOME/bin"
+  "$HOME/.cargo/bin"
+  "$HOME/.local/bin"
+	"$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin"
+
+  # Development tools
+  "/usr/local/src/depot_tools"
+  "/usr/local/google/home/jophba/bin"
+  "/snap/bin"
+  "/usr/local/opt"
+  "/usr/local/opt/llvm/bin"
+
+  # Python (use latest available)
+  "$(ls -d /opt/homebrew/Cellar/python@3.*/*/bin(N) | head -n 1)"
+
+  # Xcode tools (macOS only)
+  "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin"
+
+  # VS Code (macOS)
+  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+  # System paths (lowest priority)
+  /usr/local/bin
+  /usr/local/sbin
+  /usr/bin
+  /bin
+  /sbin
 )
-
-# Development tools (conditional)
-[[ -d /snap/bin ]] && path=(/snap/bin $path)
-[[ -d /usr/local/opt ]] && path=(/usr/local/opt $path)
-[[ -d /usr/local/opt/llvm/bin ]] && path=(/usr/local/opt/llvm/bin $path)
-
-# Python (use latest available)
-for pydir in /opt/homebrew/Cellar/python@3.*/*/bin(N); do
-	path=($pydir $path)
-	break
-done
-
-# Google/Chromium tools (conditional)
-[[ -d /usr/local/src/depot_tools ]] && path=(/usr/local/src/depot_tools $path)
-[[ -d /usr/local/google/home/jophba/bin ]] && path=(/usr/local/google/home/jophba/bin $path)
-
-# Xcode tools (macOS only)
-if [[ -d "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin" ]]; then
-	path=("/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin" $path)
-fi
-
-# VS Code (macOS)
-if [[ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]]; then
-	path=("/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $path)
-fi
-
-# Homebrew (macOS)
-
-# User tools (highest priority)
-[[ -d $HOME/bin ]] && path=($HOME/bin $path)
-
-# Rustup/Cargo (installed via Homebrew)
-[[ -d $HOME/.cargo/bin ]] && path=($HOME/.cargo/bin $path)
-
-[[ -d $HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin ]] && path=($HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin $path)
 
 # Export path and remove duplicates
 typeset -U path
 export PATH
+
+# Execute path_helper to set up the PATH environment variable. This is crucial
+# for macOS to correctly resolve system binaries and ensures that the intended
+# versions of tools (like the Google internal git from mule) are used, preventing
+# conflicts with other installed versions (e.g., Apple's git or Homebrew's git).
+if [[ -x "/usr/libexec/path_helper" ]]; then
+  eval "$(/usr/libexec/path_helper -s)"
+fi
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Homebrew Setup (macOS)
@@ -113,6 +106,7 @@ export PATH
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Plugins
@@ -163,13 +157,12 @@ alias sas="aptitude search"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias cdrt="pushd \$(git rev-parse --show-toplevel)"
 
 # Repository shortcuts
-alias red="cd ${REPO_DIR}"
+alias red="cd /usr/local/src"
 alias os="red && cd openscreen"
 alias os2="red && cd openscreen2"
-alias crm="red && cd chromium/src"
+alias crs="red && cd chromium/src"
 alias osp="red && cd openscreenprotocol"
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -198,47 +191,23 @@ command -v fd &> /dev/null && alias find="fd"
 # Only override grep if rg is available, otherwise keep colorized grep
 if command -v rg &> /dev/null; then
 	alias grep="rg"
+	alias gs="rg -i"
 else
 	alias grep="grep --color=auto"
+	alias gs='grep -rnw . -e'
 fi
 
-# ──────────────────────────────────────────────────────────────────────────────
-# Aliases - Shell Utilities
-# ──────────────────────────────────────────────────────────────────────────────
-alias h="history"
-alias j="jobs -l"
-alias path="echo -e ${PATH//:/\\n}"
-alias libpath="echo -e ${LD_LIBRARY_PATH//:/\\n}"
-alias dt="dmesg | tail"
-alias dusage='du -h -d 1 | sort -h'
-
-# Shell management
-alias zrc="vim ~/.zshrc"
-alias src="source ~/.zshrc && source ~/.zshenv && source ~/.zshenv.local"
-alias reload='exec zsh'
-
-# Network utilities
-alias ports='lsof -i -P'
-alias myip='curl -s ifconfig.me'
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Aliases - Development & Search
-# ──────────────────────────────────────────────────────────────────────────────
-# Recursive search for lines matching a regex (e.g., "gs foo")
-alias gs='grep -rnw . -e'
+# Old alias for reloading zshell dependencies
+alias src="omz reload"
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Aliases - Google/Chromium Workflow
 # ──────────────────────────────────────────────────────────────────────────────
-
 # SSH utilities
 alias ssh-status="echo \"available agents:\n\" && ls /tmp/ssh-* && echo \"\nSSH_AUTH_SOCK:\" $SSH_AUTH_SOCK"
 
-# Conditional Gemini alias. On MacOS, Gemini is installed via Homebrew.
-[[ -d /google/bin/releases/gemini-cli/tools ]] && alias gemini='/google/bin/releases/gemini-cli/tools/gemini'
-alias gemini='GEMINI_API_KEY=${GEMINI_API_KEY} gemini'
-
 # GN/Build configuration
+alias cdrt="pushd \$(git rev-parse --show-toplevel)"
 alias gngen="cdrt && mkdir -p out/Default && gn gen out/Default"
 alias gngeng="cdrt && mkdir -p out/Default && gn gen --args=\"use_reclient=true\" out/Default"
 alias gngend="cdrt && mkdir -p out/Default && gn gen --args=\"is_debug=true\" out/Default"
@@ -249,6 +218,7 @@ alias gngencc="gn gen --add-export-compile-commands=\"*\" out/Default"
 # Build & test
 alias ca="cdrt && python ./tools/traffic_annotation/scripts/check_annotations.py --build-path ./out/Default"
 alias acd="cdrt && autoninja -C out/Default"
+alias acf="cdrt && autoninja -C out/Fuzzer"
 alias fcd="cdrt && ninja -j 50 -C out/Default"
 alias mcd="cdrt && ninja -j 1000 -C out/Default"
 alias ut="cdrt && ./out/Default/*unittests"
@@ -344,6 +314,33 @@ function groot() {
 	fi
 }
 
+# Update the current branch to be based on the latest main
+function git-up() {
+  if ! git diff-index --quiet HEAD --; then
+    echo "Error: You have uncommitted changes. Please commit or stash them first." >&2
+    return 1
+  fi
+
+  local current_branch
+  current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+  if [[ "$current_branch" == "main" ]]; then
+    echo "Already on main branch. Pulling latest changes."
+    git pull && gclient sync -D
+    return
+	else
+		echo "On branch $current_branch..."
+  fi
+
+  echo "Updating main branch..."
+  git checkout main && \
+  git pull && \
+  gclient sync -D && \
+  echo "Rebasing $current_branch onto main..." && \
+  git checkout "$current_branch" && \
+  git merge main
+}
+
 # ──────────────────────────────────────────────────────────────────────────────
 # FZF Integration
 # ──────────────────────────────────────────────────────────────────────────────
@@ -358,6 +355,8 @@ if command -v fzf &> /dev/null; then
 	elif [[ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ]]; then
 		source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
 		source /opt/homebrew/opt/fzf/shell/completion.zsh
+   else
+     source <(fzf --zsh)
 	fi
 
 	# FZF options
@@ -390,12 +389,9 @@ fi
 [[ -f /etc/bash_completion.d/g4d ]] && source /etc/bash_completion.d/g4d 2>/dev/null
 
 # Google Cloud SDK
-if [[ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]]; then
-	source "$HOME/google-cloud-sdk/path.zsh.inc"
-fi
-
-if [[ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]]; then
-	source "$HOME/google-cloud-sdk/completion.zsh.inc"
+if [[ -d "$HOME/google-cloud-sdk" ]]; then
+  source "$HOME/google-cloud-sdk/path.zsh.inc"
+  source "$HOME/google-cloud-sdk/completion.zsh.inc"
 fi
 
 # Local environment variables
@@ -403,13 +399,12 @@ if [[ -f "$HOME/.local/bin/env" ]]; then
 	source "$HOME/.local/bin/env"
 fi
 
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Homebrew Path Prioritization
-# ──────────────────────────────────────────────────────────────────────────────
-if [[ -f "/opt/homebrew/bin" ]]; then
-eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# macOS-specific configuration for bikeshed
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+  export LDFLAGS="-L/opt/homebrew/opt/libxml2/lib -L/opt/homebrew/opt/libxslt/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/libxml2/include -I/opt/homebrew/opt/libxslt/include"
+fi

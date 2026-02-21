@@ -12,11 +12,25 @@ endif
 
 " Plugin list (run :PlugInstall to install)
 call plug#begin('~/.vim/plugged')
-" Add your plugins here in the future, for example:
-" Plug 'tpope/vim-sensible'
-" Plug 'tpope/vim-fugitive'
-" Plug 'preservim/nerdtree'
+" Essential Plugins
+Plug 'tpope/vim-sensible' " A collection of common-sense Vim defaults
+Plug 'tpope/vim-fugitive' " The best Git wrapper for Vim
+Plug 'preservim/nerdtree' " A file system explorer
+Plug 'vim-airline/vim-airline' " Lean & mean status/tabline
+Plug 'Yggdroot/indentLine' " Displays indent levels with thin vertical lines
+Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pairs
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intelligent autocompletion & language server protocol client
+Plug 'sainnhe/gruvbox-material' " Gruvbox theme for Vim
 call plug#end()
+
+" vim-airline configuration
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'gruvbox_material'
+
+" indentLine configuration
+let g:indentLine_char = '┆'
+let g:indentLine_enabled = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
@@ -42,7 +56,6 @@ set hlsearch
 
 " Don't allow mouse to select line numbers when copying
 se mouse+=a
-set hls
 
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
@@ -56,6 +69,9 @@ set ignorecase smartcase
 " This makes RVM work inside Vim. I have no idea why.
 set shell=bash
 
+" Global tab and indent settings
+set tabstop=4 shiftwidth=4 expandtab
+
 "Mark lines over 80 columns
 if exists('+colorcolumn')
   set colorcolumn=80
@@ -63,9 +79,8 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
-" Prevent Vim from clobbering the scrollback buffer. See
-" http://www.shallowsky.com/linux/noaltscreen.html
-set t_ti= t_te=
+" Enable true color support
+set termguicolors
 
 " keep more context when scrolling off the end of a buffer
 set scrolloff=3
@@ -99,15 +114,11 @@ map <F10> <Esc>:WC<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Highlight tabs
-autocmd syntax * SpaceHi
+"Highlight tabs (commented out as SpaceHi is undefined)
+"autocmd syntax * SpaceHi
 
-"Autocommand for indent settings
-filetype indent on
-setl tabstop=2 shiftwidth=2 expandtab
-au FileType matlab setl tabstop=2 shiftwidth=2 expandtab
-au FileType html setl shiftwidth=2 tabstop=2 expandtab
-au FileType python setl shiftwidth=4 sts=0 tabstop=4 expandtab
+"Autocommand for indent settings (removed redundant and specific filetype settings)
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
@@ -123,8 +134,7 @@ map <Down> <Nop>
 "Coloring!
 set t_Co=256
 
-"color xoria256
-color buttercream
+color gruvbox-material
 hi Normal guibg=NONE ctermbg=NONE
 set cursorline
 

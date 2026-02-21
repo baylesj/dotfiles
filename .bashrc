@@ -12,6 +12,9 @@ case $- in
       *) return;;
 esac
 
+# PATH setup
+export PATH="~/bin:~/.cargo/bin:~/.local/bin:$PATH"
+
 # History settings
 HISTCONTROL=ignoreboth
 HISTSIZE=10000
@@ -36,22 +39,20 @@ alias vi='vim'
 alias ..='cd ..'
 alias ...='cd ../..'
 
-# PATH setup
-export PATH="$HOME/bin:$HOME/.cargo/bin:$PATH"
-
 # Editor
 export EDITOR='vim'
 
 # Google Cloud SDK (if installed)
-if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then
-    source "$HOME/google-cloud-sdk/path.bash.inc"
+if [ -f "~/google-cloud-sdk/path.bash.inc" ]; then
+    source "~/google-cloud-sdk/path.bash.inc"
 fi
 
-if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then
-    source "$HOME/google-cloud-sdk/completion.bash.inc"
+if [ -f "~/google-cloud-sdk/completion.bash.inc" ]; then
+    source "~/google-cloud-sdk/completion.bash.inc"
 fi
 
 # Rust environment
-if [ -f "$HOME/.cargo/env" ]; then
-    source "$HOME/.cargo/env"
+if [ -f "~/.cargo/env" ]; then
+    source "~/.cargo/env"
 fi
+. "$HOME/.cargo/env"

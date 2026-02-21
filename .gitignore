@@ -24,6 +24,7 @@
 .zsh-update
 .zsh_history
 .zcompdump*
+.zshenv.local
 
 # Python
 *.pyc
