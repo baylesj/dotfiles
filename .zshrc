@@ -96,8 +96,12 @@ fi
 # Homebrew (macOS)
 
 # User tools (highest priority)
-[[ -d $HOME/.cargo/bin ]] && path=($HOME/.cargo/bin $path)
 [[ -d $HOME/bin ]] && path=($HOME/bin $path)
+
+# Rustup/Cargo (installed via Homebrew)
+[[ -d $HOME/.cargo/bin ]] && path=($HOME/.cargo/bin $path)
+
+[[ -d $HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin ]] && path=($HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin $path)
 
 # Export path and remove duplicates
 typeset -U path
