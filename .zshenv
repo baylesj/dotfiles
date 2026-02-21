@@ -31,4 +31,3 @@ if [ -f ~/.zshenv.local ]; then
 else
   echo "No ~/.zshenv.local file found. You can create one to set local environment variables, such as API keys."
 fi
-. "$HOME/.cargo/env"
