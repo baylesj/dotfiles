@@ -1,6 +1,10 @@
 #
 # ~/.bash_profile
 #
+
+export COLORTERM=truecolor
+export TERM=xterm-256color
+
 . $HOME/.bashrc
 
 # Make sure the users bin directory will be searched in first place.

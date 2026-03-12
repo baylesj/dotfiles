@@ -11,7 +11,8 @@
 # ──────────────────────────────────────────────────────────────────────────────
 export EDITOR="vim"
 export VISUAL="vim"
-export TERM="rxvt"
+export TERM=xterm-256color
+export COLORTERM=truecolor
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Google/Chromium Development
