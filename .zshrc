@@ -18,6 +18,7 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_THEME="powerlevel10k/powerlevel10k"
+export TERM=xterm-256color
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
