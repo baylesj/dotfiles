@@ -6,9 +6,18 @@ import fileinput
 
 def decorpify(text):
     # Gerrit Review
+    def clean_gerrit_url(match):
+        domain_prefix = match.group(1)
+        path = match.group(2)
+        # Remove usp=... query param
+        path = re.sub(r'[?&]usp=[a-zA-Z0-9_-]+', '', path)
+        # Clean up any dangling ? if it was the only query param
+        path = re.sub(r'\?(?:$|#)', '', path)
+        return f'https://{domain_prefix}-review.googlesource.com{path}'
+
     text = re.sub(
-        r'https?://([a-zA-Z0-9-]+)-review(?:\.git)?\.corp\.google\.com',
-        r'https://\1-review.googlesource.com',
+        r'https?://([a-zA-Z0-9-]+)-review(?:\.git)?\.corp\.google\.com([^\s\'"<>]*)',
+        clean_gerrit_url,
         text
     )
     
@@ -27,12 +36,12 @@ def decorpify(text):
     # Issue Tracker / Buganizer
     text = re.sub(
         r'https?://(?:b|buganizer|issuetracker)\.corp\.google\.com/(?:issues?/)?(\d+)',
-        r'https://issuetracker.google.com/issues/\1',
+        r'https://crbug.com/\1',
         text
     )
     text = re.sub(
         r'https?://b/(\d+)',
-        r'https://issuetracker.google.com/issues/\1',
+        r'https://crbug.com/\1',
         text
     )
 
