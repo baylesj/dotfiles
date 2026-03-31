@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+
+import sys
+import re
+import fileinput
+
+def decorpify(text):
+    # Gerrit Review
+    text = re.sub(
+        r'https?://([a-zA-Z0-9-]+)-review(?:\.git)?\.corp\.google\.com',
+        r'https://\1-review.googlesource.com',
+        text
+    )
+    
+    # Code Search / Chromium Source
+    text = re.sub(
+        r'https?://source\.corp\.google\.com',
+        r'https://source.chromium.org',
+        text
+    )
+    text = re.sub(
+        r'https?://cs\.corp\.google\.com',
+        r'https://source.chromium.org',
+        text
+    )
+
+    # Issue Tracker / Buganizer
+    text = re.sub(
+        r'https?://(?:b|buganizer|issuetracker)\.corp\.google\.com/(?:issues?/)?(\d+)',
+        r'https://issuetracker.google.com/issues/\1',
+        text
+    )
+    text = re.sub(
+        r'https?://b/(\d+)',
+        r'https://issuetracker.google.com/issues/\1',
+        text
+    )
+
+    return text
+
+def main():
+    # fileinput.input() reads from files passed as arguments or stdin if none are provided
+    for line in fileinput.input():
+        sys.stdout.write(decorpify(line))
+
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        sys.exit(130)

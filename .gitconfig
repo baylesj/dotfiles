@@ -5,7 +5,7 @@
 
 # Core Settings
 [core]
-	editor = vim
+	editor = hx
 	whitespace = fix, -indent-with-non-tab, trailing-space, cr-at-eol
 	excludesfile = ~/.gitignore
 	pager = delta
@@ -37,12 +37,24 @@
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
 
+[mergetool "zed"]
+  cmd = zed --wait --merge $LOCAL $REMOTE
+
+[mergetool "jetski"]
+  cmd = jetski --wait --merge $LOCAL $REMOTE
+
 # Diff Settings
 [diff]
 	tool = vscode
 
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
+
+[difftool "zed"]
+  cmd = zed --wait --diff $LOCAL $REMOTE
+
+[difftool "jetski"]
+  cmd = jetski --wait --diff $LOCAL $REMOTE
 
 # Push Settings
 [push]
@@ -266,6 +278,16 @@
 	serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 
+	# Migrated from .zshrc
+	cf = cl format
+	acp = !git add -A && git can && git cl presubmit --upload
+	hide-status = config --local oh-my-zsh.hide-status 1
+	brm = "!git branch -r --merged | grep -v main | sed 's/origin\\///'"
+	brd = "!git branch -r --merged | grep -v main | sed 's/origin\\///' | xargs -n 1 git push --delete origin"
+	bdm = "!git branch --merged | grep -v \"\\*\" | grep -v main | xargs -n 1 git branch -d"
+	sync = "!git checkout main && git pull && git remote prune origin && git brd && git bdm"
+	update = "!git fetch origin main:main && git merge main"
+
 # Google Source credential helper
 [credential "https://*.googlesource.com"]
 	helper = luci
@@ -275,42 +297,44 @@
 [url "sso://chromium/"]
 	insteadOf = https://chromium.googlesource.com/
 [credential "https://android.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://aomedia.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://beto-core.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://boringssl.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://dawn.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://pdfium.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://quiche.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://skia.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://swiftshader.googlesource.com"]
-	helper = 
+	helper =
 	helper = luci
 	useHttpPath = yes
 [credential "https://webrtc.googlesource.com"]
-	helper = 
-	helper = luci
 	useHttpPath = yes
+	helper =
+	helper = luci
+[difftool "zed"]
+	cmd = zed --wait --diff $LOCAL $REMOTE

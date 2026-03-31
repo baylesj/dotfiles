@@ -46,6 +46,9 @@ setopt SHARE_HISTORY            # Share history between sessions
 # Vi-mode key timeout (reduce lag when switching modes)
 export KEYTIMEOUT=1
 
+# Use a modern terminal emulator setting.
+export TERM="xterm-256color"
+
 # Completion settings
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case-insensitive completion
@@ -203,6 +206,9 @@ alias src="omz reload"
 # ──────────────────────────────────────────────────────────────────────────────
 # Aliases - Google/Chromium Workflow
 # ──────────────────────────────────────────────────────────────────────────────
+# Gemini
+alias gemini="gemini --model gemini-3-pro-preview"
+
 # SSH utilities
 alias ssh-status="echo \"available agents:\n\" && ls /tmp/ssh-* && echo \"\nSSH_AUTH_SOCK:\" $SSH_AUTH_SOCK"
 
@@ -223,33 +229,6 @@ alias fcd="cdrt && ninja -j 50 -C out/Default"
 alias mcd="cdrt && ninja -j 1000 -C out/Default"
 alias ut="cdrt && ./out/Default/*unittests"
 alias e2e="cdrt && ./out/Default/e2e*"
-
-# Git workflow (on Mac, don't use git cl - it uses wrong CIPD client)
-alias gcl="git-cl"
-alias gcf="git-cl format"
-alias acp="git add -A && git can && git cl presubmit --upload"
-alias hide-git-status="cdrt && echo '\n\n[oh-my-zsh]\n\thide-status=1\n\n' >> .git/config"
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Aliases - Git Branch Management
-# ──────────────────────────────────────────────────────────────────────────────
-# List merged remote branches (excluding main)
-alias git-brm="git branch -r --merged | grep -v main | sed 's/origin\///'"
-
-# Delete merged remote branches
-alias git-brd="git branch -r --merged | grep -v main | sed 's/origin\///' | xargs -n 1 git push --delete origin"
-
-# Delete merged local branches
-alias git-bdm="git branch --merged | grep -v \"\*\" | grep -v main | xargs -n 1 git branch -d"
-
-# Full sync: checkout main, pull, prune, delete merged branches
-alias git-sync="git co main && git pull && git remote prune origin && git-brd && git-bdm"
-
-# Update current branch with main
-alias git-update="git fetch origin main:main && git merge main"
-
-# Quick git commit with message
-alias gcm='git commit -m'
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Aliases - Desktop Environment (Linux)
@@ -300,17 +279,6 @@ function extract() {
 		esac
 	else
 		echo "'$1' is not a valid file"
-	fi
-}
-
-# Find and cd to git repository root
-function groot() {
-	local root=$(git rev-parse --show-toplevel 2>/dev/null)
-	if [[ -n "$root" ]]; then
-		cd "$root"
-	else
-		echo "Not in a git repository"
-		return 1
 	fi
 }
 
@@ -408,3 +376,13 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   export LDFLAGS="-L/opt/homebrew/opt/libxml2/lib -L/opt/homebrew/opt/libxslt/lib"
   export CPPFLAGS="-I/opt/homebrew/opt/libxml2/include -I/opt/homebrew/opt/libxslt/include"
 fi
+
+# Added by Antigravity
+export PATH="/Users/jophba/.antigravity/antigravity/bin:$PATH"
+
+# Added by Jetski
+export PATH="/Users/jophba/.jetski/jetski/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
