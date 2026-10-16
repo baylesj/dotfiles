@@ -68,7 +68,7 @@ path=(
 	"$HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin"
 
   # Development tools
-  "/usr/local/src/depot_tools"
+  "$HOME/depot_tools"
   "/usr/local/google/home/jophba/bin"
   "/snap/bin"
   "/usr/local/opt"
@@ -372,7 +372,9 @@ fi
 
 # macOS-specific configuration for bikeshed
 if [[ "$(uname -s)" == "Darwin" ]]; then
-  export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+  # Ask xcrun rather than hardcoding Xcode.app, which isn't always installed
+  # (a missing SDK breaks C builds such as Rust's ring crate).
+  export SDKROOT="$(env -u SDKROOT xcrun --sdk macosx --show-sdk-path)"
   export LDFLAGS="-L/opt/homebrew/opt/libxml2/lib -L/opt/homebrew/opt/libxslt/lib"
   export CPPFLAGS="-I/opt/homebrew/opt/libxml2/include -I/opt/homebrew/opt/libxslt/include"
 fi

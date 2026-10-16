@@ -60,6 +60,7 @@ dist/
 
 # Personal notes
 *-notes.txt
+RELEASE_*.md
 
 # Project-specific
 third_party/cros-components
@@ -72,3 +73,9 @@ third_party/cros-components
 *.key
 id_rsa*
 !id_rsa*.pub
+
+# AI tools
+.claude
+.gemini
+GEMINI.md
+CLAUDE.md

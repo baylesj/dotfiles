@@ -1,7 +1,13 @@
 # User Information
 [user]
 	name = Jordan Bayles
-	email = jophba@chromium.org
+	email = bayles.jordan@gmail.com
+
+# Chromium/Gerrit checkouts commit with the work address (needed for the CLA check).
+[includeIf "hasconfig:remote.*.url:https://*.googlesource.com/**"]
+	path = ~/Dotfiles/.gitconfig-chromium
+[includeIf "hasconfig:remote.*.url:sso://**"]
+	path = ~/Dotfiles/.gitconfig-chromium
 
 # Core Settings
 [core]
@@ -295,7 +301,6 @@
 
 # Prefer SSO over HTTPS for Chromium related projects
 [url "sso://chromium/"]
-	insteadOf = https://chromium.googlesource.com/
 [credential "https://android.googlesource.com"]
 	helper =
 	helper = luci
@@ -336,5 +341,7 @@
 	useHttpPath = yes
 	helper =
 	helper = luci
-[difftool "zed"]
-	cmd = zed --wait --diff $LOCAL $REMOTE
+[credential "https://chromium.googlesource.com"]
+	helper =
+	helper = luci
+	useHttpPath = yes
