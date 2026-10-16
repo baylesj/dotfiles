@@ -4,48 +4,44 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a personal dotfiles repository for managing Unix/Linux/macOS configuration files and custom scripts. The repository uses symlinks to install dotfiles from this directory to the home directory.
-
-**Environment:** Cross-platform (macOS + Linux), heavily customized for Google/Chromium development workflows.
+Personal dotfiles, installed by symlinking from this directory into `$HOME`.
+Primary machine is macOS (Apple Silicon); Linux (Debian) is still supported by
+`configure.sh`. Parts of the shell and git config are for Chromium/Open Screen
+development.
 
 ## Installation and Setup
 
-**Initial installation:**
 ```bash
-./make-links.sh
+./configure.sh
 ```
 
 This script:
-- Creates symlinks for all dotfiles (`.bashrc`, `.zshrc`, `.vimrc`, `.gitconfig`, etc.) from the repository to `$HOME`
-- Backs up existing files to `*.ml-orig` before symlinking
-- Installs/updates oh-my-zsh from the official ohmyzsh/ohmyzsh repository
-- Links the `bin/` directory to `$HOME/bin`
+- Symlinks every top-level dotfile (`.[a-z]*`) and `bin/` into `$HOME`, backing up
+  an existing file to `<name>~` first
+- Symlinks `ghostty/` to `~/.config/ghostty`
+- Installs/updates oh-my-zsh, Powerlevel10k, zsh-autosuggestions and
+  zsh-syntax-highlighting
+- Installs CLI tools (fzf, bat, eza, fd, ripgrep, git-delta, ...) with Homebrew or apt
+- On macOS, installs Ghostty and the fonts listed in `FONTS.md`
+- Installs vim plugins with vim-plug
 
-**Note:** After installation, you may need to install `eza` (modern `ls` replacement):
-```bash
-# macOS
-brew install eza
-
-# Linux (Debian/Ubuntu)
-sudo apt install eza
-```
+`configure-python.sh` sets up Python tooling separately.
 
 ## Repository Structure
 
-### Core Configuration Files
-- `.zshrc` - ZSH shell configuration with extensive aliases and functions
-- `.bashrc` - Bash shell configuration
-- `.bash_profile` - Bash shell profile (sources `.bashrc`)
-- `.vimrc` - Vim editor configuration with vim-plug plugin manager
-- `.gitconfig` - Git configuration with extensive aliases and modern features
-- `.hyper.js` - Hyper terminal configuration
-- `.Xdefaults`, `.xinitrc` - X11 window system configuration (Linux only)
-- `.conkyrc` - Conky system monitor configuration (Linux only)
-
-### Directories
-- `bin/` - Custom utility scripts (symlinked to `$HOME/bin`)
-- `.vim/` - Vim plugins, colors, and support files
-- `.fonts/` - Custom fonts
+- `.zshrc` - ZSH config: oh-my-zsh, aliases, functions. `.zshenv` holds env vars;
+  machine-specific secrets/overrides go in the untracked `.zshenv.local`
+- `.bashrc`, `.bash_profile` - Bash config
+- `.vimrc` - Vim 9 config (vim-plug, yegappan/lsp, fzf.vim, gruvbox-material)
+- `.vim/spell/` - Personal spelling dictionary (the only tracked part of `.vim/`;
+  plugins, vim-plug itself and undo history are generated and gitignored)
+- `.gitconfig` - Git config and aliases. `.gitconfig-chromium` is included for
+  googlesource/sso remotes to switch to the work email
+- `.gitignore` - Both this repo's ignore file and the global excludes file
+  (`core.excludesfile = ~/.gitignore`)
+- `ghostty/` - Ghostty terminal config (`config.ghostty`) and custom `themes/`
+- `bin/` - Utility scripts (symlinked to `$HOME/bin`)
+- `FONTS.md` - Installed fonts and how to try them in Ghostty
 
 ### Key Scripts in `bin/`
 - `git-update-all` - Updates main branch and merges it into all local branches (auto-detects Chromium repos with `gclient sync`)
@@ -54,7 +50,6 @@ sudo apt install eza
 ## Important Aliases and Workflows
 
 ### Git Workflow (Chromium/Google-specific)
-The dotfiles are heavily customized for Google/Chromium development:
 
 **Git aliases** (from `.gitconfig`):
 - `git can` - Commit amend with no edit
@@ -62,7 +57,7 @@ The dotfiles are heavily customized for Google/Chromium development:
 - `git poh` - Push to Gerrit (refs/for/main)
 
 **ZSH aliases** (from `.zshrc`):
-- `acp` - Add all, commit amend, and upload to review
+- `acp` - Add all, commit amend, presubmit and upload
 - `git-sync` - Checkout main, pull, prune, delete merged branches
 - `git-update` - Fetch and merge main into current branch
 
@@ -78,61 +73,50 @@ The dotfiles are heavily customized for Google/Chromium development:
 
 ### Navigation Shortcuts
 - `cdrt` - Change to repository root
-- `red` - Change to `$REPO_DIR` (default: `/usr/local/src/`)
-- `os`, `os2`, `crm`, `osp` - Navigate to specific repositories
+- `red` - Change to `/usr/local/src`
+- `os`, `os2`, `osp` - Navigate to Open Screen checkouts under it
 
 ### General Shell Aliases
-- `ls`, `la` - Uses `eza` (modern fork of exa) instead of traditional ls
-- `vi` - Aliased to `vim`
-- `zrc` - Edit `.zshrc`
-- `src` - Reload `.zshrc`
+- `ls`, `la` - `eza`
+- `vi` - `vim`
+- `src` - Reload zsh config (`omz reload`)
 
 ## Development Environment
 
-**Editor:** Vim (configured in `.vimrc`)
-- **Plugin manager:** vim-plug (auto-installs on first run)
-- Line numbers enabled
-- 80-column marker
-- Spell check toggle (F6/F7)
-- Custom color scheme (buttercream)
-- Arrow keys disabled (vim hardmode)
-- To add plugins: Edit `.vimrc` Plug section and run `:PlugInstall`
+**Terminal:** Ghostty. Theme follows macOS light/dark (Noctis Lux / TokyoNight).
 
-**Shell:** ZSH with oh-my-zsh
-- Theme: `crcandy`
-- Vi-mode enabled
-- Extensive plugin configuration
+**Editor:** Vim 9 (`.vimrc`)
+- vim-plug auto-installs itself and plugins on first run; `:PlugUpdate` to update
+- LSP via yegappan/lsp; servers are registered only if their binary is on `$PATH`
+  (clangd, rust-analyzer, pyright, gopls, typescript-language-server,
+  bash-language-server)
+- `<C-p>` files, `<leader>g` ripgrep, `<leader>b` buffers, `<leader>n` NERDTree
+- `gd`/`gr`/`K`/`<leader>r`/`<leader>a`/`[d`/`]d` for LSP navigation
+- Arrow keys disabled; spell check on for prose filetypes (F6/F7 toggle)
 
-**PATH priorities:**
-1. `$HOME/bin` (custom scripts)
-2. `$HOME/.cargo/bin` (Rust tools)
-3. `/usr/local/bin` (Homebrew takes precedence on macOS)
-4. Various Google/Chromium-specific tool paths
+**Shell:** ZSH with oh-my-zsh and Powerlevel10k
+- The `plugins=(...)` list must stay above `source $ZSH/oh-my-zsh.sh`
+- vi-mode plugin is enabled (`KEYTIMEOUT=1`)
 
 ## Special Configuration Notes
 
 ### Git Configuration
-- Default editor: `vim`
-- Default branch: `main` for new repos
-- Auto-setup remote when pushing new branches
-- Auto-prune deleted remote branches on fetch
-- Pager disabled for branches (`pager.branch = false`)
-- Core pager set to `cat` (immediate output)
-- SSL verification disabled (Google corporate network)
-- Google chrome-internal URL rewrite configured
-- Extensive git aliases (see `.gitconfig:36-187`)
+- Editor `vim`, pager `delta`
+- Default branch `main`, `push.autoSetupRemote`, `fetch.prune`
+- `pager.branch = false`
+- `http.sslVerify = false` (legacy from Google corp network)
 
 ### Environment-Specific
-- Homebrew integration for Apple Silicon Macs (`/opt/homebrew`)
-- Google Cloud SDK integration (if installed)
-- Depot tools and OpenScreen paths (Google/Chromium development)
+- Homebrew on Apple Silicon (`/opt/homebrew`)
+- depot_tools at `~/depot_tools`
+- `SDKROOT` comes from `xcrun` rather than a hardcoded Xcode.app path
 - Rust/Cargo integration
-- Path priority: `$HOME/bin` → `~/.cargo/bin` → `/usr/local/bin` → system paths
 
 ## Testing Changes
 
 After modifying dotfiles:
-1. Test the symlink script in a safe environment or backup first
-2. Reload shell configuration: `source ~/.zshrc`
-3. Verify vim configuration: `vim` and check for errors
-4. Test git aliases: `git st`, `git l`, etc.
+1. `bash -n configure.sh` and `zsh -n .zshrc` for syntax
+2. Reload shell configuration: `omz reload`
+3. Vim: open a file and check `:messages`; `:LspServer show status` in a C file
+4. Ghostty: `ghostty +validate-config`
+5. Git: `git config -f .gitconfig --list >/dev/null`

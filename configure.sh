@@ -31,15 +31,15 @@ for f in .[a-z]* bin; do
 	ln -s "$rf" "$hf"
 done
 
-# Create kitty config directory
-mkdir -p $HOME/.config/kitty
-
-# Link kitty.conf
-echo "Linking kitty.conf..."
-ln -f -s $root/kitty.conf $HOME/.config/kitty/kitty.conf
-
-echo "Linking kitty theme.conf..."
-ln -f -s $root/kitty-theme.conf $HOME/.config/kitty/theme.conf
+# Link the Ghostty config directory (config.ghostty + themes/)
+mkdir -p $HOME/.config
+if [ -d "$HOME/.config/ghostty" ] && ! [ -L "$HOME/.config/ghostty" ]; then
+	echo "Backing up $HOME/.config/ghostty to $HOME/.config/ghostty~..."
+	rm -rf "$HOME/.config/ghostty~"
+	mv "$HOME/.config/ghostty" "$HOME/.config/ghostty~"
+fi
+echo "Linking ghostty..."
+ln -sfn $root/ghostty $HOME/.config/ghostty
 
 if [ -d "$HOME/.oh-my-zsh" ]; then
 	echo "Updating oh my zsh..."
@@ -70,12 +70,23 @@ if [[ "$(uname)" == "Darwin" ]]; then
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	fi
 	echo "Installing packages with Homebrew..."
-	brew install kitty fzf bat eza fd ripgrep git-delta nodejs shfmt helix
+	brew install fzf bat eza fd ripgrep git-delta nodejs shfmt
+	brew install --cask ghostty
+
+	# Fonts; see FONTS.md. font-sf-mono is omitted because its .pkg needs sudo.
+	echo "Installing fonts with Homebrew..."
+	brew install --cask \
+		font-atkinson-hyperlegible font-atkinson-hyperlegible-next font-atkinson-hyperlegible-mono \
+		font-fira-code font-jetbrains-mono font-cascadia-code font-monaspace font-iosevka \
+		font-victor-mono font-maple-mono font-recursive font-lilex font-hasklig font-commit-mono \
+		font-geist-mono font-intel-one-mono font-0xproto font-martian-mono font-ibm-plex-mono \
+		font-source-code-pro font-hack font-meslo-lg font-ubuntu-mono font-inconsolata \
+		font-roboto-mono font-red-hat-mono font-space-mono font-anonymous-pro font-mononoki \
+		font-fantasque-sans-mono font-comic-mono font-symbols-only-nerd-font
 elif [ -f /etc/debian_version ]; then
 	echo "Installing packages with apt..."
 	sudo apt update
-	sudo apt install -y kitty fzf bat fd-find ripgrep git-delta nodejs shfmt snapd
-	sudo snap install helix --classic
+	sudo apt install -y vim fzf bat fd-find ripgrep git-delta nodejs shfmt
 
 	# Create symlinks for bat and fd
 	if [ ! -f /usr/local/bin/fd ]; then
@@ -85,7 +96,7 @@ elif [ -f /etc/debian_version ]; then
 		sudo ln -s /usr/bin/batcat /usr/local/bin/bat
 	fi
 else
-	echo "Please install the following packages manually: kitty, fzf, bat, eza, fd, ripgrep helix"
+	echo "Please install the following packages manually: vim, fzf, bat, eza, fd, ripgrep"
 	if ! [ -x "$(command -v fzf)" ]; then
 		echo "Installing fzf from git..."
 		git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -107,3 +118,7 @@ if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
 	echo "Installing zsh-syntax-highlighting..."
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
+
+# Install/update vim plugins (vim-plug bootstraps itself from .vimrc)
+echo "Installing vim plugins..."
+vim -Es -u "$HOME/.vimrc" +'PlugUpdate --sync' +qa || true
