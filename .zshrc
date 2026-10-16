@@ -19,6 +19,39 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# Plugins must be set before oh-my-zsh.sh is sourced.
+# oh-my-zsh plugins (found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins go in ~/.oh-my-zsh/custom/plugins/
+
+# OS-specific plugins
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	plugins=(debian archlinux systemd)
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	plugins=(macos)
+fi
+
+# Common plugins (cross-platform)
+plugins+=(
+	autopep8
+	battery
+	colorize
+	encode64
+	git
+	github
+	gnu-utils
+	jsontools
+	pep8
+	pip
+	pylint
+	python
+	sudo
+	urltools
+	vi-mode
+	vscode
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+)
+
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -110,41 +143,6 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-
-# ──────────────────────────────────────────────────────────────────────────────
-# Plugins
-# ──────────────────────────────────────────────────────────────────────────────
-# oh-my-zsh plugins (found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins go in ~/.oh-my-zsh/custom/plugins/
-
-# OS-specific plugins
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-	plugins=(debian archlinux systemd)
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-	plugins=(macos)
-fi
-
-# Common plugins (cross-platform)
-plugins+=(
-	autopep8
-	battery
-	colorize
-	encode64
-	git
-	github
-	gnu-utils
-	jsontools
-	pep8
-	pip
-	pylint
-	python
-	sudo
-	urltools
-	vi-mode
-	vscode
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-)
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Aliases - System Package Management
