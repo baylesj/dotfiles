@@ -55,11 +55,10 @@ This script:
 - `git can` - Commit amend with no edit
 - `git up` - Upload to code review (cl upload)
 - `git poh` - Push to Gerrit (refs/for/main)
-
-**ZSH aliases** (from `.zshrc`):
-- `acp` - Add all, commit amend, presubmit and upload
-- `git-sync` - Checkout main, pull, prune, delete merged branches
-- `git-update` - Fetch and merge main into current branch
+- `git acp` - Add all, commit amend, presubmit and upload
+- `git sync` - Checkout main, pull, prune, delete merged branches
+- `git update` - Fetch and merge main into current branch
+- `git cf` - `git cl format`
 
 ### Build Commands (Chromium/GN)
 - `gngen` - Generate GN build files in out/Default
@@ -101,7 +100,7 @@ This script:
 ## Special Configuration Notes
 
 ### Git Configuration
-- Editor `vim`, pager `delta`
+- Editor `vim`, pager `delta`; difftool/mergetool presets for VS Code, Zed and Jetski
 - Default branch `main`, `push.autoSetupRemote`, `fetch.prune`
 - `pager.branch = false`
 - `http.sslVerify = false` (legacy from Google corp network)
