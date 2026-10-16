@@ -103,7 +103,7 @@ This script:
 - Editor `vim`, pager `delta`; difftool/mergetool presets for VS Code, Zed and Jetski
 - Default branch `main`, `push.autoSetupRemote`, `fetch.prune`
 - `pager.branch = false`
-- `http.sslVerify = false` (legacy from Google corp network)
+- TERM is only overridden in SSH sessions (see `.zshenv`); Ghostty handles outgoing ssh
 
 ### Environment-Specific
 - Homebrew on Apple Silicon (`/opt/homebrew`)

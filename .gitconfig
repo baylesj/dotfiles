@@ -28,10 +28,6 @@
 [color]
 	ui = auto
 
-# HTTP Settings
-[http]
-	sslVerify = false
-
 # Pager Settings
 [pager]
 	branch = false

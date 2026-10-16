@@ -79,9 +79,6 @@ setopt SHARE_HISTORY            # Share history between sessions
 # Vi-mode key timeout (reduce lag when switching modes)
 export KEYTIMEOUT=1
 
-# Use a modern terminal emulator setting.
-export TERM="xterm-256color"
-
 # Completion settings
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case-insensitive completion
