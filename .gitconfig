@@ -299,8 +299,6 @@
 	helper = luci
   useHttpPath = yes
 
-# Prefer SSO over HTTPS for Chromium related projects
-[url "sso://chromium/"]
 [credential "https://android.googlesource.com"]
 	helper =
 	helper = luci
