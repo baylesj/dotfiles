@@ -1,0 +1,9 @@
+# Follows macOS appearance (System Settings → Appearance → Auto for sunrise/sunset)
+theme = light:Noctis Lux,dark:TokyoNight
+
+font-size = 15
+
+# Uncomment to try a font from FONTS.md. Ghostty ships Nerd Font symbols
+# itself, so plain (unpatched) fonts work with the p10k prompt.
+# font-family = JetBrains Mono
+# font-family = Atkinson Hyperlegible Mono
