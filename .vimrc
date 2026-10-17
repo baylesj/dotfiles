@@ -118,6 +118,7 @@ let s:lsp_servers = [
   \   syncInit: v:true},
   \ #{name: 'pyright', filetype: ['python'], path: 'pyright-langserver',
   \   args: ['--stdio'], workspaceConfig: #{python: #{pythonPath: 'python3'}}},
+  \ #{name: 'pylsp', filetype: ['python'], path: 'pylsp', args: []},
   \ #{name: 'gopls', filetype: ['go', 'gomod'], path: 'gopls', args: ['serve']},
   \ #{name: 'tsserver', filetype: ['javascript', 'typescript'],
   \   path: 'typescript-language-server', args: ['--stdio']},
@@ -131,7 +132,12 @@ function! s:LspSetup() abort
     \ showDiagWithVirtualText: v:true,
     \ diagVirtualTextAlign: 'after',
     \ })
-  call LspAddServer(filter(copy(s:lsp_servers), {_, s -> executable(s.path)}))
+  let servers = filter(copy(s:lsp_servers), {_, s -> executable(s.path)})
+  " Prefer pyright over pylsp when both are installed
+  if executable('pyright-langserver')
+    call filter(servers, {_, s -> s.name !=# 'pylsp'})
+  endif
+  call LspAddServer(servers)
 endfunction
 autocmd User LspSetup call s:LspSetup()
 

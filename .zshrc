@@ -99,7 +99,6 @@ path=(
 
   # Development tools
   "$HOME/depot_tools"
-  "/usr/local/google/home/jophba/bin"
   "/snap/bin"
   "/usr/local/opt"
   "/usr/local/opt/llvm/bin"
@@ -375,10 +374,10 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 fi
 
 # Added by Antigravity
-export PATH="/Users/jophba/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # Added by Jetski
-export PATH="/Users/jophba/.jetski/jetski/bin:$PATH"
+export PATH="$HOME/.jetski/jetski/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

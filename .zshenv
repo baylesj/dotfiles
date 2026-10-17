@@ -32,8 +32,6 @@ if [ -f /usr/local/src/ ]; then
   export REPO_DIR="/usr/local/src/"
 fi
 
-if [ -f ~/.zshenv.local ]; then
-  source ~/.zshenv.local
-else
-  echo "No ~/.zshenv.local file found. You can create one to set local environment variables, such as API keys."
-fi
+# Machine-specific env vars and secrets (untracked). No output here: .zshenv
+# runs for every zsh, including scripts.
+[ -f ~/.zshenv.local ] && source ~/.zshenv.local
