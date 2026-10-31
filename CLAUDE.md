@@ -19,6 +19,7 @@ This script:
 - Symlinks every top-level dotfile (`.[a-z]*`) and `bin/` into `$HOME`, backing up
   an existing file to `<name>~` first
 - Symlinks `ghostty/` to `~/.config/ghostty`
+- Merges `claude/settings.json` into `~/.claude/settings.json`
 - Installs/updates oh-my-zsh, Powerlevel10k, zsh-autosuggestions and
   zsh-syntax-highlighting
 - Installs CLI tools (fzf, bat, eza, fd, ripgrep, git-delta, ...) with Homebrew or apt
@@ -36,6 +37,10 @@ This script:
 - `.vim/spell/` - Personal spelling dictionary (the only tracked part of `.vim/`;
   plugins, vim-plug itself and undo history are generated and gitignored)
 - `.gitconfig` - Git config and aliases. Commits default to jophba@chromium.org
+- `claude/settings.json` - Claude Code settings. `configure.sh` merges them into
+  `~/.claude/settings.json` (not a symlink: that file also holds machine-local
+  permissions and hooks). They turn off the co-author trailer, the "Generated
+  with Claude Code" line and session links in commits and PRs
 - `.gitignore` - Both this repo's ignore file and the global excludes file
   (`core.excludesfile = ~/.gitignore`)
 - `ghostty/` - Ghostty terminal config (`config.ghostty`) and custom `themes/`
@@ -118,3 +123,4 @@ After modifying dotfiles:
 3. Vim: open a file and check `:messages`; `:LspServer show status` in a C file
 4. Ghostty: `ghostty +validate-config`
 5. Git: `git config -f .gitconfig --list >/dev/null`
+6. Claude Code: `python3 -m json.tool claude/settings.json >/dev/null`

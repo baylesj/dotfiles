@@ -19,6 +19,8 @@ cd ~/Dotfiles
   zsh-syntax-highlighting
 - installs CLI tools with Homebrew or apt: fzf, bat, eza, fd, ripgrep,
   git-delta, node, shfmt
+- merges `claude/settings.json` into `~/.claude/settings.json`, keeping the
+  machine's own permissions and hooks
 - on macOS, installs Ghostty and the fonts in [FONTS.md](FONTS.md)
 - installs vim plugins
 
@@ -36,6 +38,7 @@ sourced from `.zshenv` and not tracked.
 | `.bashrc`, `.bash_profile` | bash, for machines where zsh isn't the login shell |
 | `.vimrc`, `.vim/spell/` | Vim config and personal spelling dictionary |
 | `.gitconfig` | git settings and aliases; commits default to jophba@chromium.org |
+| `claude/settings.json` | Claude Code settings, merged into `~/.claude/settings.json` (no co-author or session lines in commits and PRs) |
 | `.gitignore` | this repo's ignores, and also the global excludes file |
 | `ghostty/` | Ghostty config and custom themes |
 | `bin/` | scripts on `PATH` (below) |
