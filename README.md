@@ -35,7 +35,7 @@ sourced from `.zshenv` and not tracked.
 | `.zshrc`, `.zshenv` | zsh: oh-my-zsh plugins, aliases, functions, `PATH` |
 | `.bashrc`, `.bash_profile` | bash, for machines where zsh isn't the login shell |
 | `.vimrc`, `.vim/spell/` | Vim config and personal spelling dictionary |
-| `.gitconfig`, `.gitconfig-chromium` | git settings and aliases; the second switches to the work email for googlesource/sso remotes |
+| `.gitconfig` | git settings and aliases; commits default to jophba@chromium.org |
 | `.gitignore` | this repo's ignores, and also the global excludes file |
 | `ghostty/` | Ghostty config and custom themes |
 | `bin/` | scripts on `PATH` (below) |

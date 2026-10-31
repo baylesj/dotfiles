@@ -35,8 +35,7 @@ This script:
 - `.vimrc` - Vim 9 config (vim-plug, yegappan/lsp, fzf.vim, gruvbox-material)
 - `.vim/spell/` - Personal spelling dictionary (the only tracked part of `.vim/`;
   plugins, vim-plug itself and undo history are generated and gitignored)
-- `.gitconfig` - Git config and aliases. `.gitconfig-chromium` is included for
-  googlesource/sso remotes to switch to the work email
+- `.gitconfig` - Git config and aliases. Commits default to jophba@chromium.org
 - `.gitignore` - Both this repo's ignore file and the global excludes file
   (`core.excludesfile = ~/.gitignore`)
 - `ghostty/` - Ghostty terminal config (`config.ghostty`) and custom `themes/`

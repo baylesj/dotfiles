@@ -1,13 +1,7 @@
 # User Information
 [user]
 	name = Jordan Bayles
-	email = bayles.jordan@gmail.com
-
-# Chromium/Gerrit checkouts commit with the work address (needed for the CLA check).
-[includeIf "hasconfig:remote.*.url:https://*.googlesource.com/**"]
-	path = ~/Dotfiles/.gitconfig-chromium
-[includeIf "hasconfig:remote.*.url:sso://**"]
-	path = ~/Dotfiles/.gitconfig-chromium
+	email = jophba@chromium.org
 
 # Core Settings
 [core]
