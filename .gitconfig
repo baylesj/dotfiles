@@ -3,6 +3,18 @@
 	name = Jordan Bayles
 	email = jophba@chromium.org
 
+# Personal repos commit with the personal address instead, matched by
+# remote URL. Each repo needs four patterns: scp-style (git@host:owner/repo)
+# and URL-style (https:// or ssh://) remotes, each with and without ".git".
+[includeIf "hasconfig:remote.*.url:**:baylesj/dotfiles"]
+	path = ~/Dotfiles/.gitconfig-personal
+[includeIf "hasconfig:remote.*.url:**:baylesj/dotfiles.git"]
+	path = ~/Dotfiles/.gitconfig-personal
+[includeIf "hasconfig:remote.*.url:**/baylesj/dotfiles"]
+	path = ~/Dotfiles/.gitconfig-personal
+[includeIf "hasconfig:remote.*.url:**/baylesj/dotfiles.git"]
+	path = ~/Dotfiles/.gitconfig-personal
+
 # Core Settings
 [core]
 	editor = vim

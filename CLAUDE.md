@@ -36,7 +36,9 @@ This script:
 - `.vimrc` - Vim 9 config (vim-plug, yegappan/lsp, fzf.vim, gruvbox-material)
 - `.vim/spell/` - Personal spelling dictionary (the only tracked part of `.vim/`;
   plugins, vim-plug itself and undo history are generated and gitignored)
-- `.gitconfig` - Git config and aliases. Commits default to jophba@chromium.org
+- `.gitconfig` - Git config and aliases. Commits default to jophba@chromium.org;
+  `.gitconfig-personal` is included for personal repos (listed in `.gitconfig`
+  by remote URL, four patterns per repo) to switch to bayles.jordan@gmail.com
 - `claude/settings.json` - Claude Code settings. `configure.sh` merges them into
   `~/.claude/settings.json` (not a symlink: that file also holds machine-local
   permissions and hooks). They turn off the co-author trailer, the "Generated

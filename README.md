@@ -37,7 +37,7 @@ sourced from `.zshenv` and not tracked.
 | `.zshrc`, `.zshenv` | zsh: oh-my-zsh plugins, aliases, functions, `PATH` |
 | `.bashrc`, `.bash_profile` | bash, for machines where zsh isn't the login shell |
 | `.vimrc`, `.vim/spell/` | Vim config and personal spelling dictionary |
-| `.gitconfig` | git settings and aliases; commits default to jophba@chromium.org |
+| `.gitconfig`, `.gitconfig-personal` | git settings and aliases; commits default to jophba@chromium.org, and the second switches to bayles.jordan@gmail.com for personal repos listed in `.gitconfig` |
 | `claude/settings.json` | Claude Code settings, merged into `~/.claude/settings.json` (no co-author or session lines in commits and PRs) |
 | `.gitignore` | this repo's ignores, and also the global excludes file |
 | `ghostty/` | Ghostty config and custom themes |
