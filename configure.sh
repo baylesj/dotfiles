@@ -41,6 +41,40 @@ fi
 echo "Linking ghostty..."
 ln -sfn $root/ghostty $HOME/.config/ghostty
 
+# Claude Code: merge claude/settings.json into ~/.claude/settings.json. Merged
+# rather than symlinked, because that file also holds machine-local
+# permissions and hooks, which this keeps. Keys from the repo win.
+echo "Merging Claude Code settings..."
+mkdir -p "$HOME/.claude"
+python3 - "$root/claude/settings.json" "$HOME/.claude/settings.json" <<'PY'
+import json, os, sys
+
+src, dst = sys.argv[1], os.path.realpath(sys.argv[2])
+with open(src) as f:
+    wanted = json.load(f)
+try:
+    with open(dst) as f:
+        current = json.load(f)
+except FileNotFoundError:
+    current = {}
+
+
+def merge(base, over):
+    for key, value in over.items():
+        if isinstance(value, dict) and isinstance(base.get(key), dict):
+            merge(base[key], value)
+        else:
+            base[key] = value
+
+
+merge(current, wanted)
+tmp = dst + ".tmp"
+with open(tmp, "w") as f:
+    json.dump(current, f, indent=2)
+    f.write("\n")
+os.replace(tmp, dst)
+PY
+
 if [ -d "$HOME/.oh-my-zsh" ]; then
 	echo "Updating oh my zsh..."
 	pushd $HOME/.oh-my-zsh

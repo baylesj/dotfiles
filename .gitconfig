@@ -1,13 +1,19 @@
 # User Information
 [user]
 	name = Jordan Bayles
-	email = bayles.jordan@gmail.com
+	email = jophba@chromium.org
 
-# Chromium/Gerrit checkouts commit with the work address (needed for the CLA check).
-[includeIf "hasconfig:remote.*.url:https://*.googlesource.com/**"]
-	path = ~/Dotfiles/.gitconfig-chromium
-[includeIf "hasconfig:remote.*.url:sso://**"]
-	path = ~/Dotfiles/.gitconfig-chromium
+# Personal repos commit with the personal address instead, matched by
+# remote URL. Each repo needs four patterns: scp-style (git@host:owner/repo)
+# and URL-style (https:// or ssh://) remotes, each with and without ".git".
+[includeIf "hasconfig:remote.*.url:**:baylesj/dotfiles"]
+	path = ~/Dotfiles/.gitconfig-personal
+[includeIf "hasconfig:remote.*.url:**:baylesj/dotfiles.git"]
+	path = ~/Dotfiles/.gitconfig-personal
+[includeIf "hasconfig:remote.*.url:**/baylesj/dotfiles"]
+	path = ~/Dotfiles/.gitconfig-personal
+[includeIf "hasconfig:remote.*.url:**/baylesj/dotfiles.git"]
+	path = ~/Dotfiles/.gitconfig-personal
 
 # Core Settings
 [core]
